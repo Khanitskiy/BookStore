@@ -3854,3 +3854,1021 @@ DETAIL:  Эта база данных используется ещё в 1 се�
   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "addresses" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "authors" DISABLE TRIGGER ALL;ALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "countries" DISABLE TRIGGER ALL;ALTER TABLE "credit_cards" DISABLE TRIGGER ALL;ALTER TABLE "customers" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.3ms)[0m  select table_name from information_schema.views where table_schema = 'amazone_test'
+  [1m[36m (1460.2ms)[0m  [1mTRUNCATE TABLE "public"."addresses", "public"."authors", "public"."books", "public"."categories", "public"."countries", "public"."credit_cards", "public"."customers", "public"."order_items", "public"."orders", "public"."ratings" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "addresses" ENABLE TRIGGER ALL;ALTER TABLE "authors" ENABLE TRIGGER ALL;ALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "countries" ENABLE TRIGGER ALL;ALTER TABLE "credit_cards" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "customers" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "books" ("title", "price", "description", "in_stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Dance Dance Dance"], ["price", "40.01"], ["description", "Est aspernatur voluptas. Doloremque vero similique illum sit nihil quibusdam officia. Ex quo asperiores omnis ipsum ut. Cumque nobis repudiandae enim possimus quod blanditiis. Est id et in."], ["in_stock", 49], ["created_at", "2016-02-23 16:11:34.399186"], ["updated_at", "2016-02-23 16:11:34.399186"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCategory Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "categories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-23 16:11:34.455420"], ["updated_at", "2016-02-23 16:11:34.455420"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "categories" SET "title" = $1, "updated_at" = $2 WHERE "categories"."id" = $3[0m  [["title", "an arbitrary value"], ["updated_at", "2016-02-23 16:11:34.458758"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCategory Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCategory Exists (0.3ms)[0m  SELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCountry Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "countries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-23 16:11:34.487231"], ["updated_at", "2016-02-23 16:11:34.487231"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "countries" SET "name" = $1, "updated_at" = $2 WHERE "countries"."id" = $3[0m  [["name", "an arbitrary value"], ["updated_at", "2016-02-23 16:11:34.489257"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCountry Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCountry Exists (0.4ms)[0m  SELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCustomer Exists (0.3ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCustomer Exists (0.3ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY "customers"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "customers" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2016-02-23 16:11:34.572898"], ["updated_at", "2016-02-23 16:11:34.572898"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "customers" SET "email" = $1, "updated_at" = $2 WHERE "customers"."id" = $3  [["email", "an arbitrary value"], ["updated_at", "2016-02-23 16:11:34.575214"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCustomer Exists (0.4ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'an arbitrary value' LIMIT 1
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "orders" ("total_price", "completed_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total_price", "255.22"], ["completed_date", "2016-02-23"], ["created_at", "2016-02-23 16:11:34.641303"], ["updated_at", "2016-02-23 16:11:34.641303"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "books" ("title", "price", "description", "in_stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Wildfire at Midnight"], ["price", "56.87"], ["description", "Id nihil totam. Dolore assumenda at enim deserunt consequatur. Vero eius facere optio nesciunt quis vel id."], ["in_stock", 165], ["created_at", "2016-02-23 16:12:00.537828"], ["updated_at", "2016-02-23 16:12:00.537828"]]
+  [1m[35m (33.1ms)[0m  COMMIT
+  [1m[36mCategory Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" IS NULL LIMIT 1[0m
+  [1m[35mCategory Load (0.7ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-23 16:12:00.598354"], ["updated_at", "2016-02-23 16:12:00.598354"]]
+  [1m[36m (8.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "categories" SET "title" = $1, "updated_at" = $2 WHERE "categories"."id" = $3[0m  [["title", "an arbitrary value"], ["updated_at", "2016-02-23 16:12:00.609118"], ["id", 2]]
+  [1m[35m (16.5ms)[0m  COMMIT
+  [1m[36mCategory Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCategory Exists (0.5ms)[0m  SELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mCountry Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" IS NULL LIMIT 1[0m
+  [1m[35mCountry Load (0.4ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "countries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-23 16:12:00.653580"], ["updated_at", "2016-02-23 16:12:00.653580"]]
+  [1m[36m (8.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "countries" SET "name" = $1, "updated_at" = $2 WHERE "countries"."id" = $3[0m  [["name", "an arbitrary value"], ["updated_at", "2016-02-23 16:12:00.664657"], ["id", 2]]
+  [1m[35m (8.3ms)[0m  COMMIT
+  [1m[36mCountry Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCountry Exists (0.4ms)[0m  SELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mCustomer Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35mCustomer Exists (0.4ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35mCustomer Exists (0.8ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY "customers"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "customers" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2016-02-23 16:12:00.764650"], ["updated_at", "2016-02-23 16:12:00.764650"]]
+  [1m[35m (2.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "customers" SET "email" = $1, "updated_at" = $2 WHERE "customers"."id" = $3  [["email", "an arbitrary value"], ["updated_at", "2016-02-23 16:12:00.770400"], ["id", 2]]
+  [1m[36m (13.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mCustomer Exists (0.6ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'an arbitrary value' LIMIT 1
+  [1m[36mCustomer Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "orders" ("total_price", "completed_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total_price", "255.22"], ["completed_date", "2016-02-23"], ["created_at", "2016-02-23 16:12:00.832463"], ["updated_at", "2016-02-23 16:12:00.832463"]]
+  [1m[35m (7.1ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "books" ("title", "price", "description", "in_stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "Tiger! Tiger! (Rudyard Kipling)"], ["price", "78.32"], ["description", "Ea et autem temporibus. Minus dolores voluptas. Necessitatibus et hic facilis numquam quod quis corporis."], ["in_stock", 167], ["created_at", "2016-02-23 16:12:37.031071"], ["updated_at", "2016-02-23 16:12:37.031071"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Exists (0.4ms)[0m  SELECT  1 AS one FROM "categories" WHERE "categories"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories"  ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Exists (0.5ms)[0m  SELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'an arbitrary value' LIMIT 1
+  [1m[36mCategory Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Exists (0.4ms)[0m  SELECT  1 AS one FROM "countries" WHERE "countries"."name" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT  "countries".* FROM "countries"  ORDER BY "countries"."id" ASC LIMIT 1[0m
+  [1m[35mCountry Exists (0.3ms)[0m  SELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'an arbitrary value' LIMIT 1
+  [1m[36mCountry Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCustomer Exists (0.9ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCustomer Exists (0.2ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers"  ORDER BY "customers"."id" ASC LIMIT 1
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCustomer Exists (0.3ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "orders" ("total_price", "completed_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["total_price", "255.22"], ["completed_date", "2016-02-23"], ["created_at", "2016-02-23 16:12:37.195617"], ["updated_at", "2016-02-23 16:12:37.195617"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "books" ("title", "price", "description", "in_stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "Cover Her Face"], ["price", "68.03"], ["description", "Ad et quia esse eum quos iusto ut. Nam vel ab. Voluptatem animi sint aut et voluptatum. Officiis in qui provident asperiores accusantium praesentium et."], ["in_stock", 120], ["created_at", "2016-02-23 16:13:32.494705"], ["updated_at", "2016-02-23 16:13:32.494705"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Exists (0.7ms)[0m  SELECT  1 AS one FROM "categories" WHERE "categories"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT  "categories".* FROM "categories"  ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Exists (0.5ms)[0m  SELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'an arbitrary value' LIMIT 1
+  [1m[36mCategory Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Exists (0.3ms)[0m  SELECT  1 AS one FROM "countries" WHERE "countries"."name" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT  "countries".* FROM "countries"  ORDER BY "countries"."id" ASC LIMIT 1[0m
+  [1m[35mCountry Exists (0.2ms)[0m  SELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'an arbitrary value' LIMIT 1
+  [1m[36mCountry Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCustomer Exists (0.9ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCustomer Exists (0.3ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCustomer Load (0.5ms)[0m  SELECT  "customers".* FROM "customers"  ORDER BY "customers"."id" ASC LIMIT 1
+  [1m[36mCustomer Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCustomer Exists (0.4ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "orders" ("total_price", "completed_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["total_price", "255.22"], ["completed_date", "2016-02-23"], ["created_at", "2016-02-23 16:13:32.690835"], ["updated_at", "2016-02-23 16:13:32.690835"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "books" ("title", "price", "description", "in_stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Look to Windward"], ["price", "45.1"], ["description", "Magni quas velit. Repellat ut aut iusto reprehenderit tempore. Vitae possimus velit inventore aspernatur modi. Consectetur in possimus itaque dolor ipsam. Qui natus qui consequatur tenetur voluptate."], ["in_stock", 93], ["created_at", "2016-02-23 16:14:30.047249"], ["updated_at", "2016-02-23 16:14:30.047249"]]
+  [1m[35m (44.8ms)[0m  COMMIT
+  [1m[36mCategory Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" IS NULL LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCategory Exists (0.3ms)[0m  SELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mCountry Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" IS NULL LIMIT 1[0m
+  [1m[35mCountry Load (0.4ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[36mCountry Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCountry Exists (0.3ms)[0m  SELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mCustomer Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35mCustomer Exists (0.7ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36mCustomer Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35mCustomer Exists (0.4ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36mCustomer Load (0.5ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY "customers"."id" ASC LIMIT 1[0m
+  [1m[35mCustomer Exists (0.6ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'an arbitrary value' LIMIT 1
+  [1m[36mCustomer Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "orders" ("total_price", "completed_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total_price", "255.22"], ["completed_date", "2016-02-23"], ["created_at", "2016-02-23 16:14:30.302465"], ["updated_at", "2016-02-23 16:14:30.302465"]]
+  [1m[35m (22.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "books" ("title", "price", "description", "in_stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Curious Incident of the Dog in the Night-Time"], ["price", "8.93"], ["description", "Facilis veniam ut asperiores voluptas molestias earum. Eaque animi ut vero. Repellendus voluptatem aliquid et qui velit. Eaque consectetur modi dolor pariatur debitis soluta. Impedit consequuntur exercitationem voluptas."], ["in_stock", 92], ["created_at", "2016-02-23 16:15:48.907139"], ["updated_at", "2016-02-23 16:15:48.907139"]]
+  [1m[35m (30.7ms)[0m  COMMIT
+  [1m[36mCategory Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" IS NULL LIMIT 1[0m
+  [1m[35mCategory Load (0.7ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCategory Exists (0.4ms)[0m  SELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mCountry Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" IS NULL LIMIT 1[0m
+  [1m[35mCountry Load (0.5ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[36mCountry Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCountry Exists (0.4ms)[0m  SELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mCustomer Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35mCustomer Exists (0.5ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36mCustomer Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35mCustomer Exists (0.3ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY "customers"."id" ASC LIMIT 1[0m
+  [1m[35mCustomer Exists (0.4ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'an arbitrary value' LIMIT 1
+  [1m[36mCustomer Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "orders" ("total_price", "completed_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total_price", "255.22"], ["completed_date", "2016-02-23"], ["created_at", "2016-02-23 16:15:49.152415"], ["updated_at", "2016-02-23 16:15:49.152415"]]
+  [1m[35m (7.9ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "orders" ("total_price", "completed_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total_price", "255.22"], ["completed_date", "2016-02-23"], ["created_at", "2016-02-23 16:15:55.461531"], ["updated_at", "2016-02-23 16:15:55.461531"]]
+  [1m[35m (20.9ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "orders" ("total_price", "completed_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total_price", "255.22"], ["completed_date", "2016-02-23"], ["created_at", "2016-02-23 16:18:59.079614"], ["updated_at", "2016-02-23 16:18:59.079614"]]
+  [1m[35m (25.2ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "books" ("title", "price", "description", "in_stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "By Grand Central Station I Sat Down and Wept"], ["price", "75.55"], ["description", "Sit impedit corrupti veniam illo vel dignissimos molestias. Amet dolorem ea eos reiciendis repellendus quam et. Nisi qui rem eum quia iste. Et sed sit voluptate quasi et fugit. Placeat perferendis quo aut recusandae consequuntur."], ["in_stock", 21], ["created_at", "2016-02-23 16:20:00.546731"], ["updated_at", "2016-02-23 16:20:00.546731"]]
+  [1m[35m (28.3ms)[0m  COMMIT
+  [1m[36mCategory Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" IS NULL LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCategory Exists (0.5ms)[0m  SELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mCountry Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" IS NULL LIMIT 1[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[36mCountry Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCountry Exists (0.3ms)[0m  SELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mCustomer Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35mCustomer Exists (0.8ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36mCustomer Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35mCustomer Exists (0.5ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36mCustomer Load (0.5ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY "customers"."id" ASC LIMIT 1[0m
+  [1m[35mCustomer Exists (0.5ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'an arbitrary value' LIMIT 1
+  [1m[36mCustomer Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "orders" ("total_price", "completed_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total_price", "255.22"], ["completed_date", "2016-02-23"], ["created_at", "2016-02-23 16:20:00.776304"], ["updated_at", "2016-02-23 16:20:00.776304"]]
+  [1m[35m (12.0ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "books" ("title", "price", "description", "in_stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "This Side of Paradise"], ["price", "50.49"], ["description", "Et odit animi. Sed nostrum velit rerum. Autem quis rerum debitis consequatur perferendis nesciunt eligendi. Pariatur tenetur libero non perspiciatis quis omnis. Earum sed nesciunt possimus dicta eum rem."], ["in_stock", 118], ["created_at", "2016-02-23 16:21:29.050233"], ["updated_at", "2016-02-23 16:21:29.050233"]]
+  [1m[35m (29.4ms)[0m  COMMIT
+  [1m[36mCategory Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" IS NULL LIMIT 1[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "categories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-23 16:21:29.103497"], ["updated_at", "2016-02-23 16:21:29.103497"]]
+  [1m[36m (11.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "categories" SET "title" = $1, "updated_at" = $2 WHERE "categories"."id" = $3[0m  [["title", "an arbitrary value"], ["updated_at", "2016-02-23 16:21:29.117892"], ["id", 1]]
+  [1m[35m (4.5ms)[0m  COMMIT
+  [1m[36mCategory Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCategory Exists (0.4ms)[0m  SELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mCountry Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" IS NULL LIMIT 1[0m
+  [1m[35mCountry Load (0.4ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "countries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-23 16:21:29.149695"], ["updated_at", "2016-02-23 16:21:29.149695"]]
+  [1m[36m (9.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "countries" SET "name" = $1, "updated_at" = $2 WHERE "countries"."id" = $3[0m  [["name", "an arbitrary value"], ["updated_at", "2016-02-23 16:21:29.162011"], ["id", 1]]
+  [1m[35m (8.7ms)[0m  COMMIT
+  [1m[36mCountry Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCountry Exists (0.6ms)[0m  SELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mCustomer Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35mCustomer Exists (0.4ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35mCustomer Exists (0.3ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY "customers"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "customers" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2016-02-23 16:21:29.273896"], ["updated_at", "2016-02-23 16:21:29.273896"]]
+  [1m[35m (7.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "customers" SET "email" = $1, "updated_at" = $2 WHERE "customers"."id" = $3  [["email", "an arbitrary value"], ["updated_at", "2016-02-23 16:21:29.284133"], ["id", 1]]
+  [1m[36m (8.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mCustomer Exists (0.4ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'an arbitrary value' LIMIT 1
+  [1m[36mCustomer Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "orders" ("total_price", "completed_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total_price", "255.22"], ["completed_date", "2016-02-23"], ["created_at", "2016-02-23 16:21:29.364642"], ["updated_at", "2016-02-23 16:21:29.364642"]]
+  [1m[35m (5.0ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "books" ("title", "price", "description", "in_stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "nfinite Jest"], ["price", "47.23"], ["description", "Et ipsum inventore quaerat suscipit voluptatum unde nemo. Sit voluptatibus est dolore aut eos et. Illo est qui non sit."], ["in_stock", 88], ["created_at", "2016-02-23 16:21:34.804469"], ["updated_at", "2016-02-23 16:21:34.804469"]]
+  [1m[35m (22.0ms)[0m  COMMIT
+  [1m[36mCategory Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" IS NULL LIMIT 1[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCategory Exists (0.6ms)[0m  SELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mCountry Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" IS NULL LIMIT 1[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[36mCountry Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCountry Exists (0.3ms)[0m  SELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mCustomer Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35mCustomer Exists (0.6ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36mCustomer Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35mCustomer Exists (0.4ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36mCustomer Load (0.6ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY "customers"."id" ASC LIMIT 1[0m
+  [1m[35mCustomer Exists (0.5ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'an arbitrary value' LIMIT 1
+  [1m[36mCustomer Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "orders" ("total_price", "completed_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total_price", "255.22"], ["completed_date", "2016-02-23"], ["created_at", "2016-02-23 16:21:34.985116"], ["updated_at", "2016-02-23 16:21:34.985116"]]
+  [1m[35m (9.6ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "addresses" DISABLE TRIGGER ALL;ALTER TABLE "authors" DISABLE TRIGGER ALL;ALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "categories" DISABLE TRIGGER ALL;ALTER TABLE "countries" DISABLE TRIGGER ALL;ALTER TABLE "credit_cards" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "customers" DISABLE TRIGGER ALL;ALTER TABLE "order_items" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.2ms)[0m  select table_name from information_schema.views where table_schema = 'bookstore_test'
+  [1m[36m (1344.8ms)[0m  [1mTRUNCATE TABLE "public"."addresses", "public"."authors", "public"."books", "public"."categories", "public"."countries", "public"."credit_cards", "public"."customers", "public"."order_items", "public"."orders", "public"."ratings" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "addresses" ENABLE TRIGGER ALL;ALTER TABLE "authors" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "categories" ENABLE TRIGGER ALL;ALTER TABLE "countries" ENABLE TRIGGER ALL;ALTER TABLE "credit_cards" ENABLE TRIGGER ALL;ALTER TABLE "customers" ENABLE TRIGGER ALL;ALTER TABLE "order_items" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "books" ("title", "price", "description", "in_stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "As I Lay Dying"], ["price", "92.16"], ["description", "Nisi rerum velit similique autem veniam. Vel alias tempora exercitationem dolore. Dolores officiis doloribus praesentium est enim ut excepturi. Laborum commodi ut voluptates eum. Magni tenetur nihil facere."], ["in_stock", 105], ["created_at", "2016-02-23 16:22:28.192834"], ["updated_at", "2016-02-23 16:22:28.192834"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCategory Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "categories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-23 16:22:28.218465"], ["updated_at", "2016-02-23 16:22:28.218465"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "categories" SET "title" = $1, "updated_at" = $2 WHERE "categories"."id" = $3[0m  [["title", "an arbitrary value"], ["updated_at", "2016-02-23 16:22:28.221071"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCategory Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCategory Exists (0.2ms)[0m  SELECT  1 AS one FROM "categories" WHERE "categories"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCountry Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "countries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-23 16:22:28.250310"], ["updated_at", "2016-02-23 16:22:28.250310"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "countries" SET "name" = $1, "updated_at" = $2 WHERE "countries"."id" = $3[0m  [["name", "an arbitrary value"], ["updated_at", "2016-02-23 16:22:28.252783"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCountry Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mCountry Exists (0.3ms)[0m  SELECT  1 AS one FROM "countries" WHERE "countries"."name" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCustomer Exists (0.5ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCustomer Exists (0.8ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY "customers"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "customers" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2016-02-23 16:22:28.341623"], ["updated_at", "2016-02-23 16:22:28.341623"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "customers" SET "email" = $1, "updated_at" = $2 WHERE "customers"."id" = $3  [["email", "an arbitrary value"], ["updated_at", "2016-02-23 16:22:28.344939"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCustomer Exists (0.4ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'an arbitrary value' LIMIT 1
+  [1m[36mCustomer Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "orders" ("total_price", "completed_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total_price", "255.22"], ["completed_date", "2016-02-23"], ["created_at", "2016-02-23 16:22:28.405537"], ["updated_at", "2016-02-23 16:22:28.405537"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
