@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Amazone</title>
+  <title>Bookstore</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
 
-<%= yield %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <span class="navbar-brand" href="<%= root_path %>">The Bookstore</span>
+    </div>
 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li <%= cp(root_path) %>><%= link_to "HOME", root_path %></li>
+        <li <%= cp(shop_path) %>><%= link_to "SHOP", shop_path %></li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <% if customer_signed_in? %>
+          
+          <li><%= link_to "Settings", '#' %></li>
+          <li><%= link_to "Orders", '#' %></li>
+
+          <li <%= cp(destroy_customer_session_path) %> >
+           <%= link_to('Sign out', destroy_customer_session_path, :method => :delete) %>   
+        
+        <% else %>
+          <li <%= cp(new_customer_session_path) %> >
+            <%= link_to "Log in", new_customer_session_path %>
+          </li>
+
+          <li <%= cp(new_customer_registration_path) %> >
+            <%= link_to "Sign up", new_customer_registration_path %>
+          </li>
+        <% end %>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+  
+  <% if notice.class === "String" %>
+  <div class="alert alert-success"><%= notice %></div>
+  <% end %>
+  <% if alert.class === "String" %>
+  <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+  
+</div>
+
+
+<div class="container">
+  <%= yield %>
+</div>
 </body>
 </html>

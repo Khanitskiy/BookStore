@@ -3,7 +3,7 @@ class CreateOrders < ActiveRecord::Migration
     create_table :orders do |t|
     	t.decimal   :total_price
     	t.date 			:completed_date
-    	t.integer		:state
+    	t.integer		:state, default: 1
     	t.string 		:billing_address
     	t.string 		:shipping_address
       t.belongs_to :customer, index:true
