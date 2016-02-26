@@ -4,7 +4,7 @@ class Customer < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 	validates :email, :password, :firstname, :lastname, presence: true
-	validates :email, uniqueness: true
+	#validates :email, uniqueness: true
 
 	has_many   :ratings
   has_many   :books, through: :ratings

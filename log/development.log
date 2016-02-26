@@ -12456,3 +12456,3052 @@ Processing by RailsAdmin::MainController#index as HTML
   [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
   Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (37.0ms)
 Completed 200 OK in 72ms (Views: 46.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:26:45 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 381ms (Views: 364.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/shop" for 127.0.0.1 at 2016-02-25 21:26:48 +0200
+Processing by BooksController#shop as HTML
+  Rendered books/shop.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:26:49 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 111ms (Views: 110.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:26:50 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 84ms (Views: 58.9ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:26:54 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V36iPjGwXg1ylnKXc26iMYHXzRUpKY8xwoIAOFjhNVtLOjUvNG1OAs7EkW7cioN3sjrVWjYdeXUzKzrpybhBkA==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mCustomer Load (0.8ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."email" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["email", "khanitskiy@gmail.com"]]
+Completed 401 Unauthorized in 29ms (ActiveRecord: 0.9ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V36iPjGwXg1ylnKXc26iMYHXzRUpKY8xwoIAOFjhNVtLOjUvNG1OAs7EkW7cioN3sjrVWjYdeXUzKzrpybhBkA==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 136ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:28:03 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V36iPjGwXg1ylnKXc26iMYHXzRUpKY8xwoIAOFjhNVtLOjUvNG1OAs7EkW7cioN3sjrVWjYdeXUzKzrpybhBkA==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["email", "khanitskiy@gmail.com"]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V36iPjGwXg1ylnKXc26iMYHXzRUpKY8xwoIAOFjhNVtLOjUvNG1OAs7EkW7cioN3sjrVWjYdeXUzKzrpybhBkA==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 124ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:28:06 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:28:06 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:28:06 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-25 21:28:06 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:28:06 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:28:06 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:28:06 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:28:06 +0200
+
+
+Started POST "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:28:09 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ClW18UVJPT1bhW7ESpaJbYzfk2l5IE47lS7cp+tkA6QWESLgQJQtMufXjT3lcqgrvzKLJmYUuH9kh+Z2ej13bw==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mCustomer Load (0.5ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."email" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["email", "khanitskiy@gmail.com"]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.5ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ClW18UVJPT1bhW7ESpaJbYzfk2l5IE47lS7cp+tkA6QWESLgQJQtMufXjT3lcqgrvzKLJmYUuH9kh+Z2ej13bw==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 116ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:29:30 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ClW18UVJPT1bhW7ESpaJbYzfk2l5IE47lS7cp+tkA6QWESLgQJQtMufXjT3lcqgrvzKLJmYUuH9kh+Z2ej13bw==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["email", "khanitskiy@gmail.com"]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ClW18UVJPT1bhW7ESpaJbYzfk2l5IE47lS7cp+tkA6QWESLgQJQtMufXjT3lcqgrvzKLJmYUuH9kh+Z2ej13bw==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 106ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:29:30 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:29:30 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:29:30 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:29:30 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-25 21:29:30 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:29:30 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:29:30 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:29:30 +0200
+
+
+Started POST "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:29:38 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hGRk7YhudwXdpH+4zN0QeXo6pduwq/L2NnslsbJMwuuYIPP8jbNnCmH2nEFjOTE/Sde9lK+fBLLH0h9gIxW2IA==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."email" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["email", "khanitskiy@gmail.com"]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hGRk7YhudwXdpH+4zN0QeXo6pduwq/L2NnslsbJMwuuYIPP8jbNnCmH2nEFjOTE/Sde9lK+fBLLH0h9gIxW2IA==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 108ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:32:54 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hGRk7YhudwXdpH+4zN0QeXo6pduwq/L2NnslsbJMwuuYIPP8jbNnCmH2nEFjOTE/Sde9lK+fBLLH0h9gIxW2IA==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["email", "khanitskiy@gmail.com"]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hGRk7YhudwXdpH+4zN0QeXo6pduwq/L2NnslsbJMwuuYIPP8jbNnCmH2nEFjOTE/Sde9lK+fBLLH0h9gIxW2IA==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 115ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:32:54 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:32:54 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:32:54 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:32:54 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:32:54 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:32:54 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-25 21:32:54 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:32:55 +0200
+
+
+Started POST "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:33:00 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4/0qd1y0nWm8cqB+JCfk7eDLJl/7ugOPfOKr29guVWD/ub1mWWmNZgAgQ4eLw8Wr0yY+EOSO9cuNS5EKSXchqw==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."email" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["email", "khanitskiy@gmail.com"]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.3ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4/0qd1y0nWm8cqB+JCfk7eDLJl/7ugOPfOKr29guVWD/ub1mWWmNZgAgQ4eLw8Wr0yY+EOSO9cuNS5EKSXchqw==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 107ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:33:11 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/L9VsrFs1NQ0zvdct3+DezBeRAZ8VmxSWHVBeyxW+bLg+8KjtLHE24icFKUYm6I9A7NcSWNimhap3HuqvQ+NeQ==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["email", "khanitskiy@gmail.com"]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.3ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/L9VsrFs1NQ0zvdct3+DezBeRAZ8VmxSWHVBeyxW+bLg+8KjtLHE24icFKUYm6I9A7NcSWNimhap3HuqvQ+NeQ==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 106ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-25 21:33:19 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-02-25 21:33:25 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "addresses"
+  [1m[36mAddress Load (0.5ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "countries"
+  [1m[36mCountry Load (0.4ms)[0m  [1mSELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "credit_cards"
+  [1m[36mCreditCard Load (0.5ms)[0m  [1mSELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "customers"
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY customers.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "orders"
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "order_items"
+  [1m[36mOrderItem Load (0.3ms)[0m  [1mSELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "ratings"
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (29.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (5.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (7.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (3.5ms)
+Completed 200 OK in 393ms (Views: 194.8ms | ActiveRecord: 16.5ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2016-02-25 21:33:47 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jGXE6iBlRiRSD9NASRHlZ/utknZhS990GQGvTevtUxSQIVP7JbhWK+5dMLnm9cQhyECKOX5/KTDoqJWcerQn3w==", "customer"=>{"firstname"=>"Dmitriy", "lastname"=>"Khanitskiy", "email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1[0m
+  [1m[35mCustomer Exists (0.3ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "customers" ("firstname", "lastname", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["firstname", "Dmitriy"], ["lastname", "Khanitskiy"], ["email", "khanitskiy@gmail.com"], ["encrypted_password", "$2a$10$lBRS/8hXxhtnQ6fJLPZXU.YllXDA/iP4G973aOFAyHWbMQGaX5Eru"], ["created_at", "2016-02-25 19:33:47.784568"], ["updated_at", "2016-02-25 19:33:47.784568"]]
+  [1m[35m (100.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "customers" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "customers"."id" = $7  [["last_sign_in_at", "2016-02-25 19:33:47.888377"], ["current_sign_in_at", "2016-02-25 19:33:47.888377"], ["last_sign_in_ip", "127.0.0.1/32"], ["current_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2016-02-25 19:33:47.889521"], ["id", 1]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 355ms (ActiveRecord: 108.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:33:47 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:34:29 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:34:30 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:34:30 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:34:30 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:34:30 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:34:30 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:34:30 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:34:30 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-25 21:34:30 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:35:28 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[35mCustomer Load (0.6ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:35:28 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:35:28 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:35:28 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:35:28 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-25 21:35:28 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:35:28 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:35:28 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:35:28 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:44:30 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 140ms (Views: 138.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-25 21:44:30 +0200
+
+
+Started GET "/assets/application.self-1001f8177a029ad20c0313efdc3e644cea3da5625c0ac6ae7f2b6bb6399008e2.js?body=1" for 127.0.0.1 at 2016-02-25 21:44:30 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:47:31 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 125ms (Views: 123.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:47:31 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:47:31 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:47:31 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:47:31 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:47:31 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-25 21:47:31 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:47:31 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:47:31 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-25 21:47:31 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:47:35 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[36mCustomer Load (0.7ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 71ms (Views: 69.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:47:37 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:47:37 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:47:37 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:47:37 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:47:37 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:47:37 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:47:37 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-25 21:47:37 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-25 21:47:37 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:48:02 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.2ms)
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:48:03 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:48:03 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:48:03 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:48:03 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:48:03 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-25 21:48:03 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:48:03 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:48:03 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-25 21:48:03 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:48:16 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 93ms (Views: 91.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:48:16 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:48:16 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:48:16 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:48:16 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:48:16 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:48:16 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:48:16 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-25 21:48:16 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-25 21:48:16 +0200
+
+
+Started GET "/shop" for 127.0.0.1 at 2016-02-25 21:48:52 +0200
+Processing by BooksController#shop as HTML
+  Rendered books/shop.html.erb within layouts/application (0.1ms)
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:48:52 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shop" for 127.0.0.1 at 2016-02-25 21:48:53 +0200
+Processing by BooksController#shop as HTML
+  Rendered books/shop.html.erb within layouts/application (0.1ms)
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 62ms (Views: 60.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:48:54 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:49:14 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:49:14 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:49:14 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:14 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:49:14 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:14 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:14 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:14 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:14 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:14 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:49:20 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:49:21 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:49:21 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:21 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:21 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:21 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:49:21 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:21 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:21 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:21 +0200
+
+
+Started GET "/shop" for 127.0.0.1 at 2016-02-25 21:49:24 +0200
+Processing by BooksController#shop as HTML
+  Rendered books/shop.html.erb within layouts/application (0.1ms)
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shop" for 127.0.0.1 at 2016-02-25 21:49:32 +0200
+Processing by BooksController#shop as HTML
+  Rendered books/shop.html.erb within layouts/application (0.7ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 46ms (Views: 44.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:49:32 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:49:32 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:32 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:32 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:32 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:32 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:49:32 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:32 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-25 21:49:32 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:49:48 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/customers/sign_out" for 127.0.0.1 at 2016-02-25 21:49:55 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tlgSy9Xf466Dw2oXX5W3fC2SyC2qu5QshpPJ3xQGq9+qHIXa0ALzoT+Rie7wcZY6Hn/QYrWPYmh3OvMOhV/fFA=="}
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:49:55 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:50:00 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:50:00 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:50:00 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:50:00 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:50:00 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:50:00 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:50:00 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:50:00 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-25 21:50:00 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-25 21:50:00 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:50:26 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 66ms (Views: 65.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:50:26 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:50:26 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:50:26 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:50:26 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:50:26 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:50:26 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:50:26 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-25 21:50:26 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-25 21:50:26 +0200
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:50:28 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 65ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:50:31 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kN0xnQthjoslBKdBgcSZZpPaYsIS1NKRlbMx4ckOtRCMnggfFFUdi1HOO1nNw8MCyNL6pb6Pqf2iIAu5fDd8Xw==", "customer"=>{"email"=>"efesf@sdsd.sd", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mCustomer Load (0.5ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."email" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["email", "efesf@sdsd.sd"]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.5ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kN0xnQthjoslBKdBgcSZZpPaYsIS1NKRlbMx4ckOtRCMnggfFFUdi1HOO1nNw8MCyNL6pb6Pqf2iIAu5fDd8Xw==", "customer"=>{"email"=>"efesf@sdsd.sd", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 114ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:51:08 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kN0xnQthjoslBKdBgcSZZpPaYsIS1NKRlbMx4ckOtRCMnggfFFUdi1HOO1nNw8MCyNL6pb6Pqf2iIAu5fDd8Xw==", "customer"=>{"email"=>"efesf@sdsd.sd", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["email", "efesf@sdsd.sd"]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kN0xnQthjoslBKdBgcSZZpPaYsIS1NKRlbMx4ckOtRCMnggfFFUdi1HOO1nNw8MCyNL6pb6Pqf2iIAu5fDd8Xw==", "customer"=>{"email"=>"efesf@sdsd.sd", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 125ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 21:51:08 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-25 21:51:08 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-25 21:51:08 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 21:51:08 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 21:51:08 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 21:51:08 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 21:51:08 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-25 21:51:08 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-25 21:51:08 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:51:11 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:51:13 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:51:16 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1UHoZ53+WopmAJ6iXT/08ddzQrlkYmSVdx3sFnrjx17JAtHlgsrJihLKAroROK6VjHva3sg5H/lAjtZOz9oOEQ==", "customer"=>{"email"=>"efesf@sdsd.sd", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."email" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["email", "efesf@sdsd.sd"]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1UHoZ53+WopmAJ6iXT/08ddzQrlkYmSVdx3sFnrjx17JAtHlgsrJihLKAroROK6VjHva3sg5H/lAjtZOz9oOEQ==", "customer"=>{"email"=>"efesf@sdsd.sd", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 122ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers/sign_in" for 127.0.0.1 at 2016-02-25 21:51:31 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jwx1swveS+HySvqhfC1ebqY0SSj6+30RiXyzsAu+8FM7T0wxFOrY4YaAZrkwKgQK/TzRT1agBn2+74novoc5HA==", "customer"=>{"email"=>"efesf@sdsd.sd", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["email", "efesf@sdsd.sd"]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jwx1swveS+HySvqhfC1ebqY0SSj6+30RiXyzsAu+8FM7T0wxFOrY4YaAZrkwKgQK/TzRT1agBn2+74novoc5HA==", "customer"=>{"email"=>"efesf@sdsd.sd", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 117ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-25 21:52:52 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-02-25 21:52:59 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "addresses"
+  [1m[36mAddress Load (0.5ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.5ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.6ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "countries"
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "credit_cards"
+  [1m[36mCreditCard Load (0.4ms)[0m  [1mSELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "customers"
+  [1m[36mCustomer Load (0.6ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY customers.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "orders"
+  [1m[36mOrder Load (0.4ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "order_items"
+  [1m[36mOrderItem Load (0.4ms)[0m  [1mSELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "ratings"
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (33.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (0.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (2.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (7.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (1.1ms)
+Completed 200 OK in 3305ms (Views: 3262.5ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/admin/customer?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-25 21:53:10 +0200
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"customer"}
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT  "customers".* FROM "customers"  ORDER BY customers.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "customers"[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (61.0ms)
+Completed 200 OK in 82ms (Views: 69.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/customer/1/edit?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-25 21:53:14 +0200
+Processing by RailsAdmin::MainController#edit as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"customer", "id"=>"1"}
+  [1m[35mCustomer Load (0.5ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (1.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_datetime.html.haml (2.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_datetime.html.haml (1.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (1.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_datetime.html.haml (1.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_datetime.html.haml (0.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."customer_id" = $1[0m  [["customer_id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "ratings"
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings"  ORDER BY ratings.id desc[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (163.0ms)
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" INNER JOIN "ratings" ON "books"."id" = "ratings"."book_id" WHERE "ratings"."customer_id" = $1  [["customer_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books"  ORDER BY books.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (25.4ms)
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."customer_id" = $1[0m  [["customer_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "orders"
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT "orders".* FROM "orders"  ORDER BY orders.id desc[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (13.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (4.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/edit.html.haml within layouts/rails_admin/pjax (257.0ms)
+Completed 200 OK in 301ms (Views: 286.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/admin/?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-25 21:53:34 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "addresses"
+  [1m[36mAddress Load (0.4ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "countries"
+  [1m[36mCountry Load (0.4ms)[0m  [1mSELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "credit_cards"
+  [1m[36mCreditCard Load (0.4ms)[0m  [1mSELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "customers"
+  [1m[36mCustomer Load (1.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY customers.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "orders"
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "order_items"
+  [1m[36mOrderItem Load (0.4ms)[0m  [1mSELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "ratings"
+  [1m[36mRating Load (0.6ms)[0m  [1mSELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax (31.5ms)
+Completed 200 OK in 70ms (Views: 40.4ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 21:53:34 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-02-25 21:53:42 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "addresses"
+  [1m[36mAddress Load (0.6ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "countries"
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "credit_cards"
+  [1m[36mCreditCard Load (0.3ms)[0m  [1mSELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "customers"
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY customers.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "orders"
+  [1m[36mOrder Load (0.4ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "order_items"
+  [1m[36mOrderItem Load (0.5ms)[0m  [1mSELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "ratings"
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (30.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (0.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (2.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (6.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (1.1ms)
+Completed 200 OK in 190ms (Views: 156.6ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/admin/book?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-25 21:53:45 +0200
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"book"}
+  [1m[35mBook Load (0.4ms)[0m  SELECT  "books".* FROM "books"  ORDER BY books.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (27.5ms)
+Completed 200 OK in 39ms (Views: 32.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/book/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-25 21:53:50 +0200
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"book"}
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_text.html.haml (1.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.4ms)[0m  [1mSELECT "authors".* FROM "authors"  ORDER BY authors.id desc[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_select.html.haml (14.7ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"  ORDER BY categories.id desc[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_select.html.haml (8.0ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "ratings"
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings"  ORDER BY ratings.id desc[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (6.9ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "customers"
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT "customers".* FROM "customers"  ORDER BY customers.id desc[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (8.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (1.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (74.2ms)
+Completed 200 OK in 89ms (Views: 79.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/admin/book/export?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-25 21:53:51 +0200
+Processing by RailsAdmin::MainController#export as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"book"}
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/export.html.haml within layouts/rails_admin/pjax (51.5ms)
+Completed 200 OK in 82ms (Views: 71.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 22:20:17 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 43ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 22:26:38 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 35ms (Views: 34.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-25 22:26:44 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 52ms (Views: 50.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2016-02-25 22:27:12 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ewnd3TLB3MxjRyY6iCAM4IHSZ7eVnSGl7nekuE0T21RnSuRfLfVPzBeNuiLEJ1aE2tr/0DnGWsnZ5J7g+CoSGw==", "customer"=>{"firstname"=>"Dima", "lastname"=>"Khanitskiy", "email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1[0m
+  [1m[35mCustomer Exists (0.2ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 124ms (Views: 33.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2016-02-25 22:28:51 +0200
+
+ActionController::RoutingError (No route matches [GET] "/customers"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/han/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/han/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/han/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (52.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.2ms)
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-25 22:28:53 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-25 22:28:56 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 70ms (Views: 68.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2016-02-25 22:29:14 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pmpogp8hy14ykTDP1KgZW4xO/ZUPdsnBUzQpRcYZqUS6KVEAgBVYXkZbrNeYr0M/10Zl8qMtsq1kpxMdcyBgCw==", "customer"=>{"firstname"=>"Dmitriy", "lastname"=>"Khanitskiy", "email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1[0m
+  [1m[35mCustomer Exists (0.3ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 115ms (Views: 32.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-25 22:30:05 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 52ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-25 22:30:11 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2016-02-25 22:30:20 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8aGoP1slyZybt921p63GpoHR3655iuEy2CEzZt4j/STt4pG9RBFanO99Qa3rqpzC2tlHydXRml7vsgk+axo0aw==", "customer"=>{"firstname"=>"Dmitriy", "lastname"=>"Khanitskiy", "email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1[0m
+  [1m[35mCustomer Exists (0.2ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 132ms (Views: 45.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2016-02-25 22:31:05 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CYivcYQNmCGh2rtt83m/hFu9p/fIaeNFSc2ymJpbVYMVy5bzmzkLIdUQJ3W/fuXgALU/kGQymCl+XojAL2KczA==", "customer"=>{"firstname"=>"Dmitriy", "lastname"=>"Khanitskiy", "email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1[0m
+  [1m[35mCustomer Exists (0.3ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 128ms (Views: 36.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2016-02-25 22:31:08 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"726eyytxHshJut3kOrO6EzlKXYm5+tUzVM03787SArzzLadJNEWNyD1wQfx2tOB3YkLF7hWhrl9jXg23e+vL8w==", "customer"=>{"firstname"=>"Dmitriy", "lastname"=>"Khanitskiy", "email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1[0m
+  [1m[35mCustomer Exists (0.4ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 58ms (Views: 42.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2016-02-25 22:31:14 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RlV05wN1JVTPvRTqu4qszdpok86qx6wxORbe5VcJLFJaFk1lHEG2VLt3iPL3jfapgWALqQac110OheS94jDlHQ==", "customer"=>{"firstname"=>"Dmitriy", "lastname"=>"Khanitskiy", "email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1[0m
+  [1m[35mCustomer Exists (1.0ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 120ms (Views: 32.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2016-02-25 22:31:23 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jbF/YFXEHVeRZ5ctQVuCXy0KJLESJxHgOpot3yK4gn2R8kbiSvCOV+WtCzUNXNg7dgK81r58aowNCReHl4FLMg==", "customer"=>{"firstname"=>"Dmitriy", "lastname"=>"Khanitskiy", "email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1[0m
+  [1m[35mCustomer Exists (0.3ms)[0m  SELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 129ms (Views: 41.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-02-25 22:32:18 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "addresses"
+  [1m[36mAddress Load (0.5ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "countries"
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "credit_cards"
+  [1m[36mCreditCard Load (0.2ms)[0m  [1mSELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "customers"
+  [1m[36mCustomer Load (0.5ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY customers.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "orders"
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "order_items"
+  [1m[36mOrderItem Load (0.3ms)[0m  [1mSELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "ratings"
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (33.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (0.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (2.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (7.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (1.1ms)
+Completed 200 OK in 194ms (Views: 168.3ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 22:36:33 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-25 22:36:37 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 64ms (Views: 45.7ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2016-02-25 22:36:49 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rJjsNBvK8QhH/FlA6j89m7vwnisapSbECmF5DmikvtGw29W2BP5iCDM2xVimOGf/4PgGTLb+Xag98kNW3Z13ng==", "customer"=>{"firstname"=>"Dima", "lastname"=>"Khanitskiy", "email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCustomer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = 'khanitskiy@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 112ms (Views: 32.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 07:29:48 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (34.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 1344ms (Views: 1310.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 07:29:50 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 07:29:50 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 07:29:50 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 07:29:51 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 07:29:51 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 07:29:51 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 07:29:51 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 07:29:51 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 07:29:51 +0200
+
+
+Started GET "/shop" for 127.0.0.1 at 2016-02-26 07:30:01 +0200
+Processing by BooksController#shop as HTML
+  Rendered books/shop.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 58ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 07:30:02 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 07:30:05 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (148.0ms)
+Completed 200 OK in 340ms (Views: 218.0ms | ActiveRecord: 95.1ms)
+
+
+Started POST "/customers/sign_in" for 127.0.0.1 at 2016-02-26 07:30:13 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BU5TIvArKx9KoVUh6+iiH+qWAswyVOtOp3+jsniDpAEldV26YXOK/TxK8AWAmSc9PSibHzHHus0mfcsVTUOlIw==", "customer"=>{"email"=>"khanitskiy@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mCustomer Load (52.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."email" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["email", "khanitskiy@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "customers" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "customers"."id" = $4  [["current_sign_in_at", "2016-02-26 05:30:13.545145"], ["sign_in_count", 2], ["updated_at", "2016-02-26 05:30:13.546751"], ["id", 1]]
+  [1m[36m (15.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 408ms (ActiveRecord: 68.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 07:30:13 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-02-26 07:30:22 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36m (18.4ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35mAddress Load (0.6ms)[0m  SELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1
+  [1m[36m (22.7ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mAuthor Load (0.6ms)[0m  SELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1
+  [1m[36m (19.8ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  [1m[35mBook Load (0.7ms)[0m  SELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1
+  [1m[36m (21.5ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCountry Load (0.4ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1
+  [1m[36m (1.1ms)[0m  [1mSELECT COUNT(*) FROM "credit_cards"[0m
+  [1m[35mCreditCard Load (0.5ms)[0m  SELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "customers"[0m
+  [1m[35mCustomer Load (0.6ms)[0m  SELECT  "customers".* FROM "customers"  ORDER BY customers.updated_at desc LIMIT 1
+  [1m[36m (1.6ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+  [1m[35mOrder Load (0.5ms)[0m  SELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM "order_items"[0m
+  [1m[35mOrderItem Load (0.6ms)[0m  SELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1
+  [1m[36m (1.6ms)[0m  [1mSELECT COUNT(*) FROM "ratings"[0m
+  [1m[35mRating Load (0.7ms)[0m  SELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (53.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (6.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (7.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (3.6ms)
+Completed 200 OK in 746ms (Views: 292.6ms | ActiveRecord: 126.8ms)
+
+
+Started GET "/admin/author?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-26 07:30:50 +0200
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"author"}
+  [1m[36mAuthor Load (0.4ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY authors.id desc LIMIT 20 OFFSET 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "authors"
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (122.0ms)
+Completed 200 OK in 160ms (Views: 148.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/address?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-26 07:30:52 +0200
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"address"}
+  [1m[36mAddress Load (0.6ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  ORDER BY addresses.id desc LIMIT 20 OFFSET 0[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "addresses"
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (15.4ms)
+Completed 200 OK in 35ms (Views: 21.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-26 07:30:52 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  [1m[35mBook Load (0.4ms)[0m  SELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCountry Load (0.4ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "credit_cards"[0m
+  [1m[35mCreditCard Load (0.5ms)[0m  SELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "customers"[0m
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT  "customers".* FROM "customers"  ORDER BY customers.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "order_items"[0m
+  [1m[35mOrderItem Load (0.3ms)[0m  SELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "ratings"[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax (37.3ms)
+Completed 200 OK in 80ms (Views: 49.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 07:44:38 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/shop" for 127.0.0.1 at 2016-02-26 07:44:40 +0200
+Processing by BooksController#shop as HTML
+  Rendered books/shop.html.erb within layouts/application (0.1ms)
+  [1m[35mCustomer Load (0.5ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 07:44:40 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[36mCustomer Load (0.7ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/customers/sign_out" for 127.0.0.1 at 2016-02-26 07:46:39 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WSMbKv780/NSxXdNR01gketVkDi/wmEIH5yB7E4gpd+awCM+Isf4XApldK3GSf3LIy1u1vHAU4cpighXhY9X6Q=="}
+  [1m[35mCustomer Load (0.5ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1  ORDER BY "customers"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 32ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 07:46:39 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 07:46:42 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 07:48:20 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 07:48:20 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 07:48:20 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 07:48:20 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 07:48:20 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 07:48:20 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 07:48:20 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 07:48:20 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 07:48:20 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 07:48:20 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:21:30 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:21:31 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:21:31 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:21:31 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:21:31 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:21:31 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:21:31 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:21:31 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:21:31 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:21:31 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:22:03 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 52ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:22:03 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:22:03 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:22:03 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:22:03 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:22:03 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:22:03 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:22:04 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:22:04 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:22:04 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:22:25 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:22:25 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:22:25 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:22:25 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:22:25 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:22:25 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:22:25 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:22:25 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:22:25 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:22:25 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:23:37 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 46ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:23:38 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:23:38 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:23:38 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:23:38 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:23:38 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:23:38 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:23:38 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:23:38 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:23:38 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:24:52 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:24:52 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:24:52 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:24:52 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:24:52 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:24:52 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:24:52 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:24:52 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:24:52 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:24:52 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:25:16 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 42ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:25:16 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:25:16 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:25:16 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:25:16 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:25:16 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:25:16 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:25:16 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:25:16 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:25:16 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:25:55 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 50ms (Views: 47.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:25:55 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:25:55 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:25:55 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:25:55 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:25:55 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:25:55 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:25:55 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:25:55 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:25:55 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:26:38 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (19.4ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/han/ruby_projects/BookStore/app/views/devise/registrations/new.html.erb:27: syntax error, unexpected tREGEXP_BEG, expecting keyword_do or '{' or '('
+...utput_buffer.safe_append='<br />
+...                               ^
+/home/han/ruby_projects/BookStore/app/views/devise/registrations/new.html.erb:29: unknown regexp options - dv
+/home/han/ruby_projects/BookStore/app/views/devise/registrations/new.html.erb:31: syntax error, unexpected '<'
+      <div class="field">
+       ^
+/home/han/ruby_projects/BookStore/app/views/devise/registrations/new.html.erb:32: syntax error, unexpected '<'
+      <br />
+       ^
+/home/han/ruby_projects/BookStore/app/views/devise/registrations/new.html.erb:34: unknown regexp options - dv
+/home/han/ruby_projects/BookStore/app/views/devise/registrations/new.html.erb:36: syntax error, unexpected '<'
+      <div class="actions">
+       ^
+/home/han/ruby_projects/BookStore/app/views/devise/registrations/new.html.erb:38: syntax error, unexpected '<', expecting ')'
+      </div>
+       ^
+/home/han/ruby_projects/BookStore/app/views/devise/registrations/new.html.erb:41: unknown regexp options - hard
+end pattern with unmatched parenthesis: /div>
+'.freeze;       end 
+@output_buffer.safe_append='
+      '.freeze;@output_buffer.append=( render "devise/
+/home/han/ruby_projects/BookStore/app/views/devise/registrations/new.html.erb:41: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...=( render "devise/shared/links" );@output_buffer.safe_append...
+...                               ^
+/home/han/ruby_projects/BookStore/app/views/devise/registrations/new.html.erb:41: unterminated string meets end of file):
+  app/views/devise/registrations/new.html.erb:27: syntax error, unexpected tREGEXP_BEG, expecting keyword_do or '{' or '('
+  app/views/devise/registrations/new.html.erb:29: unknown regexp options - dv
+  app/views/devise/registrations/new.html.erb:31: syntax error, unexpected '<'
+  app/views/devise/registrations/new.html.erb:32: syntax error, unexpected '<'
+  app/views/devise/registrations/new.html.erb:34: unknown regexp options - dv
+  app/views/devise/registrations/new.html.erb:36: syntax error, unexpected '<'
+  app/views/devise/registrations/new.html.erb:38: syntax error, unexpected '<', expecting ')'
+  app/views/devise/registrations/new.html.erb:41: unknown regexp options - hard
+  app/views/devise/registrations/new.html.erb:41: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/devise/registrations/new.html.erb:41: unterminated string meets end of file
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (203.0ms)
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:26:46 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:26:47 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:26:47 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:26:47 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:47 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:47 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:47 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:47 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:47 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:47 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:26:52 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:26:52 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:26:52 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:26:52 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:52 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:52 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:52 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:52 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:52 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:52 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:26:56 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:26:56 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:26:56 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:26:56 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:56 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:56 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:56 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:56 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:56 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:26:56 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:27:12 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 50ms (Views: 49.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:27:12 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:27:12 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:27:12 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:27:12 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:27:12 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:27:12 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:27:12 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:27:12 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:27:12 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:28:16 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:16 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:16 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:16 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:16 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:16 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:16 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:16 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:16 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:16 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:28:26 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 62ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:26 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:26 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:26 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:26 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:27 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:27 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:27 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:27 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:27 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:28:31 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:32 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:32 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:32 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:32 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:32 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:32 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:32 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:32 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:32 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:28:35 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:35 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:35 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:35 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:35 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:35 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:35 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:35 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:35 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:35 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:28:42 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:42 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:42 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:28:42 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:42 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:42 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:42 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:42 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:42 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:28:42 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:29:00 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 46ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:29:00 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:29:00 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:29:00 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:29:00 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:29:00 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:29:00 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:29:00 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:29:00 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:29:00 +0200
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:29:13 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:30:05 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:30:05 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:30:05 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:30:05 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:05 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:05 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:05 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:05 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:05 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:05 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:30:20 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:30:20 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:30:20 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:30:20 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:20 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:20 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:20 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:20 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:20 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:20 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:30:27 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 58ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:30:27 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:30:27 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:30:27 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:27 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:27 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:27 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:27 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:27 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:30:27 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:31:38 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:31:38 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:31:38 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:31:38 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:31:38 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:31:38 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:31:39 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:31:39 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:31:39 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:31:39 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:31:45 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:31:45 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:31:45 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:31:45 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:31:45 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:31:45 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:31:45 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:31:45 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:31:45 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:31:45 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:32:52 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 31ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:32:53 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:32:53 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:32:53 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:32:53 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:32:53 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:32:53 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:32:53 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:32:53 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:32:53 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:33:09 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:33:09 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:33:09 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:33:09 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:33:09 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:33:09 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:33:09 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:33:09 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:33:09 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:33:09 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:35:22 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 49ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:35:22 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:35:23 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:35:23 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:35:23 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:35:23 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:35:23 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:35:23 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:35:23 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:35:23 +0200
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:35:28 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:35:32 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:36:09 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:36:09 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:36:09 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:36:09 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:36:09 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:36:09 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:36:09 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:36:09 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:36:09 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:36:09 +0200
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:36:34 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 74ms (Views: 71.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:36:34 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:36:34 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:36:34 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:36:34 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:36:34 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:36:34 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:36:34 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:36:34 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:36:34 +0200
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:37:21 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:37:22 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:37:22 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:37:22 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:22 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:22 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:22 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:22 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:22 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:22 +0200
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:37:25 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 46ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:37:25 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:37:25 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:37:25 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:25 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:25 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:25 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:25 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:25 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:25 +0200
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:37:34 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:37:34 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:37:34 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:37:34 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:34 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:34 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:34 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:34 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:34 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:34 +0200
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:37:48 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 46ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:37:49 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:37:49 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:37:49 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:49 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:49 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:49 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:49 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:49 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:37:49 +0200
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:38:15 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 46ms (Views: 43.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:38:15 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:38:15 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:38:15 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:15 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:15 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:15 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:15 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:15 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:15 +0200
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:38:39 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:38:39 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:38:39 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:38:39 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:39 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:39 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:39 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:39 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:39 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:39 +0200
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:38:50 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 52ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:38:50 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:38:50 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:38:50 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:50 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:50 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:50 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:50 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:50 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:38:50 +0200
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:39:23 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (50.5ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `em' for #<ActionView::Helpers::FormBuilder:0x007f1ea3b65c10>):
+    15:         <% if devise_mapping.rememberable? -%>
+    16:           <div class="form-group">
+    17:             <%= f.check_box :remember_me %>
+    18:             <%= f.em :remember_me %>
+    19:           </div>
+    20:         <% end -%>
+    21: 
+  app/views/devise/sessions/new.html.erb:18:in `block in _app_views_devise_sessions_new_html_erb___1869321430631986389_69884785442640'
+  app/views/devise/sessions/new.html.erb:6:in `_app_views_devise_sessions_new_html_erb___1869321430631986389_69884785442640'
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.4ms)
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:39:33 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:39:34 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:39:34 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:34 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:39:34 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:34 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:34 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:34 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:34 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:34 +0200
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:40:36 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:40:36 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-26 08:40:36 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-26 08:40:36 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:40:36 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:40:36 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:40:36 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:40:36 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-26 08:40:36 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-26 08:40:36 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:41:27 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 08:41:30 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/shop" for 127.0.0.1 at 2016-02-26 08:41:31 +0200
+Processing by BooksController#shop as HTML
+  Rendered books/shop.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 08:41:32 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 46ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/shop" for 127.0.0.1 at 2016-02-26 08:44:16 +0200
+Processing by BooksController#shop as HTML
+  Rendered books/shop.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 08:44:35 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:44:35 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:44:38 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 42ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:44:43 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 53ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 08:44:48 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 50ms (Views: 49.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:45:00 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 56ms (Views: 54.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 08:45:01 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 08:45:02 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 08:45:03 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 09:30:52 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (122.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 3329ms (Views: 3172.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/shop" for 127.0.0.1 at 2016-02-26 09:31:02 +0200
+Processing by BooksController#shop as HTML
+  Rendered books/shop.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 69ms (Views: 68.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 09:31:03 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 127.0.0.1 at 2016-02-26 09:31:05 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (117.6ms)
+Completed 200 OK in 269ms (Views: 153.6ms | ActiveRecord: 101.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-02-26 09:31:10 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (18.6ms)[0m  SELECT COUNT(*) FROM "addresses"
+  [1m[36mAddress Load (0.5ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1[0m
+  [1m[35m (12.0ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.5ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1[0m
+  [1m[35m (21.0ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1[0m
+  [1m[35m (13.2ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1[0m
+  [1m[35m (11.2ms)[0m  SELECT COUNT(*) FROM "countries"
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "credit_cards"
+  [1m[36mCreditCard Load (0.3ms)[0m  [1mSELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1[0m
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "customers"
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers"  ORDER BY customers.updated_at desc LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "orders"
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "order_items"
+  [1m[36mOrderItem Load (0.8ms)[0m  [1mSELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1[0m
+  [1m[35m (5.3ms)[0m  SELECT COUNT(*) FROM "ratings"
+  [1m[36mRating Load (0.5ms)[0m  [1mSELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (33.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (14.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (8.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (4.1ms)
+Completed 200 OK in 902ms (Views: 422.4ms | ActiveRecord: 133.5ms)
+
+
+Started GET "/assets/rails_admin/rails_admin.self-148fc3e414f53439da1c60da151c127ced53fce520f4126dff5b9f57de236ab4.css?body=1" for 127.0.0.1 at 2016-02-26 09:31:11 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:11 +0200
+
+
+Started GET "/assets/jquery.iframe-transport.self-9d6de1e3d97369f20a85456477db38a3d2b674761f4a252275201ec0272793a4.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:11 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:11 +0200
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.self-357a8f834a6b278f578acd51708542bff0852a75d8d583d0d761d3f387af5b4c.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:11 +0200
+
+
+Started GET "/assets/jquery-ui/effect.self-3acdb29e7da09c8f0195b994d2f04d73bfef50dc539c84fd2c835d964d33e5c1.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/jquery-ui/menu.self-7abc1c9401509a7e4fc609b1e461be6fd17e8116e8fda19cc59d05ba79aefb68.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-3befc48aba87cead090cfd014562b2771a662ac6d2c8197b24c08b2d9f3d9f2d.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/moment-with-locales.self-c29e385ac561ac8d380cf9a68428251c3dd6b6f0f05f6114c6ae7e8114678db8.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap-datetimepicker.self-9bf8b50ba86095fb5caaadd1ee11eaf661b3f4879f3ea5263d541e9804fd7b15.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/jquery.colorpicker.self-65a540a6a8e61569a39a37bd1456543ae5e5bbe48868247372bed40a1dff2bcf.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/ra.filtering-multiselect.self-0eadfce64f22b8e533f96e573e738fdf5af614af5729c772838b8d1383739035.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/ra.filter-box.self-7a15aaeea6101fb1e648df5848917eddd01c5c193ffae1e121224ec7e96d8647.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/ra.filtering-select.self-29fedc7e0063905fecd8485d5a526f85b0d0c3f04de8416c2b56227e5b530528.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/ra.remote-form.self-6ee31242b35c47eae247621696152697683860be737fcb9fc7705305736c9370.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/jquery.pjax.self-aa02343d5b755c77fd76db8b2d2864cf2aebdba056b56e74b3b91f2e65207444.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/jquery_nested_form.self-d38045d10ebdd28aac44152cb451796232091957b86b47bedad1ab171a3a12cd.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.self-abecd3cd4d55ce44cbf00b87d2f612d570af5e7fe5701d05135d60f8c07e7d37.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/ra.i18n.self-725ab24c454e18d4832f68df96ec4fffa6190faed5636160923a6d1162a1a0ba.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap-typeahead.self-2621ced336904d375bef144d46edd9d304889e09c6559d64df325bbd10f4ce8a.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/bootstrap/bootstrap.self-94f59a48294d99f8d9b7632cd5a1742670c7735fe37ec7c555aab939b635fdde.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/ra.widgets.self-b707ff6592e3d3359ef77e61d1161a0370c5663c303eb0a5cec459fbf1fa7229.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/ui.self-5f1671365225e7918e5bf4cb99fc38b189e81884fb859682f79a683f41ee19b7.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/custom/ui.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/rails_admin/rails_admin.self-ab9f3e5c71b96d0ca434851ecacc97b0fc3a0e8d96ab171916e9d5fdd10ef15b.js?body=1" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/assets/fontawesome-webfont-ff82aeed6b9bb6701696c84d1b223d2e682eb78c89117a438ce6cfea8c498995.woff2?v=4.5.0" for 127.0.0.1 at 2016-02-26 09:31:12 +0200
+
+
+Started GET "/customers/sign_up" for 127.0.0.1 at 2016-02-26 09:48:02 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.0ms)
