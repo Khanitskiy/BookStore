@@ -8,7 +8,7 @@ class Book < ActiveRecord::Base
 	belongs_to :category
 	
 	has_many   :ratings
-  has_many   :customers, through: :ratings
+  has_many   :users, through: :ratings
   #has_many   :order_items
 
 end

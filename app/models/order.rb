@@ -3,6 +3,6 @@ class Order < ActiveRecord::Base
 	#validates :state, presence: true
 
 	has_many :order_items
-	belongs_to :customer
+	belongs_to :user
 	belongs_to :credit_card
 end

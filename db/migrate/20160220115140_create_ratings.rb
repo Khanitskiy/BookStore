@@ -5,7 +5,7 @@ class CreateRatings < ActiveRecord::Migration
       t.integer  :rating
       
       t.belongs_to :book, index:true
-      t.belongs_to :customer, index:true
+      t.belongs_to :user, index:true
 
       t.timestamps null: false
     end

@@ -7,7 +7,7 @@ class CreateCreditCards < ActiveRecord::Migration
     	t.integer	:expiration_year
     	t.string	:firstname
     	t.string	:lastname
-    	t.belongs_to :customer, index:true
+    	t.belongs_to :user, index:true
 
       t.timestamps null: false
     end

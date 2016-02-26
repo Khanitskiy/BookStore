@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :customers
   root 'books#home'
   get  'shop', to: 'books#shop'
   # The priority is based upon order of creation: first created -> highest priority.

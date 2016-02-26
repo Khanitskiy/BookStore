@@ -3,5 +3,5 @@ class Rating < ActiveRecord::Base
   validates_with RatingScore
 
 	belongs_to :book
-	belongs_to :customer
+	belongs_to :user
 end
