@@ -75,6 +75,15 @@ ActiveRecord::Schema.define(version: 20160226111028) do
 
   add_index "credit_cards", ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
 
+  create_table "customers", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "order_items", force: :cascade do |t|
     t.decimal  "price"
     t.string   "quantity"
