@@ -30,7 +30,7 @@ module Bookstore
     
     config.autoload_paths += %W["#{config.root}/app/validators/"]
     
-    config.web_console.development_only = false
+    config.web_console.development_only = true
     
   end
 end
