@@ -27630,3 +27630,736 @@ Started GET "/" for 127.0.0.1 at 2016-02-29 15:38:31 +0200
 Processing by BooksController#home as HTML
   Rendered books/home.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 16:45:41 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 539ms (Views: 525.8ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddImageToBooks (20160229152315)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "books" ADD "image" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160229152315"]]
+  [1m[36m (34.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'addresses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'authors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'books'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'countries'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'credit_cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'order_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'ratings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 17:30:40 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6836ms (Views: 6817.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-29 17:30:49 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (64.2ms)
+Completed 200 OK in 116ms (Views: 98.5ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-02-29 17:30:55 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gCH+1lnPKKAkuKqv5AvOgQd9arbQ1FwkhxSIhcTbvD7GnxwleeSY7ck2V5JhF/j4gf2IdQySn2CtxWNY2e7O7g==", "user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "admin@gmail.com"]]
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.7ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gCH+1lnPKKAkuKqv5AvOgQd9arbQ1FwkhxSIhcTbvD7GnxwleeSY7ck2V5JhF/j4gf2IdQySn2CtxWNY2e7O7g==", "user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 116ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-02-29 17:31:03 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eX6ScXXFBfWVJVN9t1hnHQp7kf/Csza07n3TEsaAzBo/wHCCVe61uHirrkAyRFFkjPtzPB719fDErDjP27W+yg==", "user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "admin@gmail.com"]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.5ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eX6ScXXFBfWVJVN9t1hnHQp7kf/Csza07n3TEsaAzBo/wHCCVe61uHirrkAyRFFkjPtzPB719fDErDjP27W+yg==", "user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 104ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-02-29 17:31:16 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D+MWQPqMJizKK7y8N7XIe9CvSXVnwecw8FetjHvBMZVJXfSz2qeWYSelQYGyqf4CVi+rtruHJHTahkZRZvRDRQ==", "user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "admin@gmail.com"]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D+MWQPqMJizKK7y8N7XIe9CvSXVnwecw8FetjHvBMZVJXfSz2qeWYSelQYGyqf4CVi+rtruHJHTahkZRZvRDRQ==", "user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 128ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (33.5ms)[0m  DELETE FROM "users"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "firstname", "lastname", "admin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "admin@gmail.com"], ["encrypted_password", "$2a$10$M.8b8j.I2J2DeuMXbLGBb.hrVOxgz3p0KVTK21qVpD05B2C/QO76."], ["firstname", "Admin"], ["lastname", "Adminovitch"], ["admin", "t"], ["created_at", "2016-02-29 15:31:28.321150"], ["updated_at", "2016-02-29 15:31:28.321150"]]
+  [1m[35m (19.6ms)[0m  COMMIT
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-02-29 17:31:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TU1187OCwaX9gFmY9lSWB4HBUL5PEEaLA49GG/51eTAL85cAk6lx6BAOpKVzSKB+B0GyfZNWhc8pXq3G40AL4A==", "user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "admin@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2016-02-29 15:31:42.883258"], ["current_sign_in_at", "2016-02-29 15:31:42.883258"], ["last_sign_in_ip", "127.0.0.1/32"], ["current_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2016-02-29 15:31:42.884311"], ["id", 2]]
+  [1m[36m (22.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 170ms (ActiveRecord: 26.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 17:31:42 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (1.2ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Completed 200 OK in 362ms (Views: 361.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2016-02-29 17:31:45 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "addresses"
+  [1m[36mAddress Load (0.7ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.4ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.8ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "countries"
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "credit_cards"
+  [1m[36mCreditCard Load (0.4ms)[0m  [1mSELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "orders"
+  [1m[36mOrder Load (0.5ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "order_items"
+  [1m[36mOrderItem Load (0.4ms)[0m  [1mSELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "ratings"
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (48.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (5.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (10.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (11.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (24.1ms)
+Completed 200 OK in 1139ms (Views: 858.5ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2016-02-29 17:31:47 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35mAddress Load (0.4ms)[0m  SELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCountry Load (0.3ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "credit_cards"[0m
+  [1m[35mCreditCard Load (0.4ms)[0m  SELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "order_items"[0m
+  [1m[35mOrderItem Load (0.3ms)[0m  SELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "ratings"[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (37.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (8.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (13.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (4.4ms)
+Completed 200 OK in 268ms (Views: 234.4ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/admin/book?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-29 17:31:53 +0200
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"book"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mBook Load (0.4ms)[0m  SELECT  "books".* FROM "books"  ORDER BY books.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (401.2ms)
+Completed 200 OK in 463ms (Views: 433.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/admin/book/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-29 17:32:01 +0200
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"book"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (3.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_text.html.haml (2.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (1.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors"  ORDER BY authors.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_select.html.haml (42.4ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"  ORDER BY categories.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_select.html.haml (7.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "ratings"[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT "ratings".* FROM "ratings"  ORDER BY ratings.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (28.2ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"  ORDER BY users.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (20.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (5.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (150.5ms)
+Completed 200 OK in 169ms (Views: 154.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 17:34:21 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Completed 200 OK in 434ms (Views: 406.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2016-02-29 17:34:23 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (6.2ms)[0m  SELECT COUNT(*) FROM "addresses"
+  [1m[36mAddress Load (0.8ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.4ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "countries"
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "credit_cards"
+  [1m[36mCreditCard Load (0.3ms)[0m  [1mSELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "orders"
+  [1m[36mOrder Load (0.4ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "order_items"
+  [1m[36mOrderItem Load (0.3ms)[0m  [1mSELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "ratings"
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (67.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (7.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (8.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (4.1ms)
+Completed 200 OK in 527ms (Views: 272.5ms | ActiveRecord: 21.9ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2016-02-29 17:34:24 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35mAddress Load (0.2ms)[0m  SELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  [1m[35mBook Load (0.4ms)[0m  SELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "credit_cards"[0m
+  [1m[35mCreditCard Load (0.2ms)[0m  SELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "order_items"[0m
+  [1m[35mOrderItem Load (0.2ms)[0m  SELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "ratings"[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (32.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (3.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (7.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (9.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (3.9ms)
+Completed 200 OK in 222ms (Views: 196.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/admin/book?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-29 17:34:28 +0200
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"book"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mBook Load (0.4ms)[0m  SELECT  "books".* FROM "books"  ORDER BY books.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (45.9ms)
+Completed 200 OK in 76ms (Views: 51.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/admin/book/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-29 17:34:33 +0200
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"book"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (3.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_text.html.haml (1.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (1.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors"  ORDER BY authors.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_select.html.haml (18.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"  ORDER BY categories.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_select.html.haml (6.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "ratings"[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT "ratings".* FROM "ratings"  ORDER BY ratings.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (27.8ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"  ORDER BY users.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (18.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (4.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (118.3ms)
+Completed 200 OK in 141ms (Views: 124.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 17:46:46 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Completed 200 OK in 463ms (Views: 443.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2016-02-29 17:46:47 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "addresses"
+  [1m[36mAddress Load (0.4ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "countries"
+  [1m[36mCountry Load (0.5ms)[0m  [1mSELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "credit_cards"
+  [1m[36mCreditCard Load (0.3ms)[0m  [1mSELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "orders"
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "order_items"
+  [1m[36mOrderItem Load (0.3ms)[0m  [1mSELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "ratings"
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (63.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (7.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (9.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (3.7ms)
+Completed 200 OK in 545ms (Views: 267.6ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2016-02-29 17:46:48 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35mAddress Load (0.6ms)[0m  SELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  [1m[35mBook Load (0.4ms)[0m  SELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "credit_cards"[0m
+  [1m[35mCreditCard Load (0.2ms)[0m  SELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "order_items"[0m
+  [1m[35mOrderItem Load (0.2ms)[0m  SELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "ratings"[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (31.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (3.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (7.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (9.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (3.7ms)
+Completed 200 OK in 235ms (Views: 205.9ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/admin/book?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-29 17:46:53 +0200
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"book"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mBook Load (0.4ms)[0m  SELECT  "books".* FROM "books"  ORDER BY books.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (45.3ms)
+Completed 200 OK in 81ms (Views: 50.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/admin/book/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-29 17:46:55 +0200
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"book"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (2.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_text.html.haml (1.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (1.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.5ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"  ORDER BY authors.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_select.html.haml (14.5ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"  ORDER BY categories.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_select.html.haml (7.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "ratings"[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT "ratings".* FROM "ratings"  ORDER BY ratings.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (23.1ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"  ORDER BY users.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (15.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (4.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (101.2ms)
+Completed 200 OK in 121ms (Views: 108.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 17:51:55 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Completed 200 OK in 439ms (Views: 414.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2016-02-29 17:51:57 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "addresses"
+  [1m[36mAddress Load (1.0ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.5ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1[0m
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "countries"
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "credit_cards"
+  [1m[36mCreditCard Load (0.6ms)[0m  [1mSELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "orders"
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "order_items"
+  [1m[36mOrderItem Load (0.3ms)[0m  [1mSELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "ratings"
+  [1m[36mRating Load (0.2ms)[0m  [1mSELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (64.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (7.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (9.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (3.9ms)
+Completed 200 OK in 532ms (Views: 272.9ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2016-02-29 17:51:58 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  [1m[35mBook Load (2.7ms)[0m  SELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "credit_cards"[0m
+  [1m[35mCreditCard Load (0.3ms)[0m  SELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "order_items"[0m
+  [1m[35mOrderItem Load (0.2ms)[0m  SELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "ratings"[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (31.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (7.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (10.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (3.6ms)
+Completed 200 OK in 228ms (Views: 196.3ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/admin/book?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-29 17:52:01 +0200
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"book"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mBook Load (0.3ms)[0m  SELECT  "books".* FROM "books"  ORDER BY books.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (41.7ms)
+Completed 200 OK in 71ms (Views: 47.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admin/book/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-29 17:52:03 +0200
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"book"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (3.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_text.html.haml (1.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (2.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.5ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors"  ORDER BY authors.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_select.html.haml (23.1ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"  ORDER BY categories.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_select.html.haml (10.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_file_upload.html.haml (10.1ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "ratings"[0m
+  [1m[35mRating Load (0.6ms)[0m  SELECT "ratings".* FROM "ratings"  ORDER BY ratings.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (43.1ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"  ORDER BY users.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (24.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (5.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (680.7ms)
+Completed 200 OK in 702ms (Views: 687.2ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/admin/book/new" for 127.0.0.1 at 2016-02-29 17:56:49 +0200
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"poe5T8f/ShAmp8BpSV1mikGRyMcYbZHmo0yiGIorveCH7GYALRsyaXfffpROdA2U+GSB7rHeCAdHFBYvEwgbhw==", "book"=>{"title"=>"The Rspec Book", "description"=>"", "price"=>"27.4", "in_stock"=>"181", "rating"=>"", "author_id"=>"", "category_id"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f45c67f9668 @tempfile=#<Tempfile:/tmp/RackMultipart20160229-21500-1eh33o5.png>, @original_filename="rspec_book.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"book[image]\"; filename=\"rspec_book.png\"\r\nContent-Type: image/png\r\n">, "image_cache"=>"", "rating_ids"=>["", ""], "user_ids"=>["", ""]}, "return_to"=>"http://localhost:3000/admin/book", "_save"=>"", "model_name"=>"book"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "books" ("title", "description", "price", "in_stock", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Rspec Book"], ["description", ""], ["price", "27.4"], ["in_stock", 181], ["image", "rspec_book.png"], ["created_at", "2016-02-29 15:56:49.573599"], ["updated_at", "2016-02-29 15:56:49.573599"]]
+  [1m[35m (41.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin/book
+Completed 302 Found in 249ms (ActiveRecord: 42.7ms)
+
+
+Started GET "/admin/book" for 127.0.0.1 at 2016-02-29 17:56:49 +0200
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"book"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mBook Load (0.4ms)[0m  SELECT  "books".* FROM "books"  ORDER BY books.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (97.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (3.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (5.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (12.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (5.2ms)
+Completed 200 OK in 319ms (Views: 309.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/book/1/edit?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-29 17:56:54 +0200
+Processing by RailsAdmin::MainController#edit as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"book", "id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = $1  ORDER BY "books"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_text.html.haml (0.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.2ms)
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors"  ORDER BY authors.id desc
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_select.html.haml (6.6ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"  ORDER BY categories.id desc[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_select.html.haml (4.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_file_upload.html.haml (3.4ms)
+  [1m[35mRating Load (0.3ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."book_id" = $1  [["book_id", 1]]
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT "ratings".* FROM "ratings"  ORDER BY ratings.id desc[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (202.6ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "ratings" ON "users"."id" = "ratings"."user_id" WHERE "ratings"."book_id" = $1  [["book_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"  ORDER BY users.id desc[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (18.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (2.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/edit.html.haml within layouts/rails_admin/pjax (268.0ms)
+Completed 200 OK in 328ms (Views: 309.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 18:53:39 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (81.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 1683ms (Views: 1594.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/shop" for 127.0.0.1 at 2016-02-29 18:55:47 +0200
+Processing by BooksController#shop as HTML
+  Rendered books/shop.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 56ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-29 18:55:49 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (180.5ms)
+Completed 200 OK in 418ms (Views: 247.0ms | ActiveRecord: 142.6ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 19:00:43 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 19:00:43 +0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-29 19:01:21 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 58ms (Views: 55.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-29 19:01:23 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 83ms (Views: 81.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 19:01:25 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 19:01:25 +0200
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-29 19:01:28 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.0ms)

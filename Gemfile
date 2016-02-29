@@ -19,6 +19,8 @@ gem 'devise'
 gem 'rails_admin'
 gem 'cancan'
 gem 'omniauth-facebook'
+gem 'carrierwave'
+gem 'cloudinary'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

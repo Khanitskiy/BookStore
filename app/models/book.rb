@@ -11,4 +11,6 @@ class Book < ActiveRecord::Base
   has_many   :users, through: :ratings
   #has_many   :order_items
 
+  mount_uploader :image, BookImgUploader
+
 end
