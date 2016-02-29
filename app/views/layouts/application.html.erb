@@ -32,7 +32,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          
+          <span style="padding-top: 14px; color: green; font-weight: bold; float: left;"><%= current_user.firstname %></span>
           <% if current_user.admin? %>
             <li><%= link_to "Admin panel", rails_admin.dashboard_path %></li>
           <% end %> 

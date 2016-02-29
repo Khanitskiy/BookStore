@@ -25600,3 +25600,2033 @@ Processing by BooksController#shop as HTML
   Rendered books/shop.html.erb within layouts/application (0.1ms)
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
 Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 14:55:54 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 565ms (Views: 550.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2016-02-29 14:55:58 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "addresses"
+  [1m[36mAddress Load (0.4ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "countries"
+  [1m[36mCountry Load (0.6ms)[0m  [1mSELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "credit_cards"
+  [1m[36mCreditCard Load (0.3ms)[0m  [1mSELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "orders"
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "order_items"
+  [1m[36mOrderItem Load (0.2ms)[0m  [1mSELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "ratings"
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1[0m
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (36.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (3.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (7.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (8.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (4.2ms)
+Completed 200 OK in 425ms (Views: 220.7ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2016-02-29 14:55:58 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  ORDER BY addresses.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT  "authors".* FROM "authors"  ORDER BY authors.updated_at desc LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT  "books".* FROM "books"  ORDER BY books.updated_at desc LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY categories.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT  "countries".* FROM "countries"  ORDER BY countries.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "credit_cards"[0m
+  [1m[35mCreditCard Load (0.2ms)[0m  SELECT  "credit_cards".* FROM "credit_cards"  ORDER BY credit_cards.updated_at desc LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders"  ORDER BY orders.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "order_items"[0m
+  [1m[35mOrderItem Load (0.2ms)[0m  SELECT  "order_items".* FROM "order_items"  ORDER BY order_items.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "ratings"[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  "ratings".* FROM "ratings"  ORDER BY ratings.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (33.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (3.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (6.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (9.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (3.8ms)
+Completed 200 OK in 202ms (Views: 171.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 14:56:02 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:01:38 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 419ms (Views: 398.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/shop" for 127.0.0.1 at 2016-02-29 15:01:41 +0200
+Processing by BooksController#shop as HTML
+  Rendered books/shop.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-02-29 15:01:41 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"K8mpC0DoSbPRH2eTjYtzAlSjmn/N7XexhxpQbcQHlsrU98F+sFLQbcnbqxGzvr4bIV9kAcFxLP1tCMs/UL53ow=="}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 48ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:01:41 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'addresses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'authors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'books'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'countries'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'credit_cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'order_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'ratings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddOmniauthToUsers (20160229130520)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD "provider" character varying[0m
+PG::DuplicateColumn: ОШИБКА:  колонка "provider" отношения "users" уже существует
+: ALTER TABLE "users" ADD "provider" character varying
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (323.5ms)[0m  [1mDROP DATABASE IF EXISTS "bookstore_development"[0m
+  [1m[35m (235.1ms)[0m  DROP DATABASE IF EXISTS "bookstore_test"
+  [1m[36m (661.7ms)[0m  [1mCREATE DATABASE "bookstore_development" ENCODING = 'unicode'[0m
+  [1m[35m (640.5ms)[0m  CREATE DATABASE "bookstore_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (109.6ms)[0m  CREATE TABLE "addresses" ("id" serial primary key, "address" character varying, "zipcode" integer, "city" character varying, "phone" character varying, "country" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (96.5ms)[0m  [1mCREATE TABLE "authors" ("id" serial primary key, "firstname" character varying, "lastname" character varying, "biography" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (98.2ms)[0m  CREATE TABLE "books" ("id" serial primary key, "title" character varying, "description" text, "price" decimal, "in_stock" integer, "rating" decimal, "author_id" integer, "category_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (61.3ms)[0m  [1mCREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")[0m
+  [1m[35m (63.6ms)[0m  CREATE  INDEX  "index_books_on_category_id" ON "books" USING btree ("category_id")
+  [1m[36m (103.0ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (93.0ms)[0m  CREATE TABLE "countries" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (108.1ms)[0m  [1mCREATE TABLE "credit_cards" ("id" serial primary key, "number" integer, "cvv" integer, "expiration_month" integer, "expiration_year" integer, "firstname" character varying, "lastname" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (84.8ms)[0m  CREATE  INDEX  "index_credit_cards_on_user_id" ON "credit_cards" USING btree ("user_id")
+  [1m[36m (131.3ms)[0m  [1mCREATE TABLE "order_items" ("id" serial primary key, "price" decimal, "quantity" character varying, "book_id" integer, "order_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (208.2ms)[0m  CREATE  INDEX  "index_order_items_on_book_id" ON "order_items" USING btree ("book_id")
+  [1m[36m (73.5ms)[0m  [1mCREATE  INDEX  "index_order_items_on_order_id" ON "order_items" USING btree ("order_id")[0m
+  [1m[35m (101.3ms)[0m  CREATE TABLE "orders" ("id" serial primary key, "total_price" decimal, "completed_date" date, "state" integer DEFAULT 1, "billing_address" character varying, "shipping_address" character varying, "user_id" integer, "credit_card_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (72.9ms)[0m  [1mCREATE  INDEX  "index_orders_on_credit_card_id" ON "orders" USING btree ("credit_card_id")[0m
+  [1m[35m (63.5ms)[0m  CREATE  INDEX  "index_orders_on_user_id" ON "orders" USING btree ("user_id")
+  [1m[36m (115.2ms)[0m  [1mCREATE TABLE "ratings" ("id" serial primary key, "text_review" character varying, "rating" integer, "book_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (69.4ms)[0m  CREATE  INDEX  "index_ratings_on_book_id" ON "ratings" USING btree ("book_id")
+  [1m[36m (62.9ms)[0m  [1mCREATE  INDEX  "index_ratings_on_user_id" ON "ratings" USING btree ("user_id")[0m
+  [1m[35m (149.8ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "firstname" character varying DEFAULT '' NOT NULL, "lastname" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "admin" boolean DEFAULT 'f', "provider" character varying, "uid" character varying, "image" character varying) 
+  [1m[36m (63.0ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (62.7ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (62.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (64.1ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.8ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (8.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160229093751')
+  [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220131228')[0m
+  [1m[35m (10.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160220131221')
+  [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220115101')[0m
+  [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160220115140')
+  [1m[36m (11.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160226105754')[0m
+  [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160220131238')
+  [1m[36m (10.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220131137')[0m
+  [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160220131202')
+  [1m[36m (10.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220115125')[0m
+  [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160220093423')
+  [1m[36m (10.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160226111028')[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (134.0ms)[0m  [1mCREATE TABLE "addresses" ("id" serial primary key, "address" character varying, "zipcode" integer, "city" character varying, "phone" character varying, "country" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (122.3ms)[0m  CREATE TABLE "authors" ("id" serial primary key, "firstname" character varying, "lastname" character varying, "biography" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (164.7ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying, "description" text, "price" decimal, "in_stock" integer, "rating" decimal, "author_id" integer, "category_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (63.7ms)[0m  CREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")
+  [1m[36m (63.9ms)[0m  [1mCREATE  INDEX  "index_books_on_category_id" ON "books" USING btree ("category_id")[0m
+  [1m[35m (109.6ms)[0m  CREATE TABLE "categories" ("id" serial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (114.4ms)[0m  [1mCREATE TABLE "countries" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (114.7ms)[0m  CREATE TABLE "credit_cards" ("id" serial primary key, "number" integer, "cvv" integer, "expiration_month" integer, "expiration_year" integer, "firstname" character varying, "lastname" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (63.0ms)[0m  [1mCREATE  INDEX  "index_credit_cards_on_user_id" ON "credit_cards" USING btree ("user_id")[0m
+  [1m[35m (131.4ms)[0m  CREATE TABLE "order_items" ("id" serial primary key, "price" decimal, "quantity" character varying, "book_id" integer, "order_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (84.1ms)[0m  [1mCREATE  INDEX  "index_order_items_on_book_id" ON "order_items" USING btree ("book_id")[0m
+  [1m[35m (69.1ms)[0m  CREATE  INDEX  "index_order_items_on_order_id" ON "order_items" USING btree ("order_id")
+  [1m[36m (125.4ms)[0m  [1mCREATE TABLE "orders" ("id" serial primary key, "total_price" decimal, "completed_date" date, "state" integer DEFAULT 1, "billing_address" character varying, "shipping_address" character varying, "user_id" integer, "credit_card_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (75.2ms)[0m  CREATE  INDEX  "index_orders_on_credit_card_id" ON "orders" USING btree ("credit_card_id")
+  [1m[36m (63.2ms)[0m  [1mCREATE  INDEX  "index_orders_on_user_id" ON "orders" USING btree ("user_id")[0m
+  [1m[35m (109.3ms)[0m  CREATE TABLE "ratings" ("id" serial primary key, "text_review" character varying, "rating" integer, "book_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (63.6ms)[0m  [1mCREATE  INDEX  "index_ratings_on_book_id" ON "ratings" USING btree ("book_id")[0m
+  [1m[35m (63.8ms)[0m  CREATE  INDEX  "index_ratings_on_user_id" ON "ratings" USING btree ("user_id")
+  [1m[36m (95.8ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "firstname" character varying DEFAULT '' NOT NULL, "lastname" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "admin" boolean DEFAULT 'f', "provider" character varying, "uid" character varying, "image" character varying) [0m
+  [1m[35m (64.1ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (64.2ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
+  [1m[35m (92.6ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (69.2ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.6ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160229093751')[0m
+  [1m[35m (10.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160220131228')
+  [1m[36m (10.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220131221')[0m
+  [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160220115101')
+  [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220115140')[0m
+  [1m[35m (10.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160226105754')
+  [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220131238')[0m
+  [1m[35m (11.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160220131137')
+  [1m[36m (10.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220131202')[0m
+  [1m[35m (10.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160220115125')
+  [1m[36m (10.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220093423')[0m
+  [1m[35m (10.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160226111028')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:14:01 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.1) lib/active_record/migration.rb:393:in `check_pending!'
+  activerecord (4.2.1) lib/active_record/migration.rb:374:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/han/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/han/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/han/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (65.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddOmniauthToUsers (20160229130520)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD "provider" character varying[0m
+PG::DuplicateColumn: ОШИБКА:  колонка "provider" отношения "users" уже существует
+: ALTER TABLE "users" ADD "provider" character varying
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (85.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (75.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAuthors (20160220093423)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (93.6ms)[0m  [1mCREATE TABLE "authors" ("id" serial primary key, "firstname" character varying, "lastname" character varying, "biography" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220093423"]]
+  [1m[36m (20.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateBooks (20160220115101)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (77.3ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying, "description" text, "price" decimal, "in_stock" integer, "rating" decimal, "author_id" integer, "category_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (31.2ms)[0m  CREATE  INDEX  "index_books_on_author_id" ON "books"  ("author_id")
+  [1m[36m (30.8ms)[0m  [1mCREATE  INDEX  "index_books_on_category_id" ON "books"  ("category_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220115101"]]
+  [1m[36m (27.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCategories (20160220115125)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (112.0ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220115125"]]
+  [1m[36m (26.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRatings (20160220115140)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (101.2ms)[0m  [1mCREATE TABLE "ratings" ("id" serial primary key, "text_review" character varying, "rating" integer, "book_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (49.4ms)[0m  CREATE  INDEX  "index_ratings_on_book_id" ON "ratings"  ("book_id")
+  [1m[36m (44.4ms)[0m  [1mCREATE  INDEX  "index_ratings_on_user_id" ON "ratings"  ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220115140"]]
+  [1m[36m (26.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateOrders (20160220131137)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (78.9ms)[0m  [1mCREATE TABLE "orders" ("id" serial primary key, "total_price" decimal, "completed_date" date, "state" integer DEFAULT 1, "billing_address" character varying, "shipping_address" character varying, "user_id" integer, "credit_card_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (42.1ms)[0m  CREATE  INDEX  "index_orders_on_user_id" ON "orders"  ("user_id")
+  [1m[36m (62.5ms)[0m  [1mCREATE  INDEX  "index_orders_on_credit_card_id" ON "orders"  ("credit_card_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220131137"]]
+  [1m[36m (24.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateOrderItems (20160220131202)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (70.5ms)[0m  [1mCREATE TABLE "order_items" ("id" serial primary key, "price" decimal, "quantity" character varying, "book_id" integer, "order_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (30.6ms)[0m  CREATE  INDEX  "index_order_items_on_book_id" ON "order_items"  ("book_id")
+  [1m[36m (58.8ms)[0m  [1mCREATE  INDEX  "index_order_items_on_order_id" ON "order_items"  ("order_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220131202"]]
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAddresses (20160220131221)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (86.5ms)[0m  [1mCREATE TABLE "addresses" ("id" serial primary key, "address" character varying, "zipcode" integer, "city" character varying, "phone" character varying, "country" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220131221"]]
+  [1m[36m (22.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCountries (20160220131228)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (71.6ms)[0m  [1mCREATE TABLE "countries" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220131228"]]
+  [1m[36m (28.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCreditCards (20160220131238)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (88.7ms)[0m  [1mCREATE TABLE "credit_cards" ("id" serial primary key, "number" integer, "cvv" integer, "expiration_month" integer, "expiration_year" integer, "firstname" character varying, "lastname" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (42.4ms)[0m  CREATE  INDEX  "index_credit_cards_on_user_id" ON "credit_cards"  ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160220131238"]]
+  [1m[35m (21.6ms)[0m  COMMIT
+Migrating to AddDeviseToUsers (20160226105754)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (105.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "firstname" character varying DEFAULT '' NOT NULL, "lastname" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (31.1ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (42.8ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160226105754"]]
+  [1m[35m (19.8ms)[0m  COMMIT
+Migrating to AddAdminToUsers (20160226111028)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "admin" boolean
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160226111028"]]
+  [1m[35m (16.1ms)[0m  COMMIT
+Migrating to AddOmniauthToUsers (20160229130520)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "provider" character varying
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "uid" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160229130520"]]
+  [1m[36m (12.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'addresses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'authors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'books'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'countries'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'credit_cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'order_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'ratings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:16:05 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 513ms (Views: 497.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-29 15:16:08 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 77ms (Views: 52.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:16:10 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:16:10 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQA9p203OG4mpsx8JaeumxfbqRL_A_ZXh0LIx9uzl7v-WtdmbZBgONqoD13MxW_atSwUmchY4UmbxUWSpqP0Z8OAZGDkFjpy6drprcTM-vPRO6sWV7U_fnjeE7VvAQhs1x7TCqzgw3sWuHlCvNy1lVqdCOyfys0KJ1k9trTiOhYk_FfjcGQyrMYmdOOQhCsZ6iXcTW1vh3cdZLYhQ3v0IvMnBsTFQD0QVhaJbmSXgZxtlKqYfzbZFtdG9Keq_hZu_UZfU_a5KAuej3yR96BEI_MWbCVcl18XM0bhRhgR1r3A37bDcYzIX0OMfNR7VK_JshKdxgBlOvFmk8EE8kkef327&state=936c0337364ee00a7d7f1fccabfd1ba4636881c8d8d38956" for 127.0.0.1 at 2016-02-29 15:16:10 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQA9p203OG4mpsx8JaeumxfbqRL_A_ZXh0LIx9uzl7v-WtdmbZBgONqoD13MxW_atSwUmchY4UmbxUWSpqP0Z8OAZGDkFjpy6drprcTM-vPRO6sWV7U_fnjeE7VvAQhs1x7TCqzgw3sWuHlCvNy1lVqdCOyfys0KJ1k9trTiOhYk_FfjcGQyrMYmdOOQhCsZ6iXcTW1vh3cdZLYhQ3v0IvMnBsTFQD0QVhaJbmSXgZxtlKqYfzbZFtdG9Keq_hZu_UZfU_a5KAuej3yR96BEI_MWbCVcl18XM0bhRhgR1r3A37bDcYzIX0OMfNR7VK_JshKdxgBlOvFmk8EE8kkef327", "state"=>"936c0337364ee00a7d7f1fccabfd1ba4636881c8d8d38956"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "1566888903626698"]]
+Completed 500 Internal Server Error in 254ms (ActiveRecord: 1.5ms)
+
+NoMethodError (undefined method `name=' for #<User:0x007ff87e392e10>):
+  app/models/user.rb:16:in `block in from_omniauth'
+  app/models/user.rb:13:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (34.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:18:28 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 511ms (Views: 496.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-29 15:18:30 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 73ms (Views: 54.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:18:31 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:18:31 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQChlxHVxK-3iw1ZlA60n1JUGnigWM5lYTZVPDfELjTQ4YMiakgrOaxpxpqVNjyHENXp9IV8ve52EvyNX4WG7MMc0uz0vJFwc8g0SmZLOF2PpbOn06HoRLS17lbl0ldEIacP0mWwuWMvdOMWOo1fd3o9NPB43sCxXqB8uFs0uqMd56et2HA18DQncwV2lGSj57AqrOS0hE-mVyGqGkPTdsoGlzM8Gd9bLzEsg7IsDa01J1w1GtS4IK5iYmRZ3_SieakHIXpSco_IbuOH5Ngi-5asYPGc4L7a2_ksGGCuqtn-uDFbxvZ7q-4FyKvF0_7wDKJHMhrb8Ggnd_ghofYxBbvY&state=6d615a07182abd842cd9f12043c8ad4dbe44848ee0c04fa4" for 127.0.0.1 at 2016-02-29 15:18:31 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQChlxHVxK-3iw1ZlA60n1JUGnigWM5lYTZVPDfELjTQ4YMiakgrOaxpxpqVNjyHENXp9IV8ve52EvyNX4WG7MMc0uz0vJFwc8g0SmZLOF2PpbOn06HoRLS17lbl0ldEIacP0mWwuWMvdOMWOo1fd3o9NPB43sCxXqB8uFs0uqMd56et2HA18DQncwV2lGSj57AqrOS0hE-mVyGqGkPTdsoGlzM8Gd9bLzEsg7IsDa01J1w1GtS4IK5iYmRZ3_SieakHIXpSco_IbuOH5Ngi-5asYPGc4L7a2_ksGGCuqtn-uDFbxvZ7q-4FyKvF0_7wDKJHMhrb8Ggnd_ghofYxBbvY", "state"=>"6d615a07182abd842cd9f12043c8ad4dbe44848ee0c04fa4"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "1566888903626698"]]
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.9ms)
+
+NoMethodError (undefined method `image=' for #<User:0x007f65d5913268>):
+  app/models/user.rb:18:in `block in from_omniauth'
+  app/models/user.rb:13:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddOmniauthToUsers (20160229130520)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.9ms)[0m  ALTER TABLE "image" DROP "uid"
+PG::UndefinedTable: ОШИБКА:  отношение "image" не существует
+: ALTER TABLE "image" DROP "uid"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddOmniauthToUsers (20160229130520)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" DROP "uid"
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" DROP "provider"[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1  [["version", "20160229130520"]]
+  [1m[36m (92.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'addresses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'authors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'books'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'countries'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'credit_cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'order_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'ratings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddOmniauthToUsers (20160229130520)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "provider" character varying[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "uid" character varying
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "image" ADD "uid" character varying[0m
+PG::UndefinedTable: ОШИБКА:  отношение "image" не существует
+: ALTER TABLE "image" ADD "uid" character varying
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddAdminToUsers (20160226111028)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" DROP "admin"
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20160226111028"]]
+  [1m[35m (58.8ms)[0m  COMMIT
+Migrating to AddDeviseToUsers (20160226105754)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  DROP INDEX "index_users_on_reset_password_token"
+  [1m[36m (0.4ms)[0m  [1mDROP INDEX "index_users_on_email"[0m
+  [1m[35m (2.1ms)[0m  DROP TABLE "users"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20160226105754"]]
+  [1m[35m (5.3ms)[0m  COMMIT
+Migrating to CreateCreditCards (20160220131238)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.3ms)[0m  DROP TABLE "credit_cards"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20160220131238"]]
+  [1m[35m (11.0ms)[0m  COMMIT
+Migrating to CreateCountries (20160220131228)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.0ms)[0m  DROP TABLE "countries"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20160220131228"]]
+  [1m[35m (11.3ms)[0m  COMMIT
+Migrating to CreateAddresses (20160220131221)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "addresses"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20160220131221"]]
+  [1m[35m (12.3ms)[0m  COMMIT
+Migrating to CreateOrderItems (20160220131202)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.2ms)[0m  DROP TABLE "order_items"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20160220131202"]]
+  [1m[35m (13.0ms)[0m  COMMIT
+Migrating to CreateOrders (20160220131137)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  DROP TABLE "orders"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20160220131137"]]
+  [1m[35m (7.6ms)[0m  COMMIT
+Migrating to CreateRatings (20160220115140)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "ratings"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20160220115140"]]
+  [1m[35m (12.4ms)[0m  COMMIT
+Migrating to CreateCategories (20160220115125)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.9ms)[0m  DROP TABLE "categories"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20160220115125"]]
+  [1m[35m (2.8ms)[0m  COMMIT
+Migrating to CreateBooks (20160220115101)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "books"
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20160220115101"]]
+  [1m[35m (6.5ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'authors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20160220115101)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (208.4ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying, "description" text, "price" decimal, "in_stock" integer, "rating" decimal, "author_id" integer, "category_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (47.3ms)[0m  CREATE  INDEX  "index_books_on_author_id" ON "books"  ("author_id")
+  [1m[36m (52.2ms)[0m  [1mCREATE  INDEX  "index_books_on_category_id" ON "books"  ("category_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220115101"]]
+  [1m[36m (23.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCategories (20160220115125)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (133.6ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220115125"]]
+  [1m[36m (26.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRatings (20160220115140)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (84.0ms)[0m  [1mCREATE TABLE "ratings" ("id" serial primary key, "text_review" character varying, "rating" integer, "book_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (31.7ms)[0m  CREATE  INDEX  "index_ratings_on_book_id" ON "ratings"  ("book_id")
+  [1m[36m (67.5ms)[0m  [1mCREATE  INDEX  "index_ratings_on_user_id" ON "ratings"  ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220115140"]]
+  [1m[36m (12.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateOrders (20160220131137)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (99.8ms)[0m  [1mCREATE TABLE "orders" ("id" serial primary key, "total_price" decimal, "completed_date" date, "state" integer DEFAULT 1, "billing_address" character varying, "shipping_address" character varying, "user_id" integer, "credit_card_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (42.3ms)[0m  CREATE  INDEX  "index_orders_on_user_id" ON "orders"  ("user_id")
+  [1m[36m (36.2ms)[0m  [1mCREATE  INDEX  "index_orders_on_credit_card_id" ON "orders"  ("credit_card_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220131137"]]
+  [1m[36m (19.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateOrderItems (20160220131202)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (101.6ms)[0m  [1mCREATE TABLE "order_items" ("id" serial primary key, "price" decimal, "quantity" character varying, "book_id" integer, "order_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (35.8ms)[0m  CREATE  INDEX  "index_order_items_on_book_id" ON "order_items"  ("book_id")
+  [1m[36m (35.7ms)[0m  [1mCREATE  INDEX  "index_order_items_on_order_id" ON "order_items"  ("order_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220131202"]]
+  [1m[36m (19.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAddresses (20160220131221)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (98.8ms)[0m  [1mCREATE TABLE "addresses" ("id" serial primary key, "address" character varying, "zipcode" integer, "city" character varying, "phone" character varying, "country" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220131221"]]
+  [1m[36m (18.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCountries (20160220131228)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (88.8ms)[0m  [1mCREATE TABLE "countries" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220131228"]]
+  [1m[36m (24.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCreditCards (20160220131238)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (105.4ms)[0m  [1mCREATE TABLE "credit_cards" ("id" serial primary key, "number" integer, "cvv" integer, "expiration_month" integer, "expiration_year" integer, "firstname" character varying, "lastname" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (76.0ms)[0m  CREATE  INDEX  "index_credit_cards_on_user_id" ON "credit_cards"  ("user_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160220131238"]]
+  [1m[35m (26.0ms)[0m  COMMIT
+Migrating to AddDeviseToUsers (20160226105754)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (88.2ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "firstname" character varying DEFAULT '' NOT NULL, "lastname" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (51.2ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (31.0ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160226105754"]]
+  [1m[35m (24.4ms)[0m  COMMIT
+Migrating to AddAdminToUsers (20160226111028)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "admin" boolean
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160226111028"]]
+  [1m[35m (16.7ms)[0m  COMMIT
+Migrating to AddOmniauthToUsers (20160229130520)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "provider" character varying
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "uid" character varying[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "image" ADD "uid" character varying
+PG::UndefinedTable: ОШИБКА:  отношение "image" не существует
+: ALTER TABLE "image" ADD "uid" character varying
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddOmniauthToUsers (20160229130520)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "provider" character varying[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "uid" character varying
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "users" ADD "image" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160229130520"]]
+  [1m[36m (18.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'addresses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'authors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'books'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'countries'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'credit_cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'order_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'ratings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:21:12 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 522ms (Views: 507.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-29 15:21:13 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 79ms (Views: 50.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:21:15 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:21:15 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQB6qWQjv0KOgX3J8mIHpiu_1jdVXO__u0D2Ynm5HIEUXVBaf7QNVKrVLPDsYNx54fNPDaDgWOx4HfGGPXUEiMirUJ_rBM_tZKksPFGlWqrKM_ajeWnpQO0JK7YvbPCsHpFwaOzcTjFbYT-wHr-o2qPvqIUICcDh2SAoz8fJhPWaX2VrE_jfaKZq5i93V-Z6bjJ6HL4R6ZDP9jwBkcqYe66DgY5qy9acsnKtkg2dwHMCBCtUGfjItafWAEHOPXga7M5SM0AJtuA6G5u6PM0aTm3panslNBDaB2Lgt5lQ_dIqVQ5jJk4nCO5NZrfONpUs7n81Y490HwJJNppZaERz_xx4&state=b595652a9a05a8422e9c5546b6b00066a167f2324eb5bb42" for 127.0.0.1 at 2016-02-29 15:21:15 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQB6qWQjv0KOgX3J8mIHpiu_1jdVXO__u0D2Ynm5HIEUXVBaf7QNVKrVLPDsYNx54fNPDaDgWOx4HfGGPXUEiMirUJ_rBM_tZKksPFGlWqrKM_ajeWnpQO0JK7YvbPCsHpFwaOzcTjFbYT-wHr-o2qPvqIUICcDh2SAoz8fJhPWaX2VrE_jfaKZq5i93V-Z6bjJ6HL4R6ZDP9jwBkcqYe66DgY5qy9acsnKtkg2dwHMCBCtUGfjItafWAEHOPXga7M5SM0AJtuA6G5u6PM0aTm3panslNBDaB2Lgt5lQ_dIqVQ5jJk4nCO5NZrfONpUs7n81Y490HwJJNppZaERz_xx4", "state"=>"b595652a9a05a8422e9c5546b6b00066a167f2324eb5bb42"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "1566888903626698"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36mSQL (16.8ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["provider", "facebook"], ["uid", "1566888903626698"], ["email", "khanitskiy@gmail.com"], ["encrypted_password", "$2a$10$AS8PkTaRXVfeBx9BJzjA2e0AuUJuAxjRcJOwq95.Gjf.lUEdfFJSq"], ["firstname", nil], ["image", "http://graph.facebook.com/1566888903626698/picture"], ["created_at", "2016-02-29 13:21:16.110164"], ["updated_at", "2016-02-29 13:21:16.110164"]]
+PG::NotNullViolation: ОШИБКА:  нулевое значение в колонке "firstname" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (1, khanitskiy@gmail.com, $2a$10$AS8PkTaRXVfeBx9BJzjA2e0AuUJuAxjRcJOwq95.Gjf.lUEdfFJSq, null, , null, null, null, 0, null, null, null, null, 2016-02-29 13:21:16.110164, 2016-02-29 13:21:16.110164, null, facebook, 1566888903626698, http://graph.facebook.com/1566888903626698/picture).
+: INSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 19.0ms)
+
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ОШИБКА:  нулевое значение в колонке "firstname" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (1, khanitskiy@gmail.com, $2a$10$AS8PkTaRXVfeBx9BJzjA2e0AuUJuAxjRcJOwq95.Gjf.lUEdfFJSq, null, , null, null, null, 0, null, null, null, null, 2016-02-29 13:21:16.110164, 2016-02-29 13:21:16.110164, null, facebook, 1566888903626698, http://graph.facebook.com/1566888903626698/picture).
+: INSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"):
+  app/models/user.rb:13:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.8ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:22:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 451ms (Views: 431.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-29 15:22:06 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (46.5ms)
+Completed 200 OK in 97ms (Views: 77.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-29 15:22:07 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:22:09 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:22:09 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQC4WdsYMp5tCs98e7KQnYtyBcv1rA6ANe7KQtEzx5CFnj1Oip50LYp8Hbakh-t5K3GRuZmZ2PksJs0XOk8t4c3JZOgmggJ0xND-wNfqA-rxNP8L4B5GMPUZr7bdcrprPRs8Wyh0fWWOmqlfcDJlOW0NHdA7tq4yjyQr6aHdcccytYtDK6yfS1C5-3-BVZtuE302ShnP5Bm2x8keTuUCKoqkOHULi3SCt-GRLUtIZkebUWYJlvYYjgfCSJRfKUbsZptiC3CXwLjHQzzG0v7KoWmFdXCjOAqJ6xTWHpLMf-t_9DacstW8snFRzG91Yj-_5wO5_JQcZ2m_GpqXt6SHYLIo&state=1ebc76d2b909196196d1458d55c688b4c8c75d0283bcd196" for 127.0.0.1 at 2016-02-29 15:22:09 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQC4WdsYMp5tCs98e7KQnYtyBcv1rA6ANe7KQtEzx5CFnj1Oip50LYp8Hbakh-t5K3GRuZmZ2PksJs0XOk8t4c3JZOgmggJ0xND-wNfqA-rxNP8L4B5GMPUZr7bdcrprPRs8Wyh0fWWOmqlfcDJlOW0NHdA7tq4yjyQr6aHdcccytYtDK6yfS1C5-3-BVZtuE302ShnP5Bm2x8keTuUCKoqkOHULi3SCt-GRLUtIZkebUWYJlvYYjgfCSJRfKUbsZptiC3CXwLjHQzzG0v7KoWmFdXCjOAqJ6xTWHpLMf-t_9DacstW8snFRzG91Yj-_5wO5_JQcZ2m_GpqXt6SHYLIo", "state"=>"1ebc76d2b909196196d1458d55c688b4c8c75d0283bcd196"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "1566888903626698"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36mSQL (9.9ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["provider", "facebook"], ["uid", "1566888903626698"], ["email", "khanitskiy@gmail.com"], ["encrypted_password", "$2a$10$xBOzr4PoRDx3EsX/uu.IKuKV/jpXxLV5aYLDTjvYpjtj53TUGyQJe"], ["firstname", nil], ["image", "http://graph.facebook.com/1566888903626698/picture"], ["created_at", "2016-02-29 13:22:10.557198"], ["updated_at", "2016-02-29 13:22:10.557198"]]
+PG::NotNullViolation: ОШИБКА:  нулевое значение в колонке "firstname" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (2, khanitskiy@gmail.com, $2a$10$xBOzr4PoRDx3EsX/uu.IKuKV/jpXxLV5aYLDTjvYpjtj53TUGyQJe, null, , null, null, null, 0, null, null, null, null, 2016-02-29 13:22:10.557198, 2016-02-29 13:22:10.557198, null, facebook, 1566888903626698, http://graph.facebook.com/1566888903626698/picture).
+: INSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 11.2ms)
+
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ОШИБКА:  нулевое значение в колонке "firstname" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (2, khanitskiy@gmail.com, $2a$10$xBOzr4PoRDx3EsX/uu.IKuKV/jpXxLV5aYLDTjvYpjtj53TUGyQJe, null, , null, null, null, 0, null, null, null, null, 2016-02-29 13:22:10.557198, 2016-02-29 13:22:10.557198, null, facebook, 1566888903626698, http://graph.facebook.com/1566888903626698/picture).
+: INSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"):
+  app/models/user.rb:13:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (32.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-29 15:22:42 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:22:43 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:22:43 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQBMvWhIO10s-Yf0CZU-rhAbcbwWRTvlX7m36xBRJUBY-jxvFbBK4VOWFNRFotpoooSdi8ASetcEBv91ywrY0cXExFwWQetYYh7Ox6Jayu_GnA_BGxKE246Z6ZHFx9_AD_R7LcBKVbswPvBM_d5-TYeaH9qL4sx1PtwDKfbyAb5dcy9oOFMKrx4YNtCoqyE4SiRaw9WLXg12rAWup66UenZoIGV6Q538eoJIDXPMODIHMsDtjRnZVVPvm7fSBB_T6oPQnw5JCfl_CaSWMFioyrvHqUXxJqoAggzhBnVzC2_YcSsRNU39usFNnc-gepT-FZNfErrWPVQPtHFm_xTuMfZ2&state=d3f73771ba6fe91cfd2c9699ffd59fe1ac0649d690229f7f" for 127.0.0.1 at 2016-02-29 15:22:44 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBMvWhIO10s-Yf0CZU-rhAbcbwWRTvlX7m36xBRJUBY-jxvFbBK4VOWFNRFotpoooSdi8ASetcEBv91ywrY0cXExFwWQetYYh7Ox6Jayu_GnA_BGxKE246Z6ZHFx9_AD_R7LcBKVbswPvBM_d5-TYeaH9qL4sx1PtwDKfbyAb5dcy9oOFMKrx4YNtCoqyE4SiRaw9WLXg12rAWup66UenZoIGV6Q538eoJIDXPMODIHMsDtjRnZVVPvm7fSBB_T6oPQnw5JCfl_CaSWMFioyrvHqUXxJqoAggzhBnVzC2_YcSsRNU39usFNnc-gepT-FZNfErrWPVQPtHFm_xTuMfZ2", "state"=>"d3f73771ba6fe91cfd2c9699ffd59fe1ac0649d690229f7f"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "1566888903626698"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'khanitskiy@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["provider", "facebook"], ["uid", "1566888903626698"], ["email", "khanitskiy@gmail.com"], ["encrypted_password", "$2a$10$YDFvXdgVQEynj5/weSSs6uErpYOEo.rB0rUZaZPvzw6bnE1UTU.xO"], ["firstname", nil], ["image", "http://graph.facebook.com/1566888903626698/picture"], ["created_at", "2016-02-29 13:22:44.964144"], ["updated_at", "2016-02-29 13:22:44.964144"]]
+PG::NotNullViolation: ОШИБКА:  нулевое значение в колонке "firstname" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (3, khanitskiy@gmail.com, $2a$10$YDFvXdgVQEynj5/weSSs6uErpYOEo.rB0rUZaZPvzw6bnE1UTU.xO, null, , null, null, null, 0, null, null, null, null, 2016-02-29 13:22:44.964144, 2016-02-29 13:22:44.964144, null, facebook, 1566888903626698, http://graph.facebook.com/1566888903626698/picture).
+: INSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 2.2ms)
+
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ОШИБКА:  нулевое значение в колонке "firstname" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (3, khanitskiy@gmail.com, $2a$10$YDFvXdgVQEynj5/weSSs6uErpYOEo.rB0rUZaZPvzw6bnE1UTU.xO, null, , null, null, null, 0, null, null, null, null, 2016-02-29 13:22:44.964144, 2016-02-29 13:22:44.964144, null, facebook, 1566888903626698, http://graph.facebook.com/1566888903626698/picture).
+: INSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"):
+  app/models/user.rb:13:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (32.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-29 15:23:32 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:23:34 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:23:34 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQBzMhGkxpnuSNNB4ABVJObQ27p32qN9KslRoZIo0US2qOqFZ5MOzb6e4CkoBQdBrnhL3gbcYF4LIuCrPCGCZDGq18Dk7uiTehO6paUiLXRwp10ojCgUKG5eT0_CEGQ0aWiJkUvGVrFdkZVQzLL48fjaNOTLCIjh9QPlXY5b5haSSDgSDVOeGp2F67rpb7THZ6rrhoUHHC8_4EESi8y4Vb5f4sLfBLkaMpdzkLod5eDXZNZ3OUS8asPmDenFS8VwnZ-KCZJ2g6VH9mmLQGmNjN59qfYPrBLDfPm8wpHGw9Mweq7gDSEWI25GSDP1YG7HdNkn2wD6eW1V1RLTgJ6tGFNi&state=6c2c80f32ffc57ea05b3823dfd0a956c02391d22ee65b4a4" for 127.0.0.1 at 2016-02-29 15:23:34 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBzMhGkxpnuSNNB4ABVJObQ27p32qN9KslRoZIo0US2qOqFZ5MOzb6e4CkoBQdBrnhL3gbcYF4LIuCrPCGCZDGq18Dk7uiTehO6paUiLXRwp10ojCgUKG5eT0_CEGQ0aWiJkUvGVrFdkZVQzLL48fjaNOTLCIjh9QPlXY5b5haSSDgSDVOeGp2F67rpb7THZ6rrhoUHHC8_4EESi8y4Vb5f4sLfBLkaMpdzkLod5eDXZNZ3OUS8asPmDenFS8VwnZ-KCZJ2g6VH9mmLQGmNjN59qfYPrBLDfPm8wpHGw9Mweq7gDSEWI25GSDP1YG7HdNkn2wD6eW1V1RLTgJ6tGFNi", "state"=>"6c2c80f32ffc57ea05b3823dfd0a956c02391d22ee65b4a4"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `user' for #<Class:0x007fec141fde68>):
+  app/models/user.rb:13:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-29 15:23:50 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 68ms (Views: 46.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:23:52 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:23:52 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQCv_wl1raIYWqN01Pc1b7artZS0ViwtekPriLj9dtWsStNgFTTsM6y0HN41Zo3ke_zd-LOJtVCsioDKb5Uw0arJahkKkprotg44bZ4Q9OQ_42lzUxrB8ACn9kJQBwMMGWm4fABCMMZ8dgjqyym4KjnyO-39q5WyIth2xLCsuMs4zAudTQBK1fm-LQM1vHIDbJnoKmzvIcBBj17H8Sq6JT1XhSOvXyV8lwIcn5CnH6a80ICjWGly4uEQPKjJuSUMbcJur7XKDMVU-U6hN3UVKAM3BlfP-5ZW5fhWl1MtfXxtcZRsUvACAcpFSB3K7LxQA5qjqoCSLooQTf3HEgffs7Y3&state=c5cc8634ec511fe7c5ba2a0ab40bf458676681e327b00b60" for 127.0.0.1 at 2016-02-29 15:23:52 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCv_wl1raIYWqN01Pc1b7artZS0ViwtekPriLj9dtWsStNgFTTsM6y0HN41Zo3ke_zd-LOJtVCsioDKb5Uw0arJahkKkprotg44bZ4Q9OQ_42lzUxrB8ACn9kJQBwMMGWm4fABCMMZ8dgjqyym4KjnyO-39q5WyIth2xLCsuMs4zAudTQBK1fm-LQM1vHIDbJnoKmzvIcBBj17H8Sq6JT1XhSOvXyV8lwIcn5CnH6a80ICjWGly4uEQPKjJuSUMbcJur7XKDMVU-U6hN3UVKAM3BlfP-5ZW5fhWl1MtfXxtcZRsUvACAcpFSB3K7LxQA5qjqoCSLooQTf3HEgffs7Y3", "state"=>"c5cc8634ec511fe7c5ba2a0ab40bf458676681e327b00b60"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "1566888903626698"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["provider", "facebook"], ["uid", "1566888903626698"], ["email", "khanitskiy@gmail.com"], ["encrypted_password", "$2a$10$0F08w0fDzkQFRbkkbRpmU.OfQ1beh30zCOBbIXJVSmyl151LMyO3a"], ["firstname", nil], ["image", "http://graph.facebook.com/1566888903626698/picture"], ["created_at", "2016-02-29 13:23:53.180431"], ["updated_at", "2016-02-29 13:23:53.180431"]]
+PG::NotNullViolation: ОШИБКА:  нулевое значение в колонке "firstname" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (4, khanitskiy@gmail.com, $2a$10$0F08w0fDzkQFRbkkbRpmU.OfQ1beh30zCOBbIXJVSmyl151LMyO3a, null, , null, null, null, 0, null, null, null, null, 2016-02-29 13:23:53.180431, 2016-02-29 13:23:53.180431, null, facebook, 1566888903626698, http://graph.facebook.com/1566888903626698/picture).
+: INSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 1.9ms)
+
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ОШИБКА:  нулевое значение в колонке "firstname" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (4, khanitskiy@gmail.com, $2a$10$0F08w0fDzkQFRbkkbRpmU.OfQ1beh30zCOBbIXJVSmyl151LMyO3a, null, , null, null, null, 0, null, null, null, null, 2016-02-29 13:23:53.180431, 2016-02-29 13:23:53.180431, null, facebook, 1566888903626698, http://graph.facebook.com/1566888903626698/picture).
+: INSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"):
+  app/models/user.rb:14:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (33.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-29 15:24:30 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 42ms (Views: 27.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:24:31 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:24:31 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQDS733mACe8u2lMwKZ01HocRqs4BxkGvKkZTECMPcIIkS8jR5TCLlb87rJGwYlaKRI2xucWBHv68hF4JZFmaBmGEop9OLAbyGc9pmiCbtQZjtdTb3bzb5NLAXR-vuxUCH4L8OzoZ9AXyYfy0i918CvDcUmS7qW7r6H5P02riK5uzZecM2hn2zn3cJTS0KPQHJCqJ28K3Pxk1MNm-Wl_zdBVxHmX8eoo_pnbVr0ymuWJ39nKP7lXXAo_aGvnVXusQaob3v5iiU5qKduGvewnH7UABin5TSykPU-TbqG9mlc4NDbistSuRjrbnZ9oQnwn63SDa-JwWkroQfY4aKlpKh1h&state=866fc1c77a5766145e04313b2aab0ca9e2bcd8f2a989878c" for 127.0.0.1 at 2016-02-29 15:24:31 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDS733mACe8u2lMwKZ01HocRqs4BxkGvKkZTECMPcIIkS8jR5TCLlb87rJGwYlaKRI2xucWBHv68hF4JZFmaBmGEop9OLAbyGc9pmiCbtQZjtdTb3bzb5NLAXR-vuxUCH4L8OzoZ9AXyYfy0i918CvDcUmS7qW7r6H5P02riK5uzZecM2hn2zn3cJTS0KPQHJCqJ28K3Pxk1MNm-Wl_zdBVxHmX8eoo_pnbVr0ymuWJ39nKP7lXXAo_aGvnVXusQaob3v5iiU5qKduGvewnH7UABin5TSykPU-TbqG9mlc4NDbistSuRjrbnZ9oQnwn63SDa-JwWkroQfY4aKlpKh1h", "state"=>"866fc1c77a5766145e04313b2aab0ca9e2bcd8f2a989878c"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "1566888903626698"]]
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 0.6ms)
+
+NoMethodError (undefined method `first_name=' for #<User:0x007fec1b57a3c8>):
+  app/models/user.rb:16:in `block in from_omniauth'
+  app/models/user.rb:13:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (32.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-29 15:24:58 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 51ms (Views: 37.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:25:00 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:25:00 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQDULfFk_XFTjb7AhwFyBdC0ufT0MQxbMfigZ5AxGnD9uswhCJRNR4P6Xe9jd6EvqZkOgvnsGV8SbZPRLrpnrLIjByMRrlqDae-REQFTFhSEKCCjzcI8gdnTZEw8l_9SWRxCTddmhua9X8-eBW0l13_hGYcLQ9j901owHDXmxjAyMI5gBCL_bzCpZZamHhulP1PkQI7S5LEE5c6d-DRfdtYH8K3p6jVilgnldrCWL3ZAE_-yyzkHu9EtyCmyt-txbzfblsM8NvrFyiWqgUjtz9qHuwe5EtNaRKFDMZfJ-0l9ywS5Lpk9pT_nFqT0ifeRGNVdC59nlLnJiRR7yC4AxRdo&state=30ea954fd22faa83775bf0b50c1f8a64bcff20992b06acbd" for 127.0.0.1 at 2016-02-29 15:25:00 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDULfFk_XFTjb7AhwFyBdC0ufT0MQxbMfigZ5AxGnD9uswhCJRNR4P6Xe9jd6EvqZkOgvnsGV8SbZPRLrpnrLIjByMRrlqDae-REQFTFhSEKCCjzcI8gdnTZEw8l_9SWRxCTddmhua9X8-eBW0l13_hGYcLQ9j901owHDXmxjAyMI5gBCL_bzCpZZamHhulP1PkQI7S5LEE5c6d-DRfdtYH8K3p6jVilgnldrCWL3ZAE_-yyzkHu9EtyCmyt-txbzfblsM8NvrFyiWqgUjtz9qHuwe5EtNaRKFDMZfJ-0l9ywS5Lpk9pT_nFqT0ifeRGNVdC59nlLnJiRR7yC4AxRdo", "state"=>"30ea954fd22faa83775bf0b50c1f8a64bcff20992b06acbd"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "1566888903626698"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["provider", "facebook"], ["uid", "1566888903626698"], ["email", "khanitskiy@gmail.com"], ["encrypted_password", "$2a$10$5iZK4G.XQAy0bWDR3TZcSe8nGeB7N7TRdipQBBaO47C5Fk1uTV6t6"], ["firstname", "Khanitskiy"], ["image", "http://graph.facebook.com/1566888903626698/picture"], ["created_at", "2016-02-29 13:25:01.218144"], ["updated_at", "2016-02-29 13:25:01.218144"]]
+  [1m[35m (16.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2016-02-29 13:25:01.237265"], ["current_sign_in_at", "2016-02-29 13:25:01.237265"], ["last_sign_in_ip", "127.0.0.1/32"], ["current_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2016-02-29 13:25:01.238153"], ["id", 5]]
+  [1m[36m (7.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 130ms (ActiveRecord: 26.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:25:01 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:26:28 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `first_name' for #<User:0x007fec140f9d78>):
+    32:       </form>
+    33:       <ul class="nav navbar-nav navbar-right">
+    34:         <% if user_signed_in? %>
+    35:           <span style="padding-top: 11px; color: green; font-weight: bold"><%= current_user.first_name %></span>
+    36:           <% if current_user.admin? %>
+    37:             <li><%= link_to "Admin panel", rails_admin.dashboard_path %></li>
+    38:           <% end %> 
+  app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb___1927203029463963562_70325964449280'
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:26:39 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-29 15:26:40 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-29 15:26:40 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-29 15:26:40 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-29 15:26:40 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-29 15:26:40 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 15:26:40 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-29 15:26:40 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-29 15:26:40 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-29 15:26:40 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:26:57 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-29 15:26:57 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-29 15:26:57 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-29 15:26:57 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-29 15:26:57 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-29 15:26:57 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-29 15:26:57 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 15:26:57 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-29 15:26:57 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-29 15:26:57 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:27:04 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-29 15:27:04 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-29 15:27:04 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-29 15:27:04 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-29 15:27:04 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-29 15:27:04 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-29 15:27:04 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 15:27:04 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-29 15:27:04 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-29 15:27:04 +0200
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-02-29 15:27:06 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NoGkJsq51H8uvLvEqTE2zThYrlOPL1KLA/xU8Sm7ma1FTRINgDYtxNNeX68MjCEZpLIAqzFHRGvwBi3S4jvNaQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:27:06 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 33ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:27:19 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-29 15:27:19 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-29 15:27:19 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-29 15:27:19 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-29 15:27:19 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-29 15:27:19 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-29 15:27:19 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 15:27:19 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-29 15:27:19 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-29 15:27:19 +0200
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-29 15:27:20 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:27:21 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:27:21 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQCXvvWIhuT2CQavnk_hBpwwT34-pTWK9bjXRP8z5War6r6afe_BMxuzc7wuoT_HBOZKF6fLWUrD996nwreGH4h3ljkCxS390Xohp4QDYgQvlJCG-KdwCNGChiM2PjzCUrgJxKCTtV1FBMFedBvg2JDY9eOO_9CEPBmi6F1cfLIC78vTQ26yjBdYy-YfpuObXtSurhN1dgCjNHeF9oyUPzEpv5riKxeM4K9ZiQA6jIT_9kNZ6AhSROXE2Mxb2ajK9hE7yZqVQTR0qbOJUn4sOvFyRmeQgirImHtd4IzaQIlRnKNBmUoK9oby-4Pgsncf59_FxPLyEEoxSJ1C4pnBlmW9&state=3c90d38f5d3981bfd775820b49089da092746f7b63a784f4" for 127.0.0.1 at 2016-02-29 15:27:21 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCXvvWIhuT2CQavnk_hBpwwT34-pTWK9bjXRP8z5War6r6afe_BMxuzc7wuoT_HBOZKF6fLWUrD996nwreGH4h3ljkCxS390Xohp4QDYgQvlJCG-KdwCNGChiM2PjzCUrgJxKCTtV1FBMFedBvg2JDY9eOO_9CEPBmi6F1cfLIC78vTQ26yjBdYy-YfpuObXtSurhN1dgCjNHeF9oyUPzEpv5riKxeM4K9ZiQA6jIT_9kNZ6AhSROXE2Mxb2ajK9hE7yZqVQTR0qbOJUn4sOvFyRmeQgirImHtd4IzaQIlRnKNBmUoK9oby-4Pgsncf59_FxPLyEEoxSJ1C4pnBlmW9", "state"=>"3c90d38f5d3981bfd775820b49089da092746f7b63a784f4"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "1566888903626698"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["current_sign_in_at", "2016-02-29 13:27:22.424040"], ["sign_in_count", 2], ["updated_at", "2016-02-29 13:27:22.427499"], ["id", 5]]
+  [1m[36m (23.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 38ms (ActiveRecord: 25.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:27:22 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (34.4ms)[0m  DELETE FROM "users"
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "users"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "users"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "users"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "firstname", "lastname", "admin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "admin@gmail.com"], ["encrypted_password", "$2a$10$pbTxFryKUNMP/BR0ZS4wtuW4IUQynAb.eoqAnP.FdceX/e7BxR1pi"], ["firstname", "Admin"], ["lastname", "Adminovitch"], ["admin", "t"], ["created_at", "2016-02-29 13:31:10.775753"], ["updated_at", "2016-02-29 13:31:10.775753"]]
+  [1m[35m (24.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (140.9ms)[0m  DELETE FROM "users"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "firstname", "lastname", "admin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "admin@gmail.com"], ["encrypted_password", "$2a$10$sg.SP/j3o2GVflJfKoF1JO3DIilD5GouZw4nTjHBZDBczFBkqF0ou"], ["firstname", "Admin"], ["lastname", "Adminovitch"], ["admin", "t"], ["created_at", "2016-02-29 13:31:30.687917"], ["updated_at", "2016-02-29 13:31:30.687917"]]
+  [1m[35m (16.4ms)[0m  COMMIT
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:31:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+Completed 200 OK in 411ms (Views: 392.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-29 15:31:44 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 83ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:31:45 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:31:45 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQAvCr7_pO2mlCqEhR3_3Egb5qhJujz9MAbbBANHoYRiZtkqyo1I7HubZDl144JnZ6013mUsw8ln2xTxHY5YFOZIpGcKFpo9oRGxlgu45usvGaTGTIDAtN1f_DdeAcCT5jOYyDUzB6NEjhiYBBVfrkaOw8s2aLPA3MX1CC7Ns2GYMdRLiXqc1bz3XbKbYiG-EsfktATo8UxR1DhEYqXxKtuFZsRCN0OtOPyT55HAG6Q4noJtq1PbtuUXs34Y_pikjIHPB4vVS43-Lyar5LEzybXHy7BjZAdJLOVl0uDHj10H30YvN2Zwn-MeZLBdgMJQCuPKIbgbBWafWlG51UPuJXbB&state=e3ebcd2489909482acbd08482c37ed7ea5cfbd9b136392a1" for 127.0.0.1 at 2016-02-29 15:31:45 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAvCr7_pO2mlCqEhR3_3Egb5qhJujz9MAbbBANHoYRiZtkqyo1I7HubZDl144JnZ6013mUsw8ln2xTxHY5YFOZIpGcKFpo9oRGxlgu45usvGaTGTIDAtN1f_DdeAcCT5jOYyDUzB6NEjhiYBBVfrkaOw8s2aLPA3MX1CC7Ns2GYMdRLiXqc1bz3XbKbYiG-EsfktATo8UxR1DhEYqXxKtuFZsRCN0OtOPyT55HAG6Q4noJtq1PbtuUXs34Y_pikjIHPB4vVS43-Lyar5LEzybXHy7BjZAdJLOVl0uDHj10H30YvN2Zwn-MeZLBdgMJQCuPKIbgbBWafWlG51UPuJXbB", "state"=>"e3ebcd2489909482acbd08482c37ed7ea5cfbd9b136392a1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "1566888903626698"]]
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `last_name=' for #<User:0x007f7234c1f7e8>):
+  app/models/user.rb:17:in `block in from_omniauth'
+  app/models/user.rb:13:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.6ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.5ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (25.7ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/han/.rvm/gems/ruby-2.2.2@BookStore/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-29 15:31:59 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 51ms (Views: 31.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:32:01 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:32:01 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQC5D757oD8YYY0oAeTyh1VaxLk2ZT1PPLBbN-n3UGkb0inFkI0aNGVdWX9SDVn41GeDFPFTlY5N4eQUTGKd4ojdQbu_UTa62phulq7fH8exlHVPe2L-Wvy-n8k772mvtMgYUekpqFRpxTWld47wqq50LkIVm2tI_kyLcty_qJadK2DqPWxL94eYH8FrpiMxlLepCQzfjBBN0-QTZX-CL3bmlEAIYS28YorQAob3NtBhZDqOPVX6OOWMnnkL4fduZRHk7zlnOHEGoUI7ZcYskkJZKNTBWJmunAhUltBpQ6eDCFv9FZwGRFYoWQcfAKibCly8Kaw86tMv95hrD9u0Thxu&state=172f8a0624206cedc5f0add5d6755a5e74b09a745ca11c26" for 127.0.0.1 at 2016-02-29 15:32:01 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQC5D757oD8YYY0oAeTyh1VaxLk2ZT1PPLBbN-n3UGkb0inFkI0aNGVdWX9SDVn41GeDFPFTlY5N4eQUTGKd4ojdQbu_UTa62phulq7fH8exlHVPe2L-Wvy-n8k772mvtMgYUekpqFRpxTWld47wqq50LkIVm2tI_kyLcty_qJadK2DqPWxL94eYH8FrpiMxlLepCQzfjBBN0-QTZX-CL3bmlEAIYS28YorQAob3NtBhZDqOPVX6OOWMnnkL4fduZRHk7zlnOHEGoUI7ZcYskkJZKNTBWJmunAhUltBpQ6eDCFv9FZwGRFYoWQcfAKibCly8Kaw86tMv95hrD9u0Thxu", "state"=>"172f8a0624206cedc5f0add5d6755a5e74b09a745ca11c26"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "1566888903626698"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "lastname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["provider", "facebook"], ["uid", "1566888903626698"], ["email", "khanitskiy@gmail.com"], ["encrypted_password", "$2a$10$wVjeP0ZjNmWPrrZa.eDob.ARoaB3XirMETsx0smPpvWaTSEwUdYgq"], ["firstname", "Dmitriy"], ["lastname", "Khanitskiy"], ["image", "http://graph.facebook.com/1566888903626698/picture"], ["created_at", "2016-02-29 13:32:02.668640"], ["updated_at", "2016-02-29 13:32:02.668640"]]
+  [1m[35m (19.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2016-02-29 13:32:02.691855"], ["current_sign_in_at", "2016-02-29 13:32:02.691855"], ["last_sign_in_ip", "127.0.0.1/32"], ["current_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2016-02-29 13:32:02.693238"], ["id", 8]]
+  [1m[36m (17.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 134ms (ActiveRecord: 39.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:32:02 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:32:30 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 55ms (Views: 53.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-29 15:32:30 +0200
+
+
+Started GET "/assets/custom.self-2f82b08e21b95146309766a70b27852632bbc15015be99b068d3a0842170ea77.css?body=1" for 127.0.0.1 at 2016-02-29 15:32:30 +0200
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 127.0.0.1 at 2016-02-29 15:32:30 +0200
+
+
+Started GET "/assets/bootstrap-alert.self-f7e5fbe0b23f896f20ebe28925e5f885f9c311d812b352b36fea9df5cd61fc02.js?body=1" for 127.0.0.1 at 2016-02-29 15:32:30 +0200
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 15:32:30 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-29 15:32:30 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-29 15:32:30 +0200
+
+
+Started GET "/assets/application.self-71861763f9d670d93caf72d3dcf2f25d7814d997003afdbac8fbf759c0659713.js?body=1" for 127.0.0.1 at 2016-02-29 15:32:30 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-29 15:32:30 +0200
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-02-29 15:32:33 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Q0eFzbenkBGS4GOZe2U7LZvGNJN51bF+c6axcepOZ573HWedPR75VQjWD9oIJYFmWV3S0MmYW9wqtbRJa4HVwA=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:32:33 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (86.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (73.5ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAuthors (20160220093423)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (74.1ms)[0m  [1mCREATE TABLE "authors" ("id" serial primary key, "firstname" character varying, "lastname" character varying, "biography" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220093423"]]
+  [1m[36m (28.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateBooks (20160220115101)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (72.7ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying, "description" text, "price" decimal, "in_stock" integer, "rating" decimal, "author_id" integer, "category_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (30.7ms)[0m  CREATE  INDEX  "index_books_on_author_id" ON "books"  ("author_id")
+  [1m[36m (30.4ms)[0m  [1mCREATE  INDEX  "index_books_on_category_id" ON "books"  ("category_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220115101"]]
+  [1m[36m (21.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCategories (20160220115125)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (108.8ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220115125"]]
+  [1m[36m (19.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRatings (20160220115140)
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (87.7ms)[0m  [1mCREATE TABLE "ratings" ("id" serial primary key, "text_review" character varying, "rating" integer, "book_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (41.5ms)[0m  CREATE  INDEX  "index_ratings_on_book_id" ON "ratings"  ("book_id")
+  [1m[36m (87.8ms)[0m  [1mCREATE  INDEX  "index_ratings_on_user_id" ON "ratings"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220115140"]]
+  [1m[36m (27.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateOrders (20160220131137)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (98.8ms)[0m  [1mCREATE TABLE "orders" ("id" serial primary key, "total_price" decimal, "completed_date" date, "state" integer DEFAULT 1, "billing_address" character varying, "shipping_address" character varying, "user_id" integer, "credit_card_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (86.2ms)[0m  CREATE  INDEX  "index_orders_on_user_id" ON "orders"  ("user_id")
+  [1m[36m (41.5ms)[0m  [1mCREATE  INDEX  "index_orders_on_credit_card_id" ON "orders"  ("credit_card_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220131137"]]
+  [1m[36m (26.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateOrderItems (20160220131202)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (124.9ms)[0m  [1mCREATE TABLE "order_items" ("id" serial primary key, "price" decimal, "quantity" character varying, "book_id" integer, "order_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (41.3ms)[0m  CREATE  INDEX  "index_order_items_on_book_id" ON "order_items"  ("book_id")
+  [1m[36m (42.5ms)[0m  [1mCREATE  INDEX  "index_order_items_on_order_id" ON "order_items"  ("order_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220131202"]]
+  [1m[36m (24.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAddresses (20160220131221)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (115.3ms)[0m  [1mCREATE TABLE "addresses" ("id" serial primary key, "address" character varying, "zipcode" integer, "city" character varying, "phone" character varying, "country" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220131221"]]
+  [1m[36m (23.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCountries (20160220131228)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (102.5ms)[0m  [1mCREATE TABLE "countries" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160220131228"]]
+  [1m[36m (22.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCreditCards (20160220131238)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (117.1ms)[0m  [1mCREATE TABLE "credit_cards" ("id" serial primary key, "number" integer, "cvv" integer, "expiration_month" integer, "expiration_year" integer, "firstname" character varying, "lastname" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (30.3ms)[0m  CREATE  INDEX  "index_credit_cards_on_user_id" ON "credit_cards"  ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160220131238"]]
+  [1m[35m (20.8ms)[0m  COMMIT
+Migrating to AddDeviseToUsers (20160226105754)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (137.8ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "firstname" character varying DEFAULT '' NOT NULL, "lastname" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (41.5ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (41.8ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160226105754"]]
+  [1m[35m (19.8ms)[0m  COMMIT
+Migrating to AddAdminToUsers (20160226111028)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "admin" boolean
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160226111028"]]
+  [1m[35m (16.9ms)[0m  COMMIT
+Migrating to AddOmniauthToUsers (20160229130520)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "provider" character varying
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "uid" character varying[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "image" character varying
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160229130520"]]
+  [1m[35m (15.7ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'addresses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'authors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'books'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'countries'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'credit_cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'order_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'ratings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:38:24 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 534ms (Views: 516.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-29 15:38:26 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 87ms (Views: 55.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:38:27 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-29 15:38:27 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQBHYx7jBpRWScllvliPLE-xTe4OasNcjtjCtbxenDO2WdVvdO36O0rZS952oOT5Fmzcrllw7_QurPs9CEZ4cwnoLKm3VpOL_AHwfrnLXMLlzWc8D-dACwmGCbOa-GfXwiadPWhfoNGOlsNk1KUK-gofpvCsvcq5rgkCIqzwGgxC-95b0oJX6zGxbPzxZAjwBoQXR02_rO0A36shkSXYhDPMc4uxT4yV3sFwRTl3QbmNQTQxdGx2TV_-M-rKM7wY6w001hD9Ii0Jv2YnSFTXsirB79iGXVWEjNYvdHIVP0OCPa9Rd11gpcL4wIu8FP9C3Uh69nyVVvpMmz_qGdx_q_b_&state=de507cca5b9e1e8ed1c84d4a6a1c2eb5507235a3d783ee72" for 127.0.0.1 at 2016-02-29 15:38:28 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBHYx7jBpRWScllvliPLE-xTe4OasNcjtjCtbxenDO2WdVvdO36O0rZS952oOT5Fmzcrllw7_QurPs9CEZ4cwnoLKm3VpOL_AHwfrnLXMLlzWc8D-dACwmGCbOa-GfXwiadPWhfoNGOlsNk1KUK-gofpvCsvcq5rgkCIqzwGgxC-95b0oJX6zGxbPzxZAjwBoQXR02_rO0A36shkSXYhDPMc4uxT4yV3sFwRTl3QbmNQTQxdGx2TV_-M-rKM7wY6w001hD9Ii0Jv2YnSFTXsirB79iGXVWEjNYvdHIVP0OCPa9Rd11gpcL4wIu8FP9C3Uh69nyVVvpMmz_qGdx_q_b_", "state"=>"de507cca5b9e1e8ed1c84d4a6a1c2eb5507235a3d783ee72"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "1566888903626698"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'khanitskiy@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "firstname", "lastname", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["provider", "facebook"], ["uid", "1566888903626698"], ["email", "khanitskiy@gmail.com"], ["encrypted_password", "$2a$10$TnpfvUH0Lwyk5s5hoxDYTenY4LzzuNZC.QnqM9oyJ1SL/jpO1QABy"], ["firstname", "Dmitriy"], ["lastname", "Khanitskiy"], ["image", "http://graph.facebook.com/1566888903626698/picture"], ["created_at", "2016-02-29 13:38:28.808835"], ["updated_at", "2016-02-29 13:38:28.808835"]]
+  [1m[35m (18.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2016-02-29 13:38:28.830062"], ["current_sign_in_at", "2016-02-29 13:38:28.830062"], ["last_sign_in_ip", "127.0.0.1/32"], ["current_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2016-02-29 13:38:28.831211"], ["id", 1]]
+  [1m[36m (18.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 169ms (ActiveRecord: 39.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:38:28 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-02-29 15:38:30 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NPeHqkfxKGLB3Vt+oEES/2Mudn5um7ztNumo8vOuqGuJz8gHr7JWb24IoEOUV4+DjYzbiaheKtJCYKnu9u8hAg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 15:38:31 +0200
+Processing by BooksController#home as HTML
+  Rendered books/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.0ms)

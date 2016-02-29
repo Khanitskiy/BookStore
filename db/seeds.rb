@@ -8,5 +8,5 @@
 
 
 # create first admin user
-#User.delete_all
-#User.create(email: "admin@gmail.com", password: "admin", firstname: "Dmitriy", lastname: "Khanitskiy", admin: true)
+User.delete_all
+User.create(email: "admin@gmail.com", password: "80966373139", firstname: "Admin", lastname: "Adminovitch", admin: true)
