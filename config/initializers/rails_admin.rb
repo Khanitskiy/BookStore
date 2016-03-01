@@ -8,19 +8,26 @@ RailsAdmin.config do |config|
   config.authorize_with :cancan 
   #TODO add cancancan to rails_admin config
 
-  config.model User do
-    update do
-      field :firstname
-      field :lastname
-      field :admin do
+  config.model 'User' do
+    edit do
+      configure :facebook_image do
         visible do
-          current_user.admin == 'true'
+          #user = User.find(params['id'])
+          #user.provider == 'facebook'
+          true
         end
       end
     end
   end
 
+  #def get_params_id(original_url)
+  #  uri_string = URI::parse(uri)
+  #  id = uri_string.path.split('/')[3]
+  #end
 
+  #def original_url
+  #  base_url + original_fullpath
+  #end
 
   ### Popular gems integration
 

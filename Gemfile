@@ -21,6 +21,7 @@ gem 'cancan'
 gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'ckeditor'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
