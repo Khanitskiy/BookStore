@@ -5,7 +5,23 @@ RailsAdmin.config do |config|
   end
   config.current_user_method(&:current_user)
 
-  config.authorize_with :cancan #TODO add cancancan to rails_admin config
+  config.authorize_with :cancan 
+  #TODO add cancancan to rails_admin config
+
+  config.model User do
+    update do
+      field :firstname
+      field :lastname
+      field :admin do
+        visible do
+          current_user.admin == 'true'
+        end
+      end
+    end
+  end
+
+
+
   ### Popular gems integration
 
   ## == Devise ==

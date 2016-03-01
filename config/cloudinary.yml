@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dpxmeadjo
+  api_key: '762965291683792'
+  api_secret: xBrCoY_3hFcZinpJJvwuOnvV_0o
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dpxmeadjo
+  api_key: '762965291683792'
+  api_secret: xBrCoY_3hFcZinpJJvwuOnvV_0o
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dpxmeadjo
+  api_key: '762965291683792'
+  api_secret: xBrCoY_3hFcZinpJJvwuOnvV_0o
+  enhance_image_tag: true
+  static_image_support: false
