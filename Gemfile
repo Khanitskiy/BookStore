@@ -22,6 +22,8 @@ gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'ckeditor'
+gem 'rails-jcarousel'
+gem 'owlcarousel-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

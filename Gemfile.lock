@@ -156,6 +156,8 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
+    owlcarousel-rails (1.1.3.3)
+      jquery-rails
     pg (0.18.4)
     rack (1.6.4)
     rack-pjax (0.8.0)
@@ -182,6 +184,7 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-jcarousel (1.2.2)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
@@ -298,8 +301,10 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-facebook
+  owlcarousel-rails
   pg
   rails (= 4.2.1)
+  rails-jcarousel
   rails_12factor
   rails_admin
   rspec-collection_matchers
