@@ -6,82 +6,31 @@ Welcome to our amazing Bookstore!
 
 
 		<div id="owl-demo" class="owl-carousel home-page-slider owl-theme">
- 			<div class="container">
-				<div class="row">
-				  <div class="item">
-				  	<div class="row">
-					  	<div class="col-md-3">
-					  		<%= cl_image_tag("bqykxikw4vojmwojt7nj.png", :width => 290, :height => 435) %>
-					  	</div>
-					  	<div class="col-md-5">
-						  	<h2>
-									<a href="/books/11">Ukraine (Bradt Travel Guides)
-									</a><br>
-									<small>by Andrew  Evans</small>
-								</h2>
-						  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ratione exercitationem soluta, quod iste odit voluptatibus nulla provident, harum libero est, ullam expedita deserunt sint illo aliquid veritatis aperiam qui?</p>
-					  		<div class="price">$43.00</div>
-								<%= form_tag("/orders/add_to_order", method: "put") do %>
-                  <%= number_field_tag 'quantity', "1", within: 1...10, class: 'quantity-input' %>
-                  <%#= hidden_field_tag 'book_id', book.id %>
-                  <%= submit_tag "ADD TO CART", class: 'btn btn-primary'  %>
-                <% end %>
-					  	</div>
+ 			<% @bestsellers.each do |bestseller| %>
+	 			<div class="container">
+					<div class="row">
+					  <div class="item">
+					  	<div class="row">
+						  	<div class="col-md-3">
+						  		<img src="<%= bestseller.image.my_resize %>"  />
+						  	</div>
+						  	<div class="col-md-5">
+							  	<h2>
+										<a href="/books/<%= bestseller.id %>"><%= bestseller.title %>
+										</a><br>
+										<small>by Andrew  Evans</small>
+									</h2>
+							  	<p><%= bestseller.description %></p>
+						  		<div class="price">$<%= bestseller.price %></div>
+									<%= form_tag("/orders/add_to_order", method: "put") do %>
+	                  <%= number_field_tag 'quantity', "1", within: 1...10, class: 'quantity-input' %>
+	                  <%#= hidden_field_tag 'book_id', book.id %>
+	                  <%= submit_tag "ADD TO CART", class: 'btn btn-primary'  %>
+	                <% end %>
+						  	</div>
+						  </div>
 					  </div>
-				  </div>
+					</div>
 				</div>
-			</div>
-
-			<div class="container">
-				<div class="row">
-				  <div class="item">
-				  	<div class="row">
-					  	<div class="col-md-3">
-					  		<%= cl_image_tag("bqykxikw4vojmwojt7nj.png", :width => 290, :height => 435) %>
-					  	</div>
-					  	<div class="col-md-5">
-						  	<h2>
-									<a href="/books/11">Ukraine (Bradt Travel Guides)
-									</a><br>
-									<small>by Andrew  Evans</small>
-								</h2>
-						  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ratione exercitationem soluta, quod iste odit voluptatibus nulla provident, harum libero est, ullam expedita deserunt sint illo aliquid veritatis aperiam qui?</p>
-					  		<div class="price">$43.00</div>
-								<%= form_tag("/orders/add_to_order", method: "put") do %>
-                  <%= number_field_tag 'quantity', "1", within: 1...10, class: 'quantity-input' %>
-                  <%#= hidden_field_tag 'book_id', book.id %>
-                  <%= submit_tag "ADD TO CART", class: 'btn btn-primary'  %>
-                <% end %>
-					  	</div>
-					  </div>
-				  </div>
-				</div>
-			</div>
-
-			<div class="container">
-				<div class="row">
-				  <div class="item">
-				  	<div class="row">
-					  	<div class="col-md-3">
-					  		<%= cl_image_tag("bqykxikw4vojmwojt7nj.png", :width => 290, :height => 435) %>
-					  	</div>
-					  	<div class="col-md-5">
-						  	<h2>
-									<a href="/books/11">Ukraine (Bradt Travel Guides)
-									</a><br>
-									<small>by Andrew  Evans</small>
-								</h2>
-						  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ratione exercitationem soluta, quod iste odit voluptatibus nulla provident, harum libero est, ullam expedita deserunt sint illo aliquid veritatis aperiam qui?</p>
-					  		<div class="price">$43.00</div>
-								<%= form_tag("/orders/add_to_order", method: "put") do %>
-                  <%= number_field_tag 'quantity', "1", within: 1...10, class: 'quantity-input' %>
-                  <%#= hidden_field_tag 'book_id', book.id %>
-                  <%= submit_tag "ADD TO CART", class: 'btn btn-primary'  %>
-                <% end %>
-					  	</div>
-					  </div>
-				  </div>
-				</div>
-			</div>
-
+			<% end %>
 		</div>

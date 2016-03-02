@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20160302131617) do
     t.integer  "category_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "image"
+    t.text     "image"
     t.integer  "order_counter"
     t.boolean  "best_seller"
   end

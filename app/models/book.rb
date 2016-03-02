@@ -13,4 +13,9 @@ class Book < ActiveRecord::Base
 
   mount_uploader :image, BookImgUploader
 
+
+  def self.bestsellers
+    where("best_seller = 'true'")
+  end
+
 end
