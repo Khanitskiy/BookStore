@@ -1,9 +1,21 @@
 class BooksController < ApplicationController
+	load_and_authorize_resource
+	skip_authorize_resource :only => :home
+
   def home
-  	#@books = Book.find_each(best_seller: true)
   	@bestsellers = Book.bestsellers
   end
 
-  def shop
+  def index
+  	@categories = Category.all
   end
+
+  def show
+  	@book = Book.get_book(params[:id])
+  end
+
+  def search
+
+  end
+
 end

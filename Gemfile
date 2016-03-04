@@ -17,13 +17,15 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'devise'
 gem 'rails_admin'
-gem 'cancan'
+gem 'cancancan', '~> 1.10'
 gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'ckeditor'
 gem 'rails-jcarousel'
 gem 'owlcarousel-rails'
+gem 'pg_search'
+gem "breadcrumbs_on_rails"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -48,7 +50,7 @@ group :development, :test do
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '= 2.2.1' 
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

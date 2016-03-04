@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li <%= cp(root_path) %>><%= link_to "HOME", root_path %></li>
-        <li <%= cp(shop_path) %>><%= link_to "SHOP", shop_path %></li>
+        <li <%= cp(books_path) %>><%= link_to "SHOP", books_path %></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -75,9 +75,19 @@
   
 </div>
 
-
 <div class="container">
+<% unless render_breadcrumbs == "" %>
+<ol class="breadcrumb">
+   <%= render_breadcrumbs :tag => :li, :separator => "" %>
+</ol>
+<% end %>
+
   <%= yield %>
+
 </div>
+
+<%= p params %>
+    <br><br><br><br><br>
+
 </body>
 </html>

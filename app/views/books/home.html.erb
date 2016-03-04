@@ -12,12 +12,13 @@ Welcome to our amazing Bookstore!
 					  <div class="item">
 					  	<div class="row">
 						  	<div class="col-md-3">
-						  		<img src="<%= bestseller.image.my_resize %>"  />
+						  	  <%#= image_tag bestseller.image_url :my_resize %>
+						  		<!--<img src="<%= bestseller.image.my_resize %>"  />-->
+						  		<%= link_to "#{image_tag bestseller.image_url :my_resize}".html_safe, bestseller %>
 						  	</div>
 						  	<div class="col-md-5">
 							  	<h2>
-										<a href="/books/<%= bestseller.id %>"><%= bestseller.title %>
-										</a><br>
+										<h5><%= link_to bestseller.title, bestseller %></h5><br>
 										<small>by Andrew  Evans</small>
 									</h2>
 							  	<p><%= bestseller.description %></p>

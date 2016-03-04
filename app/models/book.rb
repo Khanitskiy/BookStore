@@ -1,4 +1,5 @@
 class Book < ActiveRecord::Base
+
 	validates :title, :price, :in_stock, presence: true
 	validates :price, numericality: { greater_than: 0 }
 	validates :in_stock, numericality: { only_integer: true, greater_than: 0 }
@@ -13,9 +14,12 @@ class Book < ActiveRecord::Base
 
   mount_uploader :image, BookImgUploader
 
-
   def self.bestsellers
     where("best_seller = 'true'")
+  end
+
+  def self.get_book(id)
+    find(id)
   end
 
 end

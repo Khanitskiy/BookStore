@@ -6387,3 +6387,49 @@ Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36m (442.0ms)[0m  [1mDROP DATABASE IF EXISTS "bookstore_test"[0m
+  [1m[35m (1895.8ms)[0m  CREATE DATABASE "bookstore_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (107.0ms)[0m  CREATE TABLE "addresses" ("id" serial primary key, "address" character varying, "zipcode" integer, "city" character varying, "phone" character varying, "country" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (119.6ms)[0m  [1mCREATE TABLE "authors" ("id" serial primary key, "firstname" character varying, "lastname" character varying, "biography" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (87.7ms)[0m  CREATE TABLE "books" ("id" serial primary key, "title" character varying, "description" text, "price" decimal, "in_stock" integer, "rating" decimal, "author_id" integer, "category_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image" text, "order_counter" integer, "best_seller" boolean) 
+  [1m[36m (63.3ms)[0m  [1mCREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")[0m
+  [1m[35m (63.2ms)[0m  CREATE  INDEX  "index_books_on_category_id" ON "books" USING btree ("category_id")
+  [1m[36m (131.4ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (109.0ms)[0m  CREATE TABLE "countries" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (109.0ms)[0m  [1mCREATE TABLE "credit_cards" ("id" serial primary key, "number" integer, "cvv" integer, "expiration_month" integer, "expiration_year" integer, "firstname" character varying, "lastname" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (52.6ms)[0m  CREATE  INDEX  "index_credit_cards_on_user_id" ON "credit_cards" USING btree ("user_id")
+  [1m[36m (98.1ms)[0m  [1mCREATE TABLE "order_items" ("id" serial primary key, "price" decimal, "quantity" character varying, "book_id" integer, "order_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (74.4ms)[0m  CREATE  INDEX  "index_order_items_on_book_id" ON "order_items" USING btree ("book_id")
+  [1m[36m (52.4ms)[0m  [1mCREATE  INDEX  "index_order_items_on_order_id" ON "order_items" USING btree ("order_id")[0m
+  [1m[35m (95.5ms)[0m  CREATE TABLE "orders" ("id" serial primary key, "total_price" decimal, "completed_date" date, "state" integer DEFAULT 1, "billing_address" character varying, "shipping_address" character varying, "user_id" integer, "credit_card_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (63.9ms)[0m  [1mCREATE  INDEX  "index_orders_on_credit_card_id" ON "orders" USING btree ("credit_card_id")[0m
+  [1m[35m (86.0ms)[0m  CREATE  INDEX  "index_orders_on_user_id" ON "orders" USING btree ("user_id")
+  [1m[36m (109.5ms)[0m  [1mCREATE TABLE "ratings" ("id" serial primary key, "text_review" character varying, "rating" integer, "book_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (64.2ms)[0m  CREATE  INDEX  "index_ratings_on_book_id" ON "ratings" USING btree ("book_id")
+  [1m[36m (63.1ms)[0m  [1mCREATE  INDEX  "index_ratings_on_user_id" ON "ratings" USING btree ("user_id")[0m
+  [1m[35m (139.9ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "firstname" character varying DEFAULT '' NOT NULL, "lastname" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "admin" boolean, "provider" character varying, "uid" character varying, "image" character varying, "facebook_image" character varying) 
+  [1m[36m (74.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (75.2ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (86.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (65.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (10.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160302131617')
+  [1m[36m (11.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160229130520')[0m
+  [1m[35m (11.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160220131228')
+  [1m[36m (11.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220131221')[0m
+  [1m[35m (10.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160220115101')
+  [1m[36m (11.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220115140')[0m
+  [1m[35m (11.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160301094923')
+  [1m[36m (11.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160229152315')[0m
+  [1m[35m (10.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160226105754')
+  [1m[36m (10.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220131238')[0m
+  [1m[35m (10.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160220131137')
+  [1m[36m (10.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220131202')[0m
+  [1m[35m (10.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160220115125')
+  [1m[36m (11.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160220093423')[0m
+  [1m[35m (10.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160226111028')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (25.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m

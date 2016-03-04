@@ -20,6 +20,18 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'Book' do
+    list do
+      field :title
+      field :price
+      field :in_stock
+      #field :rating
+      field :order_counter
+      field :best_seller
+      field :category
+      include_all_fields
+    end
+  end
   #def get_params_id(original_url)
   #  uri_string = URI::parse(uri)
   #  id = uri_string.path.split('/')[3]
