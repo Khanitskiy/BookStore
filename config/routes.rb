@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'books#home'
-  #get  'shop', to: 'books#index'
+  get  '/shop/search', to: 'books#search'
   resources :books, only: [:index, :show], path: '/shop'
   resources :categories, only: [:show], path: '/shop/category/'
 

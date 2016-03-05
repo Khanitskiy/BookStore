@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
+  include PgSearch
+  pg_search_scope :search_books, against: [:title]
 
 	validates :title, :price, :in_stock, presence: true
 	validates :price, numericality: { greater_than: 0 }
