@@ -1,3 +1,19 @@
 // Place all the styles related to the Books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.price {
+	float: left;
+	font-size: 30px;
+  width: 100px;
+}
+
+.order-form-wrap {
+	float: right
+}
+
+.book-description {
+	padding-top: 20px
+}
+
+.quantity-input {width: 50px; padding: 4px 10px;}

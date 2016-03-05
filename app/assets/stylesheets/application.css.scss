@@ -19,6 +19,8 @@
 @import "bootstrap";
 
 
+.clear {clear: both}
+
 #owl-demo {
 	padding-top: 30px;
 	width: 800px;
@@ -44,3 +46,4 @@
   .price {float: left; display:inline-block; margin-right: 20px; font-size: 23px;}
   .quantity-input {width: 50px; padding: 4px 10px;}
 }
+

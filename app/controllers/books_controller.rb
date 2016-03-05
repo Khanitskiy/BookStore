@@ -15,6 +15,7 @@ class BooksController < ApplicationController
   end
 
   def search
+    @categories = Category.all
     @books = Book.search_books(params[:value])
   end
 
