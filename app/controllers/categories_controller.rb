@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
 
 	def show
   	@categories = Category.all
-  	@books =  Category.all_book_category(params[:id])
+  	@books =  Category.all_book_category(params[:id]).page params[:page]
   	add_breadcrumb  Category.title_category(params[:id]), category_path(params[:id])
   end
 

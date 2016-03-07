@@ -7,6 +7,8 @@ class BooksController < ApplicationController
   end
 
   def index
+    #@users = User.order(:name).page params[:page]
+    @books = @books.page  params[:page]
   	@categories = Category.all
   end
 

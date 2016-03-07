@@ -26,6 +26,7 @@ gem 'rails-jcarousel'
 gem 'owlcarousel-rails'
 gem 'pg_search'
 gem "breadcrumbs_on_rails"
+gem 'kaminari'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
