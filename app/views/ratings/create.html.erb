@@ -10,7 +10,7 @@
 				<% end %>
 		</div>
 		<span class="comment_title">Not sure if this is the best book to start!</span>
-		<span class="comment_date">October 4, 2009</span>
+		<span class="comment_date"><%= @last_comment.created_at.strftime("%b %d, %Y") %></span>
 	</div>
 	<div class="comment_user_name">by <a href="#"><%= @this_user.firstname << ' ' << @this_user.lastname %></a></div>
 	<div class="media">
