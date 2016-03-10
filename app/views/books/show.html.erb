@@ -14,3 +14,94 @@
 	<div class="clear"></div>
 	<div class="book-description"><%= @book.description %></div>
 </div>
+
+<div class="clear"></div>
+<div class="row reviews clearfix">
+	<div class="col-md-3">
+	<h2>Reviews</h2>
+	</div>
+	<div class="col-md-9 add-review-lnk">
+	<% if current_user %>
+		<a href="" id="open_comment_rating">Add review for this book</a>
+	<% end %>
+	</div>
+	<div class="col-md-12">
+	<br>
+	<% if @book.users.count == 0 %>
+		<div class="no-reviwes-message">There is no revies for this book. Your's can be first :)</div>
+	<% end %>
+	</div>
+</div>
+
+<div class="col-md-4">
+	<% if current_user %>
+	<form action="post" class="rating_comment">
+		<span class="rating_label">Rating:</span>
+		<div class="rating">
+			<% for i in 1..10 %>
+			<%= "<input name='star' type='radio' value=#{i} class='star {half:true}'/>".html_safe %>
+			<% end %>
+		</div>
+		<input class="hidden_input" type="hidden" value="">
+		<input class="hidden_input_userid" type="hidden" value="<%= current_user.id %>">
+		<input class="hidden_input_bookid" type="hidden" value="<%= params[:id] %>">
+		<p><textarea class="field_comment" rows="5" cols="50" autofocus></textarea></p>
+		<input type="button" id="add_comment_reting" class="btn btn-primary" value="ADD" name="commit"> or <a href="#" id="cancel">Cancel</a>
+	</form>
+	<% end %>
+</div>
+
+<!-- Commets -->
+<div class="col-md-12">
+	<div class="comments-block">
+	
+
+		<% @book.ratings.each do |rating| %>
+
+			<div class="comment-item">
+				<div class="rating-block">
+					<div class="rating">
+							<% for i in 1..10 %>
+								<% if rating.rating == i %>
+									<%= "<input name='star#{rating.id}' type='radio'  value=#{i} class='star#{rating.id} {half:true}' disabled='disabled' checked='checked' />".html_safe %>
+								<% else %>
+									<%= "<input name='star#{rating.id}' type='radio'  value=#{i} class='star#{rating.id} {half:true}' disabled='disabled' />".html_safe %>
+								<% end %>
+							<% end %>
+					</div>
+					<span class="comment_title">Not sure if this is the best book to start!</span>
+					<span class="comment_date"><%= rating.created_at.strftime("%b %d, %Y") %></span>
+				</div>
+				<div class="comment_user_name">by <a href="#"><%= rating.user.firstname << ' ' << rating.user.lastname %></a></div>
+				<div class="media">
+				  <div class="media-left">
+				    <a href="#">
+				    	<% if rating.user.facebook_image != "" %>
+				     	 <img class="media-object" height="50" width="50" src="<%= rating.user.facebook_image %>" alt="...">
+				      <% elsif rating.user.image.file.nil? == false %>
+								<img class="media-object" height="50" width="50" src="<%= rating.user.image_url %>" alt="...">
+							<% else %>
+								<img class="media-object" height="50" width="50" src="http://localhost:3000/assets/no_avatar.jpg" alt="...">
+							<% end %>
+				    </a>
+				  </div>
+				  <div class="media-body">
+				    <p><%= rating.text_review %></p>
+				  </div>
+				</div>
+			</div>
+
+		<% end %>
+		
+	</div>
+	<script>
+		$(document).on("ready page:load",function(){ 
+			<% @book.ratings.each do |rating| %>
+				<%= "$('input.star#{rating.id}').rating();".html_safe %>
+			<% end %>
+		});
+	</script>
+</div>
+<!--
+
+-->

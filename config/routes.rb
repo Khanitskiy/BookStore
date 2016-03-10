@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get  '/shop/search', to: 'books#search'
   resources :books, only: [:index, :show], path: '/shop'
   resources :categories, only: [:show], path: '/shop/category/'
+  resources :ratings, only: [:index, :create], path: '/rating'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

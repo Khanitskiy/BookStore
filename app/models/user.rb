@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
 	  end
 	end
 
+	def self.get_this_user(this_user)
+		user = find(this_user)
+	end
+
 end

@@ -15,9 +15,7 @@
 //= require turbolinks
 //= require owl.carousel
 //= require_tree .
-
-
-
+//= require jquery-star-rating
 
 
 
