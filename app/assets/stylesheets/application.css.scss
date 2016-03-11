@@ -22,6 +22,11 @@
 
 .clear {clear: both}
 
+body {
+	background-color: #FAFAFA;
+  min-width: 960px;
+}
+
 #owl-demo {
 	padding-top: 30px;
 	width: 800px;
@@ -88,3 +93,5 @@
 
 .rating {float: left}
 #id_comment {display: none;}
+
+.mb12 {margin-bottom: 12px !important;}

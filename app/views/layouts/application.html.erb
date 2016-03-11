@@ -32,11 +32,11 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <span style="padding-top: 14px; color: green; font-weight: bold; float: left;"><%= current_user.firstname %></span>
+          <span style="padding-top: 14px; margin-right: 10px; color: green; font-weight: bold; float: left;"><%= current_user.firstname %></span>
           <% if current_user.admin? %>
             <li><%= link_to "Admin panel", rails_admin.dashboard_path %></li>
           <% end %> 
-          <li><%= link_to "Settings", '#' %></li>
+          <li <%= cp(settings_path) %> ><%= link_to "Settings", settings_path %></li>
           <li><%= link_to "Orders", '#' %></li>
 
           <li <%= cp(destroy_user_session_path) %> >

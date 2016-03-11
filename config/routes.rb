@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   resources :categories, only: [:show], path: '/shop/category/'
   resources :ratings, only: [:index, :create], path: '/rating'
 
+  #get  '/settings', to: 'users#settings'
+  devise_scope :user do
+    get  '/settings', to: 'users#settings'
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

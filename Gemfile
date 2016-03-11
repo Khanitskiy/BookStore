@@ -28,6 +28,7 @@ gem 'pg_search'
 gem "breadcrumbs_on_rails"
 gem 'kaminari'
 gem 'jquery-star-rating-rails'
+gem 'country_select'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

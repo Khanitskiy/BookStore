@@ -1,0 +1,139 @@
+<h1>Settings</h1>
+
+<div class="row">
+	<div class="col-md-6">
+		<h2 class="underlined-h2 add-margin-bot">Billing address</h2>
+		<div class="row">
+			<div class="col-md-8">
+				<%= form_tag("/settings", method: "get", class: "nifty_form") do %>
+					<div class="form-group">
+						<%= label_tag(:address_firstname, "First name", class: 'control-label') %>
+						<%= text_field(:address, :firstname, { class: 'form-control', placeholder: 'First name', value: '' }) %>
+					</div>
+					<div class="form-group">
+						<%= label_tag(:address_lastname, "Last name", class: 'control-label') %>
+						<%= text_field(:address, :lastname, { class: 'form-control', placeholder: 'Last name', value: '' }) %>
+					</div>
+					<div class="form-group">
+						<%= label_tag(:address_street, "Street address", class: 'control-label') %>
+						<%= text_field(:address, :street_address, { class: 'form-control', placeholder: 'Street address', value: '' }) %>
+					</div>
+					<div class="form-group">
+						<%= label_tag(:address_city, "City", class: 'control-label') %>
+						<%= text_field(:address, :city, { class: 'form-control', placeholder: 'City', value: '' }) %>
+					</div>
+					<div class="form-group">
+						<%= label_tag(:address_country, "Country", class: 'control-label') %>
+						<%= country_select("user", "country", { include_blank: 'Select a country'}, { class: 'form-control', name: 'address[country]' }) %>
+					</div>
+					<div class="form-group">
+						<%= label_tag(:address_city, "Zip", class: 'control-label') %>
+						<%= text_field(:address, :zip, { class: 'form-control', placeholder: 'Zip', value: '' }) %>
+					</div>
+					<div class="form-group">
+						<%= label_tag(:address_city, "Phone", class: 'control-label') %>
+						<%= text_field(:address, :phone, { class: 'form-control', placeholder: 'Phone', value: '' }) %>
+					</div>
+					<%= hidden_field(:address, :type, value: 'billing' ) %>
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" value="Save" name="commit">
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<h2 class="underlined-h2 add-margin-bot mb12">Shipping address</h2>
+		<div class="row">
+			<div class="col-md-8">
+				<%= form_tag("/settings", method: "get", class: "nifty_form") do %>
+					<div class="form-group">
+						<%= label_tag(:address_label, " Use billing address") %>
+						<%= check_box(:address, :checkbox, { checked: 'checked' }) %>
+					</div>
+					<div id="shipping_address">
+						<div class="form-group">
+							<%= label_tag(:address_firstname, "First name", class: 'control-label') %>
+							<%= text_field(:address, :firstname, { class: 'form-control', placeholder: 'First name', value: '' }) %>
+						</div>
+						<div class="form-group">
+							<%= label_tag(:address_lastname, "Last name", class: 'control-label') %>
+							<%= text_field(:address, :lastname, { class: 'form-control', placeholder: 'Last name', value: '' }) %>
+						</div>
+						<div class="form-group">
+							<%= label_tag(:address_street, "Street address", class: 'control-label') %>
+							<%= text_field(:address, :street_address, { class: 'form-control', placeholder: 'Street address', value: '' }) %>
+						</div>
+						<div class="form-group">
+							<%= label_tag(:address_city, "City", class: 'control-label') %>
+							<%= text_field(:address, :city, { class: 'form-control', placeholder: 'City', value: '' }) %>
+						</div>
+						<div class="form-group">
+							<%= label_tag(:address_country, "Country", class: 'control-label') %>
+							<%= country_select("user", "country", { include_blank: 'Select a country'}, { class: 'form-control', name: 'address[country]' }) %>
+						</div>
+						<div class="form-group">
+							<%= label_tag(:address_city, "Zip", class: 'control-label') %>
+							<%= text_field(:address, :zip, { class: 'form-control', placeholder: 'Zip', value: '' }) %>
+						</div>
+						<div class="form-group">
+							<%= label_tag(:address_city, "Phone", class: 'control-label') %>
+							<%= text_field(:address, :phone, { class: 'form-control', placeholder: 'Phone', value: '' }) %>
+						</div>
+						<%= hidden_field(:address, :type, value: 'shipping' ) %>
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary" value="Save" name="commit">
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<h2 style="margin-bottom: 12px;" class="underlined-h2 add-margin-bot">Name and email</h2>
+		<div class="row">
+			<div class="col-md-8">
+				<%= form_tag("/settings", method: "get", class: "nifty_form") do %>
+					<div class="form-group">
+						<%= label_tag(:name_email_firstname, "First name", class: 'control-label') %>
+						<%= text_field(:name_email, :firstname, { class: 'form-control', placeholder: 'First name', value: '' }) %>
+					</div>
+					<div class="form-group">
+						<%= label_tag(:name_email_lastname, "Last name", class: 'control-label') %>
+						<%= text_field(:name_email, :lastname, { class: 'form-control', placeholder: 'Last name', value: '' }) %>
+					</div>
+					<div class="form-group">
+						<%= label_tag(:name_email_email, "Email", class: 'control-label') %>
+						<%= text_field(:name_email, :email, { class: 'form-control', placeholder: 'Email', value: '' }) %>
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" value="Save" name="commit">
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<h2 class="underlined-h2 add-margin-bot mb12">Password</h2>
+		<div class="row">
+			<div class="col-md-8">
+				<%= form_tag("/settings", method: "get", class: "nifty_form") do %>
+					<div class="form-group">
+						<%= label_tag(:password_old, "Old password", class: 'control-label') %>
+						<%= password_field_tag(:password, :old, { class: 'form-control', placeholder: '', value: '' }) %>
+					</div>
+					<div class="form-group">
+						<%= label_tag(:password_new, "New password", class: 'control-label') %>
+						<%=  password_field_tag(:password, :new, { class: 'form-control', placeholder: '', value: '' }) %>
+						<em>8 characters minimum</em>
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" value="Change password" name="commit">
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
