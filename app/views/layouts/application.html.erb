@@ -23,13 +23,16 @@
       <ul class="nav navbar-nav">
         <li <%= cp(root_path) %>><%= link_to "HOME", root_path %></li>
         <li <%= cp(books_path) %>><%= link_to "SHOP", books_path %></li>
+        <form class="navbar-form navbar-left" action="/shop/search" role="search" method="get">
+          <div class="form-group">
+            <input type="text" name="value" value="<%= params[:value] if params[:action] == "search" %>" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Search</button>
+        </form>
+        <li class="cart-lnk">
+            <a href="/orders/new"><span class="glyphicon glyphicon-shopping-cart"></span>CART:<em>(empty)</em>
+        </a></li>
       </ul>
-      <form class="navbar-form navbar-left" action="/shop/search" role="search" method="get">
-        <div class="form-group">
-          <input type="text" name="value" value="<%= params[:value] if params[:action] == "search" %>" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Search</button>
-      </form>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <span style="padding-top: 14px; margin-right: 10px; color: green; font-weight: bold; float: left;"><%= current_user.firstname %></span>

@@ -10,13 +10,14 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  *= require owl.carousel
  *= require owl.theme
  *= require jquery-star-rating
+ *= require_tree .
+ *= require_self
  */
 
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 
@@ -95,3 +96,7 @@ body {
 #id_comment {display: none;}
 
 .mb12 {margin-bottom: 12px !important;}
+
+.cart-lnk {
+	margin-left: 60px;
+}

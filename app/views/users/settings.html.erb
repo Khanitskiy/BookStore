@@ -1,44 +1,51 @@
 <h1>Settings</h1>
 
+
 <div class="row">
 	<div class="col-md-6">
 		<h2 class="underlined-h2 add-margin-bot">Billing address</h2>
 		<div class="row">
 			<div class="col-md-8">
-				<%= form_tag("/settings", method: "get", class: "nifty_form") do %>
-					<div class="form-group">
-						<%= label_tag(:address_firstname, "First name", class: 'control-label') %>
-						<%= text_field(:address, :firstname, { class: 'form-control', placeholder: 'First name', value: '' }) %>
+				<%= form_for @billing_address, url: address_path(current_user),  html: {class: "nifty_form", method: "patch"} do |f| %>
+				  <div class="form-group">
+					  <%= f.label :firstname, "First name", class: "control-label" %>
+	          <%= f.text_field :firstname, {class: "form-control", placeholder: 'First name'} %>
+				  </div>
+				  <div class="form-group">
+				    <%= f.label :lastname, "First name", class: "control-label" %>
+	          <%= f.text_field :lastname, {class: "form-control", placeholder: 'Last name'} %>
 					</div>
 					<div class="form-group">
-						<%= label_tag(:address_lastname, "Last name", class: 'control-label') %>
-						<%= text_field(:address, :lastname, { class: 'form-control', placeholder: 'Last name', value: '' }) %>
+						<%= f.label :address, "First name", class: "control-label" %>
+	          <%= f.text_field :address, {class: "form-control", placeholder: 'Street address'} %>
 					</div>
 					<div class="form-group">
-						<%= label_tag(:address_street, "Street address", class: 'control-label') %>
-						<%= text_field(:address, :street_address, { class: 'form-control', placeholder: 'Street address', value: '' }) %>
+						<%= f.label :city, "City", class: "control-label" %>
+	          <%= f.text_field :city, {class: "form-control", placeholder: 'City'} %>
 					</div>
 					<div class="form-group">
-						<%= label_tag(:address_city, "City", class: 'control-label') %>
-						<%= text_field(:address, :city, { class: 'form-control', placeholder: 'City', value: '' }) %>
+						<%= f.label :country, "Country", class: "control-label" %>
+						<% if @billing_address.country  %>
+							<%= country_select("address", "country", { selected: "UA" }, { class: 'form-control', name: 'address[country]' }) %>
+						<% else %>
+							<%= country_select("address", "country", { include_blank: 'Select a country'}, { class: 'form-control', name: 'address[country]' }) %>
+						<% end %>
 					</div>
 					<div class="form-group">
-						<%= label_tag(:address_country, "Country", class: 'control-label') %>
-						<%= country_select("user", "country", { include_blank: 'Select a country'}, { class: 'form-control', name: 'address[country]' }) %>
+						<%= f.label :zipcode, "Zip", class: "control-label" %>
+	          <%= f.text_field :zipcode, {class: "form-control", placeholder: 'Zip' } %>
 					</div>
 					<div class="form-group">
-						<%= label_tag(:address_city, "Zip", class: 'control-label') %>
-						<%= text_field(:address, :zip, { class: 'form-control', placeholder: 'Zip', value: '' }) %>
-					</div>
-					<div class="form-group">
-						<%= label_tag(:address_city, "Phone", class: 'control-label') %>
-						<%= text_field(:address, :phone, { class: 'form-control', placeholder: 'Phone', value: '' }) %>
+						<%= f.label :phone, "Phone", class: "control-label" %>
+	          <%= f.text_field :phone, {class: "form-control", placeholder: 'Phone'} %>
 					</div>
 					<%= hidden_field(:address, :type, value: 'billing' ) %>
+					<%= hidden_field(:address, :and_shipping, value: 'true' ) %>
 					<div class="form-group">
-						<input type="submit" class="btn btn-primary" value="Save" name="commit">
+						<%= f.submit "Save", class: "btn btn-primary"  %>
 					</div>
 				<% end %>
+
 			</div>
 		</div>
 	</div>
@@ -46,43 +53,48 @@
 		<h2 class="underlined-h2 add-margin-bot mb12">Shipping address</h2>
 		<div class="row">
 			<div class="col-md-8">
-				<%= form_tag("/settings", method: "get", class: "nifty_form") do %>
-					<div class="form-group">
-						<%= label_tag(:address_label, " Use billing address") %>
-						<%= check_box(:address, :checkbox, { checked: 'checked' }) %>
+				<%= form_for @shipping_address, url: address_path(current_user),  html: {class: "nifty_form", method: "patch"} do |f| %>
+				  <div class="form-group">
+						<%= f.label :label, "Use billing address"%>
+					  <%= f.check_box :checkbox, {:checked=>true}%> 
 					</div>
 					<div id="shipping_address">
-						<div class="form-group">
-							<%= label_tag(:address_firstname, "First name", class: 'control-label') %>
-							<%= text_field(:address, :firstname, { class: 'form-control', placeholder: 'First name', value: '' }) %>
+					  <div class="form-group">
+						  <%= f.label :firstname, "First name", class: "control-label" %>
+		          <%= f.text_field :firstname, {class: "form-control", placeholder: 'First name'} %>
+					  </div>
+					  <div class="form-group">
+					    <%= f.label :lastname, "First name", class: "control-label" %>
+		          <%= f.text_field :lastname, {class: "form-control", placeholder: 'Last name'} %>
 						</div>
 						<div class="form-group">
-							<%= label_tag(:address_lastname, "Last name", class: 'control-label') %>
-							<%= text_field(:address, :lastname, { class: 'form-control', placeholder: 'Last name', value: '' }) %>
+							<%= f.label :address, "First name", class: "control-label" %>
+		          <%= f.text_field :address, {class: "form-control", placeholder: 'Street address'} %>
 						</div>
 						<div class="form-group">
-							<%= label_tag(:address_street, "Street address", class: 'control-label') %>
-							<%= text_field(:address, :street_address, { class: 'form-control', placeholder: 'Street address', value: '' }) %>
+							<%= f.label :city, "City", class: "control-label" %>
+		          <%= f.text_field :city, {class: "form-control", placeholder: 'City'} %>
 						</div>
 						<div class="form-group">
-							<%= label_tag(:address_city, "City", class: 'control-label') %>
-							<%= text_field(:address, :city, { class: 'form-control', placeholder: 'City', value: '' }) %>
+							<%= f.label :country, "Country", class: "control-label" %>
+
+							<% if @billing_address.country  %>
+								<%= country_select("address", "country", { selected: "UA" }, { class: 'form-control', name: 'address[country]' }) %>
+							<% else %>
+								<%= country_select("address", "country", { include_blank: 'Select a country'}, { class: 'form-control', name: 'address[country]' }) %>
+							<% end %>
 						</div>
 						<div class="form-group">
-							<%= label_tag(:address_country, "Country", class: 'control-label') %>
-							<%= country_select("user", "country", { include_blank: 'Select a country'}, { class: 'form-control', name: 'address[country]' }) %>
+							<%= f.label :zipcode, "Zip", class: "control-label" %>
+		          <%= f.text_field :zipcode, {class: "form-control", placeholder: 'Zip' } %>
 						</div>
 						<div class="form-group">
-							<%= label_tag(:address_city, "Zip", class: 'control-label') %>
-							<%= text_field(:address, :zip, { class: 'form-control', placeholder: 'Zip', value: '' }) %>
-						</div>
-						<div class="form-group">
-							<%= label_tag(:address_city, "Phone", class: 'control-label') %>
-							<%= text_field(:address, :phone, { class: 'form-control', placeholder: 'Phone', value: '' }) %>
+							<%= f.label :phone, "Phone", class: "control-label" %>
+		          <%= f.text_field :phone, {class: "form-control", placeholder: 'Phone'} %>
 						</div>
 						<%= hidden_field(:address, :type, value: 'shipping' ) %>
 						<div class="form-group">
-							<input type="submit" class="btn btn-primary" value="Save" name="commit">
+							<%= f.submit "Save", class: "btn btn-primary"  %>
 						</div>
 					</div>
 				<% end %>
@@ -95,18 +107,18 @@
 		<h2 style="margin-bottom: 12px;" class="underlined-h2 add-margin-bot">Name and email</h2>
 		<div class="row">
 			<div class="col-md-8">
-				<%= form_tag("/settings", method: "get", class: "nifty_form") do %>
+			  <%= form_for current_user, url: address_path(current_user),  html: {class: "nifty_form"} do |f| %>
 					<div class="form-group">
-						<%= label_tag(:name_email_firstname, "First name", class: 'control-label') %>
-						<%= text_field(:name_email, :firstname, { class: 'form-control', placeholder: 'First name', value: '' }) %>
+						<%= f.label :name_email_firstname, "First name", class: "control-label" %>
+		        <%= f.text_field :firstname, {class: "form-control", placeholder: 'Firs tname' } %>
 					</div>
 					<div class="form-group">
-						<%= label_tag(:name_email_lastname, "Last name", class: 'control-label') %>
-						<%= text_field(:name_email, :lastname, { class: 'form-control', placeholder: 'Last name', value: '' }) %>
+					  <%= f.label :lastname, "Last name", class: "control-label" %>
+		        <%= f.text_field :lastname, {class: "form-control", placeholder: 'Last tname' } %>
 					</div>
 					<div class="form-group">
-						<%= label_tag(:name_email_email, "Email", class: 'control-label') %>
-						<%= text_field(:name_email, :email, { class: 'form-control', placeholder: 'Email', value: '' }) %>
+					  <%= f.label :email, "Email", class: "control-label" %>
+		        <%= f.text_field :email, {class: "form-control", placeholder: 'Email' } %>
 					</div>
 					<div class="form-group">
 						<input type="submit" class="btn btn-primary" value="Save" name="commit">
@@ -136,4 +148,10 @@
 			</div>
 		</div>
 	</div>
+</div>
+<div class="row">
+	<h2 class="underlined-h2">Remove account</h2>
+	<a href="/customers" id="remove_button" data-method="delete" rel="nofollow" class="btn btn-primary  disabled" data-confirm="Are you sure?">Please remove my account</a>
+	<%= check_box_tag 'remove_accaunt_checkbox', 'false' %>
+	<em>(all your data will be lost)</em>
 </div>
