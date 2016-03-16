@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+  get "/users/edit" => "users#settings"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'books#home'
   get  '/shop/search', to: 'books#search'
@@ -8,12 +10,15 @@ Rails.application.routes.draw do
   resources :categories, only: [:show], path: '/shop/category/'
   resources :ratings, only: [:index, :create], path: '/rating'
 
-  #get  '/settings', to: 'users#settings'
   devise_scope :user do
-    get  '/settings', to: 'users#settings'
+    get    '/settings', to: 'users#settings'
   end
 
   resources :addresses, only: [:update]
+  resources :users, only: [:settings, :update_data] do
+    patch  '/update_data', to: 'users#update_data'
+    patch  '/update_password', to: 'users#update_password'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

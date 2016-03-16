@@ -107,7 +107,7 @@
 		<h2 style="margin-bottom: 12px;" class="underlined-h2 add-margin-bot">Name and email</h2>
 		<div class="row">
 			<div class="col-md-8">
-			  <%= form_for current_user, url: address_path(current_user),  html: {class: "nifty_form"} do |f| %>
+			  <%= form_for current_user, url: user_update_data_path(current_user),  html: {class: "nifty_form"} do |f| %>
 					<div class="form-group">
 						<%= f.label :name_email_firstname, "First name", class: "control-label" %>
 		        <%= f.text_field :firstname, {class: "form-control", placeholder: 'Firs tname' } %>
@@ -131,19 +131,23 @@
 		<h2 class="underlined-h2 add-margin-bot mb12">Password</h2>
 		<div class="row">
 			<div class="col-md-8">
-				<%= form_tag("/settings", method: "get", class: "nifty_form") do %>
-					<div class="form-group">
-						<%= label_tag(:password_old, "Old password", class: 'control-label') %>
-						<%= password_field_tag(:password, :old, { class: 'form-control', placeholder: '', value: '' }) %>
-					</div>
-					<div class="form-group">
-						<%= label_tag(:password_new, "New password", class: 'control-label') %>
-						<%=  password_field_tag(:password, :new, { class: 'form-control', placeholder: '', value: '' }) %>
-						<em>8 characters minimum</em>
-					</div>
-					<div class="form-group">
-						<input type="submit" class="btn btn-primary" value="Change password" name="commit">
-					</div>
+				<% if current_user.provider == nil %>
+					 <%= form_for current_user, url: user_update_password_path(current_user),  html: {class: "nifty_form"} do |f| %>
+						<div class="form-group">
+							<%= f.label :old_password, "Old password", class: "control-label" %>
+			        <%= f.password_field :old_password, {class: "form-control"} %>
+						</div>
+						<div class="form-group">
+							<%= f.label :new_password, "New password", class: "control-label" %>
+			        <%= f.password_field :password, {class: "form-control"} %>
+							<em>8 characters minimum</em>
+						</div>
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary" value="Change password" name="commit">
+						</div>
+					<% end %>
+				<% else %>
+					<p>You authorize with Facebook. You can't change password</p>
 				<% end %>
 			</div>
 		</div>
@@ -151,7 +155,7 @@
 </div>
 <div class="row">
 	<h2 class="underlined-h2">Remove account</h2>
-	<a href="/customers" id="remove_button" data-method="delete" rel="nofollow" class="btn btn-primary  disabled" data-confirm="Are you sure?">Please remove my account</a>
+	<%= button_to "Please remove my account", registration_path('user'), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-primary disabled', id: 'remove_button', name: 'remove_accaunt_checkbox' %>
 	<%= check_box_tag 'remove_accaunt_checkbox', 'false' %>
-	<em>(all your data will be lost)</em>
+	<em id="em_delete">(all your data will be lost)</em>
 </div>

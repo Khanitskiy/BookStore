@@ -12,8 +12,8 @@ class AddressesController < ApplicationController
 			redirect_to settings_path 
 		else
 
-			@billing_address = Address.find_or_create_by(billing_address_id: current_user)
-			@billing_address.update address_params(true)
+			@shipping_address = Address.find_or_create_by(shipping_address_id: current_user)
+			@shipping_address.update address_params(true)
 
 			redirect_to settings_path
 
