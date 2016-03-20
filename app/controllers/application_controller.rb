@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     redirect_to "/", :alert => exception.message
   end
 
+  def create_addresses_obj
+      @billing_address = Address.find_or_create_by(billing_address_id: current_user)
+      @shipping_address = Address.find_or_create_by(shipping_address_id: current_user)
+  end
+
     protected
 
       def configure_permitted_parameters

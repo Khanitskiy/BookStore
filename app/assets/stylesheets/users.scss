@@ -42,3 +42,12 @@ h1 { padding-bottom: 20px; }
     display: block;
     padding-top: 7px;
 }
+
+.error {
+    border: 1px solid red !important;
+}
+
+.error_message {
+    color: red;
+    font-style: italic;
+}

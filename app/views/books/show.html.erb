@@ -1,6 +1,6 @@
 <h1><%= @book.title %></h1>
-<div class="col-md-4">
-	<%= image_tag @book.image_url :my_resize %>
+<div class="col-md-4 <%= 'book_id_' << @book.id.to_s %>">
+	<%= image_tag @book.image_url :my_resize %> 
 </div>
 <div class="col-md-8">
 	<div class="price"><%= @book.price %> $</div>
@@ -8,7 +8,7 @@
 		<%= form_tag("/orders/add_to_order", method: "put") do %>
       <%= number_field_tag 'quantity', "1", within: 1...10, class: 'quantity-input' %>
       <%#= hidden_field_tag 'book_id', book.id %>
-      <%= submit_tag "ADD TO CART", class: 'btn btn-primary'  %>
+      <%= submit_tag "ADD TO CART", class: 'btn btn-primary add_book', id: 'button_book_id_' << @book.id.to_s  %>
     <% end %>
 	</div>
 	<div class="clear"></div>

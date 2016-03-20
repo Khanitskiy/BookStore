@@ -6,38 +6,44 @@
 		<h2 class="underlined-h2 add-margin-bot">Billing address</h2>
 		<div class="row">
 			<div class="col-md-8">
+				<%# byebug %>
+				<%# if @billing_address.errors.any? %>
+    			<!-- <h1>Error Error Error Error</h1>-->
+      	<%# end %>
+      	<%= show_flashes('billing_form') %>
 				<%= form_for @billing_address, url: address_path(current_user),  html: {class: "nifty_form", method: "patch"} do |f| %>
+
 				  <div class="form-group">
 					  <%= f.label :firstname, "First name", class: "control-label" %>
-	          <%= f.text_field :firstname, {class: "form-control", placeholder: 'First name'} %>
+	          <%= f.text_field :firstname, {class: validate_class('billing_form', 'firstname'), placeholder: 'First name'} %>
 				  </div>
 				  <div class="form-group">
-				    <%= f.label :lastname, "First name", class: "control-label" %>
-	          <%= f.text_field :lastname, {class: "form-control", placeholder: 'Last name'} %>
+				    <%= f.label :lastname, "Last name", class: "control-label" %>
+	          <%= f.text_field :lastname, {class: validate_class('billing_form', 'lastname'), placeholder: 'Last name'} %>
 					</div>
 					<div class="form-group">
 						<%= f.label :address, "First name", class: "control-label" %>
-	          <%= f.text_field :address, {class: "form-control", placeholder: 'Street address'} %>
+	          <%= f.text_field :address, {class: validate_class('billing_form', 'address'), placeholder: 'Street address'} %>
 					</div>
 					<div class="form-group">
 						<%= f.label :city, "City", class: "control-label" %>
-	          <%= f.text_field :city, {class: "form-control", placeholder: 'City'} %>
+	          <%= f.text_field :city, {class: validate_class('billing_form', 'city'), placeholder: 'City'} %>
 					</div>
 					<div class="form-group">
 						<%= f.label :country, "Country", class: "control-label" %>
 						<% if @billing_address.country  %>
 							<%= country_select("address", "country", { selected: "UA" }, { class: 'form-control', name: 'address[country]' }) %>
 						<% else %>
-							<%= country_select("address", "country", { include_blank: 'Select a country'}, { class: 'form-control', name: 'address[country]' }) %>
+							<%= country_select("address", "country", { include_blank: 'Select a country'}, { class: validate_class('billing_form', 'country'), name: 'address[country]' }) %>
 						<% end %>
 					</div>
 					<div class="form-group">
 						<%= f.label :zipcode, "Zip", class: "control-label" %>
-	          <%= f.text_field :zipcode, {class: "form-control", placeholder: 'Zip' } %>
+	          <%= f.text_field :zipcode, {class: validate_class('billing_form', 'zipcode'), placeholder: 'Zip' } %>
 					</div>
 					<div class="form-group">
 						<%= f.label :phone, "Phone", class: "control-label" %>
-	          <%= f.text_field :phone, {class: "form-control", placeholder: 'Phone'} %>
+	          <%= f.text_field :phone, {class: validate_class('billing_form', 'phone'), placeholder: 'Phone'} %>
 					</div>
 					<%= hidden_field(:address, :type, value: 'billing' ) %>
 					<%= hidden_field(:address, :and_shipping, value: 'true' ) %>
@@ -53,6 +59,7 @@
 		<h2 class="underlined-h2 add-margin-bot mb12">Shipping address</h2>
 		<div class="row">
 			<div class="col-md-8">
+				<%= show_flashes('shipping_form') %>
 				<%= form_for @shipping_address, url: address_path(current_user),  html: {class: "nifty_form", method: "patch"} do |f| %>
 				  <div class="form-group">
 						<%= f.label :label, "Use billing address"%>
@@ -61,19 +68,19 @@
 					<div id="shipping_address">
 					  <div class="form-group">
 						  <%= f.label :firstname, "First name", class: "control-label" %>
-		          <%= f.text_field :firstname, {class: "form-control", placeholder: 'First name'} %>
+		          <%= f.text_field :firstname, {class: validate_class('shipping_form', 'firstname'), placeholder: 'First name'} %>
 					  </div>
 					  <div class="form-group">
 					    <%= f.label :lastname, "First name", class: "control-label" %>
-		          <%= f.text_field :lastname, {class: "form-control", placeholder: 'Last name'} %>
+		          <%= f.text_field :lastname, {class: validate_class('shipping_form', 'lastname'), placeholder: 'Last name'} %>
 						</div>
 						<div class="form-group">
 							<%= f.label :address, "First name", class: "control-label" %>
-		          <%= f.text_field :address, {class: "form-control", placeholder: 'Street address'} %>
+		          <%= f.text_field :address, {class: validate_class('shipping_form', 'address'), placeholder: 'Street address'} %>
 						</div>
 						<div class="form-group">
 							<%= f.label :city, "City", class: "control-label" %>
-		          <%= f.text_field :city, {class: "form-control", placeholder: 'City'} %>
+		          <%= f.text_field :city, {class: validate_class('shipping_form', 'city'), placeholder: 'City'} %>
 						</div>
 						<div class="form-group">
 							<%= f.label :country, "Country", class: "control-label" %>
@@ -81,16 +88,16 @@
 							<% if @billing_address.country  %>
 								<%= country_select("address", "country", { selected: "UA" }, { class: 'form-control', name: 'address[country]' }) %>
 							<% else %>
-								<%= country_select("address", "country", { include_blank: 'Select a country'}, { class: 'form-control', name: 'address[country]' }) %>
+								<%= country_select("address", "country", { include_blank: 'Select a country'}, { class: validate_class('shipping_form', 'country'), name: 'address[country]' }) %>
 							<% end %>
 						</div>
 						<div class="form-group">
 							<%= f.label :zipcode, "Zip", class: "control-label" %>
-		          <%= f.text_field :zipcode, {class: "form-control", placeholder: 'Zip' } %>
+		          <%= f.text_field :zipcode, {class: validate_class('shipping_form', 'zipcode'), placeholder: 'Zip' } %>
 						</div>
 						<div class="form-group">
 							<%= f.label :phone, "Phone", class: "control-label" %>
-		          <%= f.text_field :phone, {class: "form-control", placeholder: 'Phone'} %>
+		          <%= f.text_field :phone, {class: validate_class('shipping_form', 'phone'), placeholder: 'Phone'} %>
 						</div>
 						<%= hidden_field(:address, :type, value: 'shipping' ) %>
 						<div class="form-group">
@@ -107,18 +114,19 @@
 		<h2 style="margin-bottom: 12px;" class="underlined-h2 add-margin-bot">Name and email</h2>
 		<div class="row">
 			<div class="col-md-8">
+				<%= show_flashes('data_form') %>
 			  <%= form_for current_user, url: user_update_data_path(current_user),  html: {class: "nifty_form"} do |f| %>
 					<div class="form-group">
 						<%= f.label :name_email_firstname, "First name", class: "control-label" %>
-		        <%= f.text_field :firstname, {class: "form-control", placeholder: 'Firs tname' } %>
+		        <%= f.text_field :firstname, {class: validate_class('data_form', 'firstname') , placeholder: 'Firs name' } %>
 					</div>
 					<div class="form-group">
 					  <%= f.label :lastname, "Last name", class: "control-label" %>
-		        <%= f.text_field :lastname, {class: "form-control", placeholder: 'Last tname' } %>
+		        <%= f.text_field :lastname, {class: validate_class('data_from', 'lastname'), placeholder: 'Last tname' } %>
 					</div>
 					<div class="form-group">
 					  <%= f.label :email, "Email", class: "control-label" %>
-		        <%= f.text_field :email, {class: "form-control", placeholder: 'Email' } %>
+		        <%= f.text_field :email, {class: validate_class('data_form', 'email'), placeholder: 'Email' } %>
 					</div>
 					<div class="form-group">
 						<input type="submit" class="btn btn-primary" value="Save" name="commit">
@@ -131,15 +139,16 @@
 		<h2 class="underlined-h2 add-margin-bot mb12">Password</h2>
 		<div class="row">
 			<div class="col-md-8">
+				<%= show_flashes('password_form') %>
 				<% if current_user.provider == nil %>
 					 <%= form_for current_user, url: user_update_password_path(current_user),  html: {class: "nifty_form"} do |f| %>
 						<div class="form-group">
 							<%= f.label :old_password, "Old password", class: "control-label" %>
-			        <%= f.password_field :old_password, {class: "form-control"} %>
+			        <%= f.password_field :old_password, {class: validate_class('password_form', 'old_password') } %>
 						</div>
 						<div class="form-group">
 							<%= f.label :new_password, "New password", class: "control-label" %>
-			        <%= f.password_field :password, {class: "form-control"} %>
+			        <%= f.password_field :password, {class: validate_class('password_form', 'password') } %>
 							<em>8 characters minimum</em>
 						</div>
 						<div class="form-group">

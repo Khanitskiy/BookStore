@@ -3,28 +3,36 @@ class UsersController < ApplicationController
 	before_action :authenticate_user!
 
 	def settings
-		@billing_address = current_user.billing_address || Address.new
-    @shipping_address = current_user.shipping_address || Address.new
+		create_addresses_obj
 	end
 
 	def update_password
-		if current_user.valid_password?(params[:user][:old_password])
+		if params[:user][:old_password] != '' && current_user.valid_password?(params[:user][:old_password]) == false
+				flash[:alert] = "Something went wrong"
+				flash[:error] = {'old_password' => 'Incorrect password' }
+				flash[:error][:password_form] = true
+		else	
 			updates
-		else
-			flash[:alert] = "Incorrect password"
-			redirect_to settings_path
-		end
+			flash[:error] = @user.errors.messages
+	  	flash[:error][:password_form] = true
+	  	flash[:error][:old_password] = ['can\'t be blank'] if params[:user][:old_password] == ''
+	  end
+		redirect_to settings_path
+
   end
 
   def update_data
   	updates
+  	flash[:error] = @user.errors.messages
+  	flash[:error]['data_form'] = true
+
+	  redirect_to settings_path
   end
 
 
   private
 
 	def updates
-		#byebug
 		if params[:user_id].to_i == current_user.id
 
 	    @user = User.find(current_user.id)
@@ -33,13 +41,12 @@ class UsersController < ApplicationController
 	      sign_in @user, :bypass => true
 	      flash[:notice] = "Your data have been changes"
 	    else
-	      flash[:notice] = "Something went wrong"
+	      flash[:alert] = "Something went wrong"
 	    end
 
 	  else
-	  	flash[:notice] = "Something went wrong"
+	  	flash[:alert] = "Something went wrong"
 	  end
-	  redirect_to settings_path
   end
 
   def user_params
