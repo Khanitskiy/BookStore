@@ -6,7 +6,7 @@
 	<div class="price"><%= @book.price %> $</div>
 	<div class="order-form-wrap">
 		<%= form_tag("/orders/add_to_order", method: "put") do %>
-      <%= number_field_tag 'quantity', "1", within: 1...10, class: 'quantity-input' %>
+      <%= number_field_tag 'quantity', "1", within: 1...10, class: 'quantity-input quantity_id_' << @book.id.to_s %>
       <%#= hidden_field_tag 'book_id', book.id %>
       <%= submit_tag "ADD TO CART", class: 'btn btn-primary add_book', id: 'button_book_id_' << @book.id.to_s  %>
     <% end %>
