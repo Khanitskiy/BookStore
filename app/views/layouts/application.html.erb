@@ -29,7 +29,7 @@
           </div>
           <button type="submit" class="btn btn-default">Search</button>
         </form>
-        <li class="cart-lnk">
+        <li class="cart-lnk  <%= cp(new_order_path, true) %>">
             <a href="/orders/new"><span class="glyphicon glyphicon-shopping-cart"></span>CART:<em>(<%= count_products %>)</em>
         </a></li>
       </ul>

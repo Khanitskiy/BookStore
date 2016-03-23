@@ -22,7 +22,7 @@ Welcome to our amazing Bookstore!
 										<small>by Andrew  Evans</small>
 									</h2>
 							  	<p><%= bestseller.description %></p>
-						  		<div class="price">$<%= bestseller.price %></div>
+						  		<div class="price"><%= number_to_currency(bestseller.price) %></div>
 									<%= form_tag("/orders/add_to_order", method: "put") do %>
 	                  <%= number_field_tag 'quantity', "1", within: 1...10, class: 'quantity-input quantity_id_' << bestseller.id.to_s %>
 	                  <%#= hidden_field_tag 'book_id', book.id %>

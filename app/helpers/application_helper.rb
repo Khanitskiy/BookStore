@@ -1,7 +1,11 @@
 module ApplicationHelper
 
-  def cp(path)
-  	"class=active" if current_page?(path)
+  def cp(path, bool = false)
+  	if bool
+      "active" if current_page?(path)
+    else
+      "class=active" if current_page?(path)
+    end
   end
 
   def count_products

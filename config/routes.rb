@@ -10,6 +10,17 @@ Rails.application.routes.draw do
   resources :categories, only: [:show], path: '/shop/category/'
   resources :ratings, only: [:index, :create], path: '/rating'
 
+  scope :orders do 
+    get    '/clear_shopcart', to: 'orders#clear_shopcart'
+    #get    '/delete_products', to: 'orders#delete_products'
+  end
+  resources :orders
+
+  #scope :orders_items do 
+    #delete '/delete_item/:id',    to: 'orders_items#delete_cookie_item'
+  #end
+  resources :orders_items
+
   devise_scope :user do
     get    '/settings', to: 'users#settings'
   end

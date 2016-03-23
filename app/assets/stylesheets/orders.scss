@@ -1,0 +1,55 @@
+// Place all the styles related to the Orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table tbody tr {
+	background-color: #EBEBEB;
+	border-bottom: 4px solid #fff;
+}
+
+.table thead td {
+	font-weight: bold;
+}
+
+.cart .table tbody img {
+    margin-right: 10px;
+}
+
+.cart .table tbody tr td {
+    vertical-align: middle;
+}
+
+.cart .table tbody .remove_link a {
+    color: #d88484;
+    font-size: 35px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cart .table tbody .remove_link a:hover,
+.cart .table tbody .remove_link a:active, {
+    color: #af4e4e;
+    text-decoration: none;
+}
+
+.cart .table .quantity-input {
+	width: 58px;
+}
+
+.cart .order-summary-block {
+    margin-bottom: 20px;
+}
+
+.cart .order-summary-block .order-summary-line {
+    margin-bottom: 10px;
+    margin-right: 17%;
+    text-align: right !important;
+}
+
+.cart .right-btns .checkout-btn {
+    margin-left: 5px;
+    margin-right: 13%;
+}
+.pull-right {
+    float: right !important;
+}

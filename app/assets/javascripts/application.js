@@ -18,13 +18,46 @@
 //= require_tree .
 //= require jquery-star-rating
 
+
+function number_to_currency(number, options) {
+  try {
+    var options   = options || {};
+    var precision = options["precision"] || 2;
+    var unit      = options["unit"] || "$";
+    var separator = precision > 0 ? options["separator"] || "." : "";
+    var delimiter = options["delimiter"] || ",";
+  
+    var parts = parseFloat(number).toFixed(precision).split('.');
+    return unit + number_with_delimiter(parts[0], delimiter) + separator + parts[1].toString();
+  } catch(e) {
+    return number;
+  }
+}
+
+function number_with_delimiter(number, delimiter, separator) {
+  try {
+    var delimiter = delimiter || ",";
+    var separator = separator || ".";
+    
+    var parts = number.toString().split('.');
+    parts[0] = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1" + delimiter);
+    return parts.join(separator);
+  } catch(e) {
+    return number
+  }
+}
+
 function setCookie(value) {
 	var expireDate = new Date();
 	expireDate.setDate(expireDate.getDate() + 31);
 
-  //expires = "; expires="+date.toGMTString();
 	document.cookie='books= '+ encodeURIComponent(value) +' ; expires=' + expireDate.toGMTString() + '; path=/';
 }
+
+function deleteCookie(name) {
+	document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
 
 function changeCookie(book_id, quantity) {
 	var cookie_value = document.cookie.replace(/(?:(?:^|.*;\s*)books\s*\=\s*([^;]*).*$)|^.*$/, "$1");
