@@ -1,6 +1,12 @@
 class Users::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
 
+  def destroy
+    cookies.delete :user_products_count
+    session[:user_products_count] = ''
+    super
+  end
+
   # GET /resource/sign_in
   # def new
   #   super

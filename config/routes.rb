@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   get "/users/edit" => "users#settings"
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", 
+                                       :registrations      => "users/registrations",
+                                       :sessions           => "users/sessions" }
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'books#home'
@@ -11,7 +13,8 @@ Rails.application.routes.draw do
   resources :ratings, only: [:index, :create], path: '/rating'
 
   scope :orders do 
-    get    '/clear_shopcart', to: 'orders#clear_shopcart'
+    get    '/clear_shopcart', to: 'orders#clear_cookies_shopcart'
+    put    '/update_shopcart_ajax', to: 'orders#update_shopcart_ajax'
     #get    '/delete_products', to: 'orders#delete_products'
   end
   resources :orders
@@ -25,6 +28,7 @@ Rails.application.routes.draw do
     get    '/settings', to: 'users#settings'
   end
 
+  resources :order_steps
   resources :addresses, only: [:update]
   resources :users, only: [:settings, :update_data] do
     patch  '/update_data', to: 'users#update_data'

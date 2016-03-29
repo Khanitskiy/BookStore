@@ -1,0 +1,2 @@
+module CustomSessionsControllerHelper
+end

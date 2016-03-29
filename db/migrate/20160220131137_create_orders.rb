@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration
     	t.decimal   :total_price
     	t.date 			:completed_date
     	t.integer		:state, default: 1
+      t.integer   :book_count
     	t.string 		:billing_address
     	t.string 		:shipping_address
       t.belongs_to :user, index:true

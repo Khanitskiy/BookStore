@@ -54,7 +54,6 @@
             <%= link_to "Sign up", new_user_registration_path %>
           </li>
         <% end %>
-
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -89,8 +88,7 @@
 
 </div>
 
-<%#= p params %>
-    <br><br><br><br><br>
+<div style="display:none" id="current_user"><%= current_user.id if current_user %></div>
 
 </body>
 </html>
