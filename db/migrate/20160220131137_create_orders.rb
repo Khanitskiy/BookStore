@@ -5,8 +5,11 @@ class CreateOrders < ActiveRecord::Migration
     	t.date 			:completed_date
     	t.integer		:state, default: 1
       t.integer   :book_count
-    	t.string 		:billing_address
-    	t.string 		:shipping_address
+      t.integer   :step_number
+    	#t.string 		:billing_address_id
+    	#t.string 		:shipping_address_id
+      #t.string     :billing_address_id
+      #t.string     :shipping_address_id
       t.belongs_to :user, index:true
       t.belongs_to :credit_card, index:true
 

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :load_in_progress_order 
-	before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to "/", :alert => exception.message
@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def load_in_progress_order
     if current_user
-      @order = current_user.orders.where(state: '1').first
+      @order = current_user.orders.where(state: 'in_progress').first
      end
   end
 
@@ -28,7 +28,6 @@ class ApplicationController < ActionController::Base
     #end
     product_count = current_user.orders.where(state: '1').first
     session[:user_products_count] = product_count.book_count if product_count
-
     root_path
   end
 
@@ -65,8 +64,14 @@ class ApplicationController < ActionController::Base
   end
 
   def create_addresses_obj
-      @billing_address = Address.find_or_create_by(billing_address_id: current_user)
-      @shipping_address = Address.find_or_create_by(shipping_address_id: current_user)
+      @billing_address = Address.find_or_create_by(user_billing_address_id: current_user.id)
+      @shipping_address = Address.find_or_create_by(user_shipping_address_id: current_user.id)
+      #byebug
+      #if @billing_address.city.nil?
+        #@order.billing_address = @billing_address.id
+        #@order.shipping_address = @shipping_address.id
+        #@order.save
+      #end
   end
 
     protected

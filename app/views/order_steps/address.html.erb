@@ -1,0 +1,115 @@
+<div class="checkout">
+  
+  <%= render partial: "checkout_nav" %>
+
+  <div class="row">
+
+    <%= form_for @order_steps_form, url: wizard_path, html: { method: :put } do |f| %>
+      <div class="col-md-4">
+        <h2 class="margin-bot-add">Billing address</h2>
+        <div class="row">
+          <div class="col-md-8">
+           <%= show_errors('billing_address') %>
+           <%= f.fields_for(:billing_address, @order_steps_form.billing_address) do |billing_address| %>
+            <div class="form-group">
+              <%= billing_address.label :firstname, "First name", class: "control-label" %>
+              <%= billing_address.text_field :firstname, {class: validate_class('billing_form', 'firstname'), placeholder: 'First name'} %>
+            </div>
+            <div class="form-group">
+              <%= billing_address.label :lastname, "Last name", class: "control-label" %>
+              <%= billing_address.text_field :lastname, {class: validate_class('billing_form', 'lastname'), placeholder: 'Last name'} %>
+            </div>
+            <div class="form-group">
+              <%= billing_address.label :address, "Sreet address", class: "control-label" %>
+              <%= billing_address.text_field :address, {class: validate_class('billing_form', 'address'), placeholder: 'Street address'} %>
+            </div>
+            <div class="form-group">
+              <%= billing_address.label :city, "City", class: "control-label" %>
+              <%= billing_address.text_field :city, {class: validate_class('billing_form', 'city'), placeholder: 'City'} %>
+            </div>
+            <div class="form-group">
+            <%# byebug %>
+            <%= billing_address.label :country, "Country", class: "control-label" %>
+              <% if @order_steps_form.billing_address.country  %>
+                <%= country_select("billing_address", "country", { selected: @order_steps_form.billing_address.country }, { class: 'form-control', name: 'order_steps_form[billing_address][country]' }) %>
+              <% else %>
+                <%= country_select("billing_address", "country", { include_blank: 'Select a country'}, { class: validate_class('billing_form', 'country'), name: 'order_steps_form[billing_address][country]' }) %>
+              <% end %>
+            </div>
+            <div class="form-group">
+              <%= billing_address.label :zipcode, "Zip", class: "control-label" %>
+              <%= billing_address.text_field :zipcode, {class: validate_class('billing_form', 'zipcode'), placeholder: 'Zip' } %>
+            </div>
+            <div class="form-group">
+              <%= billing_address.label :phone, "Phone", class: "control-label" %>
+              <%= billing_address.text_field :phone, {class: validate_class('billing_form', 'phone'), placeholder: 'Phone'} %>
+            </div>
+            <%= hidden_field('order_steps_form[billing_address]', :order_billing_address_id, value: @order_steps_form.order.id ) %>
+            <%= hidden_field('order_steps_form[billing_address]', :and_shipping, value: 'true' ) %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h2>Shipping address</h2>
+        <div class="row">
+          <div class="col-md-8">
+          <%= f.fields_for(:shipping_address, @order_steps_form.shipping_address) do |shipping_address| %>
+              <div class="form-group">
+                <%= shipping_address.label :label, "Use billing address"%>
+                <%= shipping_address.check_box :checkbox, {:checked=> checkbox_state(true) }, checkbox_state %> 
+              </div>
+              <%= show_errors('shipping_address') %>
+              <div class="ship-address-form-fields">
+              <div id="shipping_address_step">
+                  <div class="form-group">
+                    <%= shipping_address.label :firstname, "First name", class: "control-label" %>
+                    <%= shipping_address.text_field :firstname, {class: validate_class('shipping_form', 'firstname'), placeholder: 'First name'} %>
+                  </div>
+                  <div class="form-group">
+                    <%= shipping_address.label :lastname, "Last name", class: "control-label" %>
+                    <%= shipping_address.text_field :lastname, {class: validate_class('shipping_form', 'lastname'), placeholder: 'Last name'} %>
+                  </div>
+                  <div class="form-group">
+                    <%= shipping_address.label :address, "Sreet address", class: "control-label" %>
+                    <%= shipping_address.text_field :address, {class: validate_class('shipping_form', 'address'), placeholder: 'Street address'} %>
+                  </div>
+                  <div class="form-group">
+                    <%= shipping_address.label :city, "City", class: "control-label" %>
+                    <%= shipping_address.text_field :city, {class: validate_class('shipping_form', 'city'), placeholder: 'City'} %>
+                  </div>
+                  <div class="form-group">
+                  <%= shipping_address.label :country, "Country", class: "control-label" %>
+                    <% if @order_steps_form.shipping_address.country  %>
+                      <%= country_select("shipping_address", "country", { selected: @order_steps_form.shipping_address.country }, { class: 'form-control', name: 'order_steps_form[shipping_address][country]' }) %>
+                    <% else %>
+                      <%= country_select("shipping_address", "country", { include_blank: 'Select a country'}, { class: validate_class('shipping_form', 'country'), name: 'order_steps_form[shipping_address][country]' }) %>
+                    <% end %>
+                  </div>
+                  <div class="form-group">
+                    <%= shipping_address.label :zipcode, "Zip", class: "control-label" %>
+                    <%= shipping_address.text_field :zipcode, {class: validate_class('shipping_form', 'zipcode'), placeholder: 'Zip' } %>
+                  </div>
+                  <div class="form-group">
+                    <%= shipping_address.label :phone, "Phone", class: "control-label" %>
+                    <%= shipping_address.text_field :phone, {class: validate_class('shipping_form', 'phone'), placeholder: 'Phone'} %>
+                  </div>
+                  <%= hidden_field('order_steps_form[shipping_address]', :order_shipping_address_id, value: @order_steps_form.order.id ) %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <%= render partial: "order_summary" %>
+
+      <div class="col-md-4 col-md-offset-8">
+        <div class="form-group">
+          <%= f.submit "Save and continue", name: 'commit',  class: "btn btn-success btn-lg" %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>

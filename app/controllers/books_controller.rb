@@ -1,18 +1,18 @@
 class BooksController < ApplicationController
-	load_and_authorize_resource
-	skip_authorize_resource :only => [:home, :search ]
+  load_and_authorize_resource
+  skip_authorize_resource :only => [:home, :search ]
 
   def home
-  	@bestsellers = Book.bestsellers
+    @bestsellers = Book.bestsellers
   end
 
   def index
     @books = @books.page  params[:page]
-  	@categories = Category.all
+    @categories = Category.all
   end
 
   def show
-  	@book = Book.get_book(params[:id])
+    @book = Book.get_book(params[:id])
   end
 
   def search

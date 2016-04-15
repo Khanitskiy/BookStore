@@ -1,0 +1,58 @@
+<div class="checkout">
+<%= render partial: "checkout_nav" %>
+  
+
+  <%= form_for @order_steps_form, url: wizard_path, html: { method: :put } do |f| %>
+
+  <div class="row">
+      <div class="row">
+        <div class="col-md-8">
+          <h2 class="margin-bot-add">Credit card</h2>
+          <div class="row">
+            <div class="col-md-6">
+            <%= show_errors('credit_card') %>
+            <%= f.fields_for(:payment, @order_steps_form.payment) do |payment| %>
+              <div class="form-group">
+                <%= payment.label :firstname, "First name", class: "control-label" %>
+                <%= payment.text_field :firstname, {class: validate_class('shipping_form', 'firstname'), placeholder: 'First name'} %>
+              </div>
+              <div class="form-group">
+                <%= payment.label :lastname, "Last name", class: "control-label" %>
+                <%= payment.text_field :lastname, {class: validate_class('shipping_form', 'lastname'), placeholder: 'Last name'} %>
+              </div>
+              <div class="form-group">
+                <%= payment.label :number, "Card number", class: "control-label" %>
+                <%= payment.text_field :number, {class: validate_class('shipping_form', 'lastname'), placeholder: 'Card number'} %>
+              </div>
+              <div class="form-group">
+                <%= payment.label :experation_date, "Experation date:", class: "control-label" %>
+                <%= select("credit_card", "expiration_month", options_for_select( 1..12 , @order_steps_form.payment.expiration_month ) , { include_blank: 'month' }, name: 'order_steps_form[payment][expiration_month]' ) %>
+                <%= select("credit_card", "expiration_year", options_for_select( 2016..2030 , @order_steps_form.payment.expiration_year ) , { include_blank: 'year' }, name: 'order_steps_form[payment][expiration_year]' ) %>
+              </div>
+              <div class="form-group">
+                <%= payment.label :cvv, "CVV-code", class: "control-label" %>
+                <%= payment.text_field :cvv, {class: validate_class('shipping_form', 'lastname'), placeholder: 'CVV-code'} %>
+              </div>
+
+            <% end %>
+
+            </div>
+          </div>
+        </div>
+
+        <%= render partial: "order_summary" %>
+
+        <div class="col-md-4 col-md-offset-8">
+          <div class="form-group">
+            <%= f.submit "Save and continue", name: 'commit',  class: "btn btn-success btn-lg" %>
+          </div>
+        </div>
+
+
+    </div>
+  </div>
+
+  <% end %>
+
+
+</div>

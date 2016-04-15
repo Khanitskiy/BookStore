@@ -30,6 +30,8 @@ gem 'kaminari'
 gem 'jquery-star-rating-rails'
 gem 'country_select'
 gem 'wicked'
+gem 'virtus'
+gem 'aasm'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

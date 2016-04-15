@@ -1,3 +1,155 @@
 // Place all the styles related to the OrderSteps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.checkout .checkout-h1 {
+    margin-top: 50px;
+}
+
+.checkout .checkout-nav {
+    margin: 20px 0 40px;
+}
+
+.checkout .checkout-nav .active {
+    box-shadow: none !important;
+}
+.checkout .checkout-nav .checkout-nav-lnk-wrap {
+    float: left;
+    width: 25%;
+}
+
+.checkout .checkout-nav .checkout-nav-lnk-wrap a {
+    text-decoration: none;
+}
+
+.checkout .checkout-nav .checkout-nav-lnk-wrap.active .text-lnk {
+    color: #3075ad;
+}
+.checkout .checkout-nav .checkout-nav-lnk-wrap .text-lnk {
+    color: #71a9d7;
+    font-size: 15px;
+    text-align: center;
+}
+
+.checkout .checkout-nav .checkout-nav-lnk-wrap:first-child .progress-line {
+    border-radius: 5px 0 0 5px;
+}
+.checkout .checkout-nav .checkout-nav-lnk-wrap.active .progress-line {
+    background-color: #609ed2;
+}
+
+.checkout .checkout-nav .checkout-nav-lnk-wrap .progress-line {
+    background-color: #d0e3f2;
+    height: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.checkout .checkout-nav .checkout-nav-lnk-wrap:last-child .progress-line {
+    border-radius: 0 5px 5px 0;
+}
+
+.checkout .checkout-nav .checkout-nav-lnk-wrap .progress-line .step-cercle {
+    background-color: #d0e3f2;
+    border-radius: 100%;
+    height: 40px;
+    left: 42%;
+    position: absolute;
+    text-align: center;
+    top: -10px;
+    width: 40px;
+}
+
+.checkout .checkout-nav .checkout-nav-lnk-wrap .progress-line .step-cercle span.step-number {
+    color: #8eb4e1;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.checkout .checkout-nav .checkout-nav-lnk-wrap .progress-line .step-cercle span.step-done-icon {
+    display: none;
+}
+
+.glyphicon {
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    position: relative;
+    top: 1px;
+}
+
+.checkout .margin-bot-add {
+    margin-bottom: 53px;
+}
+
+.checkout .checkout-nav .checkout-nav-lnk-wrap.active .progress-line .step-cercle {
+    background-color: #609ed2;
+}
+
+.checkout .checkout-nav .checkout-nav-lnk-wrap:hover .progress-line .step-cercle {
+    background-color: #c2dbef;
+}
+
+.checkout .checkout-nav .checkout-nav-lnk-wrap:hover .progress-line {
+    background-color: #c2dbef;
+}
+
+.checkout .checkout-nav .checkout-nav-lnk-wrap.c_active .progress-line .step-cercle span.step-number {
+    color: #e4edf8;
+}
+
+.checkout .summary-line {
+    font-size: 16px;
+    margin-bottom: 10px;
+    max-width: 200px;
+}
+
+.checkout .summary-line span {
+    float: right;
+    font-weight: bold;
+}
+
+.c_active .progress-line, .c_active .step-cercle, .c_active a,
+.c_active a:hover, .c_active a:active {
+   pointer-events: none;
+   cursor: none;
+   background-color: #609ed2 !important;
+}
+
+.not-active .progress-line, .not-active .step-cercle,
+.not-active a, .not-active a:hover, .not-active a:active {
+   pointer-events: none;
+   cursor: none;
+   background-color: #d0e3f2 !important;
+}
+
+.checkout .summary-line {
+    font-size: 16px;
+    margin-bottom: 10px;
+    max-width: 200px;
+}
+
+.chek_save {
+  margin-top: 20px;
+}
+
+.form-control {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555555;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}

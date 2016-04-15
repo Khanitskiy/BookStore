@@ -1,23 +1,64 @@
 class Order < ActiveRecord::Base
-	validates :total_price, :completed_date, presence: true
-	#validates :state, presence: true
-	before_create :set_completed_date
+  include AASM
+  validates :total_price, :completed_date, presence: true
+  #validates :state, presence: true
+  before_create :set_completed_date
 
-	has_many :order_items
-	belongs_to :user
-	belongs_to :credit_card
+  has_many :order_items
+  belongs_to :user
+  belongs_to :credit_card
+
+  has_one :billing_address, class_name: 'Address', foreign_key: 'order_billing_address_id'
+  has_one :shipping_address, class_name: 'Address', foreign_key: 'order_shipping_address_id'
+
+  STATE_LIST = ["in_progress", 
+            "processing", 
+            "shipping", 
+            "completed", 
+            "canceled"]
+
+  DELIVERY_METHOD_LIST = ["UPS Ground", 
+                        "UPS One Day", 
+                        "UPS Two Days"]
 
 
-	def create_order(cookies, total_price, user_id)
-	  order = Order.create!( user_id: user_id, 
-	  							 total_price: total_price, 
-	  							 book_count: cookies["book_count"].to_i)
-	  order.id
-	end
+  aasm :column => 'state' do
 
-	private
+    state :in_progress
+    state :in_queue
+    state :in_delivery
+    state :delivered
+    state :canceled
 
-	def completed_date
+
+    event :to_in_queue do
+      transitions :from => :in_progress, :to => :in_queue
+    end
+
+  end
+
+  def state_enum
+    STATE_LIST
+  end
+
+  def delivery_enum
+    DELIVERY_METHOD_LIST
+  end
+
+  def create_order(cookies, total_price, user_id)
+    order = Order.create!( user_id: user_id, 
+                   total_price: total_price, 
+                   book_count: cookies["book_count"].to_i)
+    order.id
+  end
+
+  def self.last_order_queue(current_user)
+    where("user_id = #{current_user.id}").order(:id).first
+  end
+
+  private
+
+  def completed_date
     3.days.from_now
   end
 

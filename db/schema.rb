@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314104155) do
+ActiveRecord::Schema.define(version: 20160414132043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,10 +24,12 @@ ActiveRecord::Schema.define(version: 20160314104155) do
     t.string   "city"
     t.string   "phone"
     t.string   "country"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.integer  "billing_address_id"
-    t.integer  "shipping_address_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "user_billing_address_id"
+    t.integer  "user_shipping_address_id"
+    t.integer  "order_billing_address_id"
+    t.integer  "order_shipping_address_id"
   end
 
   create_table "authors", force: :cascade do |t|
@@ -69,7 +71,7 @@ ActiveRecord::Schema.define(version: 20160314104155) do
   end
 
   create_table "credit_cards", force: :cascade do |t|
-    t.integer  "number"
+    t.string   "number"
     t.integer  "cvv"
     t.integer  "expiration_month"
     t.integer  "expiration_year"
@@ -83,7 +85,6 @@ ActiveRecord::Schema.define(version: 20160314104155) do
   add_index "credit_cards", ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
 
   create_table "order_items", force: :cascade do |t|
-    t.decimal  "price"
     t.string   "quantity"
     t.integer  "book_id"
     t.integer  "order_id"
@@ -97,14 +98,15 @@ ActiveRecord::Schema.define(version: 20160314104155) do
   create_table "orders", force: :cascade do |t|
     t.decimal  "total_price"
     t.date     "completed_date"
-    t.integer  "state",            default: 1
+    t.string   "state",          default: "in_progress"
     t.integer  "book_count"
-    t.string   "billing_address"
-    t.string   "shipping_address"
+    t.integer  "step_number"
     t.integer  "user_id"
     t.integer  "credit_card_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.decimal  "delivery",       default: 5.0
+    t.decimal  "order_total"
   end
 
   add_index "orders", ["credit_card_id"], name: "index_orders_on_credit_card_id", using: :btree
