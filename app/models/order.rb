@@ -2,7 +2,7 @@ class Order < ActiveRecord::Base
   include AASM
   validates :total_price, :completed_date, presence: true
   #validates :state, presence: true
-  before_create :set_completed_date
+  before_validation :set_completed_date
 
   has_many :order_items
   belongs_to :user
@@ -53,17 +53,38 @@ class Order < ActiveRecord::Base
   end
 
   def self.last_order_queue(current_user)
-    where("user_id = #{current_user.id}").order(:id).first
+    #byebug
+    where("user_id = #{current_user.id}").order(id: :desc).first
+  end
+
+  def self.in_queue(current_user)
+    where(user_id: current_user.id, state: 'in_queue').all
+  end
+  
+  def self.in_delivery(current_user)
+    where(user_id: current_user.id, state: 'in_delivery').all
+  end
+
+  def self.delivered(current_user)
+    where(user_id: current_user.id, state: 'delivered').all
   end
 
   private
 
-  def completed_date
-    3.days.from_now
-  end
+  #def completed_date
+    #3.days.from_now
+  #end
 
   def set_completed_date
-    self.completed_date = completed_date
+    self.completed_date = 3.days.from_now
   end
+
+  #def now_date
+  #  Time.now().strftime("%Y-%m-%d")
+  #end
+
+  #def set_completed_date(day)
+  #  self.completed_date = day == "infinity" ? "infinity" : day.days.from_now
+  #end
 
 end

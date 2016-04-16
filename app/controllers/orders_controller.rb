@@ -3,16 +3,8 @@ class OrdersController < ApplicationController
 
   # Management cart on cookies or database order
   def new
-    
     if current_user
-      @ids = Array.new
-      @cookies_hash = Hash.new
-      @order.order_items.try(:each) do |item| 
-        @cookies_hash[item.book_id.to_s] = item.quantity
-        @ids << item.book_id
-      end
-      @books = Book.where(:id => @ids)
-      @subtotal = @order.total_price.to_f
+      get_books_in_order
     else
       @cookies_book = JSON.parse(cookies[:books]) if cookies[:books]
       total_price(@cookies_book)
@@ -66,12 +58,15 @@ class OrdersController < ApplicationController
   end
 
   def show
-
+    @order =  Order.find_by_id(params[:id])
+    #byebug
   end
 
   def index
-    #render json: { "current_user" => current_user, "logged_in" => user_signed_in? }, :layout => false
-    #format.json { render :json => {'ok'=>true} }
+    get_books_in_order
+    @in_queue    = Order.in_queue(current_user)
+    @in_delivery = Order.in_delivery(current_user)
+    @delivered   = Order.delivered(current_user)
   end
 
   def destroy
@@ -82,14 +77,21 @@ class OrdersController < ApplicationController
     redirect_to books_path 
   end
 
-  def add_to_order
-
-  end
-
   private
 
     def order_params
       params.permit(:book_id, :quantity)
+    end
+
+    def get_books_in_order
+      @ids = Array.new
+      @cookies_hash = Hash.new
+      @order.order_items.try(:each) do |item| 
+        @cookies_hash[item.book_id.to_s] = item.quantity
+        @ids << item.book_id
+      end
+      @books = Book.where(:id => @ids)
+      @subtotal = @order.total_price.to_f
     end
 
 end

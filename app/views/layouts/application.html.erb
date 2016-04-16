@@ -40,7 +40,7 @@
             <li><%= link_to "Admin panel", rails_admin.dashboard_path %></li>
           <% end %> 
           <li <%= cp(settings_path) %> ><%= link_to "Settings", settings_path %></li>
-          <li><%= link_to "Orders", '#' %></li>
+          <li <%= cp(orders_path) %> ><%= link_to "Orders", orders_path %></li>
 
           <li <%= cp(destroy_user_session_path) %> >
            <%= link_to('Sign out', destroy_user_session_path, :method => :delete) %>   

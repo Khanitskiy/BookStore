@@ -9,8 +9,10 @@ class OrderStepsController < ApplicationController
   def show
 
     if step == :complete
+      #byebug
       @order = Order.last_order_queue(current_user)
       session[:user_products_count] = 0
+      cookies.delete :user_products_count
     end
 
     @order_steps_form = OrderStepsForm.new(@order)
