@@ -1,17 +1,19 @@
 module OrderStepsHelper
 
 
-  #def validate_class(form_type, flash_field)
-    #if flash["error"] != nil
-      #if flash["error"][form_type] && flash["error"][flash_field] != nil
-        #{}"form-control error"
-     # else
-        #{}"form-control"
-      #end
-    #else
-      #{}"form-control"
-    #end
-  #end
+  def validate_checkout_class(object, form_type, error_field, data = false)
+    #byebug  
+    if object[form_type].errors.messages.any?
+      #byebug
+      if object[form_type].errors.messages[error_field] && object[form_type].errors.messages[error_field] != []
+        data ? "border: 1px solid red" : "form-control error"
+      else
+        "form-control" unless data
+      end
+    else
+      "form-control" unless data
+    end
+  end
 
 
   def checkbox_state(bool = false)
@@ -24,7 +26,6 @@ module OrderStepsHelper
 
 
   def show_errors(form_type)
-
     @string = ''
     if @order_steps_form[form_type].errors.messages.any?
       @order_steps_form[form_type].errors.messages.each do |error_message|

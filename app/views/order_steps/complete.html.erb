@@ -36,6 +36,7 @@
       <h3>
         Payment information
       </h3>
+      <%# byebug %>
       <div>**** **** **** <%= @order_steps_form.credit_card.number.split("").last(4).join("") %></div>
       <div><%= @order_steps_form.month %>/<%= @order_steps_form.year %></div>
     </div>

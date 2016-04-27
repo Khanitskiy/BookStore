@@ -53,5 +53,28 @@ module ApplicationHelper
     end
 
   end
+
+  def cupon(order_total)
+    if @order.cupon.nil?
+      order_total
+    else @order.cupon.nil?
+      if @order.cupon.use == true
+        #byebug
+        if step == :complete
+          order_total
+        else
+          order_total - @order.cupon.discount
+        end
+      end
+    end
+  end
+
+  def discount
+    if @order.cupon.nil?
+      ''
+    else
+      '(-$<div id="cupon-value">' << @order.cupon.discount.to_s << '</div>)<br><br>'
+    end
+  end
   
 end

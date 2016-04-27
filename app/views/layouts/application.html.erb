@@ -21,16 +21,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li <%= cp(root_path) %>><%= link_to "HOME", root_path %></li>
-        <li <%= cp(books_path) %>><%= link_to "SHOP", books_path %></li>
+        <li <%= cp(root_path) %>><%= link_to t(:home), root_path %></li>
+        <li <%= cp(books_path) %>><%= link_to t(:shop), books_path %></li>
         <form class="navbar-form navbar-left" action="/shop/search" role="search" method="get">
           <div class="form-group">
-            <input type="text" name="value" value="<%= params[:value] if params[:action] == "search" %>" class="form-control" placeholder="Search">
+            <input type="text" name="value" value="<%= params[:value] if params[:action] == "search" %>" class="form-control" placeholder="<%= t(:search) %>">
           </div>
-          <button type="submit" class="btn btn-default">Search</button>
+          <button type="submit" class="btn btn-default"><%= t(:search) %></button>
         </form>
         <li class="cart-lnk  <%= cp(new_order_path, true) %>">
-            <a href="<%= new_order_path %>"><span class="glyphicon glyphicon-shopping-cart"></span>CART:<em>(<%= count_products %>)</em>
+            <a href="<%= new_order_path %>"><span class="glyphicon glyphicon-shopping-cart"></span><%= t(:cart) %>:<em>(<%= count_products %>)</em>
         </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -39,21 +39,32 @@
           <% if current_user.admin? %>
             <li><%= link_to "Admin panel", rails_admin.dashboard_path %></li>
           <% end %> 
-          <li <%= cp(settings_path) %> ><%= link_to "Settings", settings_path %></li>
-          <li <%= cp(orders_path) %> ><%= link_to "Orders", orders_path %></li>
+          <li <%= cp(settings_path) %> ><%= link_to t(:settings), settings_path %></li>
+          <li <%= cp(orders_path) %> ><%= link_to t(:orders), orders_path %></li>
 
           <li <%= cp(destroy_user_session_path) %> >
-           <%= link_to('Sign out', destroy_user_session_path, :method => :delete) %>   
-        
+           <%= link_to(t(:sign_out), destroy_user_session_path, :method => :delete) %>   
+          </li>
+          <li class="multi-languages">
+            <%= link_to 'en', url_for( :locale => 'en' ) %>
+            <%= link_to 'ru', url_for( :locale => 'ru' ) %>
+          </li>
         <% else %>
           <li <%= cp(new_user_session_path) %> >
-            <%= link_to "Log in", new_user_session_path %>
+            <%= link_to t(:log_in), new_user_session_path %>
           </li>
 
           <li <%= cp(new_user_registration_path) %> >
-            <%= link_to "Sign up", new_user_registration_path %>
+            <%= link_to t(:sign_up), new_user_registration_path %>
           </li>
+
+           <li class="multi-languages">
+            <%= link_to 'en', url_for( :locale => 'en' ) %>
+            <%= link_to 'ru', url_for( :locale => 'ru' ) %>
+          </li>
+
         <% end %>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -1,3 +1,3 @@
 class Address < ActiveRecord::Base
-	validates :firstname, :lastname, :address, :zipcode, :city, :phone, :country, presence: true
+	validates_presence_of :firstname, :lastname, :address, :zipcode, :city, :phone, :country
 end

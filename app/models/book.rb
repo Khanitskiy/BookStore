@@ -15,7 +15,7 @@ class Book < ActiveRecord::Base
   #has_many   :order_items
 
   mount_uploader :image, BookImgUploader
-  paginates_per 2
+  paginates_per 9
 
   def self.bestsellers
     where("best_seller = 'true'")

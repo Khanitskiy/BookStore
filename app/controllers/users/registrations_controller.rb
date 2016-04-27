@@ -2,7 +2,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
  protected
 
   def after_sign_up_path_for(resource)
-    after_sign_in
+    after_sign_up #unless  request.env['omniauth.origin']
     root_path
   end
 

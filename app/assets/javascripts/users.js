@@ -46,4 +46,13 @@ $(document).on("ready page:load",function(){
     }
   });
 
+  $('body').delegate('#remove_button', 'click', function(){
+
+    if ($(this).hasClass('disabled')){
+      return false;
+    }
+
+  });
+
 });
+

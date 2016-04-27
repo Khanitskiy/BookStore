@@ -9,7 +9,7 @@
 
 # create first admin user
 User.delete_all
-User.create(email: "admin@gmail.com", password: "80966373139", firstname: "Admin", lastname: "Adminovitch", admin: true)
+User.create(email: "admin@gmail.com", password: "adminadmin", firstname: "Admin", lastname: "Adminovitch", admin: true)
 
 Book.delete_all
 Book.create(title: "The Rspec Book", 
@@ -27,3 +27,20 @@ Book.create(title: "The Ruby Programming Language",
 													Yukihiro \"Matz\" Matsumoto, creator, designer and lead developer of Ruby and author of Ruby in a Nutshell, which has been expanded and revised to become this book.
 													why the lucky stiff, artist and Ruby programmer extraordinaire.",
 					  price: 32.6, in_stock: 328, order_counter: 48, image: "image/upload/v1456929904/rtkkcjwiekw007uzl3ys.png", best_seller: true)
+
+@order = Order.new()
+@order_items = OrderItem.new()
+@cookies_book = { "book_count" => "0", "total_price" => "0"}
+order_id = @order.create_order(@cookies_book, 0,  1)
+@order_items.create_items(@cookies_book, order_id)
+
+Cupon.create(value: 'asdasdasd')
+Cupon.create(value: 'Sk8fS0F23')
+Cupon.create(value: 'J3fS03fDs')
+Cupon.create(value: '23Lss02Fw')
+Cupon.create(value: 'KdGn39n3v')
+Cupon.create(value: 'Fskf9D2mf', discount: 10)
+Cupon.create(value: '9fSk3k2nv', discount: 10)
+Cupon.create(value: 'Ls02nFsd1', discount: 10)
+Cupon.create(value: 'KJsfne30v', discount: 20)
+Cupon.create(value: 'Anutochka', discount: 20)

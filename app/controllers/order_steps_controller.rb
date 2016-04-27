@@ -15,13 +15,19 @@ class OrderStepsController < ApplicationController
       cookies.delete :user_products_count
     end
 
+
     @order_steps_form = OrderStepsForm.new(@order)
     @order_steps_form.user = current_user
     #byebug
-    render_wizard
-    if step == :complete
-      after_sign_in
+    unless params[:value].nil? 
+      #byebug
+      cupon = Cupon.cheking(params[:value])
+      cupon.update(order_id: @order.id, use: true) unless cupon.nil?
     end
+      #byebug
+      #@order_steps_form.last_order = @order_steps_form.last_order
+    #end
+    render_wizard
   end
 
   def update

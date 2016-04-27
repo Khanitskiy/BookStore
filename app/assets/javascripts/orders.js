@@ -97,5 +97,49 @@ $(document).on("ready page:load",function(){
       $('.order-summary-line span').text(number_to_currency(total_price));
 
     });
+    
+    // ## Check cupon
+    $('body').delegate('#checkout', 'click', function (event){
+      cupon = $('.cupon').val();
+      console.log(window.location.toString())
+      //$(this).attr('href', $(this).attr('href') + '/address?value=' + cupon );
+      //checkout = $(this).attr('href');
+      //alert(checkout)
+      //cupon = $('.cupon').val();
+      language = $(this).attr('href').slice(1,3);
+      if(cupon.length == 0 ) {return true;}
+
+      if(cupon.length != 9 && cupon.length != 0) {
+        alert('code consists of 9 digits!');
+        return false;
+      }
+      
+      if (cupon.length != 0) {
+        event.preventDefault();
+        var value = $('.cupon').val()
+        var pathname = 'http://' + $(location).attr('host') + '/orders/check_cupon_ajax';
+      //alert(pathname) 
+        $.ajax({
+          type: "POST",
+          url: pathname,
+          data: "value=" + value,
+
+          success: function(msg){
+            
+            result = confirm(msg) ? true : false;
+            if(result) {
+              var address = 'http://' + $(location).attr('host') +'/' + language + '/order_steps/address?' + "value=" + value;
+              window.location.replace(address);
+            }
+          },
+          error:function(msg){
+            alert("Error");
+          } 
+        });
+
+
+      }
+
+    });
 
 });

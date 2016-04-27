@@ -1,12 +1,34 @@
 Rails.application.routes.draw do
 
   get "/users/edit" => "users#settings"
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", 
-                                       :registrations      => "users/registrations",
-                                       :sessions           => "users/sessions" }
+  
+
+  devise_for :users, skip: [:session, :password, :registration, :confirmation], :controllers => {
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  root 'books#home'
+
+  scope "/:locale" do
+
+    devise_for :users, skip: :omniauth_callbacks, :controllers => {:registrations => "users/registrations",
+                                                                   :sessions      => "users/sessions" }
+
+    resources :books
+    resources :orders
+    resources :orders_items
+    resources :order_steps
+    resources :addresses
+    resources :users
+
+    root 'books#home'
+    get    '/settings', to: 'users#settings'
+  end
+
+  root to: redirect("/#{I18n.default_locale}", status: 302), as: :redirected_root
+
+  get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(#{I18n.available_locales.join("|")})\/).*/}, format: false
+
   get  '/shop/search', to: 'books#search'
   resources :books, only: [:index, :show], path: '/shop'
   resources :categories, only: [:show], path: '/shop/category/'
@@ -15,6 +37,7 @@ Rails.application.routes.draw do
   scope :orders do 
     get    '/clear_shopcart', to: 'orders#clear_cookies_shopcart'
     put    '/update_shopcart_ajax', to: 'orders#update_shopcart_ajax'
+    post    '/check_cupon_ajax', to: 'orders#check_cupon_ajax'
     #get    '/delete_products', to: 'orders#delete_products'
   end
   resources :orders

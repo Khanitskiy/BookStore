@@ -1,4 +1,4 @@
-<h1>Cart</h1>
+<h1><%= t(:title_cart) %></h1>
 <% unless @books.empty? %>
 <div class="row cart full_cart">
   <div class="col-md-12">
@@ -46,8 +46,17 @@
     <%= link_to "Continue shopping", books_path, :class => "btn btn-primary" %>
   </div>
   <div class="col-md-6 right-btns">
-    <a href="<%= order_steps_path %>" class="btn btn-success pull-right checkout-btn">Checkout</a>
-    <input type="submit" class="btn btn-default pull-right" value="Update" id="update" name="commit">
+   
+    <%# byebug %>
+    <%= form_tag(order_steps_path, method: "get") do %>
+      <% if defined?(@order) && @order.cupon.nil? %>
+        <%= text_field_tag("cupon", nil, options = {class: 'cupon', placeholder: "Cupon code"} ) %>
+      <% end %>
+      
+      <%#= button_tag("Checkout", type: 'button', class: "btn btn-success pull-right checkout-btn", id: "checkout") %>
+      <a href="<%= order_steps_path %>" id="checkout" class="btn btn-success pull-right checkout-btn">Checkout</a>
+      <input type="button" class="btn btn-default pull-right" value="Update" id="update" name="commit">
+    <% end %>
   </div>
 </div>
 <% end %>

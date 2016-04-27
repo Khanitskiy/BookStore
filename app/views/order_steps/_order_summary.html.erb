@@ -12,6 +12,8 @@
   </div>
   <div class="summary-line order_total">
     ORDER TOTAL:
-    <span><%= number_to_currency(@order.order_total.to_f) %></span>
+
+    <span><%= number_to_currency(cupon(@order.order_total.to_f)) %></span>
+    <div id="cupon-red"><%= discount.html_safe %></div>
   </div>
 </div>

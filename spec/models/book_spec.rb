@@ -13,7 +13,7 @@ RSpec.describe Book, type: :model do
   it { should belong_to (:author) }
   it { should belong_to (:category) }
   it { should have_many(:ratings) }
-  it { should have_many(:customers).through(:ratings) }
+  it { should have_many(:users).through(:ratings) }
 
   it "is invalid when price 0" do
     expect(FactoryGirl.build :book, price: 0).not_to be_valid

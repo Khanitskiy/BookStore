@@ -5,9 +5,10 @@ class OrdersItemsController < ApplicationController
   end
 
   def destroy
-    #byebug
     @order.total_price = @order.total_price - params[:product_count].to_i * Book.find_by_id(params[:id]).price.to_f
     @order.order_total = @order.total_price.to_f + @order.delivery.to_f
+    @order.book_count = @order.book_count - params[:product_count].to_i
+    #byebug
     @order.save
     @order.order_items.find_by_book_id(params[:id]).destroy
     session[:user_products_count] = session[:user_products_count].to_i - params[:product_count].to_i

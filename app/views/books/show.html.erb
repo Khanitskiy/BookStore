@@ -45,7 +45,8 @@
 		<input class="hidden_input" type="hidden" value="">
 		<input class="hidden_input_userid" type="hidden" value="<%= current_user.id %>">
 		<input class="hidden_input_bookid" type="hidden" value="<%= params[:id] %>">
-		<p><textarea class="field_comment" rows="5" cols="50" autofocus></textarea></p>
+		<input type="text" name="title" placeholder="Title" class="field_title" size="50" style="padding: 0 7px;">
+		<p><textarea class="field_comment" placeholder="Comment text" rows="5" cols="50" autofocus></textarea></p>
 		<input type="button" id="add_comment_reting" class="btn btn-primary" value="ADD" name="commit"> or <a href="#" id="cancel">Cancel</a>
 	</form>
 	<% end %>
@@ -69,7 +70,7 @@
 								<% end %>
 							<% end %>
 					</div>
-					<span class="comment_title">Not sure if this is the best book to start!</span>
+					<span class="comment_title"><%= rating.title %></span>
 					<span class="comment_date"><%= rating.created_at.strftime("%b %d, %Y") %></span>
 				</div>
 				<div class="comment_user_name">by <a href="#"><%= rating.user.firstname << ' ' << rating.user.lastname %></a></div>

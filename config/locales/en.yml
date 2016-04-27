@@ -20,4 +20,27 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+
+  ## layouts/application.html.erb
+  home:     "HOME"
+  shop:     "SHOP"
+  search:   "Search"
+  cart:     "CART"
+  settings: "Settings"
+  orders:   "Orders"
+  sign_out: "Sign out"
+  log_in:   "Log in"
+  sign_up:  "Sign up"
+
+  ## books/home.html.erb
+  home_h1: "Welcome to our amazing Bookstore! "
+  home_h2: "Select all that you want and make for the lowest prices."
+
+  ## books/home.html.erb
+  title_shop: "Shop"
+
+  title_cart: "Cart"
+
+  title_settings: "Settings"
+
+  title_orders: "Orders"

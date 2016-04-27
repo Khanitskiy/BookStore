@@ -14,6 +14,7 @@ class OrderStepsForm
   attribute :current_step
   attribute :valid
   attribute :user
+  attribute :last_order
 
 
   def initialize(order)
@@ -149,6 +150,7 @@ class OrderStepsForm
        order.update( delivery: atributes[:delivery_type][:delivery].to_f,
                      order_total: order.total_price.to_f + atributes[:delivery_type][:delivery].to_f) 
     when :payment
+      #byebug
       if order.credit_card.nil?
         order.create_credit_card(atributes[:payment])
       else
@@ -156,7 +158,15 @@ class OrderStepsForm
       end
       self.valid = false if order.credit_card.errors.any?
     when :confirm
+      unless @order.cupon.nil?
+        order.update(order_total: order.order_total.to_f - order.cupon.discount)
+      end
       order.to_in_queue!
+      @new_order = Order.new()
+      @order_items = OrderItem.new()
+      @cookies_book = { "book_count" => "0", "total_price" => "0"}
+      order_id = @new_order.create_order(@cookies_book, 0,  user.id)
+      @order_items.create_items(@cookies_book, order_id)
     end
   end
 

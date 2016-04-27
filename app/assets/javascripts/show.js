@@ -21,29 +21,41 @@ $(document).on("ready page:load",function(){
     $('input.hidden_input').val($('a',this).attr('title'));
   });
 
+  //$('body').delegate('.rating-cancel a', 'click', function(){
+    //$('input.hidden_input').val('');
+  //});
+
+
   $('body').delegate('#add_comment_reting', 'click', function(){
     var pathname = $(location).attr('host') + '/rating';
     var rating = $('.hidden_input').val();
-    var comment = $('.field_comment').val();
+    var title  = $('.field_title').val();
+    var text_review = $('.field_comment').val();
     var user_id = $('.hidden_input_userid').val();
     var book_id = $('.hidden_input_bookid').val();
-    if (rating == '') { rating = '10'; }
+    //if (rating == '') { rating = '10'; }
     $.ajax({
       type: "POST",
       url: "http://" + pathname,
-      data: "rating="   + rating  + 
-            "&comment=" + comment +
-            "&user_id=" + user_id + 
-            "&book_id=" + book_id,
+      data: "rating="       + rating  + 
+            "&title="       + title   +
+            "&text_review=" + text_review +
+            "&user_id="     + user_id + 
+            "&book_id="     + book_id,
 
       success: function(msg){
-        $('.rating_comment').hide("500");
-        $( ".comments-block" ).prepend( msg );
+        if(msg == 'It broke!') {
+          alert("Fill in all the fields or enter the true test values")
+        }
+        else {
+          $('.rating_comment').hide("500");
+          $( ".comments-block" ).prepend( msg );
 
-        var id_comment = $('#id_comment').text();
-        $("input.star" + id_comment).rating();
+          var id_comment = $('#id_comment').text();
+          $("input.star" + id_comment).rating();
 
-        $( ".comments-block .my_hide" ).show(700);
+          $( ".comments-block .my_hide" ).show(700);
+        }
       },
       error:function(msg){
           alert("Error");

@@ -31,18 +31,24 @@ $(document).on("ready page:load",function(){
   });
 
   $('body').delegate('#order_steps_form_delivery_type_delivery_5', 'click', function(){
+    var cupon_value = $('#cupon-value').text();
+
     $('.shipping span').text('$5.00')
-    $('.order_total span').text(number_to_currency(+$('.item_total span').text().slice(1) + 5))
+    $('.order_total span').text(number_to_currency(+$('.item_total span').text().slice(1) + 5 - cupon_value))
   });
 
   $('body').delegate('#order_steps_form_delivery_type_delivery_10', 'click', function(){
+    var cupon_value = $('#cupon-value').text();
+
     $('.shipping span').text('$10.00')
-    $('.order_total span').text(number_to_currency(+$('.item_total span').text().slice(1) + 10))
+    $('.order_total span').text(number_to_currency(+$('.item_total span').text().slice(1) + 10 - cupon_value))
   });
 
   $('body').delegate('#order_steps_form_delivery_type_delivery_20', 'click', function(){
+    var cupon_value = $('#cupon-value').text();
+
     $('.shipping span').text('$20.00')
-    $('.order_total span').text(number_to_currency(+$('.item_total span').text().slice(1) + 20))
+    $('.order_total span').text(number_to_currency(+$('.item_total span').text().slice(1) + 20 - cupon_value))
   });
 
 

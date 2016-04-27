@@ -14,24 +14,33 @@
             <%= f.fields_for(:payment, @order_steps_form.payment) do |payment| %>
               <div class="form-group">
                 <%= payment.label :firstname, "First name", class: "control-label" %>
-                <%= payment.text_field :firstname, {class: validate_class('shipping_form', 'firstname'), placeholder: 'First name'} %>
+                <%= payment.text_field :firstname, {class: validate_checkout_class(@order_steps_form, 'payment', :firstname), placeholder: 'First name'} %>
               </div>
               <div class="form-group">
                 <%= payment.label :lastname, "Last name", class: "control-label" %>
-                <%= payment.text_field :lastname, {class: validate_class('shipping_form', 'lastname'), placeholder: 'Last name'} %>
+                <%= payment.text_field :lastname, {class: validate_checkout_class(@order_steps_form, 'payment', :lastname), placeholder: 'Last name'} %>
               </div>
               <div class="form-group">
                 <%= payment.label :number, "Card number", class: "control-label" %>
-                <%= payment.text_field :number, {class: validate_class('shipping_form', 'lastname'), placeholder: 'Card number'} %>
+                <%= payment.text_field :number, {class: validate_checkout_class(@order_steps_form, 'payment', :number), placeholder: 'Card number'} %>
               </div>
-              <div class="form-group">
-                <%= payment.label :experation_date, "Experation date:", class: "control-label" %>
-                <%= select("credit_card", "expiration_month", options_for_select( 1..12 , @order_steps_form.payment.expiration_month ) , { include_blank: 'month' }, name: 'order_steps_form[payment][expiration_month]' ) %>
-                <%= select("credit_card", "expiration_year", options_for_select( 2016..2030 , @order_steps_form.payment.expiration_year ) , { include_blank: 'year' }, name: 'order_steps_form[payment][expiration_year]' ) %>
-              </div>
+            <div class="form-group">
+              <%= payment.label :experation_date, "Experation date:", class: "control-label" %>
+              <% if @order_steps_form.payment.expiration_month?  %>
+                <%= select("credit_card", "expiration_month", options_for_select( 1..12 , @order_steps_form.payment.expiration_month ), {}, { name: 'order_steps_form[payment][expiration_month]' } )  %>
+              <% else %>
+                <%= select("credit_card", "expiration_month", options_for_select( 1..12 , @order_steps_form.payment.expiration_month ) , { include_blank: 'month' }, { class: '', style: validate_checkout_class(@order_steps_form, 'payment', :expiration_year, true), name: 'order_steps_form[payment][expiration_month]' } ) %>
+              <% end %>
+               <% if @order_steps_form.payment.expiration_year?  %>
+                <%= select("credit_card", "expiration_year", options_for_select( 2016..2030 , @order_steps_form.payment.expiration_year), {}, { name: 'order_steps_form[payment][expiration_year]' } ) %>
+              <% else %>
+                <%= select("credit_card", "expiration_year", options_for_select( 2016..2030 , @order_steps_form.payment.expiration_year ) , { include_blank: 'year' }, { class: '', style: validate_checkout_class(@order_steps_form, 'payment', :expiration_year, true), name: 'order_steps_form[payment][expiration_year]' } ) %>
+              <% end %>
+            </div>
+
               <div class="form-group">
                 <%= payment.label :cvv, "CVV-code", class: "control-label" %>
-                <%= payment.text_field :cvv, {class: validate_class('shipping_form', 'lastname'), placeholder: 'CVV-code'} %>
+                <%= payment.text_field :cvv, {class: validate_checkout_class(@order_steps_form, 'payment', :cvv), style: 'width: 90px', placeholder: 'CVV-code'} %>
               </div>
 
             <% end %>

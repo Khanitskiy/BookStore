@@ -10,17 +10,7 @@ class Order < ActiveRecord::Base
 
   has_one :billing_address, class_name: 'Address', foreign_key: 'order_billing_address_id'
   has_one :shipping_address, class_name: 'Address', foreign_key: 'order_shipping_address_id'
-
-  STATE_LIST = ["in_progress", 
-            "processing", 
-            "shipping", 
-            "completed", 
-            "canceled"]
-
-  DELIVERY_METHOD_LIST = ["UPS Ground", 
-                        "UPS One Day", 
-                        "UPS Two Days"]
-
+  has_one :cupon
 
   aasm :column => 'state' do
 
@@ -38,23 +28,29 @@ class Order < ActiveRecord::Base
   end
 
   def state_enum
-    STATE_LIST
+    ["in_progress", 
+     "processing", 
+     "shipping", 
+     "completed", 
+     "canceled"]
   end
 
   def delivery_enum
-    DELIVERY_METHOD_LIST
+    [ [ 'UPS Ground', '5.0' ], [ 'UPS One Day', '10.0' ], [ 'UPS Two Days', '20.0' ] ]
   end
 
   def create_order(cookies, total_price, user_id)
     order = Order.create!( user_id: user_id, 
-                   total_price: total_price, 
+                   total_price: total_price,
+                   order_total: total_price + 5.0,  
                    book_count: cookies["book_count"].to_i)
     order.id
   end
 
   def self.last_order_queue(current_user)
     #byebug
-    where("user_id = #{current_user.id}").order(id: :desc).first
+    #where("user_id = #{current_user.id}").order(id: :desc).first
+    where(user_id: current_user.id, state: 'in_queue').order(id: :desc).first
   end
 
   def self.in_queue(current_user)
@@ -68,6 +64,17 @@ class Order < ActiveRecord::Base
   def self.delivered(current_user)
     where(user_id: current_user.id, state: 'delivered').all
   end
+
+  #def delivery
+    #byebug
+    #if self.delivery.to_i == 5.0
+      #'UPS Ground'
+    #elsif self.delivery.to_i == 10.0
+      #'UPS One Day'
+    #elsif self.delivery.to_i == 20.0
+      #'UPS Two Days'
+    #end
+  #end
 
   private
 

@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
       get_books_in_order
     else
       @cookies_book = JSON.parse(cookies[:books]) if cookies[:books]
-      total_price(@cookies_book)
+      get_books_in_order_not_auth(@cookies_book)
     end
   end
 
@@ -26,13 +26,12 @@ class OrdersController < ApplicationController
     @order.total_price = @order.total_price + price
     @order.completed_date =  3.days.from_now
     @order.order_total =  @order.delivery.to_f +  @order.total_price.to_f
-    #byebug
     @order.save!
 
     unless @order_items == nil
       params[:quantity] = params[:quantity].to_i + @order_items[:quantity].to_i
       @order_items.update(order_params)
-    else 
+    else
       @order.order_items.create(order_params)
     end
 
@@ -40,7 +39,6 @@ class OrdersController < ApplicationController
   end
 
   def update_shopcart_ajax
-    #byebug
     total_price = 0
     quantity = 0
     params.try(:each) do |item| 
@@ -57,9 +55,23 @@ class OrdersController < ApplicationController
     render nothing: true
   end
 
+  def check_cupon_ajax
+    checking = Cupon.cheking(params[:value])
+    #byebug
+    if checking
+      #byebug
+      if checking.use
+        render :text => 'This code has been used'
+      else
+        render :text => 'Your discount is $' << checking.discount.to_s << '. Continue?'
+      end
+    else
+      render :text => 'This code is not found'
+    end
+  end
+
   def show
     @order =  Order.find_by_id(params[:id])
-    #byebug
   end
 
   def index
@@ -71,7 +83,7 @@ class OrdersController < ApplicationController
 
   def destroy
     @order.order_items.destroy_all
-    #@order.destroy
+    @order.update(total_price: 0.0, book_count: 0, order_total: 0.0)
     cookies.delete :user_products_count
     session[:user_products_count] = 'empty'
     redirect_to books_path 
@@ -80,10 +92,11 @@ class OrdersController < ApplicationController
   private
 
     def order_params
-      params.permit(:book_id, :quantity)
+      params.permit(:book_id, :quantity, :value)
     end
 
     def get_books_in_order
+      #byebug
       @ids = Array.new
       @cookies_hash = Hash.new
       @order.order_items.try(:each) do |item| 
