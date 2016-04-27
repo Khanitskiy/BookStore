@@ -15,6 +15,7 @@ Rails.application.routes.draw do
                                                                    :sessions      => "users/sessions" }
 
     resources :books
+    resources :categories
     resources :orders
     resources :orders_items
     resources :order_steps
