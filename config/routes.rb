@@ -23,14 +23,14 @@ Rails.application.routes.draw do
     resources :users
 
     root 'books#home'
-    get    '/settings', to: 'users#settings'
+    get  '/settings',    to: 'users#settings'
+    get  '/shop/search', to: 'books#search'
   end
 
   root to: redirect("/#{I18n.default_locale}", status: 302), as: :redirected_root
 
   get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(#{I18n.available_locales.join("|")})\/).*/}, format: false
 
-  get  '/shop/search', to: 'books#search'
   resources :books, only: [:index, :show], path: '/shop'
   resources :categories, only: [:show], path: '/shop/category/'
   resources :ratings, only: [:index, :create], path: '/rating'

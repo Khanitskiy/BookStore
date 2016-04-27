@@ -1,7 +1,8 @@
 module BooksHelper
 
   def highlighting_results(string)
-    string.sub(params[:value], "<span style='color: yellow'>#{params[:value]}</span>").html_safe
+    regular_expression = Regexp.new(params[:value], Regexp::IGNORECASE)
+    string.sub(regular_expression, "<span style='color: yellow'>#{string.match(regular_expression)}</span>").html_safe
   end
 
 end

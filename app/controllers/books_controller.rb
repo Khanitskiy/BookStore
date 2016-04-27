@@ -17,7 +17,7 @@ class BooksController < ApplicationController
 
   def search
     @categories = Category.all
-    @books = Book.search_books(params[:value])
+    @books = Book.search_books(params[:value]).all
   end
 
 end
