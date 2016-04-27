@@ -73,7 +73,6 @@ module ApplicationHelper
   end
 
   def discount
-    byebug
     if @order.cupon.nil?
       ''
     else
