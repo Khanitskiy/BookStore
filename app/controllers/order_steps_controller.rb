@@ -22,7 +22,7 @@ class OrderStepsController < ApplicationController
     unless params[:value].nil? 
       #byebug
       cupon = Cupon.cheking(params[:value])
-      cupon.update(order_id: @order.id, use: true) unless cupon.nil?
+      cupon.update(order_id: @order.id, use: true) if cupon && cupon.use == false
     end
       #byebug
       #@order_steps_form.last_order = @order_steps_form.last_order

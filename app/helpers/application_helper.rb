@@ -59,17 +59,21 @@ module ApplicationHelper
       order_total
     else @order.cupon.nil?
       if @order.cupon.use == true
-        #byebug
-        if step == :complete
-          order_total
+        if defined?(step)
+         if step == :complete
+            order_total
+          else
+            order_total - @order.cupon.discount
+          end
         else
-          order_total - @order.cupon.discount
+           order_total
         end
       end
     end
   end
 
   def discount
+    byebug
     if @order.cupon.nil?
       ''
     else
