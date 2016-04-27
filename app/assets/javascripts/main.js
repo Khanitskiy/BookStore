@@ -67,7 +67,7 @@ function changeCookie(book_id, quantity) {
 
 function ajaxChange(book_id, quantity) {
   var data = { book_id: book_id, quantity: quantity }
-  ajaxRequest("http://localhost:3000/orders/" + book_id, data, "PATCH");
+  ajaxRequest(window.location.host << "/orders/" + book_id, data, "PATCH");
   //var bool = 's';
   var cookie_value = document.cookie.replace(/(?:(?:^|.*;\s*)user_products_count\s*\=\s*([^;]*).*$)|^.*$/, "$1");
   

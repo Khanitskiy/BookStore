@@ -11,18 +11,6 @@ class ApplicationController < ActionController::Base
     redirect_to "/", :alert => exception.message
   end
 
-  #def set_locale
-    #if session[:omniauth_login_locale]
-      #if session[:omniauth_login_locale] != params[:locale] && params[:locale] != nil
-        #session[:omniauth_login_locale] = params[:locale]
-        #I18n.locale = params[:locale]
-      #end
-    #else
-      #I18n.locale = I18n.default_locale
-      #session[:omniauth_login_locale] = I18n.locale
-    #end
-  #end
-
   def set_locale
     I18n.locale = params[:locale] || session[:omniauth_login_locale] || I18n.default_locale
     session[:omniauth_login_locale] = I18n.locale
