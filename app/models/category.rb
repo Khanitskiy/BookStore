@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
 
 	has_many :books
 
-	def self.all_book_category(id)
+  def self.all_book_category(id)
     find(id).books
   end
 

@@ -28,11 +28,10 @@ Book.create(title: "The Ruby Programming Language",
 													why the lucky stiff, artist and Ruby programmer extraordinaire.",
 					  price: 32.6, in_stock: 328, order_counter: 48, image: "image/upload/v1456929904/rtkkcjwiekw007uzl3ys.png", best_seller: true)
 
-@order = Order.new()
-@order_items = OrderItem.new()
+#@order_items = OrderItem.new()
 @cookies_book = { "book_count" => "0", "total_price" => "0"}
-order_id = @order.create_order(@cookies_book, 0,  1)
-@order_items.create_items(@cookies_book, order_id)
+order_id = Order.create_order(@cookies_book, 0,  1)
+OrderItem.create_items(@cookies_book, order_id)
 
 Cupon.create(value: 'asdasdasd')
 Cupon.create(value: 'Sk8fS0F23')

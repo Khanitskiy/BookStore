@@ -23,11 +23,13 @@ class ApplicationController < ActionController::Base
   def load_in_progress_order
     if current_user
       @order = current_user.orders.where(state: 'in_progress').first
+      session[:user_products_count] = @order.book_count
     end
   end
 
   def after_sign_in_path_for(resource)
     #byebug
+
     sign_in_url = new_user_session_url
     if request.referer == sign_in_url
       #byebug
@@ -63,7 +65,7 @@ class ApplicationController < ActionController::Base
     if @cookies_book == nil
       @cookies_book = { "book_count" => "0", "total_price" => "0"}
     end
-    #order_id = @order.create_order(@cookies_book, total_price(@cookies_book),  id)
+    #order_id = Order.create_order(@cookies_book, total_price(@cookies_book),  id)
     
     session[:user_products_count] =  @order.book_count + @cookies_book["book_count"].to_i
     #byebug
@@ -80,15 +82,15 @@ class ApplicationController < ActionController::Base
       id = current_user.id
     end
     #byebug
-    @order = Order.new()
-    @order_items = OrderItem.new()
+    #@order = Order.new()
+    #@order_items = OrderItem.new()
     @cookies_book = JSON.parse(cookies[:books]) if cookies[:books]
     if @cookies_book == nil
       @cookies_book = { "book_count" => "0", "total_price" => "0"}
     end
-    order_id = @order.create_order(@cookies_book, total_price(@cookies_book),  id)
+    order_id = Order.create_order(@cookies_book, total_price(@cookies_book),  id)
     session[:user_products_count] = @cookies_book["book_count"]
-    @order_items.create_items(@cookies_book, order_id)
+    OrderItem.create_items(@cookies_book, order_id)
     cookies.delete :books
   end
 

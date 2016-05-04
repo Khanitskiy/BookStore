@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20160427123550) do
 
   create_table "credit_cards", force: :cascade do |t|
     t.string   "number"
-    t.integer  "cvv"
+    t.string   "cvv"
     t.integer  "expiration_month"
     t.integer  "expiration_year"
     t.string   "firstname"

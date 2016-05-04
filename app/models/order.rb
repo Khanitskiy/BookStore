@@ -1,7 +1,6 @@
 class Order < ActiveRecord::Base
   include AASM
-  validates :total_price, :completed_date, presence: true
-  #validates :state, presence: true
+  validates :total_price, :state, presence: true
   before_validation :set_completed_date
 
   has_many :order_items
@@ -39,7 +38,7 @@ class Order < ActiveRecord::Base
     [ [ 'UPS Ground', '5.0' ], [ 'UPS One Day', '10.0' ], [ 'UPS Two Days', '20.0' ] ]
   end
 
-  def create_order(cookies, total_price, user_id)
+  def self.create_order(cookies, total_price, user_id)
     order = Order.create!( user_id: user_id, 
                    total_price: total_price,
                    order_total: total_price + 5.0,  
@@ -50,7 +49,7 @@ class Order < ActiveRecord::Base
   def self.last_order_queue(current_user)
     #byebug
     #where("user_id = #{current_user.id}").order(id: :desc).first
-    where(user_id: current_user.id, state: 'in_queue').order(id: :desc).first
+    where(user_id: current_user.id, state: 'in_queue').last
   end
 
   def self.in_queue(current_user)

@@ -162,11 +162,10 @@ class OrderStepsForm
         order.update(order_total: order.order_total.to_f - order.cupon.discount)
       end
       order.to_in_queue!
-      @new_order = Order.new()
-      @order_items = OrderItem.new()
+      #@order_items = OrderItem.new()
       @cookies_book = { "book_count" => "0", "total_price" => "0"}
-      order_id = @new_order.create_order(@cookies_book, 0,  user.id)
-      @order_items.create_items(@cookies_book, order_id)
+      order_id = Order.create_order(@cookies_book, 0,  user.id)
+      OrderItem.create_items(@cookies_book, order_id)
     end
   end
 

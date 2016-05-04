@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Book, type: :model do
-	#let(:my_book) { FactoryGirl.create :book }
-
-  #pending "add some examples to (or delete) #{__FILE__}"
-
+	let(:create_books) { 
+    FactoryGirl.create :book
+    FactoryGirl.create_list :book, 2, best_seller: true
+  }
+  
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:price) }
   it { should validate_presence_of(:in_stock) }
@@ -32,12 +33,18 @@ RSpec.describe Book, type: :model do
   end
 
   it "is invalid if in_stock ont integer" do
-    expect(FactoryGirl.build :book, in_stock: 22.2).not_to be_valid
+    expect(FactoryGirl.build :book, in_stock: 22.20).not_to be_valid
   end
 
-   it "persisted?" do
-    record = FactoryGirl.create :book
-    expect(record.persisted?).to eq true
+  it "returns all bestsellers" do
+    create_books
+    expect(Book.bestsellers.count).to eq(2)
+  end
+
+  it "returns book that match transmitted id" do
+    create_books
+    book = FactoryGirl.create :book
+    expect(Book.get_book book.id).to eq(book)
   end
 
 end

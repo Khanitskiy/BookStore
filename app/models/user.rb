@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
-	has_many   :ratings
+  has_many   :ratings
   has_many   :books, through: :ratings
   has_many   :orders
 
