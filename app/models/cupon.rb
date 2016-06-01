@@ -7,5 +7,4 @@ class Cupon < ActiveRecord::Base
   def self.cheking(params)
     where(value: params).first
   end
-
 end

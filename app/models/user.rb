@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook]
+         :omniauthable, omniauth_providers: [:facebook]
 
   has_many   :ratings
   has_many   :books, through: :ratings
@@ -13,21 +13,16 @@ class User < ActiveRecord::Base
   has_one :shipping_address, class_name: 'Address', foreign_key: 'user_shipping_address_id'
 
   validates :firstname, :lastname, presence: true
-  
+
   mount_uploader :image, FacebookAvatarUploader
-  
+
   def self.from_omniauth(auth)
-	  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-	    user.email = auth.info.email
-	    user.password = Devise.friendly_token[0,20]
-	    user.firstname = auth.info.first_name   # assuming the user model has a name
-	    user.lastname = auth.info.last_name   # assuming the user model has a name
-	    user.facebook_image = auth.info.image # assuming the user model has an image
-	  end
-	end
-
-	def self.get_this_user(this_user)
-		user = find(this_user)
-	end
-
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.firstname = auth.info.first_name # assuming the user model has a name
+      user.lastname = auth.info.last_name   # assuming the user model has a name
+      user.facebook_image = auth.info.image # assuming the user model has an image
+    end
+  end
 end

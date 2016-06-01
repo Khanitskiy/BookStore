@@ -1,0 +1,2381 @@
+Inspecting 134 files
+C.CC.CC...C.CCCC..C..CC.CCCCCCCCCCCC........CCWWWWWWWCWCCCCCCCCCCCCCCC.CCWCCCC..C...CCC..C.CCC..CCCCCCCCCCCCC..CC...WCCCCC..C..C.C..CC
+
+Offenses:
+
+refactoring_lists.rb:6:27: C: Final newline missing.
+orders_items_controller.rb
+                          
+Rakefile:2:81: C: Line is too long. [90/80]
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+                                                                                ^^^^^^^^^^
+Gemfile:2:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ruby "2.2.2"
+     ^^^^^^^
+Gemfile:28:5: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "breadcrumbs_on_rails"
+    ^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:55:81: C: Line is too long. [83/80]
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+                                                                                ^^^
+Gemfile:58:31: C: Trailing whitespace detected.
+  gem 'web-console', '= 2.2.1' 
+                              ^
+Gemfile:59:81: C: Line is too long. [130/80]
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:61:3: C: Missing space after #.
+  #rspec
+  ^^^^^^
+Gemfile:78:3: C: Missing space after #.
+  #gem 'pg'
+  ^^^^^^^^^
+bin/setup:5:51: C: Unnecessary spacing detected.
+APP_ROOT = Pathname.new File.expand_path('../../',  __FILE__)
+                                                  ^
+bin/setup:11:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  puts "== Installing dependencies =="
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/setup:12:10: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  system "gem install bundler --conservative"
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/setup:13:10: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  system "bundle check || bundle install"
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/setup:21:10: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  system "bin/rake db:setup"
+         ^^^^^^^^^^^^^^^^^^^
+bin/setup:24:10: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  system "rm -f log/*"
+         ^^^^^^^^^^^^^
+bin/setup:25:10: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  system "rm -rf tmp/cache"
+         ^^^^^^^^^^^^^^^^^^
+bin/setup:28:10: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  system "touch tmp/restart.txt"
+         ^^^^^^^^^^^^^^^^^^^^^^^
+bin/spring:10:81: C: Line is too long. [97/80]
+  if (match = Bundler.default_lockfile.read.match(/^GEM$.*?^    (?:  )*spring \((.*?)\)$.*?^$/m))
+                                                                                ^^^^^^^^^^^^^^^^^
+config/routes.rb:2:1: C: Extra empty line detected at block body beginning.
+config/routes.rb:3:7: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  get "/users/edit" => "users#settings"
+      ^^^^^^^^^^^^^
+config/routes.rb:3:24: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  get "/users/edit" => "users#settings"
+                       ^^^^^^^^^^^^^^^^
+config/routes.rb:4:1: C: Trailing whitespace detected.
+config/routes.rb:6:81: C: Line is too long. [97/80]
+  devise_for :users, skip: [:session, :password, :registration, :confirmation], :controllers => {
+                                                                                ^^^^^^^^^^^^^^^^^
+config/routes.rb:6:81: C: Use the new Ruby 1.9 hash syntax.
+  devise_for :users, skip: [:session, :password, :registration, :confirmation], :controllers => {
+                                                                                ^^^^^^^^^^^^^^^
+config/routes.rb:7:25: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    omniauth_callbacks: "users/omniauth_callbacks"
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:12:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  scope "/:locale" do
+        ^^^^^^^^^^
+config/routes.rb:13:1: C: Extra empty line detected at block body beginning.
+config/routes.rb:14:51: C: Use the new Ruby 1.9 hash syntax.
+    devise_for :users, skip: :omniauth_callbacks, :controllers => {:registrations => "users/registrations",
+                                                  ^^^^^^^^^^^^^^^
+config/routes.rb:14:67: C: Space inside { missing.
+    devise_for :users, skip: :omniauth_callbacks, :controllers => {:registrations => "users/registrations",
+                                                                  ^
+config/routes.rb:14:68: C: Use the new Ruby 1.9 hash syntax.
+    devise_for :users, skip: :omniauth_callbacks, :controllers => {:registrations => "users/registrations",
+                                                                   ^^^^^^^^^^^^^^^^^
+config/routes.rb:14:81: C: Line is too long. [107/80]
+    devise_for :users, skip: :omniauth_callbacks, :controllers => {:registrations => "users/registrations",
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:14:86: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    devise_for :users, skip: :omniauth_callbacks, :controllers => {:registrations => "users/registrations",
+                                                                                     ^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:15:68: C: Use the new Ruby 1.9 hash syntax.
+                                                                   :sessions      => "users/sessions" }
+                                                                   ^^^^^^^^^^^^^^^^^
+config/routes.rb:15:81: C: Line is too long. [103/80]
+                                                                   :sessions      => "users/sessions" }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:15:86: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                                                                   :sessions      => "users/sessions" }
+                                                                                     ^^^^^^^^^^^^^^^^
+config/routes.rb:31:81: C: Line is too long. [81/80]
+  root to: redirect("/#{I18n.default_locale}", status: 302), as: :redirected_root
+                                                                                ^
+config/routes.rb:33:7: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(#{I18n.available_locales.join("|")})\/).*/}, format: false
+      ^^^^^^^^
+config/routes.rb:33:81: C: Line is too long. [161/80]
+  get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(#{I18n.available_locales.join("|")})\/).*/}, format: false
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:33:92: C: Space inside { missing.
+  get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(#{I18n.available_locales.join("|")})\/).*/}, format: false
+                                                                                           ^
+config/routes.rb:33:99: C: Use %r around regular expression.
+  get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(#{I18n.available_locales.join("|")})\/).*/}, format: false
+                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:33:146: C: Space inside } missing.
+  get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(#{I18n.available_locales.join("|")})\/).*/}, format: false
+                                                                                                                                                 ^
+config/routes.rb:39:19: C: Trailing whitespace detected.
+  scope :orders do 
+                  ^
+config/routes.rb:40:8: C: Unnecessary spacing detected.
+    put    '/update_shopcart_ajax', to: 'orders#update_shopcart_ajax'
+       ^^^
+config/routes.rb:40:8: C: Put one space between the method name and the first argument.
+    put    '/update_shopcart_ajax', to: 'orders#update_shopcart_ajax'
+       ^^^^
+config/routes.rb:41:9: C: Unnecessary spacing detected.
+    post    '/check_cupon_ajax', to: 'orders#check_cupon_ajax'
+        ^^^
+config/routes.rb:41:9: C: Put one space between the method name and the first argument.
+    post    '/check_cupon_ajax', to: 'orders#check_cupon_ajax'
+        ^^^^
+config/routes.rb:42:5: C: Missing space after #.
+    #get    '/delete_products', to: 'orders#delete_products'
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:46:3: C: Incorrect indentation detected (column 2 instead of 4).
+  #scope :orders_items do 
+  ^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:46:3: C: Missing space after #.
+  #scope :orders_items do 
+  ^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:46:26: C: Trailing whitespace detected.
+  #scope :orders_items do 
+                         ^
+config/routes.rb:47:5: C: Incorrect indentation detected (column 4 instead of 2).
+    #delete '/delete_item/:id',    to: 'orders_items#delete_cookie_item'
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:47:5: C: Missing space after #.
+    #delete '/delete_item/:id',    to: 'orders_items#delete_cookie_item'
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:48:3: C: Missing space after #.
+  #end
+  ^^^^
+config/routes.rb:62:81: C: Line is too long. [84/80]
+  # The priority is based upon order of creation: first created -> highest priority.
+                                                                                ^^^^
+config/routes.rb:74:81: C: Line is too long. [81/80]
+  # Example resource route (maps HTTP verbs to controller actions automatically):
+                                                                                ^
+config/application.rb:11:81: C: Line is too long. [82/80]
+    # Settings in config/environments/* take precedence over those specified here.
+                                                                                ^^
+config/application.rb:15:81: C: Line is too long. [99/80]
+    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
+                                                                                ^^^^^^^^^^^^^^^^^^^
+config/application.rb:16:81: C: Line is too long. [89/80]
+    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
+                                                                                ^^^^^^^^^
+config/application.rb:19:81: C: Line is too long. [98/80]
+    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+                                                                                ^^^^^^^^^^^^^^^^^^
+config/application.rb:20:81: C: Line is too long. [87/80]
+    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+                                                                                ^^^^^^^
+config/application.rb:30:1: C: Trailing whitespace detected.
+config/application.rb:31:30: C: %W-literals should be delimited by ( and ).
+    config.autoload_paths += %W["#{config.root}/app/validators/"]
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/application.rb:32:1: C: Trailing whitespace detected.
+config/application.rb:33:5: C: Missing space after #.
+    #config.web_console.development_only = false
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/application.rb:34:1: C: Trailing whitespace detected.
+config/environments/test.rb:2:81: C: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/development.rb:2:81: C: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/development.rb:30:81: C: Line is too long. [82/80]
+  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
+                                                                                ^^
+config/environments/production.rb:2:81: C: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/production.rb:34:81: C: Line is too long. [82/80]
+  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
+                                                                                ^^
+config/environments/production.rb:38:81: C: Line is too long. [102/80]
+  # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:44:81: C: Line is too long. [96/80]
+  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+                                                                                ^^^^^^^^^^^^^^^^
+config/environments/production.rb:64:81: C: Line is too long. [100/80]
+  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+                                                                                ^^^^^^^^^^^^^^^^^^^^
+config/initializers/backtrace_silencers.rb:3:81: C: Line is too long. [107/80]
+# You can add backtrace silencers for libraries that you're using but don't wish to see in your backtraces.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/backtrace_silencers.rb:6:81: C: Line is too long. [112/80]
+# You can also remove all the silencers if you're trying to debug a problem that might stem from framework code.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:9:81: C: Line is too long. [86/80]
+  # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
+                                                                                ^^^^^^
+config/initializers/devise.rb:11:81: C: Line is too long. [154/80]
+  # config.secret_key = '2ff0e364e1489601429b06cba67bcf356fe54beae55fbbc1479c7936fc056256fbba53b79b8c86a01e5fdf10be87a1396b91c1b638db4c66b0e2ab26e012c4ad'
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:17:81: C: Line is too long. [85/80]
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+                                                                                ^^^^^
+config/initializers/devise.rb:33:81: C: Line is too long. [83/80]
+  # session. If you need permissions, you should implement that in a before filter.
+                                                                                ^^^
+config/initializers/devise.rb:38:81: C: Line is too long. [84/80]
+  # Configure parameters from the request object used for authentication. Each entry
+                                                                                ^^^^
+config/initializers/devise.rb:40:81: C: Line is too long. [85/80]
+  # find_for_authentication method and considered in your model lookup. For instance,
+                                                                                ^^^^^
+config/initializers/devise.rb:41:81: C: Line is too long. [88/80]
+  # if you set :request_keys to [:subdomain], :subdomain will be used on authentication.
+                                                                                ^^^^^^^^
+config/initializers/devise.rb:42:81: C: Line is too long. [89/80]
+  # The same considerations mentioned for authentication_keys also apply to request_keys.
+                                                                                ^^^^^^^^^
+config/initializers/devise.rb:52:81: C: Line is too long. [85/80]
+  # modifying a user and when used to authenticate or find a user. Default is :email.
+                                                                                ^^^^^
+config/initializers/devise.rb:56:81: C: Line is too long. [81/80]
+  # It can be set to an array that will enable params authentication only for the
+                                                                                ^
+config/initializers/devise.rb:57:81: C: Line is too long. [85/80]
+  # given strategies, for example, `config.params_authenticatable = [:database]` will
+                                                                                ^^^^^
+config/initializers/devise.rb:63:81: C: Line is too long. [83/80]
+  # given strategies, for example, `config.http_authenticatable = [:database]` will
+                                                                                ^^^
+config/initializers/devise.rb:65:81: C: Line is too long. [84/80]
+  # :database      = Support basic authentication with authentication key + password
+                                                                                ^^^^
+config/initializers/devise.rb:94:81: C: Line is too long. [86/80]
+  # using other encryptors, it sets how many times you want the password re-encrypted.
+                                                                                ^^^^^^
+config/initializers/devise.rb:96:81: C: Line is too long. [82/80]
+  # Limiting the stretches to just one in testing will increase the performance of
+                                                                                ^^
+config/initializers/devise.rb:98:81: C: Line is too long. [82/80]
+  # a value less than 10 in other environments. Note that, for bcrypt (the default
+                                                                                ^^
+config/initializers/devise.rb:99:81: C: Line is too long. [83/80]
+  # encryptor), the cost increases exponentially with the number of stretches (e.g.
+                                                                                ^^^
+config/initializers/devise.rb:100:81: C: Line is too long. [83/80]
+  # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
+                                                                                ^^^
+config/initializers/devise.rb:104:81: C: Line is too long. [150/80]
+  # config.pepper = '03aa69d582ee89fc07d50a3e313a702e7fe26e17539f7cde7930cdd71b53dc48085f32045a3edff21094850c7222b3b069a6e7275116eb3a3693b00e2e51d71d'
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:126:81: C: Line is too long. [86/80]
+  # initial account confirmation) to be applied. Requires additional unconfirmed_email
+                                                                                ^^^^^^
+config/initializers/devise.rb:128:81: C: Line is too long. [84/80]
+  # unconfirmed_email column, and copied to email column on successful confirmation.
+                                                                                ^^^^
+config/initializers/devise.rb:164:81: C: Line is too long. [85/80]
+  # :failed_attempts = Locks an account after a number of failed attempts to sign in.
+                                                                                ^^^^^
+config/initializers/devise.rb:173:81: C: Line is too long. [83/80]
+  # :time  = Re-enables login after a certain amount of time (see :unlock_in below)
+                                                                                ^^^
+config/initializers/devise.rb:198:81: C: Line is too long. [84/80]
+  # When set to false, does not sign a user in automatically after their password is
+                                                                                ^^^^
+config/initializers/devise.rb:203:81: C: Line is too long. [87/80]
+  # Allow you to use another encryption algorithm besides bcrypt (default). You can use
+                                                                                ^^^^^^^
+config/initializers/devise.rb:204:81: C: Line is too long. [85/80]
+  # :sha1, :sha512 or encryptors from others authentication tools as :clearance_sha1,
+                                                                                ^^^^^
+config/initializers/devise.rb:205:81: C: Line is too long. [86/80]
+  # :authlogic_sha512 (then you should set stretches above to 20 for default behavior)
+                                                                                ^^^^^^
+config/initializers/devise.rb:206:81: C: Line is too long. [83/80]
+  # and :restful_authentication_sha1 (then you should set stretches to 10, and copy
+                                                                                ^^^
+config/initializers/devise.rb:213:81: C: Line is too long. [82/80]
+  # Turn scoped views on. Before rendering "sessions/new", it will first check for
+                                                                                ^^
+config/initializers/devise.rb:244:81: C: Line is too long. [150/80]
+  config.omniauth :facebook, '1562906897357009', '85fc0fb2f0e93030dd59ca7290298483' , :scope => 'email', :info_fields => 'email, first_name,last_name'
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:244:84: C: Space found before comma.
+  config.omniauth :facebook, '1562906897357009', '85fc0fb2f0e93030dd59ca7290298483' , :scope => 'email', :info_fields => 'email, first_name,last_name'
+                                                                                   ^
+config/initializers/devise.rb:244:87: C: Use the new Ruby 1.9 hash syntax.
+  config.omniauth :facebook, '1562906897357009', '85fc0fb2f0e93030dd59ca7290298483' , :scope => 'email', :info_fields => 'email, first_name,last_name'
+                                                                                      ^^^^^^^^^
+config/initializers/devise.rb:244:106: C: Use the new Ruby 1.9 hash syntax.
+  config.omniauth :facebook, '1562906897357009', '85fc0fb2f0e93030dd59ca7290298483' , :scope => 'email', :info_fields => 'email, first_name,last_name'
+                                                                                                         ^^^^^^^^^^^^^^^
+config/initializers/devise.rb:245:3: C: Missing space after #.
+  #config.omniauth :facebook, '1731658687048913', 'b5723c11e829356e850b42d56a6b3edb' , :scope => 'email', :info_fields => 'email, first_name,last_name'
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:245:81: C: Line is too long. [151/80]
+  #config.omniauth :facebook, '1731658687048913', 'b5723c11e829356e850b42d56a6b3edb' , :scope => 'email', :info_fields => 'email, first_name,last_name'
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:248:81: C: Line is too long. [82/80]
+  # change the failure app, you can configure them inside the config.warden block.
+                                                                                ^^
+config/initializers/devise.rb:256:81: C: Line is too long. [81/80]
+  # When using Devise inside an engine, let's call it `MyEngine`, and this engine
+                                                                                ^
+config/initializers/rails_admin.rb:2:1: C: Trailing whitespace detected.
+config/initializers/rails_admin.rb:8:32: C: Trailing whitespace detected.
+  config.authorize_with :cancan 
+                               ^
+config/initializers/rails_admin.rb:9:3: C: Missing space after #.
+  #TODO add cancancan to rails_admin config
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/rails_admin.rb:9:4: C: Annotation keywords like TODO should be all upper case, followed by a colon, and a space, then a note describing the problem.
+  #TODO add cancancan to rails_admin config
+   ^^^^^
+config/initializers/rails_admin.rb:15:11: C: Missing space after #.
+          #user = User.find(params['id'])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/rails_admin.rb:16:11: C: Missing space after #.
+          #user.provider == 'facebook'
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/rails_admin.rb:28:7: C: Missing space after #.
+      #field :rating
+      ^^^^^^^^^^^^^^
+config/initializers/rails_admin.rb:35:3: C: Missing space after #.
+  #def get_params_id(original_url)
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/rails_admin.rb:38:3: C: Missing space after #.
+  #end
+  ^^^^
+config/initializers/rails_admin.rb:40:3: C: Missing space after #.
+  #def original_url
+  ^^^^^^^^^^^^^^^^^
+config/initializers/rails_admin.rb:42:3: C: Missing space after #.
+  #end
+  ^^^^
+config/initializers/rails_admin.rb:59:81: C: Line is too long. [87/80]
+  # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
+                                                                                ^^^^^^^
+config/initializers/assets.rb:10:81: C: Line is too long. [93/80]
+# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+                                                                                ^^^^^^^^^^^^^
+config/initializers/wrap_parameters.rb:6:81: C: Line is too long. [96/80]
+# Enable parameter wrapping for JSON. You can disable this by setting :format to an empty array.
+                                                                                ^^^^^^^^^^^^^^^^
+spec/controllers/ratings_controller_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/controllers/orders_items_controller_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/controllers/addresses_controller_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/controllers/orders_controller_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/controllers/order_steps_controller_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/controllers/books_controller_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/controllers/books_controller_spec.rb:5:12: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  describe "GET #home" do
+           ^^^^^^^^^^^
+spec/controllers/books_controller_spec.rb:6:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    xit "returns http success" do
+        ^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/books_controller_spec.rb:11:1: C: Extra empty line detected at block body end.
+spec/controllers/categories_controller_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/controllers/users_controller_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/rails_helper.rb:5:7: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+abort("The Rails environment is running in production mode!") if Rails.env.production?
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/rails_helper.rb:5:81: C: Line is too long. [86/80]
+abort("The Rails environment is running in production mode!") if Rails.env.production?
+                                                                                ^^^^^^
+spec/rails_helper.rb:40:5: C: Missing space after #.
+    #Rails.application.load_seed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/rails_helper.rb:53:53: C: %w-literals should be delimited by ( and ).
+    DatabaseCleaner.clean_with :truncation, except: %w[books coupons categories]
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/rails_helper.rb:54:6: C: Trailing whitespace detected.
+  end  
+     ^^
+spec/rails_helper.rb:63:81: C: Line is too long. [82/80]
+    driver_shares_db_connection_with_specs = Capybara.current_driver == :rack_test
+                                                                                ^^
+spec/rails_helper.rb:65:5: C: Favor unless over if for negative conditions.
+    if !driver_shares_db_connection_with_specs [33m...[0m
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/rails_helper.rb:100:1: C: Trailing whitespace detected.
+spec/features/search_feature_spec.rb:1:1: C: Missing space after #.
+#require 'features/features_spec_helper'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/features/search_feature_spec.rb:4:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+feature "Search" do
+        ^^^^^^^^
+spec/features/search_feature_spec.rb:5:12: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  scenario "Visitor registers successfully via register form" do
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/features/search_feature_spec.rb:6:5: C: Missing space after #.
+    #byebug
+    ^^^^^^^
+spec/features/search_feature_spec.rb:7:26: C: Missing space after #.
+    visit root_path(:en) #'http://www.localhost:3000/en'
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/features/search_feature_spec.rb:12:5: C: Missing space after #.
+    #expect(page).not_to have_content 'Sign up'
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/features/search_feature_spec.rb:13:5: C: Missing space after #.
+    #puts page.body
+    ^^^^^^^^^^^^^^^
+spec/features/search_feature_spec.rb:16:5: C: Missing space after #.
+    #expect(page).to have_content 'You registered'
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/features/search_feature_spec.rb:18:4: C: Final newline missing.
+end
+   
+spec/spec_helper.rb:1:81: C: Line is too long. [92/80]
+# This file was generated by the `rails generate rspec:install` command. Conventionally, all
+                                                                                ^^^^^^^^^^^^
+spec/spec_helper.rb:20:1: C: Trailing whitespace detected.
+spec/spec_helper.rb:21:3: C: Incorrect indentation detected (column 2 instead of 4).
+  #config.before(:suite) do
+  ^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/spec_helper.rb:21:3: C: Missing space after #.
+  #config.before(:suite) do
+  ^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/spec_helper.rb:22:5: C: Incorrect indentation detected (column 4 instead of 2).
+    #Rails.application.load_seed # loading seeds
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/spec_helper.rb:22:5: C: Missing space after #.
+    #Rails.application.load_seed # loading seeds
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/spec_helper.rb:23:3: C: Missing space after #.
+  #end
+  ^^^^
+spec/spec_helper.rb:49:1: C: Do not use block comments.
+=begin [33m...[0m
+^^^^^^
+spec/models/country_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/models/country_spec.rb:7:1: C: Trailing whitespace detected.
+spec/models/rating_spec.rb:4:1: C: Trailing whitespace detected.
+spec/models/rating_spec.rb:10:31: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it { should_not allow_value("", nil).for(:title) }
+                              ^^
+spec/models/rating_spec.rb:11:31: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it { should_not allow_value("", nil).for(:text_review) }
+                              ^^
+spec/models/rating_spec.rb:12:31: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it { should_not allow_value("", nil).for(:user_id) }
+                              ^^
+spec/models/rating_spec.rb:13:31: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it { should_not allow_value("", nil).for(:rating) }
+                              ^^
+spec/models/rating_spec.rb:14:31: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it { should_not allow_value("", nil).for(:book_id) }
+                              ^^
+spec/models/rating_spec.rb:18:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "is invalid when rating 0" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/rating_spec.rb:19:12: C: Add parentheses to nested method call FactoryGirl.build :rating, rating: 0.
+    expect(FactoryGirl.build :rating, rating: 0).not_to be_valid
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/rating_spec.rb:22:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "is invalid when rating a negative number" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/rating_spec.rb:23:12: C: Add parentheses to nested method call FactoryGirl.build :rating, rating: -1.
+    expect(FactoryGirl.build :rating, rating: -1).not_to be_valid
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/rating_spec.rb:26:4: C: Inconsistent indentation detected.
+   it "is invalid when rating more 10" do [33m...[0m
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/rating_spec.rb:26:7: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+   it "is invalid when rating more 10" do
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/rating_spec.rb:27:12: C: Add parentheses to nested method call FactoryGirl.build :rating, rating: 0.
+    expect(FactoryGirl.build :rating, rating: 0).not_to be_valid
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/rating_spec.rb:28:3: W: end at 28, 2 is not aligned with it "is invalid when rating more 10" do at 26, 3.
+  end
+  ^^^
+spec/models/rating_spec.rb:29:1: C: Extra empty line detected at block body end.
+spec/models/cupon_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/models/cupon_spec.rb:5:23: C: Avoid using {...} for multi-line blocks.
+  let(:create_cupons) { 
+                      ^
+spec/models/cupon_spec.rb:5:24: C: Trailing whitespace detected.
+  let(:create_cupons) { 
+                       ^
+spec/models/cupon_spec.rb:12:24: W: (...) interpreted as grouped expression.
+  it { should belong_to (:order) }
+                       ^
+spec/models/cupon_spec.rb:12:25: C: Don't use parentheses around a literal.
+  it { should belong_to (:order) }
+                        ^^^^^^^^
+spec/models/cupon_spec.rb:14:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "return cupon that match transmitted value" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/cupon_spec.rb:17:12: C: Add parentheses to nested method call Cupon.cheking cupon.value.
+    expect(Cupon.cheking cupon.value).to eq(cupon)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/cupon_spec.rb:19:1: C: Extra empty line detected at block body end.
+spec/models/cupon_spec.rb:20:4: C: Final newline missing.
+end
+   
+spec/models/order_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/models/order_spec.rb:9:23: C: Avoid using {...} for multi-line blocks.
+  let(:create_orders) { 
+                      ^
+spec/models/order_spec.rb:9:24: C: Trailing whitespace detected.
+  let(:create_orders) { 
+                       ^
+spec/models/order_spec.rb:13:81: C: Line is too long. [87/80]
+    @last_order_queue = FactoryGirl.create :order, state: 'in_queue', user_id: @user.id
+                                                                                ^^^^^^^
+spec/models/order_spec.rb:15:1: C: Trailing whitespace detected.
+spec/models/order_spec.rb:18:24: W: (...) interpreted as grouped expression.
+  it { should have_many (:order_items) }
+                       ^
+spec/models/order_spec.rb:18:25: C: Don't use parentheses around a literal.
+  it { should have_many (:order_items) }
+                        ^^^^^^^^^^^^^^
+spec/models/order_spec.rb:19:24: W: (...) interpreted as grouped expression.
+  it { should belong_to (:user) }
+                       ^
+spec/models/order_spec.rb:19:25: C: Don't use parentheses around a literal.
+  it { should belong_to (:user) }
+                        ^^^^^^^
+spec/models/order_spec.rb:20:24: W: (...) interpreted as grouped expression.
+  it { should belong_to (:credit_card) }
+                       ^
+spec/models/order_spec.rb:20:25: C: Don't use parentheses around a literal.
+  it { should belong_to (:credit_card) }
+                        ^^^^^^^^^^^^^^
+spec/models/order_spec.rb:21:23: W: (...) interpreted as grouped expression.
+  it { should have_one (:billing_address) }
+                      ^
+spec/models/order_spec.rb:21:24: C: Don't use parentheses around a literal.
+  it { should have_one (:billing_address) }
+                       ^^^^^^^^^^^^^^^^^^
+spec/models/order_spec.rb:22:23: W: (...) interpreted as grouped expression.
+  it { should have_one (:shipping_address) }
+                      ^
+spec/models/order_spec.rb:22:24: C: Don't use parentheses around a literal.
+  it { should have_one (:shipping_address) }
+                       ^^^^^^^^^^^^^^^^^^^
+spec/models/order_spec.rb:23:23: W: (...) interpreted as grouped expression.
+  it { should have_one (:cupon) }
+                      ^
+spec/models/order_spec.rb:23:24: C: Don't use parentheses around a literal.
+  it { should have_one (:cupon) }
+                       ^^^^^^^^
+spec/models/order_spec.rb:25:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "should set completed date when validated" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/order_spec.rb:28:65: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    expect(order.completed_date).to eq 3.days.from_now.strftime("%a, %d %b %Y").to_date
+                                                                ^^^^^^^^^^^^^^
+spec/models/order_spec.rb:28:81: C: Line is too long. [87/80]
+    expect(order.completed_date).to eq 3.days.from_now.strftime("%a, %d %b %Y").to_date
+                                                                                ^^^^^^^
+spec/models/order_spec.rb:32:3: C: Use 2 (not 1) spaces for indentation.
+  	order = FactoryGirl.create :order
+  ^
+spec/models/order_spec.rb:32:3: C: Tab detected.
+  	order = FactoryGirl.create :order
+  ^
+spec/models/order_spec.rb:33:3: C: Tab detected.
+  	expect(order.state).to eq('in_progress')
+  ^
+spec/models/order_spec.rb:36:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "should than method create_order creating order record" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/order_spec.rb:41:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "returns last order which state = in_queue" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/order_spec.rb:46:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "return all order which state = in_queue" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/order_spec.rb:51:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "return all order which state = in_delivery" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/order_spec.rb:56:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "return all order which state = delivered" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/order_spec.rb:60:1: C: Extra empty line detected at block body end.
+spec/models/order_spec.rb:61:4: C: Final newline missing.
+end
+   
+spec/models/user_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/models/user_spec.rb:5:1: C: Use 2 (not 1) spaces for indentation.
+ let(:user) { FactoryGirl.create :user }
+^
+spec/models/user_spec.rb:7:3: C: Inconsistent indentation detected.
+  it { should validate_presence_of(:email) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:8:3: C: Inconsistent indentation detected.
+  it { should validate_presence_of(:password) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:9:3: C: Inconsistent indentation detected.
+  it { should validate_presence_of(:firstname) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:10:3: C: Inconsistent indentation detected.
+  it { should validate_presence_of(:lastname) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:11:3: C: Inconsistent indentation detected.
+  it { should have_many(:ratings) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:12:3: C: Inconsistent indentation detected.
+  it { should have_many(:orders) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:13:3: C: Inconsistent indentation detected.
+  it { should have_many(:books).through(:ratings) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:14:3: C: Inconsistent indentation detected.
+  it { should have_one (:billing_address) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:14:23: W: (...) interpreted as grouped expression.
+  it { should have_one (:billing_address) }
+                      ^
+spec/models/user_spec.rb:14:24: C: Don't use parentheses around a literal.
+  it { should have_one (:billing_address) }
+                       ^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:15:3: C: Inconsistent indentation detected.
+  it { should have_one (:shipping_address) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:15:23: W: (...) interpreted as grouped expression.
+  it { should have_one (:shipping_address) }
+                      ^
+spec/models/user_spec.rb:15:24: C: Don't use parentheses around a literal.
+  it { should have_one (:shipping_address) }
+                       ^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:16:1: C: Trailing whitespace detected.
+spec/models/user_spec.rb:17:3: C: Inconsistent indentation detected.
+  it "does not allow duplicate emails" do [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:17:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "does not allow duplicate emails" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:18:12: C: Add parentheses to nested method call FactoryGirl.build :user, email: user.email.
+    expect(FactoryGirl.build :user, email: user.email).not_to be_valid
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:20:1: C: Extra empty line detected at block body end.
+spec/models/category_spec.rb:4:1: C: Trailing whitespace detected.
+spec/models/category_spec.rb:10:3: C: Use 2 (not 1) spaces for indentation.
+  	find(id).title
+  ^
+spec/models/category_spec.rb:10:3: C: Tab detected.
+  	find(id).title
+  ^
+spec/models/category_spec.rb:13:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "return title category that match transmitted id" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/category_spec.rb:14:3: C: Tab detected.
+  	 category = FactoryGirl.create :category
+  ^
+spec/models/category_spec.rb:15:3: C: Tab detected.
+  	 expect(Category.title_category category.id).to eq(category.title)
+  ^
+spec/models/category_spec.rb:15:12: C: Add parentheses to nested method call Category.title_category category.id.
+  	 expect(Category.title_category category.id).to eq(category.title)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/category_spec.rb:18:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "return all books this category that match transmitted id category" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/category_spec.rb:19:50: W: Shadowing outer local variable - category.
+    category = FactoryGirl.create(:category) do |category|
+                                                 ^^^^^^^^
+spec/models/category_spec.rb:20:1: C: Tab detected.
+	  (1..3).each do |i| category.books.create(FactoryGirl.attributes_for(:book)) end
+^
+spec/models/category_spec.rb:20:16: C: Prefer {...} over do...end for single-line blocks.
+	  (1..3).each do |i| category.books.create(FactoryGirl.attributes_for(:book)) end
+               ^^
+spec/models/category_spec.rb:20:20: W: Unused block argument - i. You can omit the argument if you don't care about it.
+	  (1..3).each do |i| category.books.create(FactoryGirl.attributes_for(:book)) end
+                   ^
+spec/models/category_spec.rb:20:81: C: Line is too long. [82/80]
+	  (1..3).each do |i| category.books.create(FactoryGirl.attributes_for(:book)) end
+                                                                                ^^
+spec/models/category_spec.rb:21:1: C: Tab detected.
+	end
+^
+spec/models/category_spec.rb:21:2: W: end at 21, 1 is not aligned with category = FactoryGirl.create(:category) do |category| at 19, 4.
+	end
+ ^^^
+spec/models/category_spec.rb:22:1: C: Tab detected.
+	all_book_category = Category.all_book_category category.id
+^
+spec/models/category_spec.rb:22:2: C: Inconsistent indentation detected.
+	all_book_category = Category.all_book_category category.id
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/category_spec.rb:25:1: C: Extra empty line detected at block body end.
+spec/models/category_spec.rb:26:4: C: Final newline missing.
+end
+   
+spec/models/credit_card_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/models/credit_card_spec.rb:15:24: W: (...) interpreted as grouped expression.
+  it { should belong_to (:user) }
+                       ^
+spec/models/credit_card_spec.rb:15:25: C: Don't use parentheses around a literal.
+  it { should belong_to (:user) }
+                        ^^^^^^^
+spec/models/credit_card_spec.rb:17:1: C: Extra empty line detected at block body end.
+spec/models/book_spec.rb:4:1: C: Use 2 (not 1) spaces for indentation.
+	let(:create_books) { 
+^
+spec/models/book_spec.rb:4:1: C: Tab detected.
+	let(:create_books) { 
+^
+spec/models/book_spec.rb:4:21: C: Avoid using {...} for multi-line blocks.
+	let(:create_books) { 
+                    ^
+spec/models/book_spec.rb:4:22: C: Trailing whitespace detected.
+	let(:create_books) { 
+                     ^
+spec/models/book_spec.rb:7:3: W: } at 7, 2 is not aligned with let(:create_books) {  at 4, 1.
+  }
+  ^
+spec/models/book_spec.rb:8:1: C: Trailing whitespace detected.
+spec/models/book_spec.rb:9:3: C: Inconsistent indentation detected.
+  it { should validate_presence_of(:title) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:10:3: C: Inconsistent indentation detected.
+  it { should validate_presence_of(:price) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:11:3: C: Inconsistent indentation detected.
+  it { should validate_presence_of(:in_stock) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:12:3: C: Inconsistent indentation detected.
+  it { should validate_numericality_of(:price) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:13:3: C: Inconsistent indentation detected.
+  it { should validate_numericality_of(:in_stock) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:14:3: C: Inconsistent indentation detected.
+  it { should belong_to (:author) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:14:24: W: (...) interpreted as grouped expression.
+  it { should belong_to (:author) }
+                       ^
+spec/models/book_spec.rb:14:25: C: Don't use parentheses around a literal.
+  it { should belong_to (:author) }
+                        ^^^^^^^^^
+spec/models/book_spec.rb:15:3: C: Inconsistent indentation detected.
+  it { should belong_to (:category) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:15:24: W: (...) interpreted as grouped expression.
+  it { should belong_to (:category) }
+                       ^
+spec/models/book_spec.rb:15:25: C: Don't use parentheses around a literal.
+  it { should belong_to (:category) }
+                        ^^^^^^^^^^^
+spec/models/book_spec.rb:16:3: C: Inconsistent indentation detected.
+  it { should have_many(:ratings) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:17:3: C: Inconsistent indentation detected.
+  it { should have_many(:users).through(:ratings) }
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:19:3: C: Inconsistent indentation detected.
+  it "is invalid when price 0" do [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:19:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "is invalid when price 0" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:20:12: C: Add parentheses to nested method call FactoryGirl.build :book, price: 0.
+    expect(FactoryGirl.build :book, price: 0).not_to be_valid
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:23:3: C: Inconsistent indentation detected.
+  it "is invalid when price less 0" do [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:23:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "is invalid when price less 0" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:24:12: C: Add parentheses to nested method call FactoryGirl.build :book, price: -1.
+    expect(FactoryGirl.build :book, price: -1).not_to be_valid
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:27:3: C: Inconsistent indentation detected.
+  it "is invalid when in_stock 0" do [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:27:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "is invalid when in_stock 0" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:28:12: C: Add parentheses to nested method call FactoryGirl.build :book, in_stock: 0.
+    expect(FactoryGirl.build :book, in_stock: 0).not_to be_valid
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:31:3: C: Inconsistent indentation detected.
+  it "is invalid when in_stock less 0" do [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:31:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "is invalid when in_stock less 0" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:32:12: C: Add parentheses to nested method call FactoryGirl.build :book, in_stock: -1.
+    expect(FactoryGirl.build :book, in_stock: -1).not_to be_valid
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:35:3: C: Inconsistent indentation detected.
+  it "is invalid if in_stock ont integer" do [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:35:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "is invalid if in_stock ont integer" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:36:12: C: Add parentheses to nested method call FactoryGirl.build :book, in_stock: 22.20.
+    expect(FactoryGirl.build :book, in_stock: 22.20).not_to be_valid
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:39:3: C: Inconsistent indentation detected.
+  it "returns all bestsellers" do [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:39:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "returns all bestsellers" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:44:3: C: Inconsistent indentation detected.
+  it "returns book that match transmitted id" do [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:44:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  it "returns book that match transmitted id" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:47:12: C: Add parentheses to nested method call Book.get_book book.id.
+    expect(Book.get_book book.id).to eq(book)
+           ^^^^^^^^^^^^^^^^^^^^^
+spec/models/book_spec.rb:49:1: C: Extra empty line detected at block body end.
+spec/models/book_spec.rb:50:4: C: Final newline missing.
+end
+   
+spec/models/address_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/models/address_spec.rb:11:1: C: Extra empty line detected at block body end.
+spec/models/order_item_spec.rb:2:1: C: Trailing whitespace detected.
+spec/models/order_item_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/models/order_item_spec.rb:9:23: C: Avoid using {...} for multi-line blocks.
+  let(:empty_cookies) { 
+                      ^
+spec/models/order_item_spec.rb:9:24: C: Trailing whitespace detected.
+  let(:empty_cookies) { 
+                       ^
+spec/models/order_item_spec.rb:10:5: C: Space inside { missing.
+    {"book_count"=>"0", "total_price"=>"0"}
+    ^
+spec/models/order_item_spec.rb:10:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    {"book_count"=>"0", "total_price"=>"0"}
+     ^^^^^^^^^^^^
+spec/models/order_item_spec.rb:10:18: C: Surrounding space missing for operator =>.
+    {"book_count"=>"0", "total_price"=>"0"}
+                 ^^
+spec/models/order_item_spec.rb:10:20: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    {"book_count"=>"0", "total_price"=>"0"}
+                   ^^^
+spec/models/order_item_spec.rb:10:25: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    {"book_count"=>"0", "total_price"=>"0"}
+                        ^^^^^^^^^^^^^
+spec/models/order_item_spec.rb:10:38: C: Surrounding space missing for operator =>.
+    {"book_count"=>"0", "total_price"=>"0"}
+                                     ^^
+spec/models/order_item_spec.rb:10:40: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    {"book_count"=>"0", "total_price"=>"0"}
+                                       ^^^
+spec/models/order_item_spec.rb:10:43: C: Space inside } missing.
+    {"book_count"=>"0", "total_price"=>"0"}
+                                          ^
+spec/models/order_item_spec.rb:13:17: C: Avoid using {...} for multi-line blocks.
+  let(:cookies) { 
+                ^
+spec/models/order_item_spec.rb:13:18: C: Trailing whitespace detected.
+  let(:cookies) { 
+                 ^
+spec/models/order_item_spec.rb:14:5: C: Space inside { missing.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+    ^
+spec/models/order_item_spec.rb:14:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+     ^^^^^^^^^^^^
+spec/models/order_item_spec.rb:14:18: C: Surrounding space missing for operator =>.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+                 ^^
+spec/models/order_item_spec.rb:14:20: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+                   ^^^
+spec/models/order_item_spec.rb:14:25: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+                        ^^^^^^
+spec/models/order_item_spec.rb:14:31: C: Surrounding space missing for operator =>.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+                              ^^
+spec/models/order_item_spec.rb:14:33: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+                                ^^^
+spec/models/order_item_spec.rb:14:38: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+                                     ^^^^^^
+spec/models/order_item_spec.rb:14:44: C: Surrounding space missing for operator =>.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+                                           ^^
+spec/models/order_item_spec.rb:14:46: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+                                             ^^^
+spec/models/order_item_spec.rb:14:51: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+                                                  ^^^^^^
+spec/models/order_item_spec.rb:14:57: C: Surrounding space missing for operator =>.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+                                                        ^^
+spec/models/order_item_spec.rb:14:59: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+                                                          ^^^
+spec/models/order_item_spec.rb:14:62: C: Space inside } missing.
+    {"book_count"=>"6", "id_3"=>"2", "id_2"=>"3", "id_1"=>"1"}
+                                                             ^
+spec/models/order_item_spec.rb:18:24: W: (...) interpreted as grouped expression.
+  it { should belong_to (:book) }
+                       ^
+spec/models/order_item_spec.rb:18:25: C: Don't use parentheses around a literal.
+  it { should belong_to (:book) }
+                        ^^^^^^^
+spec/models/order_item_spec.rb:19:24: W: (...) interpreted as grouped expression.
+  it { should belong_to (:order) }
+                       ^
+spec/models/order_item_spec.rb:19:25: C: Don't use parentheses around a literal.
+  it { should belong_to (:order) }
+                        ^^^^^^^^
+spec/models/order_item_spec.rb:22:1: C: Extra empty line detected at block body beginning.
+spec/models/order_item_spec.rb:34:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    it "creates three order items" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/order_item_spec.rb:38:1: C: Extra empty line detected at block body end.
+spec/models/order_item_spec.rb:42:30: C: Avoid using {...} for multi-line blocks.
+    let(:create_order_items) { 
+                             ^
+spec/models/order_item_spec.rb:42:31: C: Trailing whitespace detected.
+    let(:create_order_items) { 
+                              ^
+spec/models/order_item_spec.rb:43:81: C: Line is too long. [82/80]
+      FactoryGirl.create :order_item, quantity: 3, book_id: 1, order_id: @order.id
+                                                                                ^^
+spec/models/order_item_spec.rb:44:81: C: Line is too long. [82/80]
+      FactoryGirl.create :order_item, quantity: 1, book_id: 2, order_id: @order.id
+                                                                                ^^
+spec/models/order_item_spec.rb:47:17: C: Avoid using {...} for multi-line blocks.
+    let(:count) { 
+                ^
+spec/models/order_item_spec.rb:47:18: C: Trailing whitespace detected.
+    let(:count) { 
+                 ^
+spec/models/order_item_spec.rb:56:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    it "adds two order items and create one order item" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/order_item_spec.rb:62:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    it "create three order items" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/order_item_spec.rb:67:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    it "updates three order items" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/order_item_spec.rb:69:81: C: Line is too long. [82/80]
+      FactoryGirl.create :order_item, quantity: 5, book_id: 3, order_id: @order.id
+                                                                                ^^
+spec/models/order_item_spec.rb:81:81: C: Line is too long. [82/80]
+      FactoryGirl.create :order_item, quantity: 5, book_id: 3, order_id: @order.id
+                                                                                ^^
+spec/models/order_item_spec.rb:85:1: C: Extra empty line detected at block body end.
+spec/models/order_item_spec.rb:87:1: C: Extra empty line detected at block body end.
+spec/models/order_item_spec.rb:88:4: C: Final newline missing.
+end
+   
+spec/models/author_spec.rb:4:1: C: Extra empty line detected at block body beginning.
+spec/models/author_spec.rb:5:1: C: Tab detected.
+	 it { should validate_presence_of(:firstname) }
+^
+spec/models/author_spec.rb:6:1: C: Tab detected.
+	 it { should validate_presence_of(:lastname) }
+^
+spec/models/author_spec.rb:7:1: C: Tab detected.
+	 it { should have_many(:books) }
+^
+spec/models/author_spec.rb:8:1: C: Extra empty line detected at block body end.
+spec/factories/orders.rb:3:16: C: Unnecessary spacing detected.
+    total_price     { Faker::Commerce.price } 
+               ^^^^
+spec/factories/orders.rb:3:46: C: Trailing whitespace detected.
+    total_price     { Faker::Commerce.price } 
+                                             ^
+spec/factories/orders.rb:4:5: C: Missing space after #.
+    #completed_date  { Faker::Date.between(3.days.ago, Date.today) } 
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/factories/orders.rb:4:69: C: Trailing whitespace detected.
+    #completed_date  { Faker::Date.between(3.days.ago, Date.today) } 
+                                                                    ^
+spec/factories/countries.rb:3:34: C: Trailing whitespace detected.
+    name  { Faker::Address.city } 
+                                 ^
+spec/factories/credit_cards.rb:3:61: C: Trailing whitespace detected.
+    number            { Faker::Business.credit_card_number } 
+                                                            ^
+spec/factories/credit_cards.rb:4:50: C: Trailing whitespace detected.
+    cvv               { Faker::Number.number(4) } 
+                                                 ^
+spec/factories/credit_cards.rb:10:4: C: Final newline missing.
+end
+   
+spec/factories/cupons.rb:3:10: C: Unnecessary spacing detected.
+    value             { Faker::Lorem.characters(9) } 
+         ^^^^^^^^^^^^
+spec/factories/cupons.rb:3:53: C: Trailing whitespace detected.
+    value             { Faker::Lorem.characters(9) } 
+                                                    ^
+spec/factories/books.rb:3:10: C: Unnecessary spacing detected.
+    title 		{ Faker::Book.title } 
+         ^^
+spec/factories/books.rb:3:34: C: Trailing whitespace detected.
+    title 		{ Faker::Book.title } 
+                                 ^
+spec/factories/books.rb:4:42: C: Trailing whitespace detected.
+    price       { Faker::Commerce.price } 
+                                         ^
+spec/factories/categories.rb:3:10: C: Unnecessary spacing detected.
+    title  { Faker::Lorem.word }
+         ^
+spec/factories/authors.rb:3:42: C: Trailing whitespace detected.
+    firstname  { Faker::Name.first_name } 
+                                         ^
+spec/factories/authors.rb:4:41: C: Trailing whitespace detected.
+    lastname   { Faker::Name.last_name } 
+                                        ^
+spec/factories/users.rb:3:14: C: Unnecessary spacing detected.
+    firstname  { Faker::Name.first_name } 
+             ^
+spec/factories/users.rb:3:42: C: Trailing whitespace detected.
+    firstname  { Faker::Name.first_name } 
+                                         ^
+spec/factories/users.rb:4:3: C: Tab detected.
+  	lastname   { Faker::Name.last_name } 
+  ^
+spec/factories/users.rb:4:4: C: Inconsistent indentation detected.
+  	lastname   { Faker::Name.last_name } 
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/factories/users.rb:4:40: C: Trailing whitespace detected.
+  	lastname   { Faker::Name.last_name } 
+                                       ^
+spec/factories/users.rb:5:3: C: Tab detected.
+  	email      { Faker::Internet.email }
+  ^
+spec/factories/users.rb:5:4: C: Inconsistent indentation detected.
+  	email      { Faker::Internet.email }
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/factories/users.rb:6:3: C: Tab detected.
+  	password   { Faker::Internet.password }
+  ^
+spec/factories/users.rb:6:4: C: Inconsistent indentation detected.
+  	password   { Faker::Internet.password }
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/factories/customers.rb:3:41: C: Trailing whitespace detected.
+    email      { Faker::Internet.email } 
+                                        ^
+spec/factories/customers.rb:4:44: C: Trailing whitespace detected.
+    password   { Faker::Internet.password } 
+                                           ^
+spec/factories/customers.rb:5:42: C: Trailing whitespace detected.
+    firstname  { Faker::Name.first_name } 
+                                         ^
+spec/factories/customers.rb:6:41: C: Trailing whitespace detected.
+    lastname   { Faker::Name.last_name } 
+                                        ^
+spec/factories/ratings.rb:3:1: C: Trailing whitespace detected.
+spec/factories/order_items.rb:3:13: C: Unnecessary spacing detected.
+    quantity  { Faker::Number.between(1, 10) } 
+            ^
+spec/factories/order_items.rb:3:47: C: Trailing whitespace detected.
+    quantity  { Faker::Number.between(1, 10) } 
+                                              ^
+spec/factories/addresses.rb:3:3: C: Use 2 (not 1) spaces for indentation.
+  	firstname  { Faker::Name.first_name  } 
+  ^
+spec/factories/addresses.rb:3:3: C: Tab detected.
+  	firstname  { Faker::Name.first_name  } 
+  ^
+spec/factories/addresses.rb:3:39: C: Unnecessary spacing detected.
+  	firstname  { Faker::Name.first_name  } 
+                                      ^
+spec/factories/addresses.rb:3:42: C: Trailing whitespace detected.
+  	firstname  { Faker::Name.first_name  } 
+                                         ^
+spec/factories/addresses.rb:4:3: C: Tab detected.
+  	lastname   { Faker::Name.last_name } 
+  ^
+spec/factories/addresses.rb:4:40: C: Trailing whitespace detected.
+  	lastname   { Faker::Name.last_name } 
+                                       ^
+spec/factories/addresses.rb:5:3: C: Tab detected.
+  	address    { Faker::Address.street_address } 
+  ^
+spec/factories/addresses.rb:5:48: C: Trailing whitespace detected.
+  	address    { Faker::Address.street_address } 
+                                               ^
+spec/factories/addresses.rb:6:5: C: Inconsistent indentation detected.
+    zipcode    { Faker::Address.zip_code } 
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/factories/addresses.rb:6:43: C: Trailing whitespace detected.
+    zipcode    { Faker::Address.zip_code } 
+                                          ^
+spec/factories/addresses.rb:7:5: C: Inconsistent indentation detected.
+    city       { Faker::Address.city }
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/factories/addresses.rb:8:5: C: Inconsistent indentation detected.
+    phone 	   { Faker::PhoneNumber.phone_number }
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/factories/addresses.rb:8:10: C: Unnecessary spacing detected.
+    phone 	   { Faker::PhoneNumber.phone_number }
+         ^^^^
+spec/factories/addresses.rb:9:5: C: Inconsistent indentation detected.
+    country    { Faker::Address.country }
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/factories/addresses.rb:9:12: C: Unnecessary spacing detected.
+    country    { Faker::Address.country }
+           ^^^
+spec/factories/addresses.rb:11:4: C: Final newline missing.
+end
+   
+spec/views/books/shop.html.erb_spec.rb:3:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+RSpec.describe "books/shop.html.erb", type: :view do
+               ^^^^^^^^^^^^^^^^^^^^^
+spec/views/books/home.html.erb_spec.rb:3:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+RSpec.describe "books/home.html.erb", type: :view do
+               ^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131228_create_countries.rb:4:5: C: Use 2 (not 1) spaces for indentation.
+    	t.string	:name
+    ^
+db/migrate/20160220131228_create_countries.rb:4:5: C: Tab detected.
+    	t.string	:name
+    ^
+db/migrate/20160220131228_create_countries.rb:6:7: C: Inconsistent indentation detected.
+      t.timestamps null: false
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131221_create_addresses.rb:6:5: C: Tab detected.
+    	t.string	:address
+    ^
+db/migrate/20160220131221_create_addresses.rb:6:6: C: Inconsistent indentation detected.
+    	t.string	:address
+     ^^^^^^^^^^^^^^^^^
+db/migrate/20160220131221_create_addresses.rb:7:5: C: Tab detected.
+    	t.integer	:zipcode
+    ^
+db/migrate/20160220131221_create_addresses.rb:7:6: C: Inconsistent indentation detected.
+    	t.integer	:zipcode
+     ^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131221_create_addresses.rb:8:5: C: Tab detected.
+    	t.string	:city
+    ^
+db/migrate/20160220131221_create_addresses.rb:8:6: C: Inconsistent indentation detected.
+    	t.string	:city
+     ^^^^^^^^^^^^^^
+db/migrate/20160220131221_create_addresses.rb:9:5: C: Tab detected.
+    	t.string	:phone
+    ^
+db/migrate/20160220131221_create_addresses.rb:9:6: C: Inconsistent indentation detected.
+    	t.string	:phone
+     ^^^^^^^^^^^^^^^
+db/migrate/20160220131221_create_addresses.rb:10:5: C: Tab detected.
+    	t.string	:country
+    ^
+db/migrate/20160220131221_create_addresses.rb:10:6: C: Inconsistent indentation detected.
+    	t.string	:country
+     ^^^^^^^^^^^^^^^^^
+db/migrate/20160427123550_change_integer_type_for_zipcode.rb:2:1: C: Use 2 (not 3) spaces for indentation.
+   def self.up
+^^^
+db/migrate/20160427123550_change_integer_type_for_zipcode.rb:3:4: C: Use 2 (not 1) spaces for indentation.
+    change_table :addresses do |t|
+   ^
+db/migrate/20160427123550_change_integer_type_for_zipcode.rb:6:3: W: end at 6, 2 is not aligned with def at 2, 3.
+  end
+  ^^^
+db/migrate/20160427123550_change_integer_type_for_zipcode.rb:7:3: C: Use empty lines between method definitions.
+  def self.down
+  ^^^
+db/migrate/20160427123550_change_integer_type_for_zipcode.rb:7:3: C: Inconsistent indentation detected.
+  def self.down [33m...[0m
+  ^^^^^^^^^^^^^
+db/migrate/20160220115101_create_books.rb:8:16: C: Unnecessary spacing detected.
+      t.decimal		 :rating
+               ^^
+db/migrate/20160220115101_create_books.rb:8:16: C: Put one space between the method name and the first argument.
+      t.decimal		 :rating
+               ^^^
+db/migrate/20160220115140_create_ratings.rb:4:5: C: Use 2 (not 1) spaces for indentation.
+    	t.string   :title
+    ^
+db/migrate/20160220115140_create_ratings.rb:4:5: C: Tab detected.
+    	t.string   :title
+    ^
+db/migrate/20160220115140_create_ratings.rb:4:14: C: Unnecessary spacing detected.
+    	t.string   :title
+             ^^
+db/migrate/20160220115140_create_ratings.rb:4:14: C: Put one space between the method name and the first argument.
+    	t.string   :title
+             ^^^
+db/migrate/20160220115140_create_ratings.rb:5:7: C: Inconsistent indentation detected.
+      t.string   :text_review
+      ^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220115140_create_ratings.rb:6:7: C: Inconsistent indentation detected.
+      t.integer  :rating
+      ^^^^^^^^^^^^^^^^^^
+db/migrate/20160220115140_create_ratings.rb:7:1: C: Trailing whitespace detected.
+db/migrate/20160220115140_create_ratings.rb:8:7: C: Inconsistent indentation detected.
+      t.belongs_to :book, index:true
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220115140_create_ratings.rb:8:32: C: Space missing after colon.
+      t.belongs_to :book, index:true
+                               ^
+db/migrate/20160220115140_create_ratings.rb:9:7: C: Inconsistent indentation detected.
+      t.belongs_to :user, index:true
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220115140_create_ratings.rb:9:32: C: Space missing after colon.
+      t.belongs_to :user, index:true
+                               ^
+db/migrate/20160220115140_create_ratings.rb:11:7: C: Inconsistent indentation detected.
+      t.timestamps null: false
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160301094923_add_facebook_image_to_user.rb:3:3: C: Use 2 (not 1) spaces for indentation.
+  	add_column :users, :facebook_image, :string
+  ^
+db/migrate/20160301094923_add_facebook_image_to_user.rb:3:3: C: Tab detected.
+  	add_column :users, :facebook_image, :string
+  ^
+db/migrate/20160314104155_add_billing_address_for_id_and_shipping_address_for_id_to_adresses.rb:1:81: C: Line is too long. [87/80]
+class AddBillingAddressForIdAndShippingAddressForIdToAdresses < ActiveRecord::Migration
+                                                                                ^^^^^^^
+db/migrate/20160226105754_add_devise_to_users.rb:2:3: C: Assignment Branch Condition size for change is too high. [16/15]
+  def change
+  ^^^
+db/migrate/20160226105754_add_devise_to_users.rb:2:3: C: Method has too many lines. [17/10]
+  def change [33m...[0m
+  ^^^^^^^^^^
+db/migrate/20160226105754_add_devise_to_users.rb:5:59: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.string :email,              null: false, default: ""
+                                                          ^^
+db/migrate/20160226105754_add_devise_to_users.rb:6:59: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.string :encrypted_password, null: false, default: ""
+                                                          ^^
+db/migrate/20160226105754_add_devise_to_users.rb:7:59: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.string :firstname,          null: false, default: ""
+                                                          ^^
+db/migrate/20160226105754_add_devise_to_users.rb:8:59: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.string :lastname,           null: false, default: ""
+                                                          ^^
+db/migrate/20160226105754_add_devise_to_users.rb:31:81: C: Line is too long. [104/80]
+      # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160226105754_add_devise_to_users.rb:35:1: C: Extra blank line detected.
+db/migrate/20160226105754_add_devise_to_users.rb:45:4: C: Final newline missing.
+end
+   
+db/migrate/20160220131238_create_credit_cards.rb:4:5: C: Use 2 (not 1) spaces for indentation.
+    	t.string	:number
+    ^
+db/migrate/20160220131238_create_credit_cards.rb:4:5: C: Tab detected.
+    	t.string	:number
+    ^
+db/migrate/20160220131238_create_credit_cards.rb:5:5: C: Tab detected.
+    	t.string	:cvv
+    ^
+db/migrate/20160220131238_create_credit_cards.rb:6:5: C: Tab detected.
+    	t.integer	:expiration_month
+    ^
+db/migrate/20160220131238_create_credit_cards.rb:7:5: C: Tab detected.
+    	t.integer	:expiration_year
+    ^
+db/migrate/20160220131238_create_credit_cards.rb:8:5: C: Tab detected.
+    	t.string	:firstname
+    ^
+db/migrate/20160220131238_create_credit_cards.rb:9:5: C: Tab detected.
+    	t.string	:lastname
+    ^
+db/migrate/20160220131238_create_credit_cards.rb:10:5: C: Tab detected.
+    	t.belongs_to :user, index:true
+    ^
+db/migrate/20160220131238_create_credit_cards.rb:10:31: C: Space missing after colon.
+    	t.belongs_to :user, index:true
+                              ^
+db/migrate/20160220131238_create_credit_cards.rb:12:7: C: Inconsistent indentation detected.
+      t.timestamps null: false
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131137_create_orders.rb:4:5: C: Use 2 (not 1) spaces for indentation.
+    	t.decimal   :total_price
+    ^
+db/migrate/20160220131137_create_orders.rb:4:5: C: Tab detected.
+    	t.decimal   :total_price
+    ^
+db/migrate/20160220131137_create_orders.rb:5:5: C: Tab detected.
+    	t.date 			:completed_date
+    ^
+db/migrate/20160220131137_create_orders.rb:5:12: C: Unnecessary spacing detected.
+    	t.date 			:completed_date
+           ^^^
+db/migrate/20160220131137_create_orders.rb:5:12: C: Put one space between the method name and the first argument.
+    	t.date 			:completed_date
+           ^^^^
+db/migrate/20160220131137_create_orders.rb:6:5: C: Tab detected.
+    	t.integer		:state, default: 1
+    ^
+db/migrate/20160220131137_create_orders.rb:6:15: C: Unnecessary spacing detected.
+    	t.integer		:state, default: 1
+              ^
+db/migrate/20160220131137_create_orders.rb:6:15: C: Put one space between the method name and the first argument.
+    	t.integer		:state, default: 1
+              ^^
+db/migrate/20160220131137_create_orders.rb:7:7: C: Inconsistent indentation detected.
+      t.integer   :book_count
+      ^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131137_create_orders.rb:8:7: C: Inconsistent indentation detected.
+      t.integer   :step_number
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131137_create_orders.rb:9:5: C: Tab detected.
+    	#t.string 		:billing_address_id
+    ^
+db/migrate/20160220131137_create_orders.rb:9:6: C: Missing space after #.
+    	#t.string 		:billing_address_id
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131137_create_orders.rb:10:5: C: Tab detected.
+    	#t.string 		:shipping_address_id
+    ^
+db/migrate/20160220131137_create_orders.rb:10:6: C: Incorrect indentation detected (column 5 instead of 6).
+    	#t.string 		:shipping_address_id
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131137_create_orders.rb:10:6: C: Missing space after #.
+    	#t.string 		:shipping_address_id
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131137_create_orders.rb:11:7: C: Missing space after #.
+      #t.string     :billing_address_id
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131137_create_orders.rb:12:7: C: Missing space after #.
+      #t.string     :shipping_address_id
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131137_create_orders.rb:13:7: C: Inconsistent indentation detected.
+      t.belongs_to :user, index:true
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131137_create_orders.rb:13:32: C: Space missing after colon.
+      t.belongs_to :user, index:true
+                               ^
+db/migrate/20160220131137_create_orders.rb:14:7: C: Inconsistent indentation detected.
+      t.belongs_to :credit_card, index:true
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131137_create_orders.rb:14:39: C: Space missing after colon.
+      t.belongs_to :credit_card, index:true
+                                      ^
+db/migrate/20160220131137_create_orders.rb:16:7: C: Inconsistent indentation detected.
+      t.timestamps null: false
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131202_create_order_items.rb:4:5: C: Use 2 (not 1) spaces for indentation.
+    	t.string	 	 :quantity
+    ^
+db/migrate/20160220131202_create_order_items.rb:4:5: C: Tab detected.
+    	t.string	 	 :quantity
+    ^
+db/migrate/20160220131202_create_order_items.rb:5:5: C: Tab detected.
+    	t.belongs_to :book, index:true
+    ^
+db/migrate/20160220131202_create_order_items.rb:5:31: C: Space missing after colon.
+    	t.belongs_to :book, index:true
+                              ^
+db/migrate/20160220131202_create_order_items.rb:6:7: C: Inconsistent indentation detected.
+      t.belongs_to :order, index:true
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160220131202_create_order_items.rb:6:33: C: Space missing after colon.
+      t.belongs_to :order, index:true
+                                ^
+db/migrate/20160220131202_create_order_items.rb:8:7: C: Inconsistent indentation detected.
+      t.timestamps null: false
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20160414132043_change_state_type_for_orders.rb:4:42: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.change :state, :string, default: "in_progress"
+                                         ^^^^^^^^^^^^^
+db/migrate/20160414132043_change_state_type_for_orders.rb:7:3: C: Use empty lines between method definitions.
+  def self.down
+  ^^^
+db/migrate/20160414132043_change_state_type_for_orders.rb:12:4: C: Final newline missing.
+end
+   
+db/seeds.rb:1:81: C: Line is too long. [103/80]
+# This file should contain all the record creation needed to seed the database with its default values.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:2:81: C: Line is too long. [96/80]
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+                                                                                ^^^^^^^^^^^^^^^^
+db/seeds.rb:9:1: C: Extra blank line detected.
+db/seeds.rb:12:20: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+User.create(email: "admin@gmail.com", password: "adminadmin", firstname: "Admin", lastname: "Adminovitch", admin: true)
+                   ^^^^^^^^^^^^^^^^^
+db/seeds.rb:12:49: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+User.create(email: "admin@gmail.com", password: "adminadmin", firstname: "Admin", lastname: "Adminovitch", admin: true)
+                                                ^^^^^^^^^^^^
+db/seeds.rb:12:74: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+User.create(email: "admin@gmail.com", password: "adminadmin", firstname: "Admin", lastname: "Adminovitch", admin: true)
+                                                                         ^^^^^^^
+db/seeds.rb:12:81: C: Line is too long. [119/80]
+User.create(email: "admin@gmail.com", password: "adminadmin", firstname: "Admin", lastname: "Adminovitch", admin: true)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:12:93: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+User.create(email: "admin@gmail.com", password: "adminadmin", firstname: "Admin", lastname: "Adminovitch", admin: true)
+                                                                                            ^^^^^^^^^^^^^
+db/seeds.rb:15:20: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+Book.create(title: "The Rspec Book", 
+                   ^^^^^^^^^^^^^^^^
+db/seeds.rb:15:37: C: Trailing whitespace detected.
+Book.create(title: "The Rspec Book", 
+                                    ^
+db/seeds.rb:16:1: C: Tab detected.
+						description: "Behaviour-Driven Development (BDD) gives you the best of Test Driven Development, Domain Driven Design, and Acceptance Test Driven Planning techniques, so you can create better software with self-documenting, executable tests that bring users and developers together with a common language.
+^^^^^^
+db/seeds.rb:16:7: C: Align the elements of a hash literal if they span more than one line.
+						description: "Behaviour-Driven Development (BDD) gives you the best of Test Driven Development, Domain Driven Design, and Acceptance Test Driven Planning techniques, so you can create better software with self-documenting, executable tests that bring users and developers together with a common language. [33m...[0m
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:16:81: C: Line is too long. [310/80]
+						description: "Behaviour-Driven Development (BDD) gives you the best of Test Driven Development, Domain Driven Design, and Acceptance Test Driven Planning techniques, so you can create better software with self-documenting, executable tests that bring users and developers together with a common language.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:17:81: C: Line is too long. [122/80]
+													Get the most out of BDD in Ruby with The RSpec Book, written by the lead developer of RSpec, David Chelimsky.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:18:81: C: Line is too long. [508/80]
+													You'll get started right away with RSpec 2 and Cucumber by developing a simple game, using Cucumber to express high-level requirements in language your customer understands, and RSpec to express more granular requirements that focus on the behavior of individual objects in the system. You'll learn how to use test doubles (mocks and stubs) to control the environment and focus the RSpec examples on one object at a time, and how to customize RSpec to \"speak\" in the language of your domain.",
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:19:1: C: Tab detected.
+					  price: 17.6, in_stock: 228, image: "image/upload/v1456929470/nxsdvwadmqzuoxde4orl.png", order_counter: 25, best_seller: true)
+^^^^^
+db/seeds.rb:19:8: C: Align the elements of a hash literal if they span more than one line.
+					  price: 17.6, in_stock: 228, image: "image/upload/v1456929470/nxsdvwadmqzuoxde4orl.png", order_counter: 25, best_seller: true)
+       ^^^^^^^^^^^
+db/seeds.rb:19:43: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+					  price: 17.6, in_stock: 228, image: "image/upload/v1456929470/nxsdvwadmqzuoxde4orl.png", order_counter: 25, best_seller: true)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:19:81: C: Line is too long. [132/80]
+					  price: 17.6, in_stock: 228, image: "image/upload/v1456929470/nxsdvwadmqzuoxde4orl.png", order_counter: 25, best_seller: true)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:21:20: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+Book.create(title: "The Ruby On Rails Tutorial", 
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:21:49: C: Trailing whitespace detected.
+Book.create(title: "The Ruby On Rails Tutorial", 
+                                                ^
+db/seeds.rb:22:1: C: Tab detected.
+						description: "The Ruby on Rails Tutorial book and screencast series teach you how to develop and deploy real, industrial-strength web applications with Ruby on Rails, the open-source web framework that powers top websites such as Twitter, Hulu, GitHub, and the Yellow Pages. The Ruby on Rails Tutorial book is available for free online and is available for purchase as an ebook (PDF, EPUB, and MOBI formats). The companion screencast series includes 12 individual lessons, one for each chapter of the Ruby on Rails Tutorial book. All purchases also include a free copy of the Solutions Manual for Exercises, with solutions to every exercise in the book.",
+^^^^^^
+db/seeds.rb:22:7: C: Align the elements of a hash literal if they span more than one line.
+						description: "The Ruby on Rails Tutorial book and screencast series teach you how to develop and deploy real, industrial-strength web applications with Ruby on Rails, the open-source web framework that powers top websites such as Twitter, Hulu, GitHub, and the Yellow Pages. The Ruby on Rails Tutorial book is available for free online and is available for purchase as an ebook (PDF, EPUB, and MOBI formats). The companion screencast series includes 12 individual lessons, one for each chapter of the Ruby on Rails Tutorial book. All purchases also include a free copy of the Solutions Manual for Exercises, with solutions to every exercise in the book.",
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:22:20: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+						description: "The Ruby on Rails Tutorial book and screencast series teach you how to develop and deploy real, industrial-strength web applications with Ruby on Rails, the open-source web framework that powers top websites such as Twitter, Hulu, GitHub, and the Yellow Pages. The Ruby on Rails Tutorial book is available for free online and is available for purchase as an ebook (PDF, EPUB, and MOBI formats). The companion screencast series includes 12 individual lessons, one for each chapter of the Ruby on Rails Tutorial book. All purchases also include a free copy of the Solutions Manual for Exercises, with solutions to every exercise in the book.",
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:22:81: C: Line is too long. [661/80]
+						description: "The Ruby on Rails Tutorial book and screencast series teach you how to develop and deploy real, industrial-strength web applications with Ruby on Rails, the open-source web framework that powers top websites such as Twitter, Hulu, GitHub, and the Yellow Pages. The Ruby on Rails Tutorial book is available for free online and is available for purchase as an ebook (PDF, EPUB, and MOBI formats). The companion screencast series includes 12 individual lessons, one for each chapter of the Ruby on Rails Tutorial book. All purchases also include a free copy of the Solutions Manual for Exercises, with solutions to every exercise in the book.",
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:23:1: C: Tab detected.
+					  price: 20.0, in_stock: 128, order_counter: 64, image: "image/upload/v1456929844/kndu8ixylvrlnl6upcyz.png", best_seller: true)
+^^^^^
+db/seeds.rb:23:8: C: Align the elements of a hash literal if they span more than one line.
+					  price: 20.0, in_stock: 128, order_counter: 64, image: "image/upload/v1456929844/kndu8ixylvrlnl6upcyz.png", best_seller: true)
+       ^^^^^^^^^^^
+db/seeds.rb:23:62: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+					  price: 20.0, in_stock: 128, order_counter: 64, image: "image/upload/v1456929844/kndu8ixylvrlnl6upcyz.png", best_seller: true)
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:23:81: C: Line is too long. [132/80]
+					  price: 20.0, in_stock: 128, order_counter: 64, image: "image/upload/v1456929844/kndu8ixylvrlnl6upcyz.png", best_seller: true)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:25:20: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+Book.create(title: "The Ruby Programming Language", 
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:25:52: C: Trailing whitespace detected.
+Book.create(title: "The Ruby Programming Language", 
+                                                   ^
+db/seeds.rb:26:1: C: Tab detected.
+						description: "The Ruby Programming Language is the authoritative guide to Ruby and provides comprehensive coverage of versions 1.8 and 1.9 of the language. It was written (and illustrated!) by an all-star team    David Flanagan, bestselling author of programming language \"bibles\" (including JavaScript: The Definitive Guide and Java in a Nutshell) and committer to the Ruby Subversion repository.
+^^^^^^
+db/seeds.rb:26:7: C: Align the elements of a hash literal if they span more than one line.
+						description: "The Ruby Programming Language is the authoritative guide to Ruby and provides comprehensive coverage of versions 1.8 and 1.9 of the language. It was written (and illustrated!) by an all-star team    David Flanagan, bestselling author of programming language \"bibles\" (including JavaScript: The Definitive Guide and Java in a Nutshell) and committer to the Ruby Subversion repository. [33m...[0m
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:26:81: C: Line is too long. [405/80]
+						description: "The Ruby Programming Language is the authoritative guide to Ruby and provides comprehensive coverage of versions 1.8 and 1.9 of the language. It was written (and illustrated!) by an all-star team    David Flanagan, bestselling author of programming language \"bibles\" (including JavaScript: The Definitive Guide and Java in a Nutshell) and committer to the Ruby Subversion repository.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:27:81: C: Line is too long. [177/80]
+													Yukihiro \"Matz\" Matsumoto, creator, designer and lead developer of Ruby and author of Ruby in a Nutshell, which has been expanded and revised to become this book.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:29:1: C: Tab detected.
+					  price: 32.6, in_stock: 328, order_counter: 48, image: "image/upload/v1456929904/rtkkcjwiekw007uzl3ys.png", best_seller: true)
+^^^^^
+db/seeds.rb:29:8: C: Align the elements of a hash literal if they span more than one line.
+					  price: 32.6, in_stock: 328, order_counter: 48, image: "image/upload/v1456929904/rtkkcjwiekw007uzl3ys.png", best_seller: true)
+       ^^^^^^^^^^^
+db/seeds.rb:29:62: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+					  price: 32.6, in_stock: 328, order_counter: 48, image: "image/upload/v1456929904/rtkkcjwiekw007uzl3ys.png", best_seller: true)
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:29:81: C: Line is too long. [132/80]
+					  price: 32.6, in_stock: 328, order_counter: 48, image: "image/upload/v1456929904/rtkkcjwiekw007uzl3ys.png", best_seller: true)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:31:1: C: Missing space after #.
+#@order_items = OrderItem.new()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:32:19: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+@cookies_book = { "book_count" => "0", "total_price" => "0"}
+                  ^^^^^^^^^^^^
+db/seeds.rb:32:35: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+@cookies_book = { "book_count" => "0", "total_price" => "0"}
+                                  ^^^
+db/seeds.rb:32:40: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+@cookies_book = { "book_count" => "0", "total_price" => "0"}
+                                       ^^^^^^^^^^^^^
+db/seeds.rb:32:57: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+@cookies_book = { "book_count" => "0", "total_price" => "0"}
+                                                        ^^^
+db/seeds.rb:32:60: C: Space inside } missing.
+@cookies_book = { "book_count" => "0", "total_price" => "0"}
+                                                           ^
+db/seeds.rb:33:48: C: Unnecessary spacing detected.
+order_id = Order.create_order(@cookies_book, 0,  1)
+                                               ^
+db/schema.rb:4:81: C: Line is too long. [81/80]
+# incrementally modify your database, and then regenerate this schema definition.
+                                                                                ^
+db/schema.rb:9:81: C: Line is too long. [86/80]
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+                                                                                ^^^^^^
+db/schema.rb:12:81: C: Line is too long. [86/80]
+# It's strongly recommended that you check this file into your version control system.
+                                                                                ^^^^^^
+db/schema.rb:14:38: C: Separate every 3 digits in the integer portion of a number with underscores(_).
+ActiveRecord::Schema.define(version: 20160427123550) do
+                                     ^^^^^^^^^^^^^^
+db/schema.rb:15:1: C: Extra empty line detected at block body beginning.
+db/schema.rb:17:20: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  enable_extension "plpgsql"
+                   ^^^^^^^^^
+db/schema.rb:19:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "addresses", force: :cascade do |t|
+               ^^^^^^^^^^^
+db/schema.rb:20:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "firstname"
+               ^^^^^^^^^^^
+db/schema.rb:21:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "lastname"
+               ^^^^^^^^^^
+db/schema.rb:22:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "address"
+               ^^^^^^^^^
+db/schema.rb:23:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "zipcode"
+               ^^^^^^^^^
+db/schema.rb:24:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "city"
+               ^^^^^^
+db/schema.rb:25:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "phone"
+               ^^^^^^^
+db/schema.rb:26:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "country"
+               ^^^^^^^^^
+db/schema.rb:27:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",                null: false
+               ^^^^^^^^^^^^
+db/schema.rb:28:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",                null: false
+               ^^^^^^^^^^^^
+db/schema.rb:29:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "user_billing_address_id"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:30:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "user_shipping_address_id"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:31:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "order_billing_address_id"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:32:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "order_shipping_address_id"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:35:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "authors", force: :cascade do |t|
+               ^^^^^^^^^
+db/schema.rb:36:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "firstname"
+               ^^^^^^^^^^^
+db/schema.rb:37:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "lastname"
+               ^^^^^^^^^^
+db/schema.rb:38:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text     "biography"
+               ^^^^^^^^^^^
+db/schema.rb:39:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:40:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:43:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "books", force: :cascade do |t|
+               ^^^^^^^
+db/schema.rb:44:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "title"
+               ^^^^^^^
+db/schema.rb:45:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text     "description"
+               ^^^^^^^^^^^^^
+db/schema.rb:46:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.decimal  "price"
+               ^^^^^^^
+db/schema.rb:47:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "in_stock"
+               ^^^^^^^^^^
+db/schema.rb:48:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.decimal  "rating"
+               ^^^^^^^^
+db/schema.rb:49:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "author_id"
+               ^^^^^^^^^^^
+db/schema.rb:50:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "category_id"
+               ^^^^^^^^^^^^^
+db/schema.rb:51:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",    null: false
+               ^^^^^^^^^^^^
+db/schema.rb:52:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",    null: false
+               ^^^^^^^^^^^^
+db/schema.rb:53:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "image"
+               ^^^^^^^
+db/schema.rb:54:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "order_counter"
+               ^^^^^^^^^^^^^^^
+db/schema.rb:55:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.boolean  "best_seller"
+               ^^^^^^^^^^^^^
+db/schema.rb:58:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
+            ^^^^^^^
+db/schema.rb:58:23: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
+                      ^^^^^^^^^^^
+db/schema.rb:58:43: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:58:81: C: Line is too long. [83/80]
+  add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
+                                                                                ^^^
+db/schema.rb:59:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "books", ["category_id"], name: "index_books_on_category_id", using: :btree
+            ^^^^^^^
+db/schema.rb:59:23: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "books", ["category_id"], name: "index_books_on_category_id", using: :btree
+                      ^^^^^^^^^^^^^
+db/schema.rb:59:45: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "books", ["category_id"], name: "index_books_on_category_id", using: :btree
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:59:81: C: Line is too long. [87/80]
+  add_index "books", ["category_id"], name: "index_books_on_category_id", using: :btree
+                                                                                ^^^^^^^
+db/schema.rb:61:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "categories", force: :cascade do |t|
+               ^^^^^^^^^^^^
+db/schema.rb:62:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "title"
+               ^^^^^^^
+db/schema.rb:63:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:64:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:67:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "countries", force: :cascade do |t|
+               ^^^^^^^^^^^
+db/schema.rb:68:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "name"
+               ^^^^^^
+db/schema.rb:69:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:70:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:73:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "credit_cards", force: :cascade do |t|
+               ^^^^^^^^^^^^^^
+db/schema.rb:74:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "number"
+               ^^^^^^^^
+db/schema.rb:75:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "cvv"
+               ^^^^^
+db/schema.rb:76:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "expiration_month"
+               ^^^^^^^^^^^^^^^^^^
+db/schema.rb:77:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "expiration_year"
+               ^^^^^^^^^^^^^^^^^
+db/schema.rb:78:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "firstname"
+               ^^^^^^^^^^^
+db/schema.rb:79:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "lastname"
+               ^^^^^^^^^^
+db/schema.rb:80:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "user_id"
+               ^^^^^^^^^
+db/schema.rb:81:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",       null: false
+               ^^^^^^^^^^^^
+db/schema.rb:82:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",       null: false
+               ^^^^^^^^^^^^
+db/schema.rb:85:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "credit_cards", ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
+            ^^^^^^^^^^^^^^
+db/schema.rb:85:30: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "credit_cards", ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
+                             ^^^^^^^^^
+db/schema.rb:85:48: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "credit_cards", ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:85:81: C: Line is too long. [93/80]
+  add_index "credit_cards", ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
+                                                                                ^^^^^^^^^^^^^
+db/schema.rb:87:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "cupons", force: :cascade do |t|
+               ^^^^^^^^
+db/schema.rb:88:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "value"
+               ^^^^^^^
+db/schema.rb:89:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.boolean  "use",        default: false
+               ^^^^^
+db/schema.rb:90:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "discount",   default: 5
+               ^^^^^^^^^^
+db/schema.rb:91:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "order_id"
+               ^^^^^^^^^^
+db/schema.rb:92:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",                 null: false
+               ^^^^^^^^^^^^
+db/schema.rb:93:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",                 null: false
+               ^^^^^^^^^^^^
+db/schema.rb:96:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "cupons", ["order_id"], name: "index_cupons_on_order_id", using: :btree
+            ^^^^^^^^
+db/schema.rb:96:24: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "cupons", ["order_id"], name: "index_cupons_on_order_id", using: :btree
+                       ^^^^^^^^^^
+db/schema.rb:96:43: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "cupons", ["order_id"], name: "index_cupons_on_order_id", using: :btree
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:96:81: C: Line is too long. [83/80]
+  add_index "cupons", ["order_id"], name: "index_cupons_on_order_id", using: :btree
+                                                                                ^^^
+db/schema.rb:98:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "order_items", force: :cascade do |t|
+               ^^^^^^^^^^^^^
+db/schema.rb:99:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "quantity"
+               ^^^^^^^^^^
+db/schema.rb:100:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "book_id"
+               ^^^^^^^^^
+db/schema.rb:101:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "order_id"
+               ^^^^^^^^^^
+db/schema.rb:102:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:103:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:106:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "order_items", ["book_id"], name: "index_order_items_on_book_id", using: :btree
+            ^^^^^^^^^^^^^
+db/schema.rb:106:29: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "order_items", ["book_id"], name: "index_order_items_on_book_id", using: :btree
+                            ^^^^^^^^^
+db/schema.rb:106:47: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "order_items", ["book_id"], name: "index_order_items_on_book_id", using: :btree
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:106:81: C: Line is too long. [91/80]
+  add_index "order_items", ["book_id"], name: "index_order_items_on_book_id", using: :btree
+                                                                                ^^^^^^^^^^^
+db/schema.rb:107:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
+            ^^^^^^^^^^^^^
+db/schema.rb:107:29: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
+                            ^^^^^^^^^^
+db/schema.rb:107:48: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:107:81: C: Line is too long. [93/80]
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
+                                                                                ^^^^^^^^^^^^^
+db/schema.rb:109:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "orders", force: :cascade do |t|
+               ^^^^^^^^
+db/schema.rb:110:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.decimal  "total_price"
+               ^^^^^^^^^^^^^
+db/schema.rb:111:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.date     "completed_date"
+               ^^^^^^^^^^^^^^^^
+db/schema.rb:112:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "state",          default: "in_progress"
+               ^^^^^^^
+db/schema.rb:112:24: C: Unnecessary spacing detected.
+    t.string   "state",          default: "in_progress"
+                       ^^^^^^^^^
+db/schema.rb:112:43: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "state",          default: "in_progress"
+                                          ^^^^^^^^^^^^^
+db/schema.rb:113:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "book_count"
+               ^^^^^^^^^^^^
+db/schema.rb:114:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "step_number"
+               ^^^^^^^^^^^^^
+db/schema.rb:115:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "user_id"
+               ^^^^^^^^^
+db/schema.rb:116:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "credit_card_id"
+               ^^^^^^^^^^^^^^^^
+db/schema.rb:117:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",                             null: false
+               ^^^^^^^^^^^^
+db/schema.rb:118:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",                             null: false
+               ^^^^^^^^^^^^
+db/schema.rb:119:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.decimal  "delivery",       default: 5.0
+               ^^^^^^^^^^
+db/schema.rb:119:27: C: Unnecessary spacing detected.
+    t.decimal  "delivery",       default: 5.0
+                          ^^^^^^
+db/schema.rb:120:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.decimal  "order_total"
+               ^^^^^^^^^^^^^
+db/schema.rb:123:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "orders", ["credit_card_id"], name: "index_orders_on_credit_card_id", using: :btree
+            ^^^^^^^^
+db/schema.rb:123:24: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "orders", ["credit_card_id"], name: "index_orders_on_credit_card_id", using: :btree
+                       ^^^^^^^^^^^^^^^^
+db/schema.rb:123:49: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "orders", ["credit_card_id"], name: "index_orders_on_credit_card_id", using: :btree
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:123:81: C: Line is too long. [95/80]
+  add_index "orders", ["credit_card_id"], name: "index_orders_on_credit_card_id", using: :btree
+                                                                                ^^^^^^^^^^^^^^^
+db/schema.rb:124:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+            ^^^^^^^^
+db/schema.rb:124:24: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+                       ^^^^^^^^^
+db/schema.rb:124:42: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:124:81: C: Line is too long. [81/80]
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+                                                                                ^
+db/schema.rb:126:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "ratings", force: :cascade do |t|
+               ^^^^^^^^^
+db/schema.rb:127:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "title"
+               ^^^^^^^
+db/schema.rb:128:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "text_review"
+               ^^^^^^^^^^^^^
+db/schema.rb:129:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "rating"
+               ^^^^^^^^
+db/schema.rb:130:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "book_id"
+               ^^^^^^^^^
+db/schema.rb:131:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "user_id"
+               ^^^^^^^^^
+db/schema.rb:132:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",  null: false
+               ^^^^^^^^^^^^
+db/schema.rb:133:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",  null: false
+               ^^^^^^^^^^^^
+db/schema.rb:136:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "ratings", ["book_id"], name: "index_ratings_on_book_id", using: :btree
+            ^^^^^^^^^
+db/schema.rb:136:25: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "ratings", ["book_id"], name: "index_ratings_on_book_id", using: :btree
+                        ^^^^^^^^^
+db/schema.rb:136:43: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "ratings", ["book_id"], name: "index_ratings_on_book_id", using: :btree
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:136:81: C: Line is too long. [83/80]
+  add_index "ratings", ["book_id"], name: "index_ratings_on_book_id", using: :btree
+                                                                                ^^^
+db/schema.rb:137:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
+            ^^^^^^^^^
+db/schema.rb:137:25: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
+                        ^^^^^^^^^
+db/schema.rb:137:43: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:137:81: C: Line is too long. [83/80]
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
+                                                                                ^^^
+db/schema.rb:139:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "users", force: :cascade do |t|
+               ^^^^^^^
+db/schema.rb:140:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "email",                  default: "", null: false
+               ^^^^^^^
+db/schema.rb:140:51: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "email",                  default: "", null: false
+                                                  ^^
+db/schema.rb:141:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "encrypted_password",     default: "", null: false
+               ^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:141:51: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "encrypted_password",     default: "", null: false
+                                                  ^^
+db/schema.rb:142:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "firstname",              default: "", null: false
+               ^^^^^^^^^^^
+db/schema.rb:142:51: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "firstname",              default: "", null: false
+                                                  ^^
+db/schema.rb:143:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "lastname",               default: "", null: false
+               ^^^^^^^^^^
+db/schema.rb:143:51: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "lastname",               default: "", null: false
+                                                  ^^
+db/schema.rb:144:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "reset_password_token"
+               ^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:145:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "reset_password_sent_at"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:146:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "remember_created_at"
+               ^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:147:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "sign_in_count",          default: 0,  null: false
+               ^^^^^^^^^^^^^^^
+db/schema.rb:147:32: C: Unnecessary spacing detected.
+    t.integer  "sign_in_count",          default: 0,  null: false
+                               ^^^^^^^^^
+db/schema.rb:147:53: C: Unnecessary spacing detected.
+    t.integer  "sign_in_count",          default: 0,  null: false
+                                                    ^
+db/schema.rb:148:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "current_sign_in_at"
+               ^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:149:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "last_sign_in_at"
+               ^^^^^^^^^^^^^^^^^
+db/schema.rb:150:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.inet     "current_sign_in_ip"
+               ^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:151:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.inet     "last_sign_in_ip"
+               ^^^^^^^^^^^^^^^^^
+db/schema.rb:152:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",                          null: false
+               ^^^^^^^^^^^^
+db/schema.rb:153:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",                          null: false
+               ^^^^^^^^^^^^
+db/schema.rb:154:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.boolean  "admin"
+               ^^^^^^^
+db/schema.rb:155:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "provider"
+               ^^^^^^^^^^
+db/schema.rb:156:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "uid"
+               ^^^^^
+db/schema.rb:157:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "image"
+               ^^^^^^^
+db/schema.rb:158:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "facebook_image"
+               ^^^^^^^^^^^^^^^^
+db/schema.rb:161:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+            ^^^^^^^
+db/schema.rb:161:23: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+                      ^^^^^^^
+db/schema.rb:161:39: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+                                      ^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:161:81: C: Line is too long. [89/80]
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+                                                                                ^^^^^^^^^
+db/schema.rb:162:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+            ^^^^^^^
+db/schema.rb:162:23: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+                      ^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:162:54: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:162:81: C: Line is too long. [119/80]
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:163:1: C: Extra empty line detected at block body end.
+app/controllers/categories_controller.rb:9:81: C: Line is too long. [83/80]
+    add_breadcrumb Category.title_category(params[:id]), category_path(params[:id])
+                                                                                ^^^
+app/controllers/addresses_controller.rb:2:3: C: Assignment Branch Condition size for update is too high. [15.07/15]
+  def update
+  ^^^
+app/controllers/addresses_controller.rb:14:81: C: Line is too long. [91/80]
+      @shipping_address = Address.find_or_create_by(user_shipping_address_id: current_user)
+                                                                                ^^^^^^^^^^^
+app/controllers/addresses_controller.rb:38:81: C: Line is too long. [109/80]
+    par = params.require(:address).permit(:firstname, :lastname, :address, :city, :country, :zipcode, :phone)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/orders_items_controller.rb:5:3: C: Assignment Branch Condition size for destroy is too high. [40.32/15]
+  def destroy
+  ^^^
+app/controllers/orders_items_controller.rb:6:81: C: Line is too long. [115/80]
+    @order.total_price = @order.total_price - params[:product_count].to_i * Book.find_by_id(params[:id]).price.to_f
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/orders_items_controller.rb:12:81: C: Line is too long. [100/80]
+    session[:user_products_count] = session[:user_products_count].to_i - params[:product_count].to_i
+                                                                                ^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:8:3: C: Assignment Branch Condition size for update_password is too high. [28.79/15]
+  def update_password
+  ^^^
+app/controllers/users_controller.rb:8:3: C: Method has too many lines. [11/10]
+  def update_password [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:9:81: C: Line is too long. [112/80]
+    if params[:user][:old_password] != '' && current_user.valid_password?(params[:user][:old_password]) == false
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:17:81: C: Line is too long. [94/80]
+      flash[:error][:old_password] = ['can\'t be blank'] if params[:user][:old_password] == ''
+                                                                                ^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:32:3: C: Assignment Branch Condition size for updates is too high. [15.65/15]
+  def updates
+  ^^^
+app/controllers/users_controller.rb:32:3: C: Method has too many lines. [11/10]
+  def updates [33m...[0m
+  ^^^^^^^^^^^
+app/controllers/users_controller.rb:50:81: C: Line is too long. [108/80]
+    params.require(:user).permit(:firstname, :lastname, :email, :password, :user_id, :password_confirmation)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/order_steps_controller.rb:9:3: C: Assignment Branch Condition size for show is too high. [21/15]
+  def show
+  ^^^
+app/controllers/order_steps_controller.rb:9:3: C: Method has too many lines. [12/10]
+  def show [33m...[0m
+  ^^^^^^^^
+app/controllers/order_steps_controller.rb:23:81: C: Line is too long. [81/80]
+      cupon.update(order_id: @order.id, use: true) if cupon && cupon.use == false
+                                                                                ^
+app/controllers/order_steps_controller.rb:31:3: C: Assignment Branch Condition size for update is too high. [16.09/15]
+  def update
+  ^^^
+app/controllers/order_steps_controller.rb:38:81: C: Line is too long. [97/80]
+      @order_steps_form.and_shipping = params[:order_steps_form][:billing_address][:and_shipping]
+                                                                                ^^^^^^^^^^^^^^^^^
+app/controllers/order_steps_controller.rb:69:3: C: Method has too many lines. [26/10]
+  def checkout_params [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^
+app/controllers/orders_controller.rb:17:3: C: Assignment Branch Condition size for update is too high. [53.8/15]
+  def update
+  ^^^
+app/controllers/orders_controller.rb:17:3: C: Method has too many lines. [16/10]
+  def update [33m...[0m
+  ^^^^^^^^^^
+app/controllers/orders_controller.rb:18:81: C: Line is too long. [81/80]
+    price = Book.find_by_id(params[:book_id]).price.to_f * params[:quantity].to_i
+                                                                                ^
+app/controllers/orders_controller.rb:19:81: C: Line is too long. [124/80]
+    @order_items = @order.order_items.find_by_book_id(params[:book_id]) || @order.order_items.new(book_id: params[:book_id])
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/orders_controller.rb:21:81: C: Line is too long. [95/80]
+    session[:user_products_count] = session[:user_products_count].to_i + params[:quantity].to_i
+                                                                                ^^^^^^^^^^^^^^^
+app/controllers/orders_controller.rb:39:3: C: Assignment Branch Condition size for update_shopcart_ajax is too high. [27/15]
+  def update_shopcart_ajax
+  ^^^
+app/controllers/orders_controller.rb:39:3: C: Method has too many lines. [16/10]
+  def update_shopcart_ajax [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/orders_controller.rb:66:81: C: Line is too long. [84/80]
+        render text: 'Your discount is $' << checking.discount.to_s << '. Continue?'
+                                                                                ^^^^
+app/controllers/orders_controller.rb:98:7: C: Do not prefix reader method names with get_.
+  def get_books_in_order
+      ^^^^^^^^^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:1:7: C: Use nested module/class definitions instead of compact style.
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:2:3: C: Assignment Branch Condition size for facebook is too high. [17.52/15]
+  def facebook
+  ^^^
+app/controllers/users/omniauth_callbacks_controller.rb:3:81: C: Line is too long. [84/80]
+    # You need to implement the method below in your model (e.g. app/models/user.rb)
+                                                                                ^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:14:81: C: Line is too long. [100/80]
+      sign_in_and_redirect @user, event: :authentication # this will throw if @user is not activated
+                                                                                ^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:15:81: C: Line is too long. [87/80]
+      set_flash_message(:notice, :success, kind: 'Facebook') if is_navigational_format?
+                                                                                ^^^^^^^
+app/controllers/users/order_controllers2.rb:17:3: C: Assignment Branch Condition size for update is too high. [33.2/15]
+  def update
+  ^^^
+app/controllers/users/order_controllers2.rb:18:81: C: Line is too long. [124/80]
+    @order_items = @order.order_items.find_by_book_id(params[:book_id]) || @order.order_items.new(book_id: params[:book_id])
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/order_controllers2.rb:20:81: C: Line is too long. [101/80]
+    session[:user_products_count] = session[:user_products_count].to_i + @order_items[:quantity].to_i
+                                                                                ^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/order_controllers2.rb:34:81: C: Line is too long. [85/80]
+    Book.find_by_id(order_params[:book_id]).price.to_f * order_params[:quantity].to_i
+                                                                                ^^^^^
+app/controllers/users/order_controllers2.rb:37:3: C: Assignment Branch Condition size for update_shopcart_ajax is too high. [27/15]
+  def update_shopcart_ajax
+  ^^^
+app/controllers/users/order_controllers2.rb:37:3: C: Method has too many lines. [14/10]
+  def update_shopcart_ajax [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/order_controllers2.rb:42:81: C: Line is too long. [105/80]
+        @order.order_items.find_by_book_id(item.first).update(book_id: item.first, quantity: item.second)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/order_controllers2.rb:60:81: C: Line is too long. [84/80]
+        render text: 'Your discount is $' << checking.discount.to_s << '. Continue?'
+                                                                                ^^^^
+app/controllers/users/order_controllers2.rb:92:7: C: Do not prefix reader method names with get_.
+  def get_books_in_order
+      ^^^^^^^^^^^^^^^^^^
+app/controllers/users/registrations_controller.rb:1:7: C: Use nested module/class definitions instead of compact style.
+class Users::RegistrationsController < Devise::RegistrationsController
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/unlocks_controller.rb:1:7: C: Use nested module/class definitions instead of compact style.
+class Users::UnlocksController < Devise::UnlocksController
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/passwords_controller.rb:1:7: C: Use nested module/class definitions instead of compact style.
+class Users::PasswordsController < Devise::PasswordsController
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/sessions_controller.rb:1:7: C: Use nested module/class definitions instead of compact style.
+class Users::SessionsController < Devise::SessionsController
+      ^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/confirmations_controller.rb:1:7: C: Use nested module/class definitions instead of compact style.
+class Users::ConfirmationsController < Devise::ConfirmationsController
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:15:81: C: Line is too long. [91/80]
+    I18n.locale = params[:locale] || session[:omniauth_login_locale] || I18n.default_locale
+                                                                                ^^^^^^^^^^^
+app/controllers/application_controller.rb:30:3: C: Assignment Branch Condition size for after_sign_in_path_for is too high. [23.11/15]
+  def after_sign_in_path_for(resource)
+  ^^^
+app/controllers/application_controller.rb:30:3: C: Cyclomatic complexity for after_sign_in_path_for is too high. [8/6]
+  def after_sign_in_path_for(resource)
+  ^^^
+app/controllers/application_controller.rb:30:3: C: Perceived complexity for after_sign_in_path_for is too high. [9/7]
+  def after_sign_in_path_for(resource)
+  ^^^
+app/controllers/application_controller.rb:33:72: C: Avoid modifier unless after another conditional.
+      new_facebook_user?(current_user) ? after_sign_up : after_sign_in unless current_user.id == 1
+                                                                       ^^^^^^
+app/controllers/application_controller.rb:33:81: C: Line is too long. [98/80]
+      new_facebook_user?(current_user) ? after_sign_up : after_sign_in unless current_user.id == 1
+                                                                                ^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:36:72: C: Avoid modifier unless after another conditional.
+      new_facebook_user?(current_user) ? after_sign_up : after_sign_in unless current_user.id == 1
+                                                                       ^^^^^^
+app/controllers/application_controller.rb:36:81: C: Line is too long. [98/80]
+      new_facebook_user?(current_user) ? after_sign_up : after_sign_in unless current_user.id == 1
+                                                                                ^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:41:3: C: Assignment Branch Condition size for after_sign_in is too high. [31.21/15]
+  def after_sign_in(_id = false)
+  ^^^
+app/controllers/application_controller.rb:41:3: C: Method has too many lines. [11/10]
+  def after_sign_in(_id = false) [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:50:81: C: Line is too long. [88/80]
+    session[:user_products_count] = @order.book_count + @cookies_book['book_count'].to_i
+                                                                                ^^^^^^^^
+app/controllers/application_controller.rb:51:81: C: Line is too long. [84/80]
+    @order.update(total_price: total_price(@cookies_book) + @order.total_price.to_f,
+                                                                                ^^^^
+app/controllers/application_controller.rb:52:81: C: Line is too long. [90/80]
+                  order_total: total_price(@cookies_book) + 5.0 + @order.total_price.to_f,
+                                                                                ^^^^^^^^^^
+app/controllers/application_controller.rb:53:81: C: Line is too long. [89/80]
+                  book_count:  @cookies_book['book_count'].to_i + @order.book_count.to_i)
+                                                                                ^^^^^^^^^
+app/controllers/application_controller.rb:58:3: C: Assignment Branch Condition size for after_sign_up is too high. [16.09/15]
+  def after_sign_up(id = false)
+  ^^^
+app/controllers/application_controller.rb:70:3: C: Assignment Branch Condition size for get_books_in_order_not_auth is too high. [20.35/15]
+  def get_books_in_order_not_auth(cookies)
+  ^^^
+app/controllers/application_controller.rb:70:3: C: Method has too many lines. [11/10]
+  def get_books_in_order_not_auth(cookies) [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:90:81: C: Line is too long. [90/80]
+    @billing_address = Address.find_or_create_by(user_billing_address_id: current_user.id)
+                                                                                ^^^^^^^^^^
+app/controllers/application_controller.rb:91:81: C: Line is too long. [92/80]
+    @shipping_address = Address.find_or_create_by(user_shipping_address_id: current_user.id)
+                                                                                ^^^^^^^^^^^^
+app/controllers/application_controller.rb:101:81: C: Line is too long. [103/80]
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:firstname, :lastname, :email, :password) }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:102:81: C: Line is too long. [110/80]
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:firstname, :lastname, :email, :password) }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/books_helper.rb:4:81: C: Line is too long. [118/80]
+    string.sub(regular_expression, "<span style='color: yellow'>#{string.match(regular_expression)}</span>").html_safe
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/order_steps_helper.rb:2:3: C: Cyclomatic complexity for validate_checkout_class is too high. [7/6]
+  def validate_checkout_class(object, form_type, error_field, data = false)
+  ^^^
+app/helpers/order_steps_helper.rb:2:3: C: Perceived complexity for validate_checkout_class is too high. [9/7]
+  def validate_checkout_class(object, form_type, error_field, data = false)
+  ^^^
+app/helpers/order_steps_helper.rb:6:81: C: Line is too long. [111/80]
+      if object[form_type].errors.messages[error_field] && object[form_type].errors.messages[error_field] != []
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/order_steps_helper.rb:24:3: C: Assignment Branch Condition size for show_errors is too high. [24.1/15]
+  def show_errors(form_type)
+  ^^^
+app/helpers/order_steps_helper.rb:24:3: C: Method has too many lines. [11/10]
+  def show_errors(form_type) [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/application_helper.rb:6:22: C: Convert if nested inside else to elsif.
+      'class=active' if current_page?(path)
+                     ^^
+app/helpers/application_helper.rb:31:3: C: Method has too many lines. [14/10]
+  def count_products [33m...[0m
+  ^^^^^^^^^^^^^^^^^^
+app/helpers/application_helper.rb:31:3: C: Perceived complexity for count_products is too high. [9/7]
+  def count_products
+  ^^^
+app/helpers/application_helper.rb:36:67: C: Convert if nested inside else to elsif.
+      @count_products = JSON.parse(cookies[:books])['book_count'] if cookies[:books]
+                                                                  ^^
+app/helpers/application_helper.rb:36:81: C: Line is too long. [84/80]
+      @count_products = JSON.parse(cookies[:books])['book_count'] if cookies[:books]
+                                                                                ^^^^
+app/helpers/application_helper.rb:52:3: C: Method has too many lines. [15/10]
+  def cupon(order_total) [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/application_helper.rb:52:3: C: Perceived complexity for cupon is too high. [8/7]
+  def cupon(order_total)
+  ^^^
+app/helpers/application_helper.rb:55:10: W: Odd else layout detected. Did you mean to use elsif?
+    else @order.cupon.nil?
+         ^^^^^^^^^^^^^^^^^
+app/helpers/application_helper.rb:58:14: C: Avoid more than 3 levels of block nesting.
+             if step == :complete [33m...[0m
+             ^^^^^^^^^^^^^^^^^^^^
+app/helpers/application_helper.rb:62:15: W: end at 62, 14 is not aligned with if at 58, 13.
+              end
+              ^^^
+app/helpers/application_helper.rb:74:81: C: Line is too long. [84/80]
+      '(-$<div id="cupon-value">' << @order.cupon.discount.to_s << '</div>)<br><br>'
+                                                                                ^^^^
+app/helpers/users_helper.rb:14:3: C: Assignment Branch Condition size for show_flashes is too high. [26.32/15]
+  def show_flashes(form_type)
+  ^^^
+app/helpers/users_helper.rb:22:81: C: Line is too long. [115/80]
+      @string << "<div id='shipping_flashes' class='has_flashes'></div>" if flash['error']['shipping_form'] == true
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:12:81: C: Line is too long. [89/80]
+  has_one :billing_address, class_name: 'Address', foreign_key: 'user_billing_address_id'
+                                                                                ^^^^^^^^^
+app/models/user.rb:13:81: C: Line is too long. [91/80]
+  has_one :shipping_address, class_name: 'Address', foreign_key: 'user_shipping_address_id'
+                                                                                ^^^^^^^^^^^
+app/models/user.rb:25:81: C: Line is too long. [82/80]
+      user.facebook_image = auth.info.image # assuming the user model has an image
+                                                                                ^^
+app/models/order_item.rb:17:3: C: Assignment Branch Condition size for update_items is too high. [23.22/15]
+  def self.update_items(cookies, order_id)
+  ^^^
+app/models/order_item.rb:17:3: C: Method has too many lines. [12/10]
+  def self.update_items(cookies, order_id) [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/order_item.rb:21:81: C: Line is too long. [96/80]
+        @order_item = OrderItem.where(order_id: order_id, book_id: book.first[3..-1].to_i).first
+                                                                                ^^^^^^^^^^^^^^^^
+app/models/order_item.rb:28:81: C: Line is too long. [85/80]
+          @order_item.update!(quantity: book.second.to_i + @order_item.quantity.to_i)
+                                                                                ^^^^^
+app/models/order.rb:10:81: C: Line is too long. [90/80]
+  has_one :billing_address, class_name: 'Address', foreign_key: 'order_billing_address_id'
+                                                                                ^^^^^^^^^^
+app/models/order.rb:11:81: C: Line is too long. [92/80]
+  has_one :shipping_address, class_name: 'Address', foreign_key: 'order_shipping_address_id'
+                                                                                ^^^^^^^^^^^^
+app/models/credit_card.rb:2:81: C: Line is too long. [101/80]
+  validates :number, :cvv, :expiration_month, :expiration_year, :firstname, :lastname, presence: true
+                                                                                ^^^^^^^^^^^^^^^^^^^^^
+app/models/address.rb:2:81: C: Line is too long. [90/80]
+  validates_presence_of :firstname, :lastname, :address, :zipcode, :city, :phone, :country
+                                                                                ^^^^^^^^^^
+app/models/rating.rb:3:81: C: Line is too long. [97/80]
+  validates :title, :text_review, :user_id, :rating, :book_id, presence: true, allow_blank: false
+                                                                                ^^^^^^^^^^^^^^^^^
+app/models/ability.rb:4:3: C: Method has too many lines. [11/10]
+  def initialize(user) [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^
+app/uploaders/facebook_avatar_uploader.rb:29:81: C: Line is too long. [112/80]
+  #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/uploaders/facebook_avatar_uploader.rb:53:81: C: Line is too long. [81/80]
+  # Avoid using model.id or version_name here, see uploader/store.rb for details.
+                                                                                ^
+app/forms/order_steps_form.rb:1:1: C: Class has too many lines. [142/100]
+class OrderStepsForm [33m...[0m
+^^^^^^^^^^^^^^^^^^^^
+app/forms/order_steps_form.rb:57:3: C: Method has too many lines. [11/10]
+  def billing_address [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^
+app/forms/order_steps_form.rb:62:9: C: Move billing_address out of the conditional.
+        billing_address
+        ^^^^^^^^^^^^^^^
+app/forms/order_steps_form.rb:65:9: C: Move billing_address out of the conditional.
+        billing_address
+        ^^^^^^^^^^^^^^^
+app/forms/order_steps_form.rb:72:3: C: Method has too many lines. [11/10]
+  def shipping_address [33m...[0m
+  ^^^^^^^^^^^^^^^^^^^^
+app/forms/order_steps_form.rb:76:9: C: Move shipping_address out of the conditional.
+        shipping_address
+        ^^^^^^^^^^^^^^^^
+app/forms/order_steps_form.rb:79:9: C: Move shipping_address out of the conditional.
+        shipping_address
+        ^^^^^^^^^^^^^^^^
+app/forms/order_steps_form.rb:108:3: C: Method has too many lines. [12/10]
+  def update_step [33m...[0m
+  ^^^^^^^^^^^^^^^
+app/forms/order_steps_form.rb:123:3: C: Assignment Branch Condition size for persist! is too high. [107/15]
+  def persist!
+  ^^^
+app/forms/order_steps_form.rb:123:3: C: Cyclomatic complexity for persist! is too high. [15/6]
+  def persist!
+  ^^^
+app/forms/order_steps_form.rb:123:3: C: Method has too many lines. [40/10]
+  def persist! [33m...[0m
+  ^^^^^^^^^^^^
+app/forms/order_steps_form.rb:123:3: C: Perceived complexity for persist! is too high. [17/7]
+  def persist!
+  ^^^
+app/forms/order_steps_form.rb:137:9: C: Convert if nested inside else to elsif.
+        if order.billing_address.nil? || order.shipping_address.nil?
+        ^^
+app/forms/order_steps_form.rb:147:81: C: Line is too long. [99/80]
+      self.valid = false if order.billing_address.errors.any? || order.shipping_address.errors.any?
+                                                                                ^^^^^^^^^^^^^^^^^^^
+app/forms/order_steps_form.rb:150:81: C: Line is too long. [99/80]
+                   order_total: order.total_price.to_f + atributes[:delivery_type][:delivery].to_f)
+                                                                                ^^^^^^^^^^^^^^^^^^^
+
+134 files inspected, 826 offenses detected

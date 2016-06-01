@@ -1,15 +1,13 @@
 class Users::RegistrationsController < Devise::RegistrationsController
- protected
+  protected
 
-  def after_sign_up_path_for(resource)
-    after_sign_up #unless  request.env['omniauth.origin']
+  def after_sign_up_path_for(_resource)
+    after_sign_up # unless  request.env['omniauth.origin']
     root_path
   end
 
-
-
-# before_filter :configure_sign_up_params, only: [:create]
-# before_filter :configure_account_update_params, only: [:update]
+  # before_filter :configure_sign_up_params, only: [:create]
+  # before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new

@@ -61,6 +61,9 @@ group :development, :test do
   #rspec
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
+
+  gem 'rubocop', require: false
+  gem "rubycritic", :require => false
 end
 
 group :test do

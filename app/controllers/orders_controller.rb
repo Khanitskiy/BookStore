@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-
-
+  load_and_authorize_resource except: :show
+  authorize_resource only: :show
   # Management cart on cookies or database order
   def new
     if current_user
@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
 
   def clear_cookies_shopcart
     cookies.delete :books
-    redirect_to books_path 
+    redirect_to books_path
   end
 
   def update
@@ -24,11 +24,11 @@ class OrdersController < ApplicationController
     @order = Order.find_by_id(@order.id)
     @order.book_count = session[:user_products_count]
     @order.total_price = @order.total_price + price
-    @order.completed_date =  3.days.from_now
-    @order.order_total =  @order.delivery.to_f +  @order.total_price.to_f
+    @order.completed_date = 3.days.from_now
+    @order.order_total =  @order.delivery.to_f + @order.total_price.to_f
     @order.save!
 
-    unless @order_items == nil
+    if @order_items
       params[:quantity] = params[:quantity].to_i + @order_items[:quantity].to_i
       @order_items.update(order_params)
     else
@@ -41,14 +41,17 @@ class OrdersController < ApplicationController
   def update_shopcart_ajax
     total_price = 0
     quantity = 0
-    params.try(:each) do |item| 
-      if item.first != "controller" && item.first != "action"
-        @order.order_items.find_by_book_id(item.first).update(book_id: item.first, quantity: item.second)
-        total_price = total_price + Book.find_by_id(item.first).price * item.second.to_f
-        quantity = quantity + item.second.to_i
+    params.try(:each) do |item|
+      if item.first != 'controller' && item.first != 'action'
+        @order.order_items
+              .find_by_book_id(item.first)
+              .update(book_id: item.first, quantity: item.second)
+
+        total_price += Book.find_by_id(item.first).price * item.second.to_f
+        quantity += item.second.to_i
       end
     end
-    @order.update(total_price: total_price, 
+    @order.update(total_price: total_price,
                   book_count: quantity,
                   order_total: @order.delivery.to_f + total_price)
     session[:user_products_count] = quantity
@@ -57,21 +60,24 @@ class OrdersController < ApplicationController
 
   def check_cupon_ajax
     checking = Cupon.cheking(params[:value])
-    #byebug
     if checking
-      #byebug
       if checking.use
-        render :text => 'This code has been used'
+        render text: 'This code has been used'
       else
-        render :text => 'Your discount is $' << checking.discount.to_s << '. Continue?'
+        render text: 'Your discount is $' << checking.discount.to_s << '. Continue?'
       end
     else
-      render :text => 'This code is not found'
+      render text: 'This code is not found'
     end
   end
 
   def show
-    @order =  Order.find_by_id(params[:id])
+    #byebug
+
+    @order = Order.find_by_id(params[:id])
+    #authorize_resource
+    authorize! :show, @order
+    #byebug
   end
 
   def index
@@ -86,25 +92,23 @@ class OrdersController < ApplicationController
     @order.update(total_price: 0.0, book_count: 0, order_total: 0.0)
     cookies.delete :user_products_count
     session[:user_products_count] = 'empty'
-    redirect_to books_path 
+    redirect_to books_path
   end
 
   private
 
-    def order_params
-      params.permit(:book_id, :quantity, :value)
-    end
+  def order_params
+    params.permit(:book_id, :quantity, :value)
+  end
 
-    def get_books_in_order
-      #byebug
-      @ids = Array.new
-      @cookies_hash = Hash.new
-      @order.order_items.try(:each) do |item| 
-        @cookies_hash[item.book_id.to_s] = item.quantity
-        @ids << item.book_id
-      end
-      @books = Book.where(:id => @ids)
-      @subtotal = @order.total_price.to_f
+  def get_books_in_order
+    @ids = []
+    @cookies_hash = {}
+    @order.order_items.try(:each) do |item|
+      @cookies_hash[item.book_id.to_s] = item.quantity
+      @ids << item.book_id
     end
-
+    @books = Book.where(id: @ids)
+    @subtotal = @order.total_price.to_f
+  end
 end

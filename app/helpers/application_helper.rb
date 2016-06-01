@@ -1,25 +1,22 @@
 module ApplicationHelper
-
   def cp(path, bool = false)
-  	if bool
-      "active" if current_page?(path)
+    if bool
+      'active' if current_page?(path)
     else
-      "class=active" if current_page?(path)
+      'class=active' if current_page?(path)
     end
   end
 
-  def wizard_link(path) 
-    if params[:id] == path
-      "c_active"
-    end
+  def wizard_link(path)
+    'c_active' if params[:id] == path
   end
 
   def not_active(step)
-    hash = {:address => 0, :delivery => 1, :payment => 2, :confirm => 3, :complete => 4}
+    hash = { address: 0, delivery: 1, payment: 2, confirm: 3, complete: 4 }
     if @order.step_number.to_i == hash[step]
-     
+
     elsif @order.step_number.to_i < hash[step]
-      "not-active"
+      'not-active'
     end
   end
 
@@ -32,43 +29,41 @@ module ApplicationHelper
   end
 
   def count_products
-
     if current_user
-      #@count_products = @order[:book_count] if @order
+      # @count_products = @order[:book_count] if @order
       @count_products = session[:user_products_count]
     else
-    	@count_products = JSON.parse(cookies[:books])["book_count"] if cookies[:books]
+      @count_products = JSON.parse(cookies[:books])['book_count'] if cookies[:books]
     end
 
     if @count_products && @count_products.to_i > 0
-      
-      unless @count_products.to_i >= 100
-        @count_products
+
+      if @count_products.to_i >= 100
+        '99+'
       else
-        "99+"
-      end   
+        @count_products
+      end
 
     else
-      "empty"
+      'empty'
     end
-
   end
 
   def cupon(order_total)
     if @order.cupon.nil?
       order_total
     else @order.cupon.nil?
-      if @order.cupon.use == true
-        if defined?(step)
-         if step == :complete
-            order_total
-          else
-            order_total - @order.cupon.discount
-          end
-        else
-           order_total
-        end
-      end
+         if @order.cupon.use == true
+           if defined?(step)
+             if step == :complete
+               order_total
+             else
+               order_total - @order.cupon.discount
+              end
+           else
+             order_total
+           end
+         end
     end
   end
 
@@ -79,5 +74,4 @@ module ApplicationHelper
       '(-$<div id="cupon-value">' << @order.cupon.discount.to_s << '</div>)<br><br>'
     end
   end
-  
 end

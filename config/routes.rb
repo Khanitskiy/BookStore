@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     root 'books#home'
     get  '/settings',    to: 'users#settings'
     get  '/shop/search', to: 'books#search'
+    get  '/clear_shopcart', to: 'orders#clear_cookies_shopcart'
   end
 
   root to: redirect("/#{I18n.default_locale}", status: 302), as: :redirected_root
@@ -36,7 +37,6 @@ Rails.application.routes.draw do
   resources :ratings, only: [:index, :create], path: '/rating'
 
   scope :orders do 
-    get    '/clear_shopcart', to: 'orders#clear_cookies_shopcart'
     put    '/update_shopcart_ajax', to: 'orders#update_shopcart_ajax'
     post    '/check_cupon_ajax', to: 'orders#check_cupon_ajax'
     #get    '/delete_products', to: 'orders#delete_products'

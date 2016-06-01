@@ -1,0 +1,6 @@
+addresses_controller.rb
+books_controller.rb
+categories_controller.rb
+ratings_controller.rb
+users_controller.rb
+orders_items_controller.rb

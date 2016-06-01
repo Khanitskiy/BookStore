@@ -3,7 +3,7 @@
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on("ready page:load",function(){
-      
+
 
     // ## Delete product
     $('body').delegate('.remove_link a', 'click', function(){
@@ -93,6 +93,9 @@ $(document).on("ready page:load",function(){
         ajaxRequest(pathname, data, 'PUT');
         $('.cart-lnk  em'). text("("+ quantity +")");
         setCookie('user_products_count', JSON.stringify({count: quantity}));
+      } else {
+        $('.cart-lnk  em'). text("("+ quantity +")");
+        updateCookie(data, quantity);
       }
       $('.order-summary-line span').text(number_to_currency(total_price));
 

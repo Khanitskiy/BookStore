@@ -38,7 +38,7 @@ RSpec.describe Book, type: :model do
 
   it "returns all bestsellers" do
     create_books
-    expect(Book.bestsellers.count).to eq(2)
+    expect(Book.bestsellers.count).to eq(5)
   end
 
   it "returns book that match transmitted id" do

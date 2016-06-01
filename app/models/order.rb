@@ -11,51 +11,56 @@ class Order < ActiveRecord::Base
   has_one :shipping_address, class_name: 'Address', foreign_key: 'order_shipping_address_id'
   has_one :cupon
 
-  aasm :column => 'state' do
-
+  aasm column: 'state' do
     state :in_progress
     state :in_queue
     state :in_delivery
     state :delivered
     state :canceled
 
-
     event :to_in_queue do
-      transitions :from => :in_progress, :to => :in_queue
+      transitions from: :in_progress, to: :in_queue
     end
-
   end
 
   def state_enum
-    ["in_progress", 
-     "processing", 
-     "shipping", 
-     "completed", 
-     "canceled"]
+    %w(in_progress
+       processing
+       shipping
+       completed
+       canceled)
   end
 
   def delivery_enum
-    [ [ 'UPS Ground', '5.0' ], [ 'UPS One Day', '10.0' ], [ 'UPS Two Days', '20.0' ] ]
+    [['UPS Ground', '5.0'], ['UPS One Day', '10.0'], ['UPS Two Days', '20.0']]
+  end
+
+  def update_order(order, session, price)
+    order.book_count = session
+    order.total_price = order.total_price.to_f + price
+    order.completed_date = 3.days.from_now
+    order.order_total =  order.delivery.to_f + order.total_price.to_f
+    order.save!
   end
 
   def self.create_order(cookies, total_price, user_id)
-    order = Order.create!( user_id: user_id, 
-                   total_price: total_price,
-                   order_total: total_price + 5.0,  
-                   book_count: cookies["book_count"].to_i)
+    order = Order.create!(user_id: user_id,
+                          total_price: total_price,
+                          order_total: total_price + 5.0,
+                          book_count: cookies['book_count'].to_i)
     order.id
   end
 
   def self.last_order_queue(current_user)
-    #byebug
-    #where("user_id = #{current_user.id}").order(id: :desc).first
+    # byebug
+    # where("user_id = #{current_user.id}").order(id: :desc).first
     where(user_id: current_user.id, state: 'in_queue').last
   end
 
   def self.in_queue(current_user)
     where(user_id: current_user.id, state: 'in_queue').all
   end
-  
+
   def self.in_delivery(current_user)
     where(user_id: current_user.id, state: 'in_delivery').all
   end
@@ -64,33 +69,32 @@ class Order < ActiveRecord::Base
     where(user_id: current_user.id, state: 'delivered').all
   end
 
-  #def delivery
-    #byebug
-    #if self.delivery.to_i == 5.0
-      #'UPS Ground'
-    #elsif self.delivery.to_i == 10.0
-      #'UPS One Day'
-    #elsif self.delivery.to_i == 20.0
-      #'UPS Two Days'
-    #end
-  #end
+  # def delivery
+  # byebug
+  # if self.delivery.to_i == 5.0
+  # 'UPS Ground'
+  # elsif self.delivery.to_i == 10.0
+  # 'UPS One Day'
+  # elsif self.delivery.to_i == 20.0
+  # 'UPS Two Days'
+  # end
+  # end
 
   private
 
-  #def completed_date
-    #3.days.from_now
-  #end
+  # def completed_date
+  # 3.days.from_now
+  # end
 
   def set_completed_date
     self.completed_date = 3.days.from_now
   end
 
-  #def now_date
+  # def now_date
   #  Time.now().strftime("%Y-%m-%d")
-  #end
+  # end
 
-  #def set_completed_date(day)
+  # def set_completed_date(day)
   #  self.completed_date = day == "infinity" ? "infinity" : day.days.from_now
-  #end
-
+  # end
 end

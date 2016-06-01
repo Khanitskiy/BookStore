@@ -1,20 +1,17 @@
 module OrderStepsHelper
-
-
   def validate_checkout_class(object, form_type, error_field, data = false)
-    #byebug  
+    # byebug
     if object[form_type].errors.messages.any?
-      #byebug
+      # byebug
       if object[form_type].errors.messages[error_field] && object[form_type].errors.messages[error_field] != []
-        data ? "border: 1px solid red" : "form-control error"
+        data ? 'border: 1px solid red' : 'form-control error'
       else
-        "form-control" unless data
+        'form-control' unless data
       end
     else
-      "form-control" unless data
+      'form-control' unless data
     end
   end
-
 
   def checkbox_state(bool = false)
     if @order_steps_form['shipping_address'].errors.messages.any?
@@ -24,14 +21,13 @@ module OrderStepsHelper
     end
   end
 
-
   def show_errors(form_type)
     @string = ''
     if @order_steps_form[form_type].errors.messages.any?
       @order_steps_form[form_type].errors.messages.each do |error_message|
         if error_message.second.first.to_s != ''
           @string << "<div style='color: red'>" + error_message.first.to_s
-          @string << " - " + error_message.second.first.to_s + " </div>"
+          @string << ' - ' + error_message.second.first.to_s + ' </div>'
         end
       end
     end

@@ -65,6 +65,23 @@ function changeCookie(book_id, quantity) {
 
 }
 
+function updateCookie(data, quantity) {
+  var cookie_value = document.cookie.replace(/(?:(?:^|.*;\s*)books\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+  var obj = jQuery.parseJSON(decodeURIComponent(cookie_value));
+
+  for (var key in data) {
+    obj["id_" + key] = data[key];
+  }
+
+  obj.book_count = quantity
+
+  setCookie("books", JSON.stringify(obj));
+
+  return obj.book_count;
+
+}
+
 function ajaxChange(book_id, quantity) {
   var data = { book_id: book_id, quantity: quantity }
   ajaxRequest("http://" + window.location.host + "/orders/" + book_id, data, "PATCH");

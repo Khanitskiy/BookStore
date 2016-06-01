@@ -1,13 +1,13 @@
 class BooksController < ApplicationController
   load_and_authorize_resource
-  skip_authorize_resource :only => [:home, :search ]
+  skip_authorize_resource only: [:home, :search]
 
   def home
     @bestsellers = Book.bestsellers
   end
 
   def index
-    @books = @books.page  params[:page]
+    @books = @books.page params[:page]
     @categories = Category.all
   end
 
@@ -19,5 +19,4 @@ class BooksController < ApplicationController
     @categories = Category.all
     @books = Book.search_books(params[:value]).all
   end
-
 end

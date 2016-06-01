@@ -24,7 +24,7 @@ RSpec.describe Rating, type: :model do
   end
 
    it "is invalid when rating more 10" do
-    expect(FactoryGirl.build :rating, rating: 0).not_to be_valid
+    expect(FactoryGirl.build :rating, rating: 11).not_to be_valid
   end
 
 end

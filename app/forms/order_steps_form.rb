@@ -16,7 +16,6 @@ class OrderStepsForm
   attribute :user
   attribute :last_order
 
-
   def initialize(order)
     self.order = order
   end
@@ -25,14 +24,14 @@ class OrderStepsForm
   def persisted?
     false
   end
- 
+
   def save
     persist!
-    if self.valid
+    if valid
       update_step
       true
     else
-      #byebug
+      # byebug
       false
     end
   end
@@ -42,46 +41,31 @@ class OrderStepsForm
   end
 
   def credit_card
-    self.payment
+    payment
   end
 
   def payment
-    if order.credit_card.nil?
+    if order.credit_card
+      order.credit_card
+    else
       credit_card = CreditCard.new(user_id: @order.user_id)
       order.update(credit_card_id: credit_card.id)
       credit_card
-    else
-      order.credit_card
     end
   end
 
   def billing_address
-    #byebug
-    if order.billing_address.nil?
-      if user.billing_address.nil? 
-        billing_address = Address.new( order_billing_address_id: @order.id)
-        billing_address
-      else
-        billing_address = user.billing_address
-        billing_address
-      end
-    else
-      order.billing_address
-    end
+    order.billing_address || user.billing_address  || Address.new(order_billing_address_id: order.id)
+    billing_shipping_adresses(:billing_address)
   end
 
   def shipping_address
-    if order.shipping_address.nil?
-      if user.shipping_address.nil? 
-        shipping_address = Address.new( order_shipping_address_id: @order.id)
-        shipping_address
-      else
-        shipping_address = user.shipping_address
-        shipping_address
-      end
-    else
-      order.shipping_address
-    end
+    order.shipping_address || user.shipping_address  || Address.new(order_shipping_address_id: order.id)
+    billing_shipping_adresses(:shipping_address)
+  end
+
+  def billing_shipping_adresses(address)
+    order.public_send(address) || user.public_send(address) || Address.new("order_#{address.to_s}_id".to_sym => order.id)
   end
 
   def delivery
@@ -89,11 +73,11 @@ class OrderStepsForm
   end
 
   def month
-     @order.credit_card.expiration_month
+    order.credit_card.expiration_month
   end
 
   def year
-     @order.credit_card.expiration_year
+    order.credit_card.expiration_year
   end
 
   private
@@ -109,48 +93,40 @@ class OrderStepsForm
   def update_step
     case step
     when :address
-      @order.update(step_number: 1)
+      order.update(step_number: 1)
     when :delivery
-      @order.update(step_number: 2)
+      order.update(step_number: 2)
     when :payment
-      @order.update(step_number: 3)
+      order.update(step_number: 3)
     when :confirm
-      @order.update(step_number: 4)
+      order.update(step_number: 4)
     when :complete
-      @order.update(step_number: 5)
+      order.update(step_number: 5)
     end
   end
 
   def persist!
     self.valid = true
-    #byebug
     case step
     when :address
       if and_shipping == 'true'
-        if order.billing_address.nil? && order.shipping_address.nil?
-          order.create_billing_address(atributes[:billing_address])
-          order.create_shipping_address(atributes[:billing_address])
+        if order.billing_address && order.shipping_address
+          billing_shipping_update
         else
-          order.billing_address.update(atributes[:billing_address])
-          order.shipping_address.update(atributes[:shipping_address])
+          billing_shipping_create
         end
       else
-        if order.billing_address.nil? || order.shipping_address.nil?
-          #byebug
-          order.create_billing_address(atributes[:billing_address])
-          order.create_shipping_address(atributes[:shipping_address])
+        if order.billing_address
+          billing_shipping_update
         else
-          #byebug
-          order.billing_address.update(atributes[:billing_address])
-          order.shipping_address.update(atributes[:shipping_address])
+          billing_shipping_create
         end
       end
       self.valid = false if order.billing_address.errors.any? || order.shipping_address.errors.any?
     when :delivery
-       order.update( delivery: atributes[:delivery_type][:delivery].to_f,
-                     order_total: order.total_price.to_f + atributes[:delivery_type][:delivery].to_f) 
+      order.update(delivery: atributes[:delivery_type][:delivery].to_f,
+                   order_total: order.total_price.to_f + atributes[:delivery_type][:delivery].to_f)
     when :payment
-      #byebug
       if order.credit_card.nil?
         order.create_credit_card(atributes[:payment])
       else
@@ -162,11 +138,21 @@ class OrderStepsForm
         order.update(order_total: order.order_total.to_f - order.cupon.discount)
       end
       order.to_in_queue!
-      #@order_items = OrderItem.new()
-      @cookies_book = { "book_count" => "0", "total_price" => "0"}
-      order_id = Order.create_order(@cookies_book, 0,  user.id)
+      # @order_items = OrderItem.new()
+      @cookies_book = { 'book_count' => '0', 'total_price' => '0' }
+      order_id = Order.create_order(@cookies_book, 0, user.id)
       OrderItem.create_items(@cookies_book, order_id)
     end
+  end
+
+  def billing_shipping_create
+    order.create_billing_address(atributes[:billing_address])
+    order.create_shipping_address(atributes[:billing_address])
+  end
+
+  def billing_shipping_update
+    order.billing_address.update(atributes[:billing_address])
+    order.shipping_address.update(atributes[:shipping_address])
   end
 
 end
