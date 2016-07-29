@@ -7,11 +7,7 @@ class OrderStepsController < ApplicationController
   steps :address, :delivery, :payment, :confirm, :complete
 
   def show
-    if step == :complete
-      @order = Order.last_order_queue(current_user)
-      session[:user_products_count] = 0
-      cookies.delete :user_products_count
-    end
+    new_order if step == :complete
 
     @order_steps_form = OrderStepsForm.new(@order)
     @order_steps_form.user = current_user
@@ -23,7 +19,6 @@ class OrderStepsController < ApplicationController
   end
 
   def update
-    # byebug
     @order_steps_form = OrderStepsForm.new(@order)
     @order_steps_form.step = step
     @order_steps_form.atributes = checkout_params unless step == :confirm
@@ -34,7 +29,7 @@ class OrderStepsController < ApplicationController
     render_wizard @order_steps_form
   end
 
-  def redirect_to_step
+ def redirect_to_step
     # byebug
     # root_path if step == :confirm
     hash = { address: 0, delivery: 1, payment: 2, confirm: 3, complete: 4 }
@@ -53,11 +48,13 @@ class OrderStepsController < ApplicationController
   private
 
   def complete?
-    if step == :complete
-      true
-    else
-      false
-    end
+    step == :complete
+  end
+
+  def new_order 
+    @order = Order.last_order_queue(current_user)
+    session[:user_products_count] = 0
+    cookies.delete :user_products_count
   end
 
   def checkout_params

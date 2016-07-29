@@ -16,6 +16,8 @@ class OrderStepsForm
   attribute :user
   attribute :last_order
 
+  STEP_TYPE = { :address => 1, :delivery => 2, :payment => 3, :confirm => 4, :complete => 5 }
+
   def initialize(order)
     self.order = order
   end
@@ -31,7 +33,6 @@ class OrderStepsForm
       update_step
       true
     else
-      # byebug
       false
     end
   end
@@ -91,18 +92,7 @@ class OrderStepsForm
   end
 
   def update_step
-    case step
-    when :address
-      order.update(step_number: 1)
-    when :delivery
-      order.update(step_number: 2)
-    when :payment
-      order.update(step_number: 3)
-    when :confirm
-      order.update(step_number: 4)
-    when :complete
-      order.update(step_number: 5)
-    end
+    order.update(step_number: STEP_TYPE[step])
   end
 
   def persist!
@@ -111,30 +101,46 @@ class OrderStepsForm
     when :address
       if and_shipping == 'true'
         if order.billing_address && order.shipping_address
-          billing_shipping_update
+          addresses_update
         else
-          billing_shipping_create
+          addresses_create
         end
       else
         if order.billing_address
-          billing_shipping_update
+          addresses_update
         else
-          billing_shipping_create
+          addresses_create
         end
       end
+
+      #shipping = order.shipping_address
+      #billing= order.billing_address
+
+
+      #if shipping && and_shipping == 'true'
+        #shipping ? addresses_update : addresses_create
+      #else
+       #billing ? addresses_update : addresses_create
+      #end
+
+      #billing && and_shipping ? create_update(shipping) : create_update(shipping)
+
+
+
+
       self.valid = false if order.billing_address.errors.any? || order.shipping_address.errors.any?
     when :delivery
       order.update(delivery: atributes[:delivery_type][:delivery].to_f,
                    order_total: order.total_price.to_f + atributes[:delivery_type][:delivery].to_f)
     when :payment
-      if order.credit_card.nil?
-        order.create_credit_card(atributes[:payment])
-      else
+      if order.credit_card
         order.credit_card.update(atributes[:payment])
+      else
+        order.create_credit_card(atributes[:payment])
       end
       self.valid = false if order.credit_card.errors.any?
     when :confirm
-      unless @order.cupon.nil?
+      if @order.cupon
         order.update(order_total: order.order_total.to_f - order.cupon.discount)
       end
       order.to_in_queue!
@@ -145,12 +151,12 @@ class OrderStepsForm
     end
   end
 
-  def billing_shipping_create
+  def addresses_create
     order.create_billing_address(atributes[:billing_address])
     order.create_shipping_address(atributes[:billing_address])
   end
 
-  def billing_shipping_update
+  def addresses_update
     order.billing_address.update(atributes[:billing_address])
     order.shipping_address.update(atributes[:shipping_address])
   end

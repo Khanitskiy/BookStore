@@ -4,11 +4,7 @@ class Category < ActiveRecord::Base
 
   has_many :books
 
-  def self.all_book_category(id)
-    find(id).books
-  end
-
-  def self.title_category(id)
-    find(id).title
-  end
+  scope :all_book_category, ->(id) { find_by_id(id).books }
+  scope :title_category, ->(id) { find_by_id(id).title }
+  
 end

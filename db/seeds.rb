@@ -8,10 +8,10 @@
 
 
 # create first admin user
-User.delete_all
+#User.delete_all
 User.create(email: "admin@gmail.com", password: "adminadmin", firstname: "Admin", lastname: "Adminovitch", admin: true)
 
-Book.delete_all
+#Book.delete_all
 Book.create(title: "The Rspec Book", 
 						description: "Behaviour-Driven Development (BDD) gives you the best of Test Driven Development, Domain Driven Design, and Acceptance Test Driven Planning techniques, so you can create better software with self-documenting, executable tests that bring users and developers together with a common language.
 													Get the most out of BDD in Ruby with The RSpec Book, written by the lead developer of RSpec, David Chelimsky.
@@ -29,9 +29,9 @@ Book.create(title: "The Ruby Programming Language",
 					  price: 32.6, in_stock: 328, order_counter: 48, image: "image/upload/v1456929904/rtkkcjwiekw007uzl3ys.png", best_seller: true)
 
 #@order_items = OrderItem.new()
-@cookies_book = { "book_count" => "0", "total_price" => "0"}
+@cookies_book = { "book_count" => "0" }
 order_id = Order.create_order(@cookies_book, 0,  1)
-OrderItem.create_items(@cookies_book, order_id)
+#OrderItem.create_items(@cookies_book, order_id)
 
 Cupon.create(value: 'asdasdasd')
 Cupon.create(value: 'Sk8fS0F23')

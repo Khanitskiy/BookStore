@@ -8,7 +8,7 @@
         <h2 class="margin-bot-add">Billing address</h2>
         <div class="row">
           <div class="col-md-8">
-           <%= show_errors('billing_address') %>
+           <%= show_errors(@billing_address, :shipping_form) %>
            <%= f.fields_for(:billing_address, @order_steps_form.billing_address) do |billing_address| %>
             <div class="form-group">
               <%= billing_address.label :firstname, "First name", class: "control-label" %>
@@ -57,7 +57,7 @@
                 <%= shipping_address.label :label, "Use billing address"%>
                 <%= shipping_address.check_box :checkbox, {:checked=> checkbox_state(true) }, checkbox_state %> 
               </div>
-              <%= show_errors('shipping_address') %>
+              <%= show_errors(@shipping_address, :shipping_form) %>
               <div class="ship-address-form-fields">
               <div id="shipping_address_step">
                   <div class="form-group">

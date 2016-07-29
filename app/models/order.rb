@@ -35,39 +35,67 @@ class Order < ActiveRecord::Base
     [['UPS Ground', '5.0'], ['UPS One Day', '10.0'], ['UPS Two Days', '20.0']]
   end
 
-  def update_order(order, session, price)
-    order.book_count = session
-    order.total_price = order.total_price.to_f + price
-    order.completed_date = 3.days.from_now
-    order.order_total =  order.delivery.to_f + order.total_price.to_f
-    order.save!
-  end
+  scope :last_order_queue, -> (current_user) { 
+    where(user_id: current_user.id, state: 'in_queue').last 
+  }
+
+  scope :in_queue, -> (current_user) { 
+    where(user_id: current_user.id, state: 'in_queue').all 
+  }
+
+  scope :in_delivery, -> (current_user) {
+    where(user_id: current_user.id, state: 'in_delivery').all
+  }
+
+  scope :delivered, -> (current_user) {
+    where(user_id: current_user.id, state: 'delivered').all
+  }
 
   def self.create_order(cookies, total_price, user_id)
-    order = Order.create!(user_id: user_id,
+    order = Order.create(user_id: user_id,
                           total_price: total_price,
                           order_total: total_price + 5.0,
                           book_count: cookies['book_count'].to_i)
     order.id
   end
 
-  def self.last_order_queue(current_user)
+  #def self.in_queue(current_user)
+    #where(user_id: current_user.id, state: 'in_queue').all
+  #end
+
+  #def self.in_delivery(current_user)
+    #where(user_id: current_user.id, state: 'in_delivery').all
+  #end
+
+  #def self.delivered(current_user)
+    #where(user_id: current_user.id, state: 'delivered').all
+  #end
+
+  #def update_order(order, session, price)
+    #order.book_count = session
+    #order.total_price = order.total_price.to_f + price
+    #order.completed_date = 3.days.from_now
+    #order.order_total =  order.delivery.to_f + order.total_price.to_f
+    #order.save!
+  #end
+
+  #def self.last_order_queue(current_user)
     # byebug
     # where("user_id = #{current_user.id}").order(id: :desc).first
-    where(user_id: current_user.id, state: 'in_queue').last
-  end
+    #where(user_id: current_user.id, state: 'in_queue').last
+  #end
 
-  def self.in_queue(current_user)
-    where(user_id: current_user.id, state: 'in_queue').all
-  end
+  #def self.in_queue(current_user)
+    #where(user_id: current_user.id, state: 'in_queue').all
+  #end
 
-  def self.in_delivery(current_user)
-    where(user_id: current_user.id, state: 'in_delivery').all
-  end
+  #def self.in_delivery(current_user)
+    #where(user_id: current_user.id, state: 'in_delivery').all
+  #end
 
-  def self.delivered(current_user)
-    where(user_id: current_user.id, state: 'delivered').all
-  end
+  #def self.delivered(current_user)
+    #where(user_id: current_user.id, state: 'delivered').all
+  #end
 
   # def delivery
   # byebug

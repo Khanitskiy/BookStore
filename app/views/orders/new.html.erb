@@ -13,16 +13,15 @@
       </thead>
       <tbody>
         <% @books.try(:each) do |book| %>
-          
           <tr class="tr">
             <td>
               <%= link_to "#{image_tag book.image_url :resize_to_cart} #{book.title}".html_safe, book %>
             </td>
             <td class="book_price"><%= number_to_currency(book.price) %></td>
             <td class="count">
-              <input type="number" max="100" min="1" class="quantity-input" value="<%= @cookies_hash["#{book.id}"] %>" id="quantity_<%= book.id %>" name="quantity-input">
+              <input type="number" max="100" min="1" class="quantity-input" value="<%= items_calc(book, true) %>" id="quantity_<%= book.id %>" name="quantity-input">
             </td>
-            <td class="total"><%= number_to_currency(book.price * @cookies_hash["#{book.id}"].to_i) %></td>
+            <td class="total"><%= items_calc(book) %></td>
             <td class="remove_link">
               <%= link_to "<span aria-hidden='true'>&times;</span>".html_safe , 'javascript:void(0)', id: "id_" << book.id.to_s  %>
             </td>
@@ -37,7 +36,6 @@
     </div>
   </div>
   <div class="col-md-6">
-    <!--<a href="/orders/65" data-method="delete" rel="nofollow" data-confirm="Are you sure?" class="btn btn-default">Empty cart</a> -->
     <% if current_user %>
     <%= button_to "Empty cart", @order, :method => "delete", :class => "btn btn-default",  data: { confirm: "Are you sure?" } %>
     <% else %>
@@ -47,13 +45,10 @@
   </div>
   <div class="col-md-6 right-btns">
    
-    <%# byebug %>
     <%= form_tag(order_steps_path, method: "get") do %>
       <% if defined?(@order) && @order.cupon.nil? %>
         <%= text_field_tag("cupon", nil, options = {class: 'cupon', placeholder: "Cupon code"} ) %>
       <% end %>
-      
-      <%#= button_tag("Checkout", type: 'button', class: "btn btn-success pull-right checkout-btn", id: "checkout") %>
       <a href="<%= order_steps_path %>" id="checkout" class="btn btn-success pull-right checkout-btn">Checkout</a>
       <input type="button" class="btn btn-default pull-right" value="Update" id="update" name="commit">
     <% end %>

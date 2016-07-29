@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::Base
+
+  include CookiesHandling
+  include SessionHandling
+  include ValueCalculation
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -25,10 +30,19 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }.merge options
   end
 
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:firstname, :lastname, :email, :password) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:firstname, :lastname, :email, :password) }
+  end
+
+  private
+
   def load_in_progress_order
     if current_user
       @order = current_user.orders.where(state: 'in_progress').first
-      session[:user_products_count] = @order.book_count
+      set_session(@order.book_count) unless current_user.admin
     end
   end
 
@@ -43,74 +57,42 @@ class ApplicationController < ActionController::Base
   end
 
   def new_facebook_user
-    if new_facebook_user?(current_user)
-      after_sign_up
-    else
-      after_sign_in unless current_user.id == 1
+    unless current_user.id == 1
+      new_facebook_user?(current_user) ? after_auth(true) : after_auth(false)
     end
   end
 
-  def after_sign_in(id = false)
-    load_in_progress_order
-
-    cookies_json_parse
+  def after_auth(bool)
+    @cookies_book = cookies_json_parse(:books)
+    @cookies_count = cookies_json_parse(:book_count)
     cookies_nil
-    session[:user_products_count] = @order.book_count + @cookies_book['book_count'].to_i
-    @order.update(total_price: total_price(@cookies_book) + @order.total_price.to_f,
-                  order_total: total_price(@cookies_book) + 5.0 + @order.total_price.to_f,
-                  book_count:  @cookies_book['book_count'].to_i + @order.book_count.to_i)
-    OrderItem.update_items(@cookies_book, @order.id)
-    cookies.delete :books
+    bool ? after_sign_up : after_sign_in
+    OrderItem.update_items(@cookies_book, current_user.id)
+    cookies_delete
   end
 
-  def after_sign_up(id = false)
+  def after_sign_up
     id = current_user.id unless id
-    cookies_json_parse
-    cookies_nil
-
-    order_id = Order.create_order(@cookies_book, total_price(@cookies_book), id)
-    session[:user_products_count] = @cookies_book['book_count']
-    OrderItem.create_items(@cookies_book, order_id)
-    cookies.delete :books
+    @order = Order.create_order(@cookies_count , total_price, id)
   end
 
-  def get_books_in_order_not_auth(cookies)
-    @ids = []
-    @cookies_hash = {}
-    @subtotal = 0
-    cookies.try(:each) do |book|
-      @cookies_hash[book[0][3..-1]] = book[1]  unless book[0] == 'book_count'
-      @ids << book[0][3..-1] unless book[0] == 'book_count'
-    end
-    @books = Book.where(id: @ids)
-    @books.try(:each) do |book|
-      @subtotal += book.price * @cookies_hash[book.id.to_s].to_i
-    end
-    @subtotal
+  def after_sign_in
+    load_in_progress_order
+    set_session(@order.book_count + @cookies_count['book_count'].to_i)
+    @order.update(total_price: total_calc,
+                  order_total: total_calc(5.0),
+                  book_count:  @cookies_count['book_count'].to_i + @order.book_count)
   end
 
-  def total_price(cookies)
-    get_books_in_order_not_auth(cookies)
+  def get_books(bool = true)
+    value = current_user && bool
+    @obj = value ? @order.order_items : cookies_json_parse(:books)
+    @books = Book.where(id: parse_ids(@obj, value))
+    @subtotal = current_user && bool ? @order.total_price : calc_subtotal(@books)
   end
 
   def new_facebook_user?(user)
     user.sign_in_count < 2 && user.provider == 'facebook' ? true : false
   end
 
-  def cookies_nil
-    unless @cookies_book
-      @cookies_book = { 'book_count' => '0', 'total_price' => '0' }
-    end
-  end
-
-  def cookies_json_parse
-    @cookies_book = JSON.parse(cookies[:books]) if cookies[:books]
-  end
-
-  protected
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:firstname, :lastname, :email, :password) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:firstname, :lastname, :email, :password) }
-  end
 end

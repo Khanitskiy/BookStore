@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :books
     resources :categories
     resources :orders
-    resources :orders_items
+    resources :order_items
     resources :order_steps
     resources :addresses
     resources :users
@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   #scope :orders_items do 
     #delete '/delete_item/:id',    to: 'orders_items#delete_cookie_item'
   #end
-  resources :orders_items
+  resources :order_items
 
   devise_scope :user do
     get    '/settings', to: 'users#settings'

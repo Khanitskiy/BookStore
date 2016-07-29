@@ -1,0 +1,640 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"shi",
+				"shipping_address"
+			],
+			[
+				"C",
+				"Category"
+			],
+			[
+				"crea",
+				"creates"
+			],
+			[
+				"Order",
+				"OrderItem"
+			],
+			[
+				"las",
+				"last_order_queue"
+			],
+			[
+				"co",
+				"completed_date"
+			],
+			[
+				"book",
+				"book_count"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"def",
+				"def	def … end"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"by",
+				"byebug"
+			],
+			[
+				"chec",
+				"checkbox"
+			],
+			[
+				"redirect",
+				"redirect_to"
+			],
+			[
+				"order",
+				"order_steps_form"
+			],
+			[
+				"billing",
+				"billing_address"
+			],
+			[
+				"billi",
+				"billing_address"
+			],
+			[
+				"be",
+				"be_empty"
+			],
+			[
+				"ite",
+				"item2"
+			],
+			[
+				"en",
+				"environment"
+			],
+			[
+				"Store",
+				"StoreApplication"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 96.0,
+		"last_filter": "vmen",
+		"selected_items":
+		[
+			[
+				"vmen",
+				"View: Toggle Menu"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax ht",
+				"Set Syntax: HTML (Tcl)"
+			],
+			[
+				"syntax h",
+				"Set Syntax: HTML"
+			],
+			[
+				"hml",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"package ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package control: instal ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: SCSS",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"Package Control: Sass",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"Package Control: Saas",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Sass",
+				"Set Syntax: CSS"
+			],
+			[
+				"pro",
+				"Project: Add Folder"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 168.0,
+		"history":
+		[
+			"Package Control: Upgrade Package SCSS",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/han/ruby_projects/BookStore"
+	],
+	"file_history":
+	[
+		"/home/han/ruby_projects/BookStore/app/views/users/_password.html.haml",
+		"/home/han/ruby_projects/BookStore/app/controllers/addresses_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/views/users/_shipping_address.html.haml",
+		"/home/han/ruby_projects/BookStore/app/views/users/settings.html.haml",
+		"/home/han/ruby_projects/BookStore/app/helpers/users_helper.rb",
+		"/home/han/ruby_projects/BookStore/app/views/users/_name_and_email.html.haml",
+		"/home/han/ruby_projects/BookStore/app/controllers/users_controller.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/book_spec.rb",
+		"/home/han/ruby_projects/BookStore/app/views/users/_billing_address.html.haml",
+		"/home/han/ruby_projects/BookStore/app/views/layouts/application.html.erb",
+		"/home/han/ruby_projects/BookStore/app/assets/javascripts/users.js",
+		"/home/han/ruby_projects/BookStore/app/views/ratings/create.html.haml",
+		"/home/han/ruby_projects/BookStore/app/views/users/_name_and_email.html.erb",
+		"/home/han/ruby_projects/BookStore/app/views/users/settings.html.erb",
+		"/home/han/ruby_projects/BookStore/app/controllers/application_controller.rb",
+		"/home/han/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/han/ruby_projects/BookStore/app/models/cupon.rb",
+		"/home/han/ruby_projects/BookStore/app/views/users/_remove_account.html.haml",
+		"/home/han/ruby_projects/BookStore/app/views/users/_remove_account.html.erb",
+		"/home/han/ruby_projects/BookStore/app/views/users/name_and_email.html.erb",
+		"/home/han/ruby_projects/BookStore/app/views/users/_billing_address.gtml.erb",
+		"/home/han/ruby_projects/BookStore/app/views/users/_shipping_address.html.erb",
+		"/home/han/ruby_projects/BookStore/app/models/category.rb",
+		"/home/han/ruby_projects/BookStore/app/helpers/application_helper.rb",
+		"/home/han/ruby_projects/BookStore/app/models/rating.rb",
+		"/home/han/ruby_projects/BookStore/app/models/order_item.rb",
+		"/home/han/ruby_projects/BookStore/app/models/book.rb",
+		"/home/han/ruby_projects/BookStore/app/models/ability.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/orders_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/forms/order_steps_form.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/ratings_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/order_steps_controller.rb",
+		"/home/han/ruby_projects/BookStore/db/seeds.rb",
+		"/home/han/ruby_projects/BookStore/app/models/user.rb",
+		"/home/han/ruby_projects/BookStore/app/models/order.rb",
+		"/home/han/ruby_projects/BookStore/db/migrate/20160220131202_create_order_items.rb",
+		"/home/han/ruby_projects/BookStore-refactoring/.gitignore",
+		"/home/han/ruby_projects/BookStore/app/assets/javascripts/orders.js",
+		"/home/han/ruby_projects/BookStore/Gemfile",
+		"/home/han/ruby_projects/BookStore/app/views/orders/show.html.erb",
+		"/home/han/ruby_projects/BookStore/app/controllers/users/sessions_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/orders_items_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/categories_controller.rb",
+		"/home/han/pgadmin3",
+		"/home/han/ruby_projects/BookStore/spec/factories/ratings.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/rating_spec.rb",
+		"/home/han/ruby_projects/BookStore/app/validators/rating_score.rb",
+		"/home/han/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/han/.config/sublime-text-3/Packages/User/Ruby.sublime-settings",
+		"/home/han/ruby_projects/BookStore/app/controllers/sdsd.rb",
+		"/home/han/.config/sublime-text-3/Packages/User/JavaScript.sublime-settings",
+		"/home/han/.config/sublime-text-3/Packages/User/JSON.sublime-settings",
+		"/home/han/ruby_projects/BookStore/app/assets/javascripts/main.js",
+		"/home/han/ruby_projects/BookStore/config/routes.rb",
+		"/home/han/ruby_projects/BookStore/spec/controllers/books_controller_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/features/search_feature_spec.rb",
+		"/home/han/ruby_projects/BookStore/refactoring_lists.rb",
+		"/home/han/ruby_projects/BookStore/.rubocop.yml",
+		"/home/han/ruby_projects/BookStore/app/controllers/books_controller.rb",
+		"/home/han/ruby_projects/BookStore/spec/spec_helper.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/users/order_controllers2.rb",
+		"/home/han/ruby_projects/BookStore/spec/rails_helper.rb",
+		"/home/han/ruby_projects/BookStore/app/views/books/search.html.erb",
+		"/home/han/ruby_projects/BookStore/config/environments/test.rb",
+		"/home/han/ruby_projects/BookStore/spec/feature/search_feature_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/user_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/users.rb",
+		"/home/han/ruby_projects/BookStore/app/models/credit_card.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/order_items.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/order_item_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/order_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/credit_card_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/orders.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/cupons.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/cupon_spec.rb",
+		"/home/han/ruby_projects/BookStore/db/migrate/20160220131238_create_credit_cards.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/categories.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/countries.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/category_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/country_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/books.rb",
+		"/home/han/ruby_projects/BookStore/app/models/author.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/authors.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/addresses.rb",
+		"/home/han/ruby_projects/BookStore/app/models/address.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/address_spec.rb",
+		"/home/han/ruby_projects/BookStore/config/initializers/devise.rb",
+		"/media/han/41039C3FE7F28310/Задание/animation/animation/22-progress-bar-anim/index.html",
+		"/home/han/ruby_projects/HH-UploadApp/app/uploaders/file_uploader.rb",
+		"/home/han/ruby_projects/HH-UploadApp/Gemfile",
+		"/home/han/ruby_projects/HH-UploadApp/app/assets/javascripts/application.js",
+		"/home/han/ruby_projects/HH-UploadApp/app/views/welcome/index.html.erb",
+		"/home/han/ruby_projects/HH-UploadApp/app/assets/stylesheets/application.scss",
+		"/home/han/ruby_projects/HH-UploadApp/app/assets/stylesheets/style.css",
+		"/home/han/ruby_projects/HH-UploadApp/.gitignore",
+		"/home/han/ruby_projects/HH-UploadApp/app/assets/fonts/font-awesome.css.scss.erb",
+		"/home/han/ruby_projects/HH-UploadApp/config/application.rb",
+		"/home/han/ruby_projects/HH-UploadApp/app/assets/stylesheets/font-awesome.css.scss.erb",
+		"/home/han/ruby_projects/HH-UploadApp/app/views/layouts/application.html.erb",
+		"/media/han/41039C3FE7F28310/Задание/animation/animation/22-progress-bar-anim/img/bg.png",
+		"/media/han/41039C3FE7F28310/Задание/animation/animation/22-progress-bar-anim/css/style.css",
+		"/home/han/ruby_projects/Gemfile",
+		"/home/han/.config/sublime-text-3/Packages/User/RubyTest.sublime-settings",
+		"/home/han/.config/sublime-text-3/Packages/RubyTest/Default.sublime-keymap",
+		"/home/han/.config/sublime-text-3/Packages/RubyTest/Default (Linux).sublime-keymap",
+		"/home/han/.config/sublime-text-3/Packages/RubyTest/RubyTest.sublime-settings",
+		"/home/han/ruby_projects/BookStore/db/migrate/20160427123550_change_integer_type_for_zipcode.rb",
+		"/home/han/ruby_projects/BookStore/app/helpers/books_helper.rb",
+		"/home/han/ruby_projects/BookStore/app/views/orders/new.html.erb",
+		"/home/han/ruby_projects/BookStore/config/locales/en.yml",
+		"/home/han/ruby_projects/BookStore/app/controllers/users/registrations_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/users/omniauth_callbacks_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/omniauth_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/assets/javascripts/order_steps.js",
+		"/home/han/ruby_projects/BookStore/app/views/order_steps/_order_summary.html.erb",
+		"/home/han/ruby_projects/BookStore/app/views/order_steps/address.html.erb",
+		"/home/han/ruby_projects/BookStore/app/assets/stylesheets/order_steps.scss",
+		"/home/han/ruby_projects/BookStore/db/migrate/20160425123503_create_cupons.rb",
+		"/home/han/ruby_projects/BookStore/app/assets/javascripts/show.js",
+		"/home/han/ruby_projects/BookStore/app/assets/stylesheets/orders.scss",
+		"/home/han/ruby_projects/BookStore/app/views/books/show.html.erb",
+		"/home/han/ruby_projects/BookStore/app/views/ratings/create.html.erb",
+		"/home/han/ruby_projects/BookStore/app/assets/stylesheets/main.css.scss",
+		"/home/han/ruby_projects/BookStore/app/views/books/index.html.erb",
+		"/home/han/ruby_projects/BookStore/app/views/books/home.html.erb",
+		"/home/han/ruby_projects/BookStore/public/404.html",
+		"/home/han/ruby_projects/BookStore/app/views/orders/index.html.erb",
+		"/home/han/ruby_projects/BookStore/config/locales/ru.yml"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore/app/views",
+			"/home/han/ruby_projects/BookStore/spec/views",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore/app/controllers",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/views",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/controllers",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/helpers",
+			"/home/han/ruby_projects/BookStore/app/assets/javascripts",
+			"/home/han/ruby_projects/BookStore/spec/models",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/controllers",
+			"/home/han/ruby_projects/BookStore/app/views",
+			"/home/han/ruby_projects/BookStore/app/assets/javascripts",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore/app/assets/javascripts",
+			"/home/han/ruby_projects/BookStore/app/views",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore/app/assets",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore/app/controllers",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/models",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/assets/javascripts",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore/app/controllers/users",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/assets/javascripts",
+			"/home/han/ruby_projects/BookStore/app/controllers",
+			"",
+			"-",
+			" ",
+			"",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/views",
+			"/home/han/ruby_projects/BookStore/app/controllers/users",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/views/devise",
+			"/home/han/ruby_projects/amazon",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStrore",
+			"/home/han/ruby_projects/timesheets"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"create_addresses_obj",
+			"byebug",
+			"settings",
+			"show_flashes",
+			"shipping_flashes",
+			"#address_checkbox",
+			"shipping_address",
+			"address_checkbox",
+			"shipping_flashes",
+			">\n",
+			"byebu",
+			"get_books_in_order",
+			"billing_shipping_adresses",
+			"show_flashes",
+			"flash_create",
+			"shipping_false",
+			"shipping_true",
+			"billing_shipping_adresses",
+			"billing_shipping_create",
+			"cupon",
+			"create_item",
+			"create_order",
+			"get_book",
+			"create_order",
+			"update_order",
+			" update_order",
+			"billing_address",
+			"cookies_hash",
+			"@cookies_hash",
+			"books",
+			"cookies[:books]",
+			"billing_shipping_create",
+			"billing_address",
+			"@billing_address",
+			"billing_address = user.billing_address",
+			"$end",
+			"record.errors[:rating] << 'Score must be more than 0 and less than 11'",
+			"@subtotal",
+			"order_total: total_price(@cookies_book) + 5.0 + @order.total_price.to_f,",
+			"@cookies_book",
+			"cookies_book",
+			"subtotal",
+			"total_price",
+			"total_pr",
+			"subtotal",
+			"@cookies_book",
+			"@",
+			"@books",
+			"@subtotal",
+			"@ids",
+			"@billing_address",
+			"create_addresses_obj",
+			"@",
+			"\"",
+			"book_count:  @cookies_book['book_count'].to_i + @order.book_count.to_i)",
+			"order_total: total_price(@cookies_book) + 5.0 + @order.total_price.to_f",
+			"@order.update(total_price: total_price(@cookies_book) + @order.total_price.to_f,",
+			"session[:user_products_count] = @order.book_count + @cookies_book['book_count'].to_i",
+			"@cookies_book = JSON.parse(cookies[:books]) if cookies[:books]",
+			"unless @cookies_book",
+			"cookies_nil",
+			"unless @cookies_book",
+			"if @cookies_book.nil?",
+			"create_addresses_obj",
+			"changeCookie",
+			"create_addresses_obj",
+			"order_params",
+			"find_by_id",
+			"find_by_id(",
+			"get_books_in_order",
+			"get_ratings",
+			"get_ra",
+			"get_this_user",
+			"create_items",
+			"update_items",
+			"create_items",
+			"OrderItem",
+			"create_items",
+			"order",
+			"user",
+			"create_order",
+			"session",
+			" transition",
+			"log",
+			"dragover",
+			"450px",
+			"img",
+			"byebug",
+			"if step == :complete",
+			"localhost",
+			"location",
+			"path",
+			"localhost",
+			"search",
+			"cate",
+			"customer",
+			"redire",
+			"render",
+			"redire",
+			"after_sign_up",
+			"new_facebook_user",
+			"byebug",
+			"OrderItem.update_items",
+			"user_omniauth_authorize_path",
+			"failure",
+			"render",
+			"GET",
+			"Checkout",
+			"in_sto",
+			"RatingScore",
+			"Not sure if this is the best book to start! ",
+			"this",
+			"remove_button",
+			"cp",
+			"cp(",
+			"cp",
+			"last_order_queue",
+			"credit_card",
+			"order_steps_form.payment",
+			"byebug",
+			"user.id",
+			"byebug",
+			"@order = Order.new()",
+			"      @order = Order.new()",
+			" get_books_in_order",
+			"update_items",
+			"OrderItem.update_items(@cookies_book, @order.id)",
+			"payment"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "no_avatar.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"book",
+				"app/models/book.rb"
+			],
+			[
+				"resurs",
+				"sample_app/spec/requests/user_pages_spec.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 354.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"ActiveSupport::TestCase"
+			]
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 287.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

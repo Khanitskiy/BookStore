@@ -4,7 +4,7 @@
 
 $(document).on("ready page:load",function(){
 
-  if ($( "#shipping_flashes" ).hasClass( "has_flashes" )) {
+  if ($( "#shipping_error" ).hasClass( "has_errors" )) {
     $('#address_checkbox').val('0');
     $('#shipping_address').show(200);
     $("#address_checkbox").prop( "checked", false );

@@ -11,16 +11,11 @@ class Book < ActiveRecord::Base
 
   has_many   :ratings
   has_many :users, through: :ratings
-  # has_many   :order_items
+
+  scope :bestsellers, -> {  where("best_seller = 'true'") }
+  scope :get_book, -> (id) { find_by_id(id) }
 
   mount_uploader :image, BookImgUploader
   paginates_per 9
-
-  def self.bestsellers
-    where("best_seller = 'true'")
-  end
-
-  def self.get_book(id)
-    find(id)
-  end
+  
 end

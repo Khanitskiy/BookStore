@@ -24,9 +24,9 @@
                   </td>
                   <td class="book_price"><%= number_to_currency(book.price) %></td>
                   <td class="count">
-                    <input type="number" max="100" min="1" class="quantity-input" value="<%= @cookies_hash["#{book.id}"] %>" id="quantity_<%= book.id %>" name="quantity-input">
+                    <input type="number" max="100" min="1" class="quantity-input" value="<%= items_calc(book, true) %>" id="quantity_<%= book.id %>" name="quantity-input">
                   </td>
-                  <td class="total"><%= number_to_currency(book.price * @cookies_hash["#{book.id}"].to_i) %></td>
+                  <td class="total"><%= items_calc(book) %></td>
                 </tr>
               <% end %>
             </tbody>

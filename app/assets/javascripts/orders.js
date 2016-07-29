@@ -7,19 +7,15 @@ $(document).on("ready page:load",function(){
 
     // ## Delete product
     $('body').delegate('.remove_link a', 'click', function(){
-      var product_id = $(this).attr('id');
+      var product_id = $(this).attr('id').slice(3);
       var product_count;
       var total_price = 0;
-      //var delete_data['price'] = $(this).parents('tr').find( ".book_price" ).text().slice(1);
-      //var delete_data['count'] = product_count;
-      //var data = {"$(this).parents('tr').find( \".total\" ).slice(1)": }
       $(this).parents('tr').find( ".total" ).removeClass();
       $(this).parents('tr').hide(500);
       if ($('#current_user').text()) {
-        //alert(product_id)
         var cookie_value = document.cookie.replace(/(?:(?:^|.*;\s*)user_products_count\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         var product_count = $(this).parents('tr').find( ".quantity-input" ).val();
-        var pathname = 'http://' + $(location).attr('host') + '/orders_items/' + product_id.slice(3);
+        var pathname = 'http://' + $(location).attr('host') + '/order_items/' + product_id;
         var data = { product_count: product_count }
         var obj = cookie_value ? jQuery.parseJSON(decodeURIComponent(cookie_value)) : {count: "0"};
 
@@ -37,24 +33,27 @@ $(document).on("ready page:load",function(){
       } else {
 
         var cookie_value = document.cookie.replace(/(?:(?:^|.*;\s*)books\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        var product_count = document.cookie.replace(/(?:(?:^|.*;\s*)book_count\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
         if (cookie_value) {
           var obj = jQuery.parseJSON(decodeURIComponent(cookie_value));
-          product_count = parseInt(obj[product_id]);
-
+          product_count = jQuery.parseJSON(decodeURIComponent(product_count));
+          console.log(product_count)
           // Change count products in shop carts
-          $('.cart-lnk em').text("(" + (parseInt($('.cart-lnk em').text().slice(1, -1)) - product_count) + ")");
+          $('.cart-lnk em').text("(" + (parseInt($('.cart-lnk em').text().slice(1, -1)) - parseInt(obj[product_id])) + ")");
           if ($('.cart-lnk em').text() == '(0)' ) {$('.cart-lnk em').text('(empty)')}
 
 
           // Delete cookies
+          product_count['book_count'] =  product_count['book_count'] - parseInt(obj[product_id]);
           delete obj[product_id];
-          obj['book_count'] =  obj['book_count'] - product_count;
-          if (obj['book_count'] == '0') { 
+          if (product_count['book_count'] == '0') { 
+            deleteCookie('book_count') 
             deleteCookie('books') 
             $('.full_cart').hide(300).delay(2000)
             $('.cart_empty').show(300).delay(3000).fadeIn( 500 );
           } else {
+            setCookie('book_count', JSON.stringify(product_count));
             setCookie('books', JSON.stringify(obj));
           }
         }
@@ -121,7 +120,7 @@ $(document).on("ready page:load",function(){
         event.preventDefault();
         var value = $('.cupon').val()
         var pathname = 'http://' + $(location).attr('host') + '/orders/check_cupon_ajax';
-      //alert(pathname) 
+
         $.ajax({
           type: "POST",
           url: pathname,

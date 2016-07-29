@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20160427123550) do
   add_index "cupons", ["order_id"], name: "index_cupons_on_order_id", using: :btree
 
   create_table "order_items", force: :cascade do |t|
-    t.string   "quantity"
+    t.integer  "quantity"
     t.integer  "book_id"
     t.integer  "order_id"
     t.datetime "created_at", null: false

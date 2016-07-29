@@ -1,0 +1,939 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"shi",
+				"shipping_address"
+			],
+			[
+				"C",
+				"Category"
+			],
+			[
+				"crea",
+				"creates"
+			],
+			[
+				"Order",
+				"OrderItem"
+			],
+			[
+				"las",
+				"last_order_queue"
+			],
+			[
+				"co",
+				"completed_date"
+			],
+			[
+				"book",
+				"book_count"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"def",
+				"def	def … end"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"by",
+				"byebug"
+			],
+			[
+				"chec",
+				"checkbox"
+			],
+			[
+				"redirect",
+				"redirect_to"
+			],
+			[
+				"order",
+				"order_steps_form"
+			],
+			[
+				"billing",
+				"billing_address"
+			],
+			[
+				"billi",
+				"billing_address"
+			],
+			[
+				"be",
+				"be_empty"
+			],
+			[
+				"ite",
+				"item2"
+			],
+			[
+				"en",
+				"environment"
+			],
+			[
+				"Store",
+				"StoreApplication"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "class ApplicationController < ActionController::Base\n  # Prevent CSRF attacks by raising an exception.\n  # For APIs, you may want to use :null_session instead.\n  protect_from_forgery with: :exception\n\n  before_filter :load_in_progress_order, if: :current_user\n  before_filter :configure_permitted_parameters, if: :devise_controller?\n  before_action :set_locale\n\n  rescue_from CanCan::AccessDenied do |exception|\n    redirect_to '/', alert: exception.message\n  end\n\n  def set_locale\n    I18n.locale = params[:locale]   ||\n    session[:omniauth_login_locale] || \n    I18n.default_locale\n    \n    session[:omniauth_login_locale] = I18n.locale\n  end\n\n  def create_addresses_obj\n    @billing_address = Address.find_or_create_by(user_billing_address_id: current_user.id)\n    @shipping_address = Address.find_or_create_by(user_shipping_address_id: current_user.id)\n  end\n\n  def default_url_options(options = {})\n    { locale: I18n.locale }.merge options\n  end\n\n  def load_in_progress_order\n    if current_user\n      @order = current_user.orders.where(state: 'in_progress').first\n      session[:user_products_count] = @order.book_count\n    end\n  end\n\n  def after_sign_in_path_for(resource)\n    sign_in_url = new_user_session_url\n    new_facebook_user\n    if request.referer == sign_in_url\n      super\n    else\n      stored_location_for(resource) || request.referer || root_path\n    end\n  end\n\n  def new_facebook_user\n    if new_facebook_user?(current_user)\n      after_sign_up\n    else\n      after_sign_in unless current_user.id == 1\n    end\n  end\n\n  def after_sign_in(id = false)\n    load_in_progress_order\n\n    cookies_json_parse\n    cookies_nil\n    session[:user_products_count] = @order.book_count + @cookies_book['book_count'].to_i\n    @order.update(total_price: total_price(@cookies_book) + @order.total_price.to_f,\n                  order_total: total_price(@cookies_book) + 5.0 + @order.total_price.to_f,\n                  book_count:  @cookies_book['book_count'].to_i + @order.book_count.to_i)\n    OrderItem.update_items(@cookies_book, @order.id)\n    cookies.delete :books\n  end\n\n  def after_sign_up(id = false)\n    id = current_user.id unless id\n    cookies_json_parse\n    cookies_nil\n\n    order_id = Order.create_order(@cookies_book, total_price(@cookies_book), id)\n    session[:user_products_count] = @cookies_book['book_count']\n    OrderItem.create_items(@cookies_book, order_id)\n    cookies.delete :books\n  end\n\n  def get_books_in_order_not_auth(cookies)\n    @ids = []\n    @cookies_hash = {}\n    @subtotal = 0\n    cookies.try(:each) do |book|\n      @cookies_hash[book[0][3..-1]] = book[1]  unless book[0] == 'book_count'\n      @ids << book[0][3..-1] unless book[0] == 'book_count'\n    end\n    @books = Book.where(id: @ids)\n    @books.try(:each) do |book|\n      @subtotal += book.price * @cookies_hash[book.id.to_s].to_i\n    end\n    @subtotal\n  end\n\n  def total_price(cookies)\n    get_books_in_order_not_auth(cookies)\n  end\n\n  def new_facebook_user?(user)\n    user.sign_in_count < 2 && user.provider == 'facebook' ? true : false\n  end\n\n  def cookies_nil\n    unless @cookies_book\n      @cookies_book = { 'book_count' => '0', 'total_price' => '0' }\n    end\n  end\n\n  def cookies_json_parse\n    @cookies_book = JSON.parse(cookies[:books]) if cookies[:books]\n  end\n\n  protected\n\n  def configure_permitted_parameters\n    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:firstname, :lastname, :email, :password) }\n    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:firstname, :lastname, :email, :password) }\n  end\nend\n",
+			"file": "app/controllers/application_controller.rb",
+			"file_size": 3525,
+			"file_write_time": 131092683949873150,
+			"settings":
+			{
+				"buffer_size": 3541,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/orders_controller.rb",
+			"settings":
+			{
+				"buffer_size": 3287,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/book.rb",
+			"settings":
+			{
+				"buffer_size": 595,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 114 files for \"get_books_in_order_not_auth\"\n\n/home/han/ruby_projects/BookStore/app/controllers/application_controller.rb:\n   78    end\n   79  \n   80:   def get_books_in_order_not_auth(cookies)\n   81      @ids = []\n   82      @cookies_hash = {}\n   ..\n   94  \n   95    def total_price(cookies)\n   96:     get_books_in_order_not_auth(cookies)\n   97    end\n   98  \n\n/home/han/ruby_projects/BookStore/app/controllers/orders_controller.rb:\n   10        byebug\n   11        @cookies_book = JSON .parse(cookies[:books]) if cookies[:books]\n   12:       get_books_in_order_not_auth(@cookies_book)\n   13      end\n   14    end\n\n3 matches across 2 files\n",
+			"settings":
+			{
+				"buffer_size": 651,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "app/models/order_item.rb",
+			"settings":
+			{
+				"buffer_size": 970,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/cupon.rb",
+			"settings":
+			{
+				"buffer_size": 197,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "class UsersController < ApplicationController\n  load_and_authorize_resource\n  \n  before_action :authenticate_user!\n  \n  def settings\n    create_addresses_obj\n  end\n\n  def update_password\n    if params[:user][:old_password] != '' && current_user.valid_password?(params[:user][:old_password]) == false\n      flash[:alert] = 'Something went wrong'\n      flash[:error] = { 'old_password' => 'Incorrect password' }\n      flash[:error][:password_form] = true\n    else\n      updates\n      flash[:error] = @user.errors.messages\n      flash[:error][:password_form] = true\n      flash[:error][:old_password] = ['can\\'t be blank'] if params[:user][:old_password] == ''\n    end\n    redirect_to settings_path\n  end\n\n  def update_data\n    updates\n    flash[:error] = @user.errors.messages\n    flash[:error]['data_form'] = true\n\n    redirect_to settings_path\n  end\n\n  private\n\n  def updates\n    if params[:user_id].to_i == current_user.id\n\n      @user = User.find(current_user.id)\n      if @user.update(user_params)\n        # Sign in the user by passing validation in case their password changed\n        sign_in @user, bypass: true\n        flash[:notice] = 'Your data have been changes'\n      else\n        flash[:alert] = 'Something went wrong'\n      end\n\n    else\n      flash[:alert] = 'Something went wrong'\n    end\n  end\n\n  def user_params\n    params.require(:user).permit(:firstname, :lastname, :email, :password, :user_id, :password_confirmation)\n  end\nend",
+			"settings":
+			{
+				"buffer_size": 1446,
+				"line_ending": "Unix",
+				"name": "class UsersController < ApplicationController"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "vmen",
+		"selected_items":
+		[
+			[
+				"vmen",
+				"View: Toggle Menu"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax ht",
+				"Set Syntax: HTML (Tcl)"
+			],
+			[
+				"syntax h",
+				"Set Syntax: HTML"
+			],
+			[
+				"hml",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"package ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package control: instal ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: SCSS",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"Package Control: Sass",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"Package Control: Saas",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Sass",
+				"Set Syntax: CSS"
+			],
+			[
+				"pro",
+				"Project: Add Folder"
+			]
+		],
+		"width": 401.0
+	},
+	"console":
+	{
+		"height": 168.0,
+		"history":
+		[
+			"Package Control: Upgrade Package SCSS",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/han/ruby_projects/BookStore",
+		"/home/han/ruby_projects/BookStore/app",
+		"/home/han/ruby_projects/BookStore/app/controllers",
+		"/home/han/ruby_projects/BookStore/app/models",
+		"/home/han/ruby_projects/BookStore/app/views"
+	],
+	"file_history":
+	[
+		"/home/han/ruby_projects/BookStore/app/controllers/users_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/models/order.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/ratings_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/views/users/_password.html.haml",
+		"/home/han/ruby_projects/BookStore/app/controllers/addresses_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/views/users/_shipping_address.html.haml",
+		"/home/han/ruby_projects/BookStore/app/views/users/settings.html.haml",
+		"/home/han/ruby_projects/BookStore/app/helpers/users_helper.rb",
+		"/home/han/ruby_projects/BookStore/app/views/users/_name_and_email.html.haml",
+		"/home/han/ruby_projects/BookStore/spec/models/book_spec.rb",
+		"/home/han/ruby_projects/BookStore/app/views/users/_billing_address.html.haml",
+		"/home/han/ruby_projects/BookStore/app/views/layouts/application.html.erb",
+		"/home/han/ruby_projects/BookStore/app/assets/javascripts/users.js",
+		"/home/han/ruby_projects/BookStore/app/views/ratings/create.html.haml",
+		"/home/han/ruby_projects/BookStore/app/views/users/_name_and_email.html.erb",
+		"/home/han/ruby_projects/BookStore/app/views/users/settings.html.erb",
+		"/home/han/ruby_projects/BookStore/app/controllers/application_controller.rb",
+		"/home/han/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/han/ruby_projects/BookStore/app/models/cupon.rb",
+		"/home/han/ruby_projects/BookStore/app/views/users/_remove_account.html.haml",
+		"/home/han/ruby_projects/BookStore/app/views/users/_remove_account.html.erb",
+		"/home/han/ruby_projects/BookStore/app/views/users/name_and_email.html.erb",
+		"/home/han/ruby_projects/BookStore/app/views/users/_billing_address.gtml.erb",
+		"/home/han/ruby_projects/BookStore/app/views/users/_shipping_address.html.erb",
+		"/home/han/ruby_projects/BookStore/app/models/category.rb",
+		"/home/han/ruby_projects/BookStore/app/helpers/application_helper.rb",
+		"/home/han/ruby_projects/BookStore/app/models/rating.rb",
+		"/home/han/ruby_projects/BookStore/app/models/order_item.rb",
+		"/home/han/ruby_projects/BookStore/app/models/book.rb",
+		"/home/han/ruby_projects/BookStore/app/models/ability.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/orders_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/forms/order_steps_form.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/order_steps_controller.rb",
+		"/home/han/ruby_projects/BookStore/db/seeds.rb",
+		"/home/han/ruby_projects/BookStore/app/models/user.rb",
+		"/home/han/ruby_projects/BookStore/db/migrate/20160220131202_create_order_items.rb",
+		"/home/han/ruby_projects/BookStore-refactoring/.gitignore",
+		"/home/han/ruby_projects/BookStore/app/assets/javascripts/orders.js",
+		"/home/han/ruby_projects/BookStore/Gemfile",
+		"/home/han/ruby_projects/BookStore/app/views/orders/show.html.erb",
+		"/home/han/ruby_projects/BookStore/app/controllers/users/sessions_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/orders_items_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/categories_controller.rb",
+		"/home/han/pgadmin3",
+		"/home/han/ruby_projects/BookStore/spec/factories/ratings.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/rating_spec.rb",
+		"/home/han/ruby_projects/BookStore/app/validators/rating_score.rb",
+		"/home/han/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/han/.config/sublime-text-3/Packages/User/Ruby.sublime-settings",
+		"/home/han/ruby_projects/BookStore/app/controllers/sdsd.rb",
+		"/home/han/.config/sublime-text-3/Packages/User/JavaScript.sublime-settings",
+		"/home/han/.config/sublime-text-3/Packages/User/JSON.sublime-settings",
+		"/home/han/ruby_projects/BookStore/app/assets/javascripts/main.js",
+		"/home/han/ruby_projects/BookStore/config/routes.rb",
+		"/home/han/ruby_projects/BookStore/spec/controllers/books_controller_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/features/search_feature_spec.rb",
+		"/home/han/ruby_projects/BookStore/refactoring_lists.rb",
+		"/home/han/ruby_projects/BookStore/.rubocop.yml",
+		"/home/han/ruby_projects/BookStore/app/controllers/books_controller.rb",
+		"/home/han/ruby_projects/BookStore/spec/spec_helper.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/users/order_controllers2.rb",
+		"/home/han/ruby_projects/BookStore/spec/rails_helper.rb",
+		"/home/han/ruby_projects/BookStore/app/views/books/search.html.erb",
+		"/home/han/ruby_projects/BookStore/config/environments/test.rb",
+		"/home/han/ruby_projects/BookStore/spec/feature/search_feature_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/user_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/users.rb",
+		"/home/han/ruby_projects/BookStore/app/models/credit_card.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/order_items.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/order_item_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/order_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/credit_card_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/orders.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/cupons.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/cupon_spec.rb",
+		"/home/han/ruby_projects/BookStore/db/migrate/20160220131238_create_credit_cards.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/categories.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/countries.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/category_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/country_spec.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/books.rb",
+		"/home/han/ruby_projects/BookStore/app/models/author.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/authors.rb",
+		"/home/han/ruby_projects/BookStore/spec/factories/addresses.rb",
+		"/home/han/ruby_projects/BookStore/app/models/address.rb",
+		"/home/han/ruby_projects/BookStore/spec/models/address_spec.rb",
+		"/home/han/ruby_projects/BookStore/config/initializers/devise.rb",
+		"/media/han/41039C3FE7F28310/Задание/animation/animation/22-progress-bar-anim/index.html",
+		"/home/han/ruby_projects/HH-UploadApp/app/uploaders/file_uploader.rb",
+		"/home/han/ruby_projects/HH-UploadApp/Gemfile",
+		"/home/han/ruby_projects/HH-UploadApp/app/assets/javascripts/application.js",
+		"/home/han/ruby_projects/HH-UploadApp/app/views/welcome/index.html.erb",
+		"/home/han/ruby_projects/HH-UploadApp/app/assets/stylesheets/application.scss",
+		"/home/han/ruby_projects/HH-UploadApp/app/assets/stylesheets/style.css",
+		"/home/han/ruby_projects/HH-UploadApp/.gitignore",
+		"/home/han/ruby_projects/HH-UploadApp/app/assets/fonts/font-awesome.css.scss.erb",
+		"/home/han/ruby_projects/HH-UploadApp/config/application.rb",
+		"/home/han/ruby_projects/HH-UploadApp/app/assets/stylesheets/font-awesome.css.scss.erb",
+		"/home/han/ruby_projects/HH-UploadApp/app/views/layouts/application.html.erb",
+		"/media/han/41039C3FE7F28310/Задание/animation/animation/22-progress-bar-anim/img/bg.png",
+		"/media/han/41039C3FE7F28310/Задание/animation/animation/22-progress-bar-anim/css/style.css",
+		"/home/han/ruby_projects/Gemfile",
+		"/home/han/.config/sublime-text-3/Packages/User/RubyTest.sublime-settings",
+		"/home/han/.config/sublime-text-3/Packages/RubyTest/Default.sublime-keymap",
+		"/home/han/.config/sublime-text-3/Packages/RubyTest/Default (Linux).sublime-keymap",
+		"/home/han/.config/sublime-text-3/Packages/RubyTest/RubyTest.sublime-settings",
+		"/home/han/ruby_projects/BookStore/db/migrate/20160427123550_change_integer_type_for_zipcode.rb",
+		"/home/han/ruby_projects/BookStore/app/helpers/books_helper.rb",
+		"/home/han/ruby_projects/BookStore/app/views/orders/new.html.erb",
+		"/home/han/ruby_projects/BookStore/config/locales/en.yml",
+		"/home/han/ruby_projects/BookStore/app/controllers/users/registrations_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/users/omniauth_callbacks_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/controllers/omniauth_controller.rb",
+		"/home/han/ruby_projects/BookStore/app/assets/javascripts/order_steps.js",
+		"/home/han/ruby_projects/BookStore/app/views/order_steps/_order_summary.html.erb",
+		"/home/han/ruby_projects/BookStore/app/views/order_steps/address.html.erb",
+		"/home/han/ruby_projects/BookStore/app/assets/stylesheets/order_steps.scss",
+		"/home/han/ruby_projects/BookStore/db/migrate/20160425123503_create_cupons.rb",
+		"/home/han/ruby_projects/BookStore/app/assets/javascripts/show.js",
+		"/home/han/ruby_projects/BookStore/app/assets/stylesheets/orders.scss",
+		"/home/han/ruby_projects/BookStore/app/views/books/show.html.erb",
+		"/home/han/ruby_projects/BookStore/app/views/ratings/create.html.erb",
+		"/home/han/ruby_projects/BookStore/app/assets/stylesheets/main.css.scss",
+		"/home/han/ruby_projects/BookStore/app/views/books/index.html.erb",
+		"/home/han/ruby_projects/BookStore/app/views/books/home.html.erb",
+		"/home/han/ruby_projects/BookStore/public/404.html",
+		"/home/han/ruby_projects/BookStore/app/views/orders/index.html.erb",
+		"/home/han/ruby_projects/BookStore/config/locales/ru.yml"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore/app/views",
+			"/home/han/ruby_projects/BookStore/spec/views",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore/app/controllers",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/views",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/controllers",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/helpers",
+			"/home/han/ruby_projects/BookStore/app/assets/javascripts",
+			"/home/han/ruby_projects/BookStore/spec/models",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/controllers",
+			"/home/han/ruby_projects/BookStore/app/views",
+			"/home/han/ruby_projects/BookStore/app/assets/javascripts",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore/app/assets/javascripts",
+			"/home/han/ruby_projects/BookStore/app/views",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore/app/assets",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore/app/controllers",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/models",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/assets/javascripts",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore/app/controllers/users",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/assets/javascripts",
+			"/home/han/ruby_projects/BookStore/app/controllers",
+			"",
+			"-",
+			" ",
+			"",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/views",
+			"/home/han/ruby_projects/BookStore/app/controllers/users",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app/views/devise",
+			"/home/han/ruby_projects/amazon",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStore/app",
+			"/home/han/ruby_projects/BookStore",
+			"/home/han/ruby_projects/BookStrore",
+			"/home/han/ruby_projects/timesheets"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"get_books_in_order_not_auth",
+			"price_calc",
+			"@cookies_hash",
+			"get_books_in_order",
+			"create_addresses_obj",
+			"byebug",
+			"settings",
+			"show_flashes",
+			"shipping_flashes",
+			"#address_checkbox",
+			"shipping_address",
+			"address_checkbox",
+			"shipping_flashes",
+			">\n",
+			"byebu",
+			"get_books_in_order",
+			"billing_shipping_adresses",
+			"show_flashes",
+			"flash_create",
+			"shipping_false",
+			"shipping_true",
+			"billing_shipping_adresses",
+			"billing_shipping_create",
+			"cupon",
+			"create_item",
+			"create_order",
+			"get_book",
+			"create_order",
+			"update_order",
+			" update_order",
+			"billing_address",
+			"cookies_hash",
+			"@cookies_hash",
+			"books",
+			"cookies[:books]",
+			"billing_shipping_create",
+			"billing_address",
+			"@billing_address",
+			"billing_address = user.billing_address",
+			"$end",
+			"record.errors[:rating] << 'Score must be more than 0 and less than 11'",
+			"@subtotal",
+			"order_total: total_price(@cookies_book) + 5.0 + @order.total_price.to_f,",
+			"@cookies_book",
+			"cookies_book",
+			"subtotal",
+			"total_price",
+			"total_pr",
+			"subtotal",
+			"@cookies_book",
+			"@",
+			"@books",
+			"@subtotal",
+			"@ids",
+			"@billing_address",
+			"create_addresses_obj",
+			"@",
+			"\"",
+			"book_count:  @cookies_book['book_count'].to_i + @order.book_count.to_i)",
+			"order_total: total_price(@cookies_book) + 5.0 + @order.total_price.to_f",
+			"@order.update(total_price: total_price(@cookies_book) + @order.total_price.to_f,",
+			"session[:user_products_count] = @order.book_count + @cookies_book['book_count'].to_i",
+			"@cookies_book = JSON.parse(cookies[:books]) if cookies[:books]",
+			"unless @cookies_book",
+			"cookies_nil",
+			"unless @cookies_book",
+			"if @cookies_book.nil?",
+			"create_addresses_obj",
+			"changeCookie",
+			"create_addresses_obj",
+			"order_params",
+			"find_by_id",
+			"find_by_id(",
+			"get_books_in_order",
+			"get_ratings",
+			"get_ra",
+			"get_this_user",
+			"create_items",
+			"update_items",
+			"create_items",
+			"OrderItem",
+			"create_items",
+			"order",
+			"user",
+			"create_order",
+			"session",
+			" transition",
+			"log",
+			"dragover",
+			"450px",
+			"img",
+			"byebug",
+			"if step == :complete",
+			"localhost",
+			"location",
+			"path",
+			"localhost",
+			"search",
+			"cate",
+			"customer",
+			"redire",
+			"render",
+			"redire",
+			"after_sign_up",
+			"new_facebook_user",
+			"byebug",
+			"OrderItem.update_items",
+			"user_omniauth_authorize_path",
+			"failure",
+			"render",
+			"GET",
+			"Checkout",
+			"in_sto",
+			"RatingScore",
+			"Not sure if this is the best book to start! ",
+			"this",
+			"remove_button",
+			"cp",
+			"cp(",
+			"cp",
+			"last_order_queue",
+			"credit_card",
+			"order_steps_form.payment",
+			"byebug",
+			"user.id",
+			"byebug",
+			"@order = Order.new()",
+			"      @order = Order.new()"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/controllers/application_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3541,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1533,
+								1533
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 204.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/controllers/orders_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3287,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1356,
+								1356
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 561.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/models/book.rb",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 595,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 651,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										166,
+										193
+									],
+									[
+										313,
+										340
+									],
+									[
+										554,
+										581
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ 	].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/models/order_item.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 970,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								75,
+								75
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/models/cupon.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 197,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								190,
+								190
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1446,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								208,
+								208
+							]
+						],
+						"settings":
+						{
+							"auto_name": "class UsersController < ApplicationController",
+							"syntax": "Packages/Rails/Ruby on Rails.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"book",
+				"app/models/book.rb"
+			],
+			[
+				"resurs",
+				"sample_app/spec/requests/user_pages_spec.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 354.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"ActiveSupport::TestCase"
+			]
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 287.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

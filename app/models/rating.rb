@@ -5,12 +5,4 @@ class Rating < ActiveRecord::Base
 
   belongs_to :book
   belongs_to :user
-
-  # def self.create_rating(params)
-  # Rating.create(params).valid?
-  # end
-
-  # def self.get_ratings(book_id)
-  # where("book_id = book_id")
-  # end
 end
