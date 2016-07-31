@@ -52,10 +52,11 @@ class Order < ActiveRecord::Base
   }
 
   def self.create_order(cookies, total_price, user_id)
+    book_count = cookies.nil? ? 0 : cookies['book_count']
     order = Order.create(user_id: user_id,
                           total_price: total_price,
                           order_total: total_price + 5.0,
-                          book_count: cookies['book_count'].to_i)
+                          book_count: book_count.to_i)
     order.id
   end
 

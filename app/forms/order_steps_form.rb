@@ -33,44 +33,35 @@ class OrderStepsForm
 
   def save
     persist!
-    if valid
-      update_step
-      true
-    else
-      false
-    end
+    self.valid ? update_step : false
   end
 
   def order_items
-    self.order.order_items
+    order.order_items
   end
 
   def credit_card
-    payment
+    order.credit_card ? order.credit_card : payment
   end
 
   def payment
-    if order.credit_card
-      order.credit_card
-    else
-      credit_card = CreditCard.new(user_id: @order.user_id)
-      order.update(credit_card_id: credit_card.id)
-      credit_card
-    end
+    credit_card = CreditCard.new(user_id: @order.user_id)
+    order.update(credit_card_id: credit_card.id)
+    credit_card
   end
 
   def billing_address
-    order.billing_address || user.billing_address  || Address.new(order_billing_address_id: order.id)
     billing_shipping_adresses(:billing_address)
   end
 
   def shipping_address
-    order.shipping_address || user.shipping_address  || Address.new(order_shipping_address_id: order.id)
     billing_shipping_adresses(:shipping_address)
   end
 
   def billing_shipping_adresses(address)
-    order.public_send(address) || user.public_send(address) || Address.new("order_#{address.to_s}_id".to_sym => order.id)
+    order.public_send(address) ||
+      user.public_send(address) ||
+        Address.new("order_#{address.to_s}_id".to_sym => order.id)
   end
 
   def delivery
@@ -87,18 +78,6 @@ class OrderStepsForm
 
   private
 
-  #def set_and_shipping(params, step)
-  #  params[:order_steps_form][:billing_address][:and_shipping if step == :address
-  #end
-
-  #def step_address?
-  #  step.to_s == 'address'
-  #end
-
-  #def step_payment?
-  #  step.to_s == 'payment'
-  #end
-
   def update_step
     order.update(step_number: STEP_TYPE[step])
   end
@@ -107,38 +86,57 @@ class OrderStepsForm
     self.valid = true
     case step
     when :address
-      ChangeAddressService.new(order, and_shipping, atributes).call
-      valid = false if order.billing_address.errors.any? || order.billing_address.errors.any?
+      address_logic
     when :delivery
-      order.update(delivery: atributes[:delivery_type][:delivery].to_f,
-                   order_total: order.total_price.to_f + atributes[:delivery_type][:delivery].to_f)
+      delivery_logic
     when :payment
-      if order.credit_card
-        order.credit_card.update(atributes[:payment])
-      else
-        order.create_credit_card(atributes[:payment])
-      end
-      self.valid = false if order.credit_card.errors.any?
+      payment_logic
     when :confirm
-      if @order.cupon
-        order.update(order_total: order.order_total.to_f - order.cupon.discount)
-      end
-      order.to_in_queue!
-      # @order_items = OrderItem.new()
-      @cookies_book = { 'book_count' => '0'}
-      order_id = Order.create_order(@cookies_book, 0, user.id)
-      #OrderItem.create_items(@cookies_book, order_id)
+      confirm_logic
     end
   end
 
-  def addresses_create
-    order.create_billing_address(atributes[:billing_address])
-    order.create_shipping_address(atributes[:billing_address])
+  private
+
+  def address_logic
+    ChangeAddressService.new(order, and_shipping, atributes).call
+    self.valid = false if errors_addresses
   end
 
-  def addresses_update
-    order.billing_address.update(atributes[:billing_address])
-    order.shipping_address.update(atributes[:shipping_address])
+  def delivery_logic
+    order.update(delivery: get_delivery, order_total: addition_total_price)
+  end
+
+  def payment_logic
+    SetCreditCardService.new(order, atributes[:payment]).call
+    self.valid = false if order.credit_card.errors.any?
+  end
+
+  def confirm_logic
+    update_cupon if @order.cupon
+    order.to_in_queue!
+    @cookies_book = { 'book_count' => '0'}
+    order_id = Order.create_order(@cookies_book, 0, user.id)
+  end
+
+  def errors_addresses
+    order.billing_address.errors.any? || order.billing_address.errors.any?
+  end
+
+  def update_cupon
+    order.update(order_total: order.order_total.to_f - order.cupon.discount)
+  end
+
+  def addition_total_price
+    order.total_price.to_f + get_delivery
+  end
+
+  def get_delivery
+    atributes[:delivery_type][:delivery].to_f
+  end
+
+  def any_error?(val)
+    order.val.errors.any? || order.val.errors.any?
   end
 
 end

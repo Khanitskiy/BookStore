@@ -98,7 +98,7 @@ class OrderStepsForm
 
   def address_logic
     ChangeAddressService.new(order, and_shipping, atributes).call
-    valid = false if order.billing_address.errors.any? || order.billing_address.errors.any? any_error?('shipping_address')
+    valid = false if addresses_errors
   end
 
   def delivery_logic
@@ -106,11 +106,7 @@ class OrderStepsForm
   end
 
   def payment_logic
-    if order.credit_card
-      order.credit_card.update(atributes[:payment])
-    else
-      order.create_credit_card(atributes[:payment])
-    end
+    SetCreditCardService.new(order).call
     valid = false if order.credit_card.errors.any? #any_error?('credit_card')
   end
 
@@ -119,6 +115,10 @@ class OrderStepsForm
     order.to_in_queue!
     @cookies_book = { 'book_count' => '0'}
     order_id = Order.create_order(@cookies_book, 0, user.id)
+  end
+
+  def addresses_errors
+    order.billing_address.errors.any? || order.billing_address.errors.any?
   end
 
   def update_cupon
