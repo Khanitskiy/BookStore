@@ -41,7 +41,7 @@ class OrderStepsForm
   end
 
   def credit_card
-    order.credit_card ? order.credit_card : payment
+    order.credit_card || payment
   end
 
   def payment
@@ -50,18 +50,10 @@ class OrderStepsForm
     credit_card
   end
 
-  def billing_address
-    billing_shipping_adresses(:billing_address)
-  end
-
-  def shipping_address
-    billing_shipping_adresses(:shipping_address)
-  end
-
-  def billing_shipping_adresses(address)
-    order.public_send(address) ||
-      user.public_send(address) ||
-        Address.new("order_#{address.to_s}_id".to_sym => order.id)
+  [:billing_address, :shipping_address].each do |address|
+    define_method address do
+      order.public_send(address) || user.public_send(address) || Address.new("order_#{address}_id".to_sym => order.id)
+    end
   end
 
   def delivery
@@ -120,7 +112,7 @@ class OrderStepsForm
   end
 
   def errors_addresses
-    order.billing_address.errors.any? || order.billing_address.errors.any?
+    order.billing_address.errors.any? || order.shipping_address.errors.any?
   end
 
   def update_cupon
@@ -133,10 +125,6 @@ class OrderStepsForm
 
   def get_delivery
     atributes[:delivery_type][:delivery].to_f
-  end
-
-  def any_error?(val)
-    order.val.errors.any? || order.val.errors.any?
   end
 
 end

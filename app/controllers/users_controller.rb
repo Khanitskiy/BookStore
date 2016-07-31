@@ -7,19 +7,21 @@ class UsersController < ApplicationController
     bool = current_user.valid_password?(params[:user][:old_password])
     bool ? updates : flash.now[:alert] = 'Incorrect password'
     current_user.errors.messages[:password_form] = true
-    render "users/settings.html.haml"
+    render "users/settings"
   end
 
   def update_data
     updates
     current_user.errors.messages[:data_form] = true
-    render "users/settings.html.haml"
+    render "users/settings"
   end
 
   private
 
   def updates
+    #@user = User.find(current_user.id)
     if current_user.update(user_params)
+      sign_in current_user, :bypass => true
       flash.now[:notice] = 'Your data have been changes'
     else
       flash.now[:alert] = 'Something went wrong'
