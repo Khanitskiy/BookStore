@@ -12,8 +12,9 @@ class Book < ActiveRecord::Base
   has_many   :ratings
   has_many :users, through: :ratings
 
+  scope :get_books, -> (ids) {  where(id: ids) }
   scope :bestsellers, -> {  where("best_seller = 'true'") }
-  scope :get_book, -> (id) { find_by_id(id) }
+  #scope :get_book, -> (id) { find_by_id(id) }
 
   mount_uploader :image, BookImgUploader
   paginates_per 9

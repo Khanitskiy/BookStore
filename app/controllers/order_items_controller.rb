@@ -20,8 +20,9 @@ class OrderItemsController < ApplicationController
   private
 
   def get_order_items
-    @order.order_items.find_by_book_id(params[:book_id]) || 
-    @order.order_items.new(book_id: params[:book_id])
+    book_id = params[:book_id]
+    items = @order.order_items
+    items.find_by_book_id(book_id) || items.new(book_id: book_id)
   end
 
   def items_update_or_create(order_items)

@@ -12,11 +12,11 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.get_book(params[:id])
+    @book = Book.find_by_id(params[:id])
   end
 
   def search
     @categories = Category.all
-    @books = Book.search_books(params[:value]).all
+    @books = Book.search_books(params[:value])#.all
   end
 end

@@ -107,36 +107,8 @@ class OrderStepsForm
     self.valid = true
     case step
     when :address
-      if and_shipping == 'true'
-        if order.billing_address && order.shipping_address
-          addresses_update
-        else
-          addresses_create
-        end
-      else
-        if order.billing_address
-          addresses_update
-        else
-          addresses_create
-        end
-      end
-
-      #shipping = order.shipping_address
-      #billing= order.billing_address
-
-
-      #if shipping && and_shipping == 'true'
-        #shipping ? addresses_update : addresses_create
-      #else
-       #billing ? addresses_update : addresses_create
-      #end
-
-      #billing && and_shipping ? create_update(shipping) : create_update(shipping)
-
-
-
-
-      self.valid = false if order.billing_address.errors.any? || order.shipping_address.errors.any?
+      ChangeAddressService.new(order, and_shipping, atributes).call
+      valid = false if order.billing_address.errors.any? || order.billing_address.errors.any?
     when :delivery
       order.update(delivery: atributes[:delivery_type][:delivery].to_f,
                    order_total: order.total_price.to_f + atributes[:delivery_type][:delivery].to_f)

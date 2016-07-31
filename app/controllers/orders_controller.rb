@@ -19,23 +19,20 @@ class OrdersController < ApplicationController
 
   def check_cupon_ajax
     checking = Cupon.cheking(params[:value])
-    if checking.empty?
-      render text: 'This code is not found'
-    else
-      message = checking.first.use ? 'This code has been used' : 'Your discount is $' << checking.first.discount.to_s << '. Continue?'
-      render text: message
-    end
+    msg = checking.empty? ? 'This code is not found' : checking_message(checking.first)
+    render text: msg
   end
 
   def show
     @order = Order.find_by_id(params[:id])
-    authorize! :show, @order
+    authorize! :show, @order # check it
   end
 
   def index
     get_books
     [:in_queue, :in_delivery, :delivered].each do |item|
-      instance_variable_set("@#{item}".to_sym,  Order.public_send(item, current_user))
+      instance_variable_set("@#{item}".to_sym,
+        Order.public_send(item, current_user))
     end
   end
 
@@ -47,6 +44,11 @@ class OrdersController < ApplicationController
   end
 
   private
+
+  def checking_message(first)
+    str = 'Your discount is $' << first.discount.to_s << '. Continue?'
+    first.use ? 'This code has been used' : str
+  end
 
   def clear_order
     @order.order_items.destroy_all

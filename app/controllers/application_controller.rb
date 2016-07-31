@@ -33,8 +33,9 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:firstname, :lastname, :email, :password) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:firstname, :lastname, :email, :password) }
+    fields = [:firstname, :lastname, :email, :password]
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(fields) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(fields) }
   end
 
   private
@@ -57,9 +58,8 @@ class ApplicationController < ActionController::Base
   end
 
   def new_facebook_user
-    unless current_user.id == 1
-      new_facebook_user?(current_user) ? after_auth(true) : after_auth(false)
-    end
+    return if current_user.id == 1
+    new_facebook_user?(current_user) ? after_auth(true) : after_auth(false)
   end
 
   def after_auth(bool)
@@ -88,12 +88,12 @@ class ApplicationController < ActionController::Base
   def get_books(bool = true)
     value = current_user && bool
     @obj = value ? @order.order_items : cookies_json_parse(:books)
-    @books = Book.where(id: parse_ids(@obj, value))
+    @books = Book.get_books(parse_ids(@obj, value))
     @subtotal = current_user && bool ? @order.total_price : calc_subtotal(@books)
   end
 
   def new_facebook_user?(user)
-    user.sign_in_count < 2 && user.provider == 'facebook' ? true : false
+    user.sign_in_count < 2 && user.provider == 'facebook'
   end
 
 end

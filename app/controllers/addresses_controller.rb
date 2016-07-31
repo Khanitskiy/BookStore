@@ -29,8 +29,8 @@ class AddressesController < ApplicationController
 
   def billing_shipping_adresses(address)
     order.public_send(address) ||
-    user.public_send(address)  ||
-    Address.new("order_#{address.to_s}_id".to_sym => order.id)
+      user.public_send(address)  ||
+        Address.new("order_#{address.to_s}_id".to_sym => order.id)
   end
 
   def address_params(val)

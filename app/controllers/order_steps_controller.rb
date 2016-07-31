@@ -8,6 +8,7 @@ class OrderStepsController < ApplicationController
 
   def show
     new_order if step == :complete
+
     all_checkout_params = [current_user, step]
     @order_steps_form = OrderStepsForm.new(@order, all_checkout_params)
     update_cupon
