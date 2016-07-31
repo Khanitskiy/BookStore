@@ -12,7 +12,6 @@ class ShopcartUpdate
         @order.order_items
               .find_by_book_id(item.first)
               .update(book_id: item.first, quantity: item.second)
-        byebug
         total_price += Book.find_by_id(item.first).price * item.second.to_f
         quantity += item.second.to_i
       end
@@ -23,5 +22,4 @@ class ShopcartUpdate
     quantity
   end
 
-  private
 end

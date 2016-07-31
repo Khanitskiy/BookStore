@@ -1,7 +1,6 @@
 <div class="checkout">
   
-  <%= render partial: "checkout_nav" %>
-<%# byebug %>
+  <%= render partial: "order_steps/partials/checkout_nav" %>
   <div class="row">
     <%= form_for @order_steps_form, url: wizard_path, html: { method: :put } do |f| %>
       <div class="col-md-4">
@@ -100,7 +99,7 @@
         </div>
       </div>
 
-      <%= render partial: "order_summary" %>
+      <%= render partial: "order_steps/partials/order_summary" %>
 
       <div class="col-md-4 col-md-offset-8">
         <div class="form-group">

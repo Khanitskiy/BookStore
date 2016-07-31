@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
   def load_in_progress_order
     if current_user
       @order = current_user.orders.where(state: 'in_progress').first
-      set_session(@order.book_count) unless current_user.admin
+      set_session(@order.book_count)# unless current_user.admin
     end
   end
 
@@ -66,8 +66,8 @@ class ApplicationController < ActionController::Base
     @cookies_book = cookies_json_parse(:books)
     @cookies_count = cookies_json_parse(:book_count)
     cookies_nil
-    bool ? after_sign_up : after_sign_in
-    OrderItem.update_items(@cookies_book, current_user.id)
+    order_id = bool ? after_sign_up : after_sign_in
+    OrderItem.update_items(@cookies_book, order_id)
     cookies_delete
   end
 
@@ -82,6 +82,7 @@ class ApplicationController < ActionController::Base
     @order.update(total_price: total_calc,
                   order_total: total_calc(5.0),
                   book_count:  @cookies_count['book_count'].to_i + @order.book_count)
+    @order.id
   end
 
   def get_books(bool = true)

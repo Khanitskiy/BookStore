@@ -1,0 +1,16 @@
+- unless status.empty?
+  %h2.underlined-h2= title
+  %table.table
+    %thead
+      %tr
+        %td NUMBER
+        %td COMPLETED AT
+        %td TOTAL
+        %td DETAILS
+    %tbody
+      - status.try(:each) do |order|
+        %tr
+          %td= order.id
+          %td= order.completed_date
+          %td= number_to_currency(order.order_total)
+          %td= link_to "view", order_path(order)

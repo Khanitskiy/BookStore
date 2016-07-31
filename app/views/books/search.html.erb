@@ -13,17 +13,13 @@
   <% end %>
 </div>
 <div class="col-md-3">
-
   <div class="list-group">
     <% @categories.each do |category| %>
-      
       <% unless category.id == params[:id].to_i %>
           <%= link_to category.title, category, class: "list-group-item" %>
       <% else %>
           <%= link_to category.title, category, class: "list-group-item active" %>
       <% end %>
-
     <% end %>
   </div>
-  
 </div>

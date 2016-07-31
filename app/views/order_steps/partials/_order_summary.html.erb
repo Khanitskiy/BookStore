@@ -1,0 +1,19 @@
+<div class="col-md-4">
+  <h2 class="margin-bot-add">Order summary</h2>
+  <div class="summary-line item_total">
+    ITEM TOTAL:
+    <span><%= number_to_currency(@order.total_price.to_f) %></span>
+  </div>
+  <div class="summary-line shipping">
+    SHIPPING:
+    <span>
+      <%= number_to_currency(@order.delivery .to_f) %>
+    </span>
+  </div>
+  <div class="summary-line order_total">
+    ORDER TOTAL:
+
+    <span><%= number_to_currency(cupon(@order.order_total.to_f)) %></span>
+    <div id="cupon-red"><%= discount.html_safe %></div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 <div class="checkout">
-  <%= render partial: "checkout_nav" %>
+  <%= render partial: "order_steps/partials/checkout_nav" %>
 
   <div class="row">
     <div class="col-md-12">
@@ -51,26 +51,8 @@
   <div class="row cart full_cart">
     <div class="col-md-12">
       <table class="table">
-        <thead>
-          <tr>
-            <td>BOOK</td>
-            <td>PRICE</td>
-            <td>QTY</td>
-            <td>TOTAL</td>
-          </tr>
-        </thead>
-        <tbody>
-          <% @order_steps_form.order_items.try(:each) do |item| %>
-            <tr class="tr">
-              <td>
-                <%= link_to "#{image_tag item.book.image_url :resize_to_cart} #{item.book.title}".html_safe, item.book %>
-              </td>
-              <td class="book_price"><%= number_to_currency(item.book.price) %></td>
-              <td class="count"><%= item.quantity %></td>
-              <td class="total"><%= number_to_currency(item.book.price.to_i * item.quantity.to_i) %></td>
-            </tr>
-          <% end %>
-        </tbody>
+        <%= render partial: "orders/partials/books_header" %>
+        <%= render partial: "orders/partials/render_items", locals: {obj: @order_steps_form} %>
       </table>
     </div>
   
@@ -78,14 +60,11 @@
   
   <div class="row">
     <div class="col-md-1">
-
-
-
-        <%=  button_to("Place order", wizard_path, html_options = { class: "btn btn-success btn-lg", style: "margin-top: 150px;", method: :put,  }) %>
+      <%=  button_to("Place order", wizard_path, html_options = { class: "btn btn-success btn-lg", style: "margin-top: 150px;", method: :put,  }) %>
     </div>
     <div class="col-md-7">
     </div>
-    <%= render partial: "order_summary" %>
+    <%= render partial: "order_steps/partials/order_summary" %>
   </div>
   <br><br>
 

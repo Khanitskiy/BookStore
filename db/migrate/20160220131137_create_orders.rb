@@ -5,7 +5,7 @@ class CreateOrders < ActiveRecord::Migration
     	t.date 			:completed_date
     	t.integer		:state, default: 1
       t.integer   :book_count
-      t.integer   :step_number
+      t.integer   :step_number, default: 0
     	#t.string 		:billing_address_id
     	#t.string 		:shipping_address_id
       #t.string     :billing_address_id

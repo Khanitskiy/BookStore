@@ -1,35 +1,13 @@
 <div class="row">
   <div class="col-md-12">
     <h1><%= t(:title_orders) %></h1>
-
     <% unless @books.empty? %>
       <h2 class="underlined-h2">In progress</h2>
       <div class="row cart">
         <div class="col-md-12">
           <table class="table">
-            <thead>
-              <tr>
-                <td>BOOK</td>
-                <td>PRICE</td>
-                <td>QTY</td>
-                <td>TOTAL</td>
-              </tr>
-            </thead>
-            <tbody>
-              <% @books.try(:each) do |book| %>
-                
-                <tr class="tr">
-                  <td>
-                    <%= link_to "#{image_tag book.image_url :resize_to_cart} #{book.title}".html_safe, book %>
-                  </td>
-                  <td class="book_price"><%= number_to_currency(book.price) %></td>
-                  <td class="count">
-                    <input type="number" max="100" min="1" class="quantity-input" value="<%= items_calc(book, true) %>" id="quantity_<%= book.id %>" name="quantity-input">
-                  </td>
-                  <td class="total"><%= items_calc(book) %></td>
-                </tr>
-              <% end %>
-            </tbody>
+            <%= render partial: "orders/partials/books_header" %>
+            <%= render partial: "orders/partials/render_books" , locals: {books: @books} %>
           </table>
         </div>
         <div class="col-md-6">
@@ -43,79 +21,9 @@
       </div>
       <br>
     <% end %>
-
-    <% unless @in_queue.empty? %>
-      <h2 class="underlined-h2">Waiting for processing</h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <td>NUMBER</td>
-            <td>COMPLETED AT</td>
-            <td>TOTAL</td>
-            <td>DETAILS</td>
-          </tr>
-        </thead>
-        <tbody>
-          <% @in_queue.try(:each) do |order| %>
-            <tr>
-              <td><%= order.id %></td>
-              <td><%= order.completed_date %></td>
-              <td><%= number_to_currency(order.order_total) %></td>
-              <td><%= link_to "view", order_path(order) %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% end %>
-
-    <% unless @in_delivery.empty? %>
-      <h2 class="underlined-h2">In deliver</h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <td>NUMBER</td>
-            <td>COMPLETED AT</td>
-            <td>TOTAL</td>
-            <td>DETAILS</td>
-          </tr>
-        </thead>
-        <tbody>
-          <% @in_queue.try(:each) do |order| %>
-            <tr>
-              <td><%= order.id %></td>
-              <td><%= order.completed_date %></td>
-              <td><%= number_to_currency(order.order_total) %></td>
-              <td><%= link_to "view", order_path(order) %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% end %>
-
-    <% unless @delivered.empty? %>
-      <h2 class="underlined-h2">Delivered</h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <td>NUMBER</td>
-            <td>COMPLETED AT</td>
-            <td>TOTAL</td>
-            <td>DETAILS</td>
-          </tr>
-        </thead>
-        <tbody>
-          <% @in_queue.try(:each) do |order| %>
-            <tr>
-              <td><%= order.id %></td>
-              <td><%= order.completed_date %></td>
-              <td><%= number_to_currency(order.order_total) %></td>
-              <td><%= link_to "view", order_path(order) %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% end %>
-    
+    <%= render partial: "orders/partials/status", locals: {status: @in_queue, title: 'In deliver'} %>
+    <%= render partial: "orders/partials/status", locals: {status: @in_delivery, title: 'In deliver'} %>
+    <%= render partial: "orders/partials/status", locals: {status: @delivered, title: 'Delivered'} %>
     <br><br>
   </div>
 </div>

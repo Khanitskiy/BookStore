@@ -18,8 +18,12 @@ class OrderStepsForm
 
   STEP_TYPE = { :address => 1, :delivery => 2, :payment => 3, :confirm => 4, :complete => 5 }
 
-  def initialize(order)
-    self.order = order
+  def initialize(order, checkout_params)
+    self.order        = order
+    self.user         = checkout_params[0]
+    self.step         = checkout_params[1]
+    self.and_shipping = checkout_params[2] if checkout_params[2]
+    self.atributes    = checkout_params[3] if checkout_params[3]
   end
 
   # Forms are never themselves persisted
@@ -38,7 +42,7 @@ class OrderStepsForm
   end
 
   def order_items
-    order.order_items
+    self.order.order_items
   end
 
   def credit_card
@@ -83,13 +87,17 @@ class OrderStepsForm
 
   private
 
-  def step_address?
-    step.to_s == 'address'
-  end
+  #def set_and_shipping(params, step)
+  #  params[:order_steps_form][:billing_address][:and_shipping if step == :address
+  #end
 
-  def step_payment?
-    step.to_s == 'payment'
-  end
+  #def step_address?
+  #  step.to_s == 'address'
+  #end
+
+  #def step_payment?
+  #  step.to_s == 'payment'
+  #end
 
   def update_step
     order.update(step_number: STEP_TYPE[step])
@@ -145,9 +153,9 @@ class OrderStepsForm
       end
       order.to_in_queue!
       # @order_items = OrderItem.new()
-      @cookies_book = { 'book_count' => '0', 'total_price' => '0' }
+      @cookies_book = { 'book_count' => '0'}
       order_id = Order.create_order(@cookies_book, 0, user.id)
-      OrderItem.create_items(@cookies_book, order_id)
+      #OrderItem.create_items(@cookies_book, order_id)
     end
   end
 

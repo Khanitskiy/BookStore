@@ -4,80 +4,40 @@
       <h2>Order # <%= @order.id %></h2>
     </div>
   </div>
-  <%# byebug %>
   <div class="row">
     <div class="col-md-3">
-      <h3>
-        Shipping address
-      </h3>
-      <div><%= @order.billing_address.firstname %></div>
-      <div><%= @order.billing_address.address %></div>
-      <div><%= @order.billing_address.city %></div>
-      <div><%= @order.billing_address.country %></div>
-      <div><%= @order.billing_address.phone %></div>
+      <h3>Shipping address</h3>
+      <%= render partial: "orders/partials/address_data", locals: {address: @order.billing_address} %>
     </div>
     <div class="col-md-3">
-      <h3>
-        Billing address
-      </h3>
-      <div><%= @order.shipping_address.firstname %></div>
-      <div><%= @order.shipping_address.address %></div>
-      <div><%= @order.shipping_address.city %></div>
-      <div><%= @order.shipping_address.country %></div>
-      <div><%= @order.shipping_address.phone %></div>
+      <h3>Billing address</h3>
+      <%= render partial: "orders/partials/address_data", locals: {address: @order.shipping_address} %>
     </div>
     <div class="col-md-3">
-      <h3>
-        Shipments
-      </h3>
+      <h3>Shipments</h3>
       <div>UPS two day (<%= number_to_currency(@order.delivery.to_f) %>)</div>
     </div>
     <div class="col-md-3">
-      <h3>
-        Payment information
-      </h3>
+      <h3>Payment information</h3>
       <div>**** **** **** <%= @order.credit_card.number.split("").last(4).join("") %></div>
       <div><%= @order.credit_card.expiration_month %>/<%= @order.credit_card.expiration_year %></div>
     </div>
   </div>
 
-  
   <% unless @order.order_items.empty? %>
     <h2 class="underlined-h2">In progress</h2>
     <div class="row cart">
       <div class="col-md-12">
         <table class="table">
-          <thead>
-            <tr>
-              <td>BOOK</td>
-              <td>PRICE</td>
-              <td>QTY</td>
-              <td>TOTAL</td>
-            </tr>
-          </thead>
-          <tbody>
-            <%# byebug %>
-            <% @order.order_items.try(:each) do |item| %>
-              <%# byebug %>
-              <tr class="tr">
-                <td>
-                  <%= link_to "#{image_tag item.book.image_url :resize_to_cart} #{item.book.title}".html_safe, item.book %>
-                </td>
-                <td class="book_price"><%= number_to_currency(item.book.price) %></td>
-                <td class="count">
-                  <input type="number" max="100" min="1" class="quantity-input" value="<%= item.quantity %>" id="quantity_<%= item.book.id %>" name="quantity-input">
-                </td>
-                <td class="total"><%= number_to_currency(item.book.price * item.quantity.to_i) %></td>
-              </tr>
-            <% end %>
-          </tbody>
+          <%= render partial: "orders/partials/books_header" %>
+          <%= render partial: "orders/partials/render_items", locals: {obj: @order} %>
         </table>
       </div>
       <div class="col-md-6">
         <%= link_to('Back to order', orders_path, html_options = { class: "btn btn-primary lnk-to-cart"}) %>
       </div>
       <div class="col-md-2"></div>
-      <%= render partial: "/order_steps/order_summary" %>
+      <%= render partial: "/order_steps/partials/order_summary" %>
     </div>
     <br>
   <% end %>

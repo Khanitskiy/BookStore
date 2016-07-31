@@ -3,31 +3,8 @@
 <div class="row cart full_cart">
   <div class="col-md-12">
     <table class="table">
-      <thead>
-        <tr>
-          <td>BOOK</td>
-          <td>PRICE</td>
-          <td>QTY</td>
-          <td>TOTAL</td>
-        </tr>
-      </thead>
-      <tbody>
-        <% @books.try(:each) do |book| %>
-          <tr class="tr">
-            <td>
-              <%= link_to "#{image_tag book.image_url :resize_to_cart} #{book.title}".html_safe, book %>
-            </td>
-            <td class="book_price"><%= number_to_currency(book.price) %></td>
-            <td class="count">
-              <input type="number" max="100" min="1" class="quantity-input" value="<%= items_calc(book, true) %>" id="quantity_<%= book.id %>" name="quantity-input">
-            </td>
-            <td class="total"><%= items_calc(book) %></td>
-            <td class="remove_link">
-              <%= link_to "<span aria-hidden='true'>&times;</span>".html_safe , 'javascript:void(0)', id: "id_" << book.id.to_s  %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
+      <%= render partial: "orders/partials/books_header" %>
+      <%= render partial: "orders/partials/render_books",  locals: {books: @books, remove_link: true} %> 
     </table>
   </div>
   <div class="col-md-6 col-md-offset-6 clearfix order-summary-block">

@@ -31,6 +31,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # DELETE /resource
   # def destroy
+  #    current_user.order.order_items.destroy_all
+  #    current_user.order.destroy
+  #    current_user.destroy
   #   super
   # end
 

@@ -21,7 +21,7 @@ module OrderStepsHelper
     end
   end
 
-  def show_errors(form_type)
+  def payment_show_errors(form_type)
     @string = ''
     if @order_steps_form[form_type].errors.messages.any?
       @order_steps_form[form_type].errors.messages.each do |error_message|

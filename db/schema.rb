@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 20160427123550) do
     t.date     "completed_date"
     t.string   "state",          default: "in_progress"
     t.integer  "book_count"
-    t.integer  "step_number"
+    t.integer  "step_number",    default: 0
     t.integer  "user_id"
     t.integer  "credit_card_id"
     t.datetime "created_at",                             null: false
