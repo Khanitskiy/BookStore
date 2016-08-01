@@ -54,5 +54,4 @@ class OrdersController < ApplicationController
     @order.order_items.destroy_all
     @order.update(total_price: 0.0, book_count: 0, order_total: 0.0)
   end
-
 end

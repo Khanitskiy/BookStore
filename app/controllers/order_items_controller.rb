@@ -53,5 +53,4 @@ class OrderItemsController < ApplicationController
   def order_params
     params.permit(:book_id, :quantity, :value)
   end
-
 end

@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    fields = [:firstname, :lastname, :email, :password]
+    fields = [:firstname, :lastname, :email, :password, :password_confirmation]
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(fields) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(fields) }
   end
@@ -59,30 +59,32 @@ class ApplicationController < ActionController::Base
 
   def new_facebook_user
     return if current_user.id == 1
-    new_facebook_user?(current_user) ? after_auth(true) : after_auth(false)
-  end
-
-  def after_auth(bool)
-    @cookies_book = cookies_json_parse(:books)
-    @cookies_count = cookies_json_parse(:book_count)
-    cookies_nil
-    order_id = bool ? after_sign_up : after_sign_in
-    OrderItem.update_items(@cookies_book, order_id)
-    cookies_delete
+    new_facebook_user?(current_user) ? after_sign_up : after_sign_in
   end
 
   def after_sign_up
+    parse_cookies
     id = current_user.id unless id
     @order = Order.create_order(@cookies_count , total_price, id)
+    OrderItem.update_items(@cookies_book, @order)
+    cookies_delete
   end
 
   def after_sign_in
     load_in_progress_order
+    parse_cookies
     set_session(@order.book_count + @cookies_count['book_count'].to_i)
     @order.update(total_price: total_calc,
                   order_total: total_calc(5.0),
                   book_count:  @cookies_count['book_count'].to_i + @order.book_count)
-    @order.id
+    OrderItem.update_items(@cookies_book, @order.id)
+    cookies_delete
+  end
+
+  def parse_cookies
+    @cookies_book = cookies_json_parse(:books)
+    @cookies_count = cookies_json_parse(:book_count)
+    cookies_nil
   end
 
   def get_books(bool = true)
@@ -95,5 +97,4 @@ class ApplicationController < ActionController::Base
   def new_facebook_user?(user)
     user.sign_in_count < 2 && user.provider == 'facebook'
   end
-
 end

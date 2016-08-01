@@ -1,8 +1,6 @@
 module OrderStepsHelper
   def validate_checkout_class(object, form_type, error_field, data = false)
-    # byebug
     if object[form_type].errors.messages.any?
-      # byebug
       if object[form_type].errors.messages[error_field] && object[form_type].errors.messages[error_field] != []
         data ? 'border: 1px solid red' : 'form-control error'
       else

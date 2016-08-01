@@ -9,14 +9,12 @@ class Book < ActiveRecord::Base
   belongs_to :author
   belongs_to :category
 
-  has_many   :ratings
+  has_many :ratings, dependent: :destroy
   has_many :users, through: :ratings
 
   scope :get_books, -> (ids) {  where(id: ids) }
   scope :bestsellers, -> {  where("best_seller = 'true'") }
-  #scope :get_book, -> (id) { find_by_id(id) }
 
   mount_uploader :image, BookImgUploader
   paginates_per 9
-  
 end

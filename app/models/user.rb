@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   has_many   :ratings
   has_many   :books, through: :ratings
-  has_many   :orders
+  has_many   :orders, dependent: :destroy
 
   has_one :billing_address, class_name: 'Address', foreign_key: 'user_billing_address_id'
   has_one :shipping_address, class_name: 'Address', foreign_key: 'user_shipping_address_id'

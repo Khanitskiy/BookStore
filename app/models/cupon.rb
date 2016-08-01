@@ -5,5 +5,4 @@ class Cupon < ActiveRecord::Base
   belongs_to :order
 
   scope :cheking, ->(param) { where('value LIKE ?', param).all }
-
 end

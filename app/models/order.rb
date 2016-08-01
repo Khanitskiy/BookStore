@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
   validates :total_price, :state, presence: true
   before_validation :set_completed_date
 
-  has_many :order_items
+  has_many :order_items, dependent: :destroy
   belongs_to :user
   belongs_to :credit_card
 
@@ -110,20 +110,8 @@ class Order < ActiveRecord::Base
   # end
 
   private
-
-  # def completed_date
-  # 3.days.from_now
-  # end
-
+  
   def set_completed_date
     self.completed_date = 3.days.from_now
   end
-
-  # def now_date
-  #  Time.now().strftime("%Y-%m-%d")
-  # end
-
-  # def set_completed_date(day)
-  #  self.completed_date = day == "infinity" ? "infinity" : day.days.from_now
-  # end
 end

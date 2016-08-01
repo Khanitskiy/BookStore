@@ -1,4 +1,11 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  
+  # DELETE /resource
+  def destroy
+    cookies_delete
+    super
+  end
+
   protected
 
   def after_sign_up_path_for(_resource)
@@ -30,12 +37,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # DELETE /resource
-  # def destroy
-  #    current_user.order.order_items.destroy_all
-  #    current_user.order.destroy
-  #    current_user.destroy
-  #   super
-  # end
+  #def destroy
+  #  cookies_delete
+  #  super
+  #end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign

@@ -74,5 +74,4 @@ module ApplicationHelper
     end
     type ? quantity : number_to_currency(val)
   end
-
 end
