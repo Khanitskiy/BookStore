@@ -1,71 +1,40 @@
 <div class="checkout">
   <%= render partial: "order_steps/partials/checkout_nav" %>
-
   <div class="row">
     <div class="col-md-12">
-      <h2>Confirm</h2>
+      <h2><%= t(:confirm) %></h2>
     </div>
   </div>
-
   <div class="row">
     <div class="col-md-3">
       <h3>
-        Shipping address
-        <small><a href="<%= wizard_path(:address) %>">(edit)</a></small>
+        <%= t(:shipping_address) %>
+        <small><a href="<%= wizard_path(:address) %>"><%= t(:edit) %></a></small>
       </h3>
-      <div><%= @order_steps_form.billing_address.firstname %></div>
-      <div><%= @order_steps_form.billing_address.address %></div>
-      <div><%= @order_steps_form.billing_address.city %></div>
-      <div><%= @order_steps_form.billing_address.country %></div>
-      <div><%= @order_steps_form.billing_address.phone %></div>
+      <%= render partial: "orders/partials/address_data", locals: {address:@order_steps_form.billing_address} %>
     </div>
     <div class="col-md-3">
       <h3>
-        Billing address
-        <small><a href="<%= wizard_path(:address) %>">(edit)</a></small>
+        <%= t(:billing_address) %>
+        <small><a href="<%= wizard_path(:address) %>"><%= t(:edit) %></a></small>
       </h3>
-      <div><%= @order_steps_form.shipping_address.firstname %></div>
-      <div><%= @order_steps_form.shipping_address.address %></div>
-      <div><%= @order_steps_form.shipping_address.city %></div>
-      <div><%= @order_steps_form.shipping_address.country %></div>
-      <div><%= @order_steps_form.shipping_address.phone %></div>
+      <%= render partial: "orders/partials/address_data", locals: {address:@order_steps_form.shipping_address} %>
     </div>
     <div class="col-md-3">
       <h3>
-        Shipments
-        <small><a href="<%= wizard_path(:delivery) %>">(edit)</a></small>
+        <%= t(:shipments) %>
+        <small><a href="<%= wizard_path(:delivery) %>"><%= t(:edit) %></a></small>
       </h3>
-      <div>UPS two day (<%= number_to_currency(@order_steps_form.delivery.to_f) %>)</div>
+      <div><%= t('ups_two_day', number: number_to_currency(@order_steps_form.delivery.to_f)) %></div>
     </div>
     <div class="col-md-3">
       <h3>
-        Payment information
-        <small><a href="<%= wizard_path(:payment) %>">(edit)</a></small>
+        <%= t(:payment_information) %>
+        <small><a href="<%= wizard_path(:payment) %>"><%= t(:edit) %></a></small>
       </h3>
-      <div>**** **** **** <%= @order_steps_form.credit_card.number.split("").last(4).join("") %></div>
+      <div>**** **** **** <%= @order_steps_form.payment.number.split("").last(4).join("") %></div>
       <div><%= @order_steps_form.month %>/<%= @order_steps_form.year %></div>
     </div>
   </div>
-
-  
-  <div class="row cart full_cart">
-    <div class="col-md-12">
-      <table class="table">
-        <%= render partial: "orders/partials/books_header" %>
-        <%= render partial: "orders/partials/render_items", locals: {obj: @order_steps_form} %>
-      </table>
-    </div>
-  
-  </div>
-  
-  <div class="row">
-    <div class="col-md-1">
-      <%=  button_to("Place order", wizard_path, html_options = { class: "btn btn-success btn-lg", style: "margin-top: 150px;", method: :put,  }) %>
-    </div>
-    <div class="col-md-7">
-    </div>
-    <%= render partial: "order_steps/partials/order_summary" %>
-  </div>
-  <br><br>
-
+  <%= render partial: "order_steps/partials/complete_confirm_footer", locals: { complete: false  } %>
 </div>

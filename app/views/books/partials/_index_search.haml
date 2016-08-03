@@ -1,0 +1,21 @@
+.col-md-9
+  - books.each do |book|
+    .col-sm-6.col-md-4
+      .thumbnail
+        = link_to "#{image_tag book.image_url :my_resize}".html_safe, book
+        .caption
+          - if search
+            %h5= highlighting_results(book.title, params)
+            %h4
+              = book.price
+              $
+          - else
+            %h5= link_to book.title, book
+            %h4= number_to_currency(book.price)
+.col-md-3
+  .list-group
+    - categories.each do |category|
+      - unless category.id == params[:id].to_i
+        = link_to category.title, category, class: "list-group-item"
+      - else
+        = link_to category.title, category, class: "list-group-item active"

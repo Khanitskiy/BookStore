@@ -1,0 +1,32 @@
+<div class="form-group">
+  <%= address.label :firstname, t(:first_name), class: "control-label" %>
+  <%= address.text_field :firstname, {class: validate_checkout_class(order_steps_form, address_string, :firstname), placeholder: t(:first_name)} %>
+</div>
+<div class="form-group">
+  <%= address.label :lastname, t(:last_name), class: "control-label" %>
+  <%= address.text_field :lastname, {class: validate_checkout_class(order_steps_form, address_string, :lastname), placeholder: t(:last_name)} %>
+</div>
+<div class="form-group">
+  <%= address.label :address, t(:street_address), class: "control-label" %>
+  <%= address.text_field :address, {class: validate_checkout_class(order_steps_form, address_string, :address), placeholder: t(:street_address)} %>
+</div>
+<div class="form-group">
+  <%= address.label :city, "City", class: "control-label" %>
+  <%= address.text_field :city, {class: validate_checkout_class(order_steps_form, address_string, :city), placeholder: t(:city)} %>
+</div>
+<div class="form-group">
+<%= address.label :country, "Country", class: "control-label" %>
+  <% if country && !country.empty?  %>
+    <%= country_select(address_string, "country", { selected: country }, { class: 'form-control', name: 'order_steps_form[#{address_string}][country]' }) %>
+  <% else %>
+    <%= country_select(address_string, "country", { include_blank: t(:select_a_country)}, { class: validate_checkout_class(order_steps_form, address_string, :country), name: 'order_steps_form[' << address_string << '][country]' }) %>
+  <% end %>
+</div>
+<div class="form-group">
+  <%= address.label :zipcode, t(:zip), class: "control-label" %>
+  <%= address.text_field :zipcode, {class: validate_checkout_class(order_steps_form, address_string, :zipcode), placeholder: t(:zip) } %>
+</div>
+<div class="form-group">
+  <%= address.label :phone, t(:phone), class: "control-label" %>
+  <%= address.text_field :phone, {class: validate_checkout_class(order_steps_form, address_string, :phone), placeholder: t(:phone)} %>
+</div>

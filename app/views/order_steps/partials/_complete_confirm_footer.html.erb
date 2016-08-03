@@ -1,0 +1,21 @@
+<div class="row cart full_cart">
+  <div class="col-md-12">
+    <table class="table">
+      <%= render partial: "orders/partials/books_header"%>
+      <%= render partial: "orders/partials/render_items", locals: {obj: @order_steps_form, qty_change: false} %>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-1">
+    <% if complete %>
+    <%=  link_to("Go Back To Store", root_path, html_options = { class: "btn btn-success btn-lg", style: "margin-top: 150px;" }) %>
+    <% else %>
+    <%=  button_to("Place order", wizard_path, html_options = { class: "btn btn-success btn-lg", style: "margin-top: 150px;", method: :put,  }) %>
+    <% end %>
+  </div>
+  <div class="col-md-7">
+  </div>
+  <%= render partial: "order_steps/partials/order_summary" %>
+</div>
+<br><br>

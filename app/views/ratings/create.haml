@@ -1,0 +1,3 @@
+.comment-item.my_hide{:style => "display: none"}
+      = render partial: "ratings/partials/comment", locals: {comment: @last_comment, user: @this_user}
+#id_comment= @last_comment.id

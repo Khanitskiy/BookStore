@@ -1,0 +1,30 @@
+- @resource = resource
+.form-group
+  = f.label :firstname, t(:first_name), class: "control-label"
+  = f.text_field :firstname, {class: validate_class(form, :firstname), placeholder: t(:first_name)}
+.form-group
+  = f.label :lastname, t(:last_name), class: "control-label"
+  = f.text_field :lastname, {class: validate_class(form, :lastname), placeholder: t(:last_name)}
+.form-group
+  = f.label :address, t(:street_address), class: "control-label"
+  = f.text_field :address, {class: validate_class(form, :address), placeholder: t(:street_address)}
+.form-group
+  = f.label :city, t(:city), class: "control-label"
+  = f.text_field :city, {class: validate_class(form, :city), placeholder: t(:city)}
+.form-group
+  = f.label :country, "Country", class: "control-label"
+  - if address.country && !address.country.empty?
+    = country_select("address", "country", { selected: address.country }, { class: 'form-control', name: 'address[country]' })
+  - else
+    = country_select("address", "country", { include_blank: t(:select_a_country)}, { class: validate_class(form, :country), name: 'address[country]' })
+.form-group
+  = f.label :zipcode, t(:zip), class: "control-label"
+  = f.text_field :zipcode, {class: validate_class(form, :zipcode), placeholder: t(:zip) }
+.form-group
+  = f.label :phone, t(:phone), class: "control-label"
+  = f.text_field :phone, {class: validate_class(form, :phone), placeholder: t(:phone)}
+  = hidden_field(:address, :type, value: type )
+  -unless shipping
+    = hidden_field(:address, :and_shipping, value: 'true' )
+.form-group
+  = f.submit t(:save), class: "btn btn-primary"

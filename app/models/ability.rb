@@ -3,53 +3,35 @@ class Ability
 
   def initialize(user)
     if user
-      # user ||= User.new # guest user (not logged in)
-      if user.admin?
-        can :access, :rails_admin # only allow admin users to access Rails Admin
-        can :dashboard
-        can :manage, :all
-      else
-        can :read, :all
-        cannot :read, Order
-        can :read, Order, user_id: user.id
-        can :manage, Order, user_id: user.id
-        can :manage, Rating
-        can :manage, User
-        can :update, Address, user_id: user.id
-      end
+      user.admin ? admin_abilities : user_abilities(user)
     else
-      can :read, :all
-      can :manage, Order
-      cannot :show, Order
-      cannot :index, Order
-      #cannot :show, :index, Order
-      #can :read, Order, :user_id => user.id
+      guest_abilities
     end
-    # Define abilities for the passed in user here. For example:
-    #
-    #   user ||= User.new # guest user (not logged in)
-    #   if user.admin?
-    #     can :manage, :all
-    #   else
-    #     can :read, :all
-    #   end
-    #
-    # The first argument to `can` is the action you are giving the user
-    # permission to do.
-    # If you pass :manage it will apply to every action. Other common actions
-    # here are :read, :create, :update and :destroy.
-    #
-    # The second argument is the resource the user can perform the action on.
-    # If you pass :all it will apply to every resource. Otherwise pass a Ruby
-    # class of the resource.
-    #
-    # The third argument is an optional hash of conditions to further filter the
-    # objects.
-    # For example, here the user can only update published articles.
-    #
-    #   can :update, Article, :published => true
-    #
-    # See the wiki for details:
-    # https://github.com/ryanb/cancan/wiki/Defining-Abilities
+  end
+
+  def admin_abilities
+    can :access, :rails_admin
+    can :dashboard
+    can :manage, [Author, User, Book, Cupon, Category, Rating]
+    cannot :create, Rating
+  end
+
+  def user_abilities(user)
+    guest_abilities
+    can :read, [Book, Category, Rating, Author]
+    can :manage, Address, billing_address_for_id: user.id
+    can :manage, Address, shipping_address_for_id: user.id
+    can :manage, CreditCard, user_id: user.id
+    can :manage, Order, user_id: user.id
+    can :manage, OrderItem, order: { 
+      user_id: user.id, state: 'in_progress' } 
+    can [:read, :update], Cupon
+    can [:manage], User, id: user.id
+    can :create, Rating, user_id: user.id
+  end
+
+  def guest_abilities
+    can :read, [Book, Category, Author, Rating]
+    can [:read, :create, :clear_cookies_shopcart, :check_cupon_ajax], Order
   end
 end

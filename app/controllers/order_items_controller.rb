@@ -1,10 +1,10 @@
 class OrderItemsController < ApplicationController
-  #load_and_authorize_resource
+  authorize_resource
   
   def update
     addition_of_session(params[:quantity].to_i)
-    OrderUpdate.new(@order, session, calc_price(params[:book_id], params[:quantity])).call
-    items_update_or_create(get_order_items)
+    OrderUpdateService.new(@order, session, calc_price(params[:book_id], params[:quantity])).call
+    items_update(get_order_items)
     render nothing: true
   end
 
@@ -25,13 +25,9 @@ class OrderItemsController < ApplicationController
     items.find_by_book_id(book_id) || items.new(book_id: book_id)
   end
 
-  def items_update_or_create(order_items)
-    if order_items
-      params[:quantity] = params[:quantity].to_i + order_items[:quantity].to_i
-      order_items.update(order_params)
-    else
-      order.order_items.create(order_params)
-    end
+  def items_update(order_items)
+    params[:quantity] = params[:quantity].to_i + order_items[:quantity].to_i
+    order_items.update(order_params)
   end
 
   def calc_total_price

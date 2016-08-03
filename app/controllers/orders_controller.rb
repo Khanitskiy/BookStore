@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   load_and_authorize_resource except: :show
-  authorize_resource only: :show
+  #authorize_resource only: :show
   # Management cart on cookies or database order
 
   def new
@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def update_shopcart_ajax
-    set_session(ShopcartUpdate.new(@order, params).call)
+    set_session(ShopcartUpdateService.new(@order, params).call)
     render nothing: true
   end
 

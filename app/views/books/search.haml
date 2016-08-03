@@ -1,0 +1,3 @@
+%h1
+  = t(:title_search)
+= render partial: "books/partials/index_search", locals: {books: @books, categories: @categories, params: params, search: true}

@@ -1,0 +1,7 @@
+<script>
+	$(document).on("ready page:load",function(){ 
+		<% @book.ratings.each do |rating| %>
+			<%= "$('input.star#{rating.id}').rating();".html_safe %>
+		<% end %>
+	});
+</script>

@@ -21,26 +21,143 @@
 
 en:
 
+  ### all  -------------
+  title:  "Title"
+  add:    "ADD"
+  cancel: "Cancel"
+  or:     " or "
+
+  ### form -------------
+  first_name:        "First name"
+  last_name:         "Last name"
+  cart_number:       "Card number"
+  cvv_code:          "CVV-code"
+  street_address:    "Street address"
+  city:              "City"
+  zip:               "Zip"
+  phone:             "Phone"
+  email:             "Email"
+  old_password:      "Old password"
+  new_password:      "New password"
+  eight_characters:      "8 characters minimum"
+  select_a_country:  "Select a country"
+  save_and_continue: "Save and continue"
+  save:              "Save"
+
+
+  ### books ------------
   ## layouts/application.html.erb
-  home:     "HOME"
-  shop:     "SHOP"
-  search:   "Search"
-  cart:     "CART"
-  settings: "Settings"
-  orders:   "Orders"
-  sign_out: "Sign out"
-  log_in:   "Log in"
-  sign_up:  "Sign up"
+  home:        "HOME"
+  shop:        "SHOP"
+  search:      "Search"
+  cart:        "CART"
+  settings:    "Settings"
+  orders:      "Orders"
+  sign_out:    "Sign out"
+  log_in:      "Log in"
+  sign_up:     "Sign up"
+  admin_panel: "Admin panel"
 
-  ## books/home.html.erb
-  home_h1: "Welcome to our amazing Bookstore! "
-  home_h2: "Select all that you want and make for the lowest prices."
+  ## books/home.haml
+  home_h1:     "Welcome to our amazing Bookstore! "
+  home_h2:     "Select all that you want and make for the lowest prices."
+  add_to_cart: "ADD TO CART"
 
-  ## books/home.html.erb
-  title_shop: "Shop"
-
-  title_cart: "Cart"
-
+  ## books/home.haml
+  title_shop:     "Shop"
+  title_cart:     "Cart"
   title_settings: "Settings"
+  title_orders:   "Orders"
 
-  title_orders: "Orders"
+  ## books/search.haml
+  title_search: "Search results"
+
+  ## books/show.haml
+  reviews:      "Reviews"
+  add_review:   "Add review for this book"
+  you_be_first: "There is no revies for this book. Your's can be first :)"
+  rating:       "Rating:"
+  comment_text: "Comment text"
+
+
+  ### categories ------------
+  ## layouts/categories/show.haml
+  shop2:     "Shop"
+
+
+  ### order_steps ------------
+  ## order_steps/address.haml
+  billing_address:     "Billing address"
+  shipping_address:    "Shipping address"
+  use_billing_address: "Use billing address"
+  name_and_email:      "Name and email"
+  password:            "Password"
+  change_password:     "Change password"
+  not_change_password: "You authorize with Facebook. You can't change password"
+  remove_account:      "Remove account"
+
+  ## order_steps/complete.haml
+  shipments:           "Shipments"
+  payment_information: "Payment information"
+
+  ## order_steps/confirm.haml
+  confirm:     "Confirm"
+  edit:        "(edit)"
+  ups_two_day: "UPS two day (%{number})"
+
+  ## order_steps/delivery.haml
+  delivery_type:   "Delivery type"
+  take_from_offie: "Take from our office + $5.00"
+  two_day:         "UPS two day + $10.00"
+  one_day:         "UPS one day + $20.00"
+
+  ## order_steps/payment.haml
+  credit_card:     "Credit card"
+  card_number:     "Card number"
+  experation_date: "Experation date:"
+  month:           "month"
+  year:            "year"
+
+  ## order_steps/partials/_checkout_nav
+  checkout:  "Checkout"
+  address:  "Address"
+  delivery: "Delivery"
+  payment:  "Payment"
+  confirm:  "Confirm"
+
+  ## order_steps/partials/_order_summary.html
+  order_summary: "Order summary"
+  item_total:    "ITEM TOTAL:"
+  shipping:      "SHIPPING:"
+  order_total:   "ORDER TOTAL:"
+
+
+  ## orders/index.haml
+  in_progress:       "In progress"
+  in_queue:          "In queue"
+  in_deliver:        "In deliver"
+  delivered:         "Delivered"
+  subtotal:          "SUBTOTAL"
+  go_to_cart:        "Go to cart"
+  empty_cart:        "Empty cart"
+  are_you_sure:      "Are you sure?"
+  continue_shopping: "Continue shopping"
+  cupon_code:        "Cupon code"
+  update:            "Update"
+  cart_empty:        "Your shop cart is empty"
+
+  ## orders/partials/books_header.haml
+  book:  "BOOK"
+  price: "PRICE"
+  qty:   "QTY"
+  total: "TOTAL"
+  
+  ## orders/partials/status.haml
+  number:       "NUMBER"
+  completed_at: "COMPLETED AT"
+  details:      "DETAILS"
+  view:         "view"
+
+  ## users/partials/_remove_account.haml
+  remove_account: "Please remove my account"
+  data_lost:      "All your data will be lost"

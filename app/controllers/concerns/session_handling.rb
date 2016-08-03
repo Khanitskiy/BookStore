@@ -13,7 +13,7 @@ module SessionHandling
 
   def change_session
     val = session[:user_products_count].to_i - params[:product_count].to_i
-    session[:user_products_count] == 0 ? set_session('empty') : set_session(val)
+    set_session(val) unless session[:user_products_count] == 0
   end
   
 end

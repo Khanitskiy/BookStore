@@ -4,34 +4,34 @@
   <div class="col-md-12">
     <table class="table">
       <%= render partial: "orders/partials/books_header" %>
-      <%= render partial: "orders/partials/render_books",  locals: {books: @books, remove_link: true} %> 
+      <%= render partial: "orders/partials/render_books",  locals: {books: @books, remove_link: true, qty_change: true} %> 
     </table>
   </div>
   <div class="col-md-6 col-md-offset-6 clearfix order-summary-block">
     <div class="order-summary-line">
-      SUBTOTAL: <span><%= number_to_currency(@subtotal) %></span>
+      <%= t(:subtotal) %> <span><%= number_to_currency(@subtotal) %></span>
     </div>
   </div>
   <div class="col-md-6">
     <% if current_user %>
-    <%= button_to "Empty cart", @order, :method => "delete", :class => "btn btn-default",  data: { confirm: "Are you sure?" } %>
+    <%= button_to t(:empty_cart), @order, :method => "delete", :class => "btn btn-default",  data: { confirm: t(:are_you_sure) } %>
     <% else %>
-    <%= link_to "Empty cart", clear_shopcart_path, :class => "btn btn-default",  data: { confirm: "Are you sure?" } %>
+    <%= link_to t(:empty_cart), clear_shopcart_path, :class => "btn btn-default",  data: { confirm: t(:are_you_sure) } %>
     <% end %>
-    <%= link_to "Continue shopping", books_path, :class => "btn btn-primary" %>
+    <%= link_to t(:continue_shopping), books_path, :class => "btn btn-primary" %>
   </div>
   <div class="col-md-6 right-btns">
    
     <%= form_tag(order_steps_path, method: "get") do %>
       <% if defined?(@order) && @order.cupon.nil? %>
-        <%= text_field_tag("cupon", nil, options = {class: 'cupon', placeholder: "Cupon code"} ) %>
+        <%= text_field_tag("cupon", nil, options = {class: 'cupon', placeholder: t(:cupon_code)} ) %>
       <% end %>
-      <a href="<%= order_steps_path %>" id="checkout" class="btn btn-success pull-right checkout-btn">Checkout</a>
-      <input type="button" class="btn btn-default pull-right" value="Update" id="update" name="commit">
+      <a href="<%= order_steps_path %>" id="checkout" class="btn btn-success pull-right checkout-btn"><%= t(:checkout) %></a>
+      <input type="button" class="btn btn-default pull-right" value="<%= t(:update) %>" id="update" name="commit">
     <% end %>
   </div>
 </div>
 <% end %>
 <div class="cart_empty" <%= 'hidden' unless @books.empty? %>>
-  <h4>Your shop cart is empty</h4>
+  <h4><%= t(:cart_empty) %></h4>
 </div>

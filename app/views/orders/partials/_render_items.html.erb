@@ -6,7 +6,11 @@
       </td>
       <td class="book_price"><%= number_to_currency(item.book.price) %></td>
       <td class="count">
-        <input type="number" max="100" min="1" class="quantity-input" value="<%= item.quantity %>" id="quantity_<%= item.book.id %>" name="quantity-input">
+        <% if qty_change %>
+        <input type="number" max="100" min="1" class="quantity-input" value="<%= item.quantity %>" id="quantity_<%= book.id %>" name="quantity-input">
+        <% else %>
+          <%= item.quantity %>
+        <% end %>
       </td>
       <td class="total"><%= number_to_currency(item.book.price * item.quantity.to_i) %></td>
     </tr>

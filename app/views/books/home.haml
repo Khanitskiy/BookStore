@@ -1,0 +1,22 @@
+%h1.text-center
+  = t(:home_h1)
+  %br/
+  %small= t(:home_h2)
+#owl-demo.owl-carousel.home-page-slider.owl-theme
+  - @bestsellers.each do |bestseller|
+    .container
+      .row
+        .item
+          .row
+            .col-md-3
+              = link_to "#{image_tag bestseller.image_url :my_resize}".html_safe, bestseller, :class => 'book_id_' << bestseller.id.to_s
+            .col-md-5
+              %h2
+                = link_to bestseller.title, bestseller
+                %br/
+                %small by Andrew  Evans
+              %p= bestseller.description
+              .price= number_to_currency(bestseller.price)
+              = form_tag("/orders/add_to_order", method: "put") do
+                = number_field_tag 'quantity', "1", within: 1...10, class: 'quantity-input quantity_id_' << bestseller.id.to_s
+                = submit_tag "#{t(:add_to_cart)}", class: 'btn btn-primary add_book', id: 'button_book_id_' << bestseller.id.to_s

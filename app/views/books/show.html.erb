@@ -1,108 +1,64 @@
 <h1><%= @book.title %></h1>
 <div class="col-md-4 <%= 'book_id_' << @book.id.to_s %>">
-	<%= image_tag @book.image_url :my_resize %> 
+  <%= image_tag @book.image_url :my_resize %> 
 </div>
 <div class="col-md-8">
-	<div class="price"><%= number_to_currency(@book.price) %></div>
-	<div class="order-form-wrap">
-		<%= form_tag("/orders/add_to_order", method: "put") do %>
+  <div class="price"><%= number_to_currency(@book.price) %></div>
+  <div class="order-form-wrap">
+    <%= form_tag("/orders/add_to_order", method: "put") do %>
       <%= number_field_tag 'quantity', "1", within: 1...10, class: 'quantity-input quantity_id_' << @book.id.to_s %>
-      <%#= hidden_field_tag 'book_id', book.id %>
-      <%= submit_tag "ADD TO CART", class: 'btn btn-primary add_book', id: 'button_book_id_' << @book.id.to_s  %>
+      <%= submit_tag "#{t(:add_to_cart)}", class: 'btn btn-primary add_book', id: 'button_book_id_' << @book.id.to_s  %>
     <% end %>
-	</div>
-	<div class="clear"></div>
-	<div class="book-description"><%= @book.description %></div>
+  </div>
+  <div class="clear"></div>
+  <div class="book-description"><%= @book.description %></div>
 </div>
 
 <div class="clear"></div>
 <div class="row reviews clearfix">
-	<div class="col-md-3">
-	<h2>Reviews</h2>
-	</div>
-	<div class="col-md-9 add-review-lnk">
-	<% if current_user %>
-		<a href="" id="open_comment_rating">Add review for this book</a>
-	<% end %>
-	</div>
-	<div class="col-md-12">
-	<br>
-	<% if @book.users.count == 0 %>
-		<div class="no-reviwes-message">There is no revies for this book. Your's can be first :)</div>
-	<% end %>
-	</div>
+  <div class="col-md-3">
+  <h2><%= t(:reviews) %></h2>
+  </div>
+  <div class="col-md-9 add-review-lnk">
+  <% if current_user %>
+    <a href="" id="open_comment_rating"><%= t(:add_review) %></a>
+  <% end %>
+  </div>
+  <div class="col-md-12">
+  <br>
+  <% if @book.users.count == 0 %>
+    <div class="no-reviwes-message"><%= t(:you_be_first) %></div>
+  <% end %>
+  </div>
 </div>
 
 <div class="col-md-4">
-	<% if current_user %>
-	<form action="post" class="rating_comment">
-		<span class="rating_label">Rating:</span>
-		<div class="rating">
-			<% for i in 1..10 %>
-			<%= "<input name='star' type='radio' value=#{i} class='star {half:true}'/>".html_safe %>
-			<% end %>
-		</div>
-		<input class="hidden_input" type="hidden" value="">
-		<input class="hidden_input_userid" type="hidden" value="<%= current_user.id %>">
-		<input class="hidden_input_bookid" type="hidden" value="<%= params[:id] %>">
-		<input type="text" name="title" placeholder="Title" class="field_title" size="50" style="padding: 0 7px;">
-		<p><textarea class="field_comment" placeholder="Comment text" rows="5" cols="50" autofocus></textarea></p>
-		<input type="button" id="add_comment_reting" class="btn btn-primary" value="ADD" name="commit"> or <a href="#" id="cancel">Cancel</a>
-	</form>
-	<% end %>
+  <% if current_user %>
+  <form action="post" class="rating_comment">
+    <span class="rating_label"><%= t(:rating) %></span>
+    <div class="rating">
+      <% for i in 1..10 %>
+      <%= "<input name='star' type='radio' value=#{i} class='star {half:true}'/>".html_safe %>
+      <% end %>
+    </div>
+    <input class="hidden_input" type="hidden" value="">
+    <input class="hidden_input_userid" type="hidden" value="<%= current_user.id %>">
+    <input class="hidden_input_bookid" type="hidden" value="<%= params[:id] %>">
+    <input type="text" name="title" placeholder="<%= t(:title) %>" class="field_title" size="50" style="padding: 0 7px;">
+    <p><textarea class="field_comment" placeholder="<%= t(:comment_text) %>" rows="5" cols="50" autofocus></textarea></p>
+    <input type="button" id="add_comment_reting" class="btn btn-primary" value="<%= t(:add) %>" name="commit"><%= t(:or) %><a href="#" id="cancel"><%= t(:cancel) %></a>
+  </form>
+  <% end %>
 </div>
 
 <!-- Commets -->
 <div class="col-md-12">
-	<div class="comments-block">
-	
-
-		<% @book.ratings.order(created_at: :desc).each do |rating| %>
-
-			<div class="comment-item">
-				<div class="rating-block">
-					<div class="rating">
-							<% for i in 1..10 %>
-								<% if rating.rating == i %>
-									<%= "<input name='star#{rating.id}' type='radio'  value=#{i} class='star#{rating.id} {half:true}' disabled='disabled' checked='checked' />".html_safe %>
-								<% else %>
-									<%= "<input name='star#{rating.id}' type='radio'  value=#{i} class='star#{rating.id} {half:true}' disabled='disabled' />".html_safe %>
-								<% end %>
-							<% end %>
-					</div>
-					<span class="comment_title"><%= rating.title %></span>
-					<span class="comment_date"><%= rating.created_at.strftime("%b %d, %Y") %></span>
-				</div>
-				<div class="comment_user_name">by <a href="#"><%= rating.user.firstname << ' ' << rating.user.lastname %></a></div>
-				<div class="media">
-				  <div class="media-left">
-				    <a href="#">
-				    	<% if rating.user.facebook_image != "" %>
-				     	 <img class="media-object" height="50" width="50" src="<%= rating.user.facebook_image %>" alt="...">
-				      <% elsif rating.user.image.file.nil? == false %>
-								<img class="media-object" height="50" width="50" src="<%= rating.user.image_url %>" alt="...">
-							<% else %>
-								<img class="media-object" height="50" width="50" src="http://localhost:3000/assets/no_avatar.jpg" alt="...">
-							<% end %>
-				    </a>
-				  </div>
-				  <div class="media-body">
-				    <p><%= rating.text_review %></p>
-				  </div>
-				</div>
-			</div>
-
-		<% end %>
-		
-	</div>
-	<script>
-		$(document).on("ready page:load",function(){ 
-			<% @book.ratings.each do |rating| %>
-				<%= "$('input.star#{rating.id}').rating();".html_safe %>
-			<% end %>
-		});
-	</script>
+  <div class="comments-block">
+    <% @book.ratings.order(created_at: :desc).each do |rating| %>
+      <div class="comment-item">
+        <%= render partial: "ratings/partials/comment", locals: {comment: rating, user: rating.user} %>
+      </div>
+    <% end %>
+  </div>
+  <%= render partial: "books/partials/rating_stars", locals: {book: @book} %>
 </div>
-<!--
-
--->

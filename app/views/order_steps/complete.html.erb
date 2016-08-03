@@ -4,58 +4,24 @@
       <h2>Order # <%= @order_steps_form.order.id %></h2>
     </div>
   </div>
-
   <div class="row">
     <div class="col-md-3">
-      <h3>
-        Shipping address
-      </h3>
-      <div><%= @order_steps_form.billing_address.firstname %></div>
-      <div><%= @order_steps_form.billing_address.address %></div>
-      <div><%= @order_steps_form.billing_address.city %></div>
-      <div><%= @order_steps_form.billing_address.country %></div>
-      <div><%= @order_steps_form.billing_address.phone %></div>
+      <h3><%= t(:billing_address) %></h3>
+      <%= render partial: "orders/partials/address_data", locals: {address:@order_steps_form.billing_address} %>
     </div>
     <div class="col-md-3">
-      <h3>
-        Billing address
-      </h3>
-      <div><%= @order_steps_form.shipping_address.firstname %></div>
-      <div><%= @order_steps_form.shipping_address.address %></div>
-      <div><%= @order_steps_form.shipping_address.city %></div>
-      <div><%= @order_steps_form.shipping_address.country %></div>
-      <div><%= @order_steps_form.shipping_address.phone %></div>
+      <h3><%= t(:shipping_address) %></h3>
+      <%= render partial: "orders/partials/address_data", locals: {address:@order_steps_form.shipping_address} %>
     </div>
     <div class="col-md-3">
-      <h3>Shipments</h3>
+      <h3><%= t(:shipments) %></h3>
       <div>UPS two day (<%= number_to_currency(@order_steps_form.delivery.to_f) %>)</div>
     </div>
     <div class="col-md-3">
-      <h3>Payment information</h3>
-      <div>**** **** **** <%= @order_steps_form.credit_card.number.split("").last(4).join("") %></div>
+      <h3><%= t(:payment_information) %></h3>
+      <div>**** **** **** <%= @order_steps_form.payment.number.split("").last(4).join("") %></div>
       <div><%= @order_steps_form.month %>/<%= @order_steps_form.year %></div>
     </div>
-  </div>
-
-  
-  <div class="row cart full_cart">
-    <div class="col-md-12">
-      <table class="table">
-        <%= render partial: "orders/partials/books_header" %>
-        <%= render partial: "orders/partials/render_items", locals: {obj: @order_steps_form} %>
-      </table>
-    </div>
-  
-  </div>
-  
-  <div class="row">
-    <div class="col-md-1">
-        <%=  link_to("Go Back To Store", root_path, html_options = { class: "btn btn-success btn-lg", style: "margin-top: 150px;" }) %>
-    </div>
-    <div class="col-md-7">
-    </div>
-    <%= render partial: "order_steps/partials/order_summary" %>
-  </div>
-  <br><br>
-
+  </div> 
+   <%= render partial: "order_steps/partials/complete_confirm_footer", locals: { complete: true  } %>
 </div>

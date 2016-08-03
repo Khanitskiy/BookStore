@@ -30,7 +30,7 @@ body {
 .home-page-slider {
   img {max-height: 450px; margin-left:0.5%; max-width:99%; float: left;}
   .price {float: left; display:inline-block; margin-right: 20px; font-size: 23px;}
-  .quantity-input {width: 50px; padding: 4px 10px;}
+  .quantity-input {width: 65px; padding: 4px 10px;}
 }
 
 .pagination {
@@ -110,4 +110,11 @@ body {
 li a {
   padding-left: 10px !important;
   padding-right: 10px !important;
+}
+
+.media {margin-top: 5px !important;}
+.media hr {
+  margin: 0;
+  border-width: 3px 0 0 !important;
+  margin-bottom: 5px;
 }

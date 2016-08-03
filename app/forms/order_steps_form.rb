@@ -40,14 +40,12 @@ class OrderStepsForm
     order.order_items
   end
 
-  def credit_card
-    order.credit_card || payment
-  end
+  #def credit_card
+  #  payment
+  #end
 
   def payment
-    credit_card = CreditCard.new(user_id: @order.user_id)
-    order.update(credit_card_id: credit_card.id)
-    credit_card
+    order.credit_card || payment_empty
   end
 
   [:billing_address, :shipping_address].each do |address|
@@ -109,6 +107,12 @@ class OrderStepsForm
     order.to_in_queue!
     @cookies_book = { 'book_count' => '0'}
     order_id = Order.create_order(@cookies_book, 0, user.id)
+  end
+
+  def payment_empty
+    credit_card = CreditCard.new(user_id: @order.user_id)
+    order.update(credit_card_id: credit_card.id)
+    credit_card
   end
 
   def errors_addresses

@@ -2,28 +2,28 @@
   <div class="col-md-12">
     <h1><%= t(:title_orders) %></h1>
     <% unless @books.empty? %>
-      <h2 class="underlined-h2">In progress</h2>
+      <h2 class="underlined-h2"><%= t(:in_progress) %></h2>
       <div class="row cart">
         <div class="col-md-12">
           <table class="table">
             <%= render partial: "orders/partials/books_header" %>
-            <%= render partial: "orders/partials/render_books" , locals: {books: @books} %>
+            <%= render partial: "orders/partials/render_books" , locals: {books: @books, remove_link: false, qty_change: false} %>
           </table>
         </div>
         <div class="col-md-6">
-          <a href="/orders/new" class=" btn btn-primary lnk-to-cart">Go to cart</a>
+          <a href="/orders/new" class=" btn btn-primary lnk-to-cart"><%= t(:go_to_cart) %></a>
         </div>
         <div class="col-md-6 col-md-6">
           <div class="order-summary-line" style="float: right; padding-right: 110px;">
-            SUBTOTAL: <span><%= number_to_currency(@subtotal) %></span>
+            <%= t(:subtotal) %> <span><%= number_to_currency(@subtotal) %></span>
           </div>
         </div>
       </div>
       <br>
     <% end %>
-    <%= render partial: "orders/partials/status", locals: {status: @in_queue, title: 'In deliver'} %>
-    <%= render partial: "orders/partials/status", locals: {status: @in_delivery, title: 'In deliver'} %>
-    <%= render partial: "orders/partials/status", locals: {status: @delivered, title: 'Delivered'} %>
+    <%= render partial: "orders/partials/status", locals: {status: @in_queue, title: t(:in_queue)} %>
+    <%= render partial: "orders/partials/status", locals: {status: @in_delivery, title: t(:in_delivery)} %>
+    <%= render partial: "orders/partials/status", locals: {status: @delivered, title: t(:delivered)} %>
     <br><br>
   </div>
 </div>

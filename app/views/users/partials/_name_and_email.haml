@@ -1,18 +1,17 @@
 .col-md-6
-  %h2.underlined-h2.add-margin-bot{:style => "margin-bottom: 12px;"} Name and email
+  %h2.underlined-h2.add-margin-bot{:style => "margin-bottom: 12px;"}=t(:name_and_email)
   .row
     .col-md-8
       = show_errors(current_user, :data_form)
-      =# show_flashes('data_form')
       = form_for current_user, url: user_update_data_path(current_user),  html: {class: "nifty_form"} do |f|
         .form-group
-          = f.label :name_email_firstname, "First name", class: "control-label"
-          = f.text_field :firstname, {class: validate_class('data_form', 'firstname') , placeholder: 'Firs name' }
+          = f.label :name_email_firstname, t(:first_name), class: "control-label"
+          = f.text_field :firstname, {class: validate_class('data_form', 'firstname') , placeholder: t(:first_name) }
         .form-group
-          = f.label :lastname, "Last name", class: "control-label"
-          = f.text_field :lastname, {class: validate_class('data_from', 'lastname'), placeholder: 'Last tname' }
+          = f.label :lastname, t(:last_name), class: "control-label"
+          = f.text_field :lastname, {class: validate_class('data_from', 'lastname'), placeholder: t(:last_name) }
         .form-group
-          = f.label :email, "Email", class: "control-label"
-          = f.text_field :email, {class: validate_class('data_form', 'email'), placeholder: 'Email' }
+          = f.label :email, t(:email), class: "control-label"
+          = f.text_field :email, {class: validate_class('data_form', 'email'), placeholder: t(:email) }
         .form-group
-          %input.btn.btn-primary{:name => "commit", :type => "submit", :value => "Save"}
+          %input.btn.btn-primary{:name => "commit", :type => "submit", :value => t(:save)}

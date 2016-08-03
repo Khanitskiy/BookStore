@@ -1,47 +1,20 @@
+<% types ={address:t(:address),delivery:t(:delivery),payment:t(:payment),confirm:t(:confirm)} %>
 <div class="row">
-      <div class="col-md-3">
-        <h1 class="checkout-h1">Checkout</h1>
-      </div>
-    <div class="col-md-9 checkout-nav">
-      <div class="<%= wizard_link('address') %> <%= not_active(:address) %> checkout-nav-lnk-wrap">
-        <a href="/order_steps/address"><div class="text-lnk">Address</div>
-          <div class="progress-line">
-            <div class="step-cercle">
-              <span class="step-number">1</span>
-              <span class="glyphicon glyphicon-ok step-done-icon"></span>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="<%= wizard_link('delivery') %> <%= not_active(:delivery) %> checkout-nav-lnk-wrap">
-        <a href="/order_steps/delivery"><div class="text-lnk">Delivery</div>
-          <div class="progress-line">
-            <div class="step-cercle">
-              <span class="step-number">2</span>
-              <span class="glyphicon glyphicon-ok step-done-icon"></span>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="<%= wizard_link('payment') %> <%= not_active(:payment) %> checkout-nav-lnk-wrap">
-        <a href="/order_steps/payment"><div class="text-lnk">Payment</div>
-          <div class="progress-line">
-            <div class="step-cercle">
-              <span class="step-number">3</span>
-              <span class="glyphicon glyphicon-ok step-done-icon"></span>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="<%= wizard_link('confirm') %> <%= not_active(:confirm) %> checkout-nav-lnk-wrap">
-        <a href="/order_steps/confirm"><div class="text-lnk">Confirm</div>
-          <div class="progress-line">
-            <div class="step-cercle">
-              <span class="step-number">4</span>
-              <span class="glyphicon glyphicon-ok step-done-icon">}</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
+  <div class="col-md-3">
+    <h1 class="checkout-h1"><%= t(:checkout) %></h1>
   </div>
+  <div class="col-md-9 checkout-nav">
+    <% types.each do |type| %>
+    <div class="<%= wizard_link(type.first.to_s) %> <%= not_active(type.first) %> checkout-nav-lnk-wrap">
+      <a href="/order_steps/<%= type.first.to_s %>"><div class="text-lnk"><%= type.second %></div>
+        <div class="progress-line">
+          <div class="step-cercle">
+            <span class="step-number">4</span>
+            <span class="glyphicon glyphicon-ok step-done-icon">}</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <% end %>
+  </div>
+</div>

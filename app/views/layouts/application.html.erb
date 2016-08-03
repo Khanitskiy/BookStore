@@ -37,7 +37,7 @@
         <% if user_signed_in? %>
           <span style="padding-top: 14px; margin-right: 10px; color: green; font-weight: bold; float: left;"><%= current_user.firstname %></span>
           <% if current_user.admin? %>
-            <li><%= link_to "Admin panel", rails_admin.dashboard_path %></li>
+            <li><%= link_to t(:admin_panel), rails_admin.dashboard_path %></li>
           <% end %> 
           <li <%= cp(settings_path) %> ><%= link_to t(:settings), settings_path %></li>
           <li <%= cp(orders_path) %> ><%= link_to t(:orders), orders_path %></li>

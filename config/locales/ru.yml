@@ -21,26 +21,141 @@
 
 ru:
 
+  ### all  -------------
+  title:  "Заглавие"
+  add:    "Добавить"
+  cancel: "Отменить"
+  or:     " или "
+
+  ### form -------------
+  first_name:        "Имя"
+  last_name:         "Фамилия"
+  cart_number:       "Номер карты"
+  cvv_code:          "CVV-код"
+  street_address:    "Улица"
+  city:              "Город"
+  zip:               "Zip"
+  phone:             "Телефон"
+  email:             "Email"
+  old_password:      "Старый пароль"
+  new_password:      "Новый пароль"
+  eight_characters:      "Не менее 8 символов"
+  select_a_country:  "Выберите страну"
+  save_and_continue: "Сохранить и продолжить"
+  save:              "Сохранить"
+
+  ###--- books ---###
   ## layouts/application.html.erb
-  home:     "ГЛАВНАЯ"
-  shop:     "КАТАЛОГ"
-  search:   "Поиск"
-  cart:     "КОРЗИНА"
-  settings: "Настройки"
-  orders:   "Заказы"
-  sign_out: "Выйти"
-  log_in:   "Войти"
-  sign_up:  "Регистрация"
+  home:        "ГЛАВНАЯ"
+  shop:        "КАТАЛОГ"
+  search:      "Поиск"
+  cart:        "КОРЗИНА"
+  settings:    "Настройки"
+  orders:      "Заказы"
+  sign_out:    "Выйти"
+  log_in:      "Войти"
+  sign_up:     "Регистрация"
+  admin_panel: "Админ панель"
 
   ## books/home.html.erb
-  home_h1: "Добро пожаловать на наш удивительный книжный магазин!"
-  home_h2: "Выберите все, что вы хотите и закажите по самым низким ценам ."
+  home_h1:         "Добро пожаловать на наш удивительный книжный магазин!"
+  home_h2:         "Выберите все, что вы хотите и закажите по самым низким ценам ."
+  add_to_cart:     "Добавить в Корзину"
 
   ## books/home.html.erb
-  title_shop: "Каталог"
-
-  title_cart: "Корзина"
-
+  title_shop:     "Каталог"
+  title_cart:     "Корзина"
   title_settings: "Настройки"
+  title_orders:   "Заказы"
 
-  title_orders: "Заказы"
+  ## books/search.haml
+  title_search: "Результат поиска"
+
+  ## books/show.haml
+  reviews:      "Отзывы"
+  add_review:   "Добавить отзыв для этой книги"
+  you_be_first: "Для этой книги пока что нет отзывов. Вы можете стать первым :)"
+  rating:       "Рейтинг:"
+  comment_text: "Текст комментария"
+
+
+  ### categories ------------
+  ## layouts/categories/show.haml
+  shop2:     "Каталог"
+
+
+  ### order_steps ------------
+  ## order_steps/address.haml
+  billing_address:     "Платежный адрес"
+  shipping_address:    "Адрес доставки"
+  use_billing_address: "Использовать платежный"
+  name_and_email:      "Имя и Email"
+  password:            "Пароль"
+  change_password:     "Изменить пароль"
+  not_change_password: "Вы авторизованны через Facebook. Вы не можете поменять пароль"
+  remove_account:      "Удалить аккаунт"
+
+  ## order_steps/complete.haml
+  shipments:           "Груз"
+  payment_information: "Платежная информация"
+
+  ## order_steps/confirm.haml
+  confirm:     "Подтвердить"
+  edit:        "(изменить)"
+  ups_two_day: "два дня (%{number})"
+
+  ## order_steps/delivery.haml
+  delivery_type:   "Delivery type"
+  take_from_offie: "Take from our office + $5.00"
+  two_day:         "UPS two day + $10.00"
+  one_day:         "UPS one day + $20.00"
+
+  ## order_steps/payment.haml
+  credit_card:     "Кредитная карта"
+  card_number:     "Номер кредитной карты"
+  experation_date: "Experation date:"
+  month:           "месяц"
+  year:            "год"
+
+  ## order_steps/partials/_checkout_nav
+  checkout: "Заказ"
+  address:  "Адрес"
+  delivery: "Доставка"
+  payment:  "Оплата"
+  confirm:  "Подтвердить"
+
+  ## order_steps/partials/_order_summary.html
+  order_summary: "Общая стоимость"
+  item_total:    "ЗАКАЗ:"
+  shipping:      "ДОСТАВКА:"
+  order_total:   "ВСЕГО:"
+
+    ## orders/index.haml
+  in_progress:       "В процесе"
+  in_queue:          "В очереди"
+  in_deliver:        "In deliver"
+  delivered:         "В доставке"
+  subtotal:          "SUBTOTAL"
+  go_to_cart:        "Перейти в корзину"
+  empty_cart:        "Пустая корзина"
+  are_you_sure:      "Вы уверены?"
+  continue_shopping: "Продолжить покупки"
+  cupon_code:        "Купон код"
+  update:            "Обновить"
+  cart_empty:        "Ваша корзина пуста"
+
+  ## orders/partials/books_header.haml
+  book:  "КНИГА"
+  price: "PRICE"
+  qty:   "КОЛИЧЕСТВО"
+  total: "ВСЕГО"
+  
+  ## orders/partials/status.haml
+  number:       "НОМЕР"
+  completed_at: "ЗАВЕРШЕННО"
+  details:      "ДЕТАЛИ"
+  view:         "посмотреть"
+
+  ## users/partials/_remove_account.haml
+  remove_account: "Удалить мой аккаунт "
+  data_lost:      "Ваши данные будут утеряны"

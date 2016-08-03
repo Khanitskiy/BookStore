@@ -22,12 +22,12 @@ class OrderStepsController < ApplicationController
     render_wizard @order_steps_form
   end
 
- def redirect_to_step
+  private
+
+  def redirect_to_step
     result = CurrentStepService.new(@order).call
     redirect_to wizard_path(result[0]) if result[1][step].nil?
   end
-
-  private
 
   def and_shipping
     params[:order_steps_form][:billing_address][:and_shipping] if step == :address
@@ -39,7 +39,7 @@ class OrderStepsController < ApplicationController
 
   def update_cupon
     unless params[:value].nil?
-      cupon = Cupon.cheking(params[:value])
+      cupon = Cupon.cheking(params[:value]).first
       cupon.update(order_id: @order.id, use: true) if cupon && cupon.use == false
     end
   end
@@ -50,25 +50,21 @@ class OrderStepsController < ApplicationController
     cookies_delete
   end
 
+  def address_params
+    [:firstname,
+     :lastname,
+     :address,
+     :city,
+     :phone,
+     :zipcode,
+     :country]
+  end
+
   def checkout_params
     params.require(:order_steps_form).permit(
-      billing_address: [:firstname,
-                        :lastname,
-                        :address,
-                        :city,
-                        :phone,
-                        :zipcode,
-                        :country,
-                        :order_billing_address_id,
-                        :order_shipping_address_id],
-      shipping_address: [:firstname,
-                         :lastname,
-                         :address,
-                         :city,
-                         :phone,
-                         :city,
-                         :zipcode,
-                         :country],
+      billing_address: address_params + [:order_billing_address_id,
+                                         :order_shipping_address_id],
+      shipping_address: address_params,
       delivery_type:   [:delivery],
       payment:         [:firstname,
                         :lastname,

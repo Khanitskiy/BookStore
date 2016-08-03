@@ -1,0 +1,37 @@
+.checkout
+  .row
+    .col-md-12
+      %h2
+        Order # #{@order.id}
+  .row
+    .col-md-3
+      %h3= t(:shipping_address)
+      = render partial: "orders/partials/address_data", locals: {address: @order.billing_address}
+    .col-md-3
+      %h3= t(:billing_address)
+      = render partial: "orders/partials/address_data", locals: {address: @order.shipping_address}
+    .col-md-3
+      %h3= t(:shipments)
+      %div
+        UPS two day (#{number_to_currency(@order.delivery.to_f)})
+    .col-md-3
+      %h3= t(:payment_information)
+      %div
+        **** **** **** #{@order.credit_card.number.split("").last(4).join("")}
+      %div
+        = @order.credit_card.expiration_month
+        \/#{@order.credit_card.expiration_year}
+  - unless @order.order_items.empty?
+    %h2.underlined-h2= t(@order.state.to_sym)
+    .row.cart
+      .col-md-12
+        %table.table
+          = render partial: "orders/partials/books_header"
+          = render partial: "orders/partials/render_items", locals: {obj: @order, qty_change: false}
+      .col-md-6
+        = link_to('Back to order', orders_path, html_options = { class: "btn btn-primary lnk-to-cart"})
+      .col-md-2
+      = render partial: "/order_steps/partials/order_summary"
+    %br/
+  %br/
+  %br/

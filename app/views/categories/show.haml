@@ -1,0 +1,5 @@
+%h1=t(:shop2)
+= render partial: "books/partials/index_search", locals: {books: @books, categories: @categories, search: false}
+.clear
+.text-center
+  = paginate @books

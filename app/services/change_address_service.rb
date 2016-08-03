@@ -10,7 +10,7 @@ class ChangeAddressService
       if @order.billing_address && @order.shipping_address
         addresses_update
       else
-        addresses_create
+        two_addresses_create
       end
     else
       if @order.billing_address
@@ -23,9 +23,14 @@ class ChangeAddressService
 
   private
 
-  def addresses_create
+  def two_addresses_create
     @order.create_billing_address(@atributes[:billing_address])
     @order.create_shipping_address(@atributes[:billing_address])
+  end
+
+  def addresses_create
+    @order.create_billing_address(@atributes[:billing_address])
+    @order.create_shipping_address(@atributes[:shipping_address])
   end
 
   def addresses_update

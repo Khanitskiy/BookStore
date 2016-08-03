@@ -12,7 +12,6 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find_by_id(params[:id])
   end
 
   def search
