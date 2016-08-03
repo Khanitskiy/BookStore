@@ -1,17 +1,8 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
-// You can use CoffeeScript in this file: http://coffeescript.org/
-
-
-
-
-
 $(document).on("ready page:load",function(){
 
 
   if($('#order_steps_form_shipping_address_checkbox').val() == 1) {
       $('#shipping_address_step').hide();
-      //$("#order_steps_form_shipping_address_checkbox").prop( "checked", true );
   } else {
       $('#shipping_address').show();
       $('.ship-address-form-fields').show();

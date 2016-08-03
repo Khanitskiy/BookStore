@@ -11,24 +11,36 @@ class Order < ActiveRecord::Base
   has_one :shipping_address, class_name: 'Address', foreign_key: 'order_shipping_address_id'
   has_one :cupon
 
-  aasm column: 'state' do
-    state :in_progress
-    state :in_queue
-    state :in_delivery
-    state :delivered
-    state :canceled
-
-    event :to_in_queue do
-      transitions from: :in_progress, to: :in_queue
-    end
-  end
-
   def state_enum
     %w(in_progress
-       processing
-       shipping
-       completed
+       in_queue
+       in_delivery
+       delivered
        canceled)
+  end
+
+  aasm column: 'state', whiny_transitions: false do 
+    state :in_progress, initial: true
+    state :in_queue
+    state :in_delivery 
+    state :delivered 
+    state :canceled
+
+    event :process do
+      transitions from: :in_progress, to: :in_queue
+    end
+
+    event :ship do
+      transitions from: :in_queue, to: :in_delivery
+    end
+
+    event :complete do
+      transitions from: [:in_queue, :in_delivery], to: :delivered
+    end
+
+    event :cancel do
+      transitions from: [:in_queue, :in_delivery], to: :canceled
+    end
   end
 
   def delivery_enum
@@ -59,55 +71,6 @@ class Order < ActiveRecord::Base
                           book_count: book_count.to_i)
     order.id
   end
-
-  #def self.in_queue(current_user)
-    #where(user_id: current_user.id, state: 'in_queue').all
-  #end
-
-  #def self.in_delivery(current_user)
-    #where(user_id: current_user.id, state: 'in_delivery').all
-  #end
-
-  #def self.delivered(current_user)
-    #where(user_id: current_user.id, state: 'delivered').all
-  #end
-
-  #def update_order(order, session, price)
-    #order.book_count = session
-    #order.total_price = order.total_price.to_f + price
-    #order.completed_date = 3.days.from_now
-    #order.order_total =  order.delivery.to_f + order.total_price.to_f
-    #order.save!
-  #end
-
-  #def self.last_order_queue(current_user)
-    # byebug
-    # where("user_id = #{current_user.id}").order(id: :desc).first
-    #where(user_id: current_user.id, state: 'in_queue').last
-  #end
-
-  #def self.in_queue(current_user)
-    #where(user_id: current_user.id, state: 'in_queue').all
-  #end
-
-  #def self.in_delivery(current_user)
-    #where(user_id: current_user.id, state: 'in_delivery').all
-  #end
-
-  #def self.delivered(current_user)
-    #where(user_id: current_user.id, state: 'delivered').all
-  #end
-
-  # def delivery
-  # byebug
-  # if self.delivery.to_i == 5.0
-  # 'UPS Ground'
-  # elsif self.delivery.to_i == 10.0
-  # 'UPS One Day'
-  # elsif self.delivery.to_i == 20.0
-  # 'UPS Two Days'
-  # end
-  # end
 
   private
   

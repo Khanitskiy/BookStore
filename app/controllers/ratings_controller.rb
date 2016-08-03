@@ -3,9 +3,10 @@ class RatingsController < ApplicationController
 
   def create
     @rating = Rating.create(comments_params)
-    if @rating
+    if @rating.id
       @last_comment = Rating.last
       @this_user = current_user
+      @not_access = true
       render layout: false
     else
       render text: 'It broke!'
@@ -18,3 +19,5 @@ class RatingsController < ApplicationController
     params.permit(:title, :text_review, :rating, :user_id, :book_id)
   end
 end
+
+

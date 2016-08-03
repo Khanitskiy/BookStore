@@ -1,0 +1,24 @@
+.checkout
+  .row
+    .col-md-12
+      %h2
+        Order # #{@order_steps_form.order.id}
+  .row
+    .col-md-3
+      %h3= t(:billing_address)
+      = render partial: "orders/partials/address_data", locals: {address:@order_steps_form.billing_address}
+    .col-md-3
+      %h3= t(:shipping_address)
+      = render partial: "orders/partials/address_data", locals: {address:@order_steps_form.shipping_address}
+    .col-md-3
+      %h3= t(:shipments)
+      %div
+        UPS two day (#{number_to_currency(@order_steps_form.delivery.to_f)})
+    .col-md-3
+      %h3= t(:payment_information)
+      %div
+        **** **** **** #{@order_steps_form.payment.number.split("").last(4).join("")}
+      %div
+        = @order_steps_form.month
+        \/#{@order_steps_form.year}
+  = render partial: "order_steps/partials/complete_confirm_footer", locals: { complete: true  }

@@ -21,11 +21,6 @@ $(document).on("ready page:load",function(){
     $('input.hidden_input').val($('a',this).attr('title'));
   });
 
-  //$('body').delegate('.rating-cancel a', 'click', function(){
-    //$('input.hidden_input').val('');
-  //});
-
-
   $('body').delegate('#add_comment_reting', 'click', function(){
     var pathname = $(location).attr('host') + '/rating';
     var rating = $('.hidden_input').val();
@@ -33,7 +28,7 @@ $(document).on("ready page:load",function(){
     var text_review = $('.field_comment').val();
     var user_id = $('.hidden_input_userid').val();
     var book_id = $('.hidden_input_bookid').val();
-    //if (rating == '') { rating = '10'; }
+
     $.ajax({
       type: "POST",
       url: "http://" + pathname,

@@ -1,0 +1,14 @@
+- types ={address:t(:address),delivery:t(:delivery),payment:t(:payment),confirm:t(:confirm)}
+.row
+  .col-md-3
+    %h1.checkout-h1= t(:checkout)
+  .col-md-9.checkout-nav
+    - hash = {address: 1, delivery: 2, payment: 3, confirm: 4}
+    - types.each do |type|
+      %div{:class => "#{wizard_link(type.first.to_s)} #{not_active(type.first)} checkout-nav-lnk-wrap"}
+        %a{:href => "/order_steps/#{type.first.to_s}"}
+          .text-lnk= type.second
+          .progress-line
+            .step-cercle
+              %span.step-number= hash[type.first.to_sym]
+              %span.glyphicon.glyphicon-ok.step-done-icon }

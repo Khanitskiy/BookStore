@@ -1,5 +1,3 @@
-
-
 .clear {clear: both}
 
 body {
@@ -30,7 +28,7 @@ body {
 .home-page-slider {
   img {max-height: 450px; margin-left:0.5%; max-width:99%; float: left;}
   .price {float: left; display:inline-block; margin-right: 20px; font-size: 23px;}
-  .quantity-input {width: 65px; padding: 4px 10px;}
+  .quantity-input {width: 70px; padding: 4px 10px;}
 }
 
 .pagination {
@@ -62,6 +60,11 @@ body {
   font-style: italic;
   color: grey;
   padding-left: 6px;
+}
+
+.comment_moderation {
+  color: red;
+  font-style: bold;
 }
 
 .comment-item {

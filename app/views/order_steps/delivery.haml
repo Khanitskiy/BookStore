@@ -1,0 +1,28 @@
+.checkout
+  = render partial: "order_steps/partials/checkout_nav"
+  - if  @order_steps_form.errors.full_messages.any?
+    - @order_steps_form.errors.full_messages.each do |error_message|
+      = error_message
+      %br/
+  = form_for @order_steps_form, url: wizard_path, html: { method: :put } do |f|
+    .col-md-8
+      %h2.margin-bot-add= t(:delivery_type)
+      .row
+        .col-md-8
+          = f.fields_for(:delivery_type, @order_steps_form.order) do |order|
+            .radio
+              = order.radio_button :delivery, '5', checked: checked(5)
+              = t(:take_from_offie)
+              %br/
+            .radio
+              = order.radio_button :delivery, '10', checked: checked(10)
+              = t(:two_day)
+              %br/
+            .radio
+              = order.radio_button :delivery, '20', checked: checked(20)
+              = t(:one_day)
+              %br/
+    = render partial: "order_steps/partials/order_summary"
+    .col-md-4.col-md-offset-8
+      .form-group
+        = f.submit "Save and continue", name: 'commit',  class: "btn btn-success btn-lg"

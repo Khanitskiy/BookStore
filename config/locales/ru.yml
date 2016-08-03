@@ -43,6 +43,7 @@ ru:
   select_a_country:  "Выберите страну"
   save_and_continue: "Сохранить и продолжить"
   save:              "Сохранить"
+  back_to_order:     "Назад к заказам"
 
   ###--- books ---###
   ## layouts/application.html.erb
@@ -52,6 +53,7 @@ ru:
   cart:        "КОРЗИНА"
   settings:    "Настройки"
   orders:      "Заказы"
+  order:       "Заказ"
   sign_out:    "Выйти"
   log_in:      "Войти"
   sign_up:     "Регистрация"

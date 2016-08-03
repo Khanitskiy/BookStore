@@ -12,7 +12,7 @@ class Ability
   def admin_abilities
     can :access, :rails_admin
     can :dashboard
-    can :manage, [Author, User, Book, Cupon, Category, Rating]
+    can :manage, [Author, User, Book, Cupon, Category, Rating, Order]
     cannot :create, Rating
   end
 

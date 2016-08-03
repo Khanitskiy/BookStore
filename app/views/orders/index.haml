@@ -1,0 +1,22 @@
+.row
+  .col-md-12
+    %h1= t(:title_orders)
+    - unless @books.empty?
+      %h2.underlined-h2= t(:in_progress)
+      .row.cart
+        .col-md-12
+          %table.table
+            = render partial: "orders/partials/books_header"
+            = render partial: "orders/partials/render_books" , locals: {books: @books, remove_link: false, qty_change: false}
+        .col-md-6
+          %a.btn.btn-primary.lnk-to-cart{:href => "/orders/new"}= t(:go_to_cart)
+        .col-md-6.col-md-6
+          .order-summary-line{:style => "float: right; padding-right: 110px;"}
+            = t(:subtotal)
+            %span= number_to_currency(@subtotal)
+      %br/
+    = render partial: "orders/partials/status", locals: {status: @in_queue, title: t(:in_queue)}
+    = render partial: "orders/partials/status", locals: {status: @in_delivery, title: t(:in_delivery)}
+    = render partial: "orders/partials/status", locals: {status: @delivered, title: t(:delivered)}
+    %br/
+    %br/

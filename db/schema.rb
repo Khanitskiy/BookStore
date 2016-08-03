@@ -127,10 +127,11 @@ ActiveRecord::Schema.define(version: 20160427123550) do
     t.string   "title"
     t.string   "text_review"
     t.integer  "rating"
+    t.boolean  "access",      default: false
     t.integer  "book_id"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "ratings", ["book_id"], name: "index_ratings_on_book_id", using: :btree

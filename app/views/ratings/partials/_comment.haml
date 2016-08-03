@@ -2,15 +2,22 @@
   .rating
     - for i in 1..10
       = create_reatings(i, comment)
-  %span.comment_title= comment.title
-  %span.comment_date= comment.created_at.strftime("%b %d, %Y")
+  %span.comment_title
+    = comment.title
+  %span.comment_date
+    = comment.created_at.strftime("%b %d, %Y")
+  - if @not_access
+    %span.comment_moderation
+      &nbsp;&nbsp;&nbsp;Your comment is waiting for moderation
 .comment_user_name
-  by 
-  %b= user.firstname << ' ' << user.lastname
+  by
+  %b
+    = user.firstname << ' ' << user.lastname
 .media
   %hr{:color => "#ff9900", :size => "4"}/
   .media-left
     = get_user_avatar(user)
   .media-body
     %h4.media-heading
-    %p= comment.text_review
+    %p
+      = comment.text_review

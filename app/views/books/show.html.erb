@@ -55,9 +55,11 @@
 <div class="col-md-12">
   <div class="comments-block">
     <% @book.ratings.order(created_at: :desc).each do |rating| %>
+      <% if rating.access %>
       <div class="comment-item">
         <%= render partial: "ratings/partials/comment", locals: {comment: rating, user: rating.user} %>
       </div>
+      <% end %>
     <% end %>
   </div>
   <%= render partial: "books/partials/rating_stars", locals: {book: @book} %>

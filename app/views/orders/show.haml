@@ -2,7 +2,7 @@
   .row
     .col-md-12
       %h2
-        Order # #{@order.id}
+        #{t(:order)} # #{@order.id}
   .row
     .col-md-3
       %h3= t(:shipping_address)
@@ -29,7 +29,7 @@
           = render partial: "orders/partials/books_header"
           = render partial: "orders/partials/render_items", locals: {obj: @order, qty_change: false}
       .col-md-6
-        = link_to('Back to order', orders_path, html_options = { class: "btn btn-primary lnk-to-cart"})
+        = link_to(t(:back_to_order), orders_path, html_options = { class: "btn btn-primary lnk-to-cart"})
       .col-md-2
       = render partial: "/order_steps/partials/order_summary"
     %br/

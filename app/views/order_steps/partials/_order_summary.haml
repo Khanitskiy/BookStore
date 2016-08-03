@@ -1,0 +1,13 @@
+.col-md-4
+  %h2.margin-bot-add= t(:order_summary)
+  .summary-line.item_total
+    = t(:item_total)
+    %span= number_to_currency(@order.total_price.to_f)
+  .summary-line.shipping
+    = t(:shipping)
+    %span
+      = number_to_currency(@order.delivery .to_f)
+  .summary-line.order_total
+    = t(:order_total)
+    %span= number_to_currency(cupon(@order.order_total.to_f))
+    #cupon-red= discount.html_safe

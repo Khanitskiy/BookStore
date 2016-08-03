@@ -43,6 +43,7 @@ en:
   select_a_country:  "Select a country"
   save_and_continue: "Save and continue"
   save:              "Save"
+  back_to_order:     "Back to order"
 
 
   ### books ------------
@@ -53,6 +54,7 @@ en:
   cart:        "CART"
   settings:    "Settings"
   orders:      "Orders"
+  order:       "Order"
   sign_out:    "Sign out"
   log_in:      "Log in"
   sign_up:     "Sign up"

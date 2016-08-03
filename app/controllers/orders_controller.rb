@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
-  load_and_authorize_resource except: :show
-  #authorize_resource only: :show
-  # Management cart on cookies or database order
+  skip_before_action :load_in_progress_order, only: [:show]
+  load_and_authorize_resource except: [:update_shopcart_ajax, 
+    :clear_cookies_shopcart,
+     :check_cupon_ajax]
 
   def new
     get_books
@@ -24,22 +25,20 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find_by_id(params[:id])
-    authorize! :show, @order # check it
   end
 
   def index
     get_books
     [:in_queue, :in_delivery, :delivered].each do |item|
       instance_variable_set("@#{item}".to_sym,
-        Order.public_send(item, current_user))
+        Order.public_send(item).last_by_current_user(current_user))
     end
   end
 
   def destroy
     clear_order
     cookies_delete
-    set_session('empty')
+    set_session(0)
     redirect_to books_path
   end
 

@@ -1,9 +1,4 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
-// You can use CoffeeScript in this file: http://coffeescript.org/
-
 $(document).on("ready page:load",function(){
-
 
     // ## Delete product
     $('body').delegate('.remove_link a', 'click', function(){
@@ -38,7 +33,7 @@ $(document).on("ready page:load",function(){
         if (cookie_value) {
           var obj = jQuery.parseJSON(decodeURIComponent(cookie_value));
           product_count = jQuery.parseJSON(decodeURIComponent(product_count));
-          console.log(product_count)
+
           // Change count products in shop carts
           $('.cart-lnk em').text("(" + (parseInt($('.cart-lnk em').text().slice(1, -1)) - parseInt(obj[product_id])) + ")");
           if ($('.cart-lnk em').text() == '(0)' ) {$('.cart-lnk em').text('(empty)')}
@@ -68,7 +63,6 @@ $(document).on("ready page:load",function(){
 
     });
 
-    
     // ## Update shop cart
     $('body').delegate('#update', 'click', function(){
       var pathname = 'http://' + $(location).attr('host') + '/orders/update_shopcart_ajax';
@@ -103,11 +97,6 @@ $(document).on("ready page:load",function(){
     // ## Check cupon
     $('body').delegate('#checkout', 'click', function (event){
       cupon = $('.cupon').val();
-      console.log(window.location.toString())
-      //$(this).attr('href', $(this).attr('href') + '/address?value=' + cupon );
-      //checkout = $(this).attr('href');
-      //alert(checkout)
-      //cupon = $('.cupon').val();
       language = $(this).attr('href').slice(1,3);
       if(cupon.length == 0 ) {return true;}
 
@@ -138,7 +127,6 @@ $(document).on("ready page:load",function(){
             alert("Error");
           } 
         });
-
 
       }
 

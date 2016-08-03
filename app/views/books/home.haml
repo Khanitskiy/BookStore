@@ -14,7 +14,7 @@
               %h2
                 = link_to bestseller.title, bestseller
                 %br/
-                %small by Andrew  Evans
+                %small="by" << bestseller.author.to_s
               %p= bestseller.description
               .price= number_to_currency(bestseller.price)
               = form_tag("/orders/add_to_order", method: "put") do

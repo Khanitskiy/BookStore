@@ -1,7 +1,3 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
-// You can use CoffeeScript in this file: http://coffeescript.org/
-
 $(document).on("ready page:load",function(){
 
   if ($( "#shipping_error" ).hasClass( "has_errors" )) {
@@ -28,8 +24,6 @@ $(document).on("ready page:load",function(){
         $("#address_and_shipping").val( "false" );
     }
   });
-
-
 
   if($('#remove_accaunt_checkbox').val() == 'false') {
       $('#remove_button').addClass('disabled');

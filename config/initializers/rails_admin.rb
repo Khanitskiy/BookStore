@@ -75,4 +75,44 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+   config.excluded_models << OrderItem
+
+  ['Author',
+   'Book',
+   'Category',
+   'Cupon',
+   'User', 
+   'Order',
+   'OrderItem', 
+   'Rating'].each do |model_name|
+    config.model model_name do
+
+      if model_name == 'User'
+        object_label_method do
+          :custom_label_method
+        end
+      end
+      
+      exclude_fields :created_at, :updated_at
+
+      exclude_fields(:credit_card,
+                    :step_number) if model_name == 'Order'
+    end
+  end
+
+
+  config.model 'Order' do
+    edit do
+      include_fields :state
+      field :state, :enum do
+        enum do
+          init_state = bindings[:object].state
+          bindings[:object].aasm.states(:permitted => true).map(&:name)
+              .unshift(init_state)
+        end
+      end
+    end
+  end
+
 end
