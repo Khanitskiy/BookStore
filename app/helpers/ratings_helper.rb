@@ -14,7 +14,7 @@ module RatingsHelper
     elsif this_user.image.file.nil? == false
       "<img class='media-object' height='50' width='50' src='#{this_user.image_url}' alt='...'>".html_safe
     else
-      "<img class='media-object' height='50' width='50' src='http://localhost:3000/assets/no_avatar.jpg' alt='...'>".html_safe
+      "<img class='media-object' height='50' width='50' src='http://res.cloudinary.com/dpxmeadjo/image/upload/v1470231876/no_avatar_ay0cbj.jpg' alt='...'>".html_safe
     end
   end
 end
